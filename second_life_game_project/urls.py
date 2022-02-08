@@ -18,5 +18,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('github_webhook/', include('git_webhook.urls')),
+    path('git_push/', include('git_webhook.urls')),
 ]
