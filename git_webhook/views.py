@@ -5,7 +5,7 @@ import git
 
 @csrf_exempt
 def github_webhook(request):
-    repo = git.Repo('./../second_life_game_project')
+    repo = git.Repo('./second_life_game_project')
     origin = repo.remotes.origin
     print(origin.pull())
     return HttpResponse(status=200)
