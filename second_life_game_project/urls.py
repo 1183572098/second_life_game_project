@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from game import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('git_push/', include('git_webhook.urls')),
+    path('', views.index, name='index'),
+    # path('game/', include('game.urls')),
 ]
