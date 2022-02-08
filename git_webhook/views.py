@@ -8,12 +8,8 @@ import os
 def github_webhook(request):
     repo = git.Repo('./second_life_game_project')
     origin = repo.remotes.origin
-    try:
-        origin.pull()
-    except Exception as e:
-        print(e)
-        repo.git.reset('--hard')
-        origin.pull()
+    repo.git.reset('--hard')
+    origin.pull()
     os.system('/var/www/caxiao_pythonanywhere_com_wsgi.py')
     print("reload web success!")
     return HttpResponse(status=200)
