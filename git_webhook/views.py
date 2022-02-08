@@ -10,6 +10,6 @@ def github_webhook(request):
     origin = repo.remotes.origin
     repo.git.reset('--hard')
     origin.pull()
-    os.system('/var/www/caxiao_pythonanywhere_com_wsgi.py')
+    os.utime('/var/www/caxiao_pythonanywhere_com_wsgi.py', None)
     print("reload web success!")
     return HttpResponse(status=200)
