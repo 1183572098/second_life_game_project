@@ -77,11 +77,14 @@ WSGI_APPLICATION = 'second_life_game_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'CAXiao$second_life',  # second_life
+        'USER': 'CAXiao',  # root
+        'PASSWORD': 'secondlife',  # 123456
+        'HOST': 'CAXiao.mysql.pythonanywhere-services.com',  # localhost
+        'PORT': '3306',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -120,3 +123,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+MEDIA_DIR = os.path.join(BASE_DIR, 'media')
+
+MEDIA_ROOT = MEDIA_DIR
+
+MEDIA_URL = '/media/'
+
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
