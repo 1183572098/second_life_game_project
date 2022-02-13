@@ -37,9 +37,21 @@ class DataProcess(object):
         print("register models success.")
 
     def set_cache(self, key, value, timeout=float(system_config.parameter[1001])):
+        """
+        Update a key-value pair in the cache
+        :param key: cache key
+        :param value: cache value
+        :param timeout: cache timeout
+        :return: None
+        """
         self.data_cache.set(key, value, timeout)
 
     def get_cache(self, key):
+        """
+        Get a value in the cache by the key
+        :param key: cache key
+        :return: cache value
+        """
         if isinstance(key, str):
             if self.data_cache.has_key(key):
                 return self.data_cache.get(key)
@@ -79,9 +91,24 @@ class DataProcess(object):
         raise Exception("Can't find such a model named: " + model)
 
     def model(self, name):
+        """
+        Get the model object of a certain name
+        :param name: model name, type of str
+        :return: model object, type of model
+        """
         return self.__get_model_by_name(name)
 
     def select(self, select_func, tables, *args, **kwargs):
+        """
+        Query data from a database or cache. If the data exists in the cache, the data in the cache will be returned.
+        If the data in the cache does not exist, the database query function will be executed and the query result
+        will be returned.
+        :param select_func: Query function, this is a callback function
+        :param tables: Query function, which is a callback function. eg. Blog.objects.values_list
+        :param args: non-keyword arguments. eg. 'id', 'name'
+        :param kwargs: keyword arguments  eg. headline='Hello'
+        :return: query result, data object
+        """
         cache_key = self.__transform_to_cache_key(tables, *args, **kwargs)
         if self.data_cache.has_key(cache_key):
             print("Get data from cache")
@@ -116,11 +143,23 @@ class DataProcess(object):
         return cache_key
 
     def create(self, model, **kwargs):
+        """
+        Add a row of data
+        :param model: Model object or model name, type of model or str
+        :param kwargs: keyword arguments. eg. first_name="Bruce", last_name="Springsteen"
+        :return: None
+        """
         obj = self.__get_model_by_name(model)
         o = obj.objects.create(**kwargs)
         o.save()
 
     def update(self, data_objs, **kwargs):
+        """
+        Update one or more rows of data
+        :param data_objs: data objects, type of model object or list of model objects
+        :param kwargs: The data to be modified is passed as keyword arguments. eg. views=20
+        :return: None
+        """
         # Get the class name of the first object in the list, because the objects of a group of update operations
         # must be instances of the same class
         cache_head = data_objs[0].__class__.__name__
