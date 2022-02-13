@@ -3,15 +3,21 @@ import os
 from itertools import islice
 
 
-class SystemConfig(object):
-    parameter = {}
+class Parameter(object):
+    parameter = []
 
     def __init__(self):
         work_path = os.path.dirname(os.path.abspath(__file__))
-        print(work_path)
-        csv_reader = csv.reader(open(os.path.join(work_path, '../static/config/parameter.csv')))
-        for line in islice(csv_reader, 1, None):
-            self.parameter.update({int(line[0]): line[1]})
+        parameter_file = csv.DictReader(open(os.path.join(work_path, '../static/config/parameter.csv')))
+        for role in parameter_file:
+            self.parameter.append(dict(role))
+
+    def value(self, parameter_id):
+        for para in self.parameter:
+            if para["id"] == str(parameter_id):
+                return int(para["value"])
+
+        raise Exception("Can't find parameter id: " + str(parameter_id))
 
 
-system_config = SystemConfig()
+parameter = Parameter()

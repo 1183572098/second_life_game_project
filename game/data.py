@@ -10,7 +10,7 @@
 from django.core.cache import cache
 import game.models as models
 import inspect
-from game.config import system_config
+from game.config import parameter
 
 
 class DataProcess(object):
@@ -36,7 +36,7 @@ class DataProcess(object):
 
         print("register models success.")
 
-    def set_cache(self, key, value, timeout=float(system_config.parameter[1001])):
+    def set_cache(self, key, value, timeout=parameter.value(1001)):
         """
         Update a key-value pair in the cache
         :param key: cache key
@@ -122,7 +122,7 @@ class DataProcess(object):
         else:
             print("Get data from database")
             result_data = select_func(*args, **kwargs)
-            self.data_cache.set(cache_key, result_data, float(system_config.parameter[1001]))
+            self.data_cache.set(cache_key, result_data, parameter.value(1001))
             return result_data
 
     def __transform_to_cache_key(self, tables, *args, **kwargs):
