@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'game'
+    'game',
 ]
 
 MIDDLEWARE = [
@@ -83,6 +83,13 @@ DATABASES = {
         'PASSWORD': 'secondlife',  # 123456
         'HOST': 'CAXiao.mysql.pythonanywhere-services.com',  # localhost
         'PORT': '3306',
+    }
+}
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
     }
 }
 

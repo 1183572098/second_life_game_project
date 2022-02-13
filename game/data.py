@@ -1,0 +1,142 @@
+# -*- coding: utf-8 -*-
+# @Time    : 2022/2/12 16:24
+# @Author  : Jinyi Li
+# @FileName: data.py
+# @Software: PyCharm
+
+# This file provides a unified calling interface for the database and cache, reducing the coding complexity of the
+# module when calling data
+
+from django.core.cache import cache
+import game.models as models
+import inspect
+from game.config import system_config
+
+
+class DataProcess(object):
+    _instance = None
+
+    data_cache = cache
+    classes = []
+
+    # As for singleton
+    def __new__(cls, *args, **kwargs):
+        if cls._instance is None:
+            cls._instance = object.__new__(cls)
+        return cls._instance
+
+    def __init__(self):
+        self.__get_models()
+
+    def __get_models(self):
+        classes = inspect.getmembers(models, inspect.isclass)
+        for (name, _) in classes:
+            variables = [attr for attr in dir(_) if not callable(getattr(_, attr)) and not attr.startswith("_")]
+            self.classes.append((_, name, variables))
+
+        print("register models success.")
+
+    def set_cache(self, key, value, timeout=float(system_config.parameter[1001])):
+        self.data_cache.set(key, value, timeout)
+
+    def get_cache(self, key):
+        if isinstance(key, str):
+            if self.data_cache.has_key(key):
+                return self.data_cache.get(key)
+
+        elif isinstance(key, list):
+            data_list = []
+            for k in key:
+                if self.data_cache.has_key(key):
+                    data_list.append(self.data_cache.get(k))
+
+            return data_list
+        else:
+            raise Exception("Input type of 'key' must be str or list.")
+
+    # Just return 1 object
+    def __select_key_from_all_models(self, key):
+        model_list = []
+        for obj, n, v in self.classes:
+            if v.contains(key):
+                model_list.append(obj)
+
+        if len(model_list) > 1:
+            raise Exception("The query field exists in multiple tables, please confirm the input or specify the object")
+
+        return model_list[0]
+
+    def __get_model_by_name(self, model):
+        if type(model) == str:
+            for obj, n, v in self.classes:
+                if n == model:
+                    return obj
+        else:
+            for obj, n, v in self.classes:
+                if obj == model:
+                    return obj
+
+        raise Exception("Can't find such a model named: " + model)
+
+    def model(self, name):
+        return self.__get_model_by_name(name)
+
+    def select(self, select_func, tables, *args, **kwargs):
+        cache_key = self.__transform_to_cache_key(tables, *args, **kwargs)
+        if self.data_cache.has_key(cache_key):
+            print("Get data from cache")
+            try:
+                cache_data = self.data_cache.get(cache_key)
+            except Exception as e:
+                print(e)
+                cache_data = None
+
+            return cache_data
+        else:
+            print("Get data from database")
+            result_data = select_func(*args, **kwargs)
+            self.data_cache.set(cache_key, result_data, float(system_config.parameter[1001]))
+            return result_data
+
+    def __transform_to_cache_key(self, tables, *args, **kwargs):
+        cache_key = None
+        for table in tables:
+            for obj, n, v in self.classes:
+                if table == obj or table == n:
+                    cache_key += str(table)
+                else:
+                    raise Exception(table + " not exists in models.")
+
+        for arg in args:
+            cache_key += str(arg)
+
+        for key in kwargs:
+            cache_key += str(key) + str(kwargs[key])
+
+        return cache_key
+
+    def create(self, model, **kwargs):
+        obj = self.__get_model_by_name(model)
+        o = obj.objects.create(**kwargs)
+        o.save()
+
+    def update(self, data_objs, **kwargs):
+        # Get the class name of the first object in the list, because the objects of a group of update operations
+        # must be instances of the same class
+        cache_head = data_objs[0].__class__.__name__
+        self.__delete_cache(cache_head)
+        for data_obj in data_objs:
+            for key in kwargs:
+                setattr(data_obj, key, kwargs[key])
+            data_obj.save()
+
+        # Delayed double deletion
+        self.__delete_cache(cache_head)
+
+    def __delete_cache(self, key_str):
+        for key in self.data_cache.keys():
+            if key_str in key:
+                self.data_cache.delete(key)
+
+
+data = DataProcess()
