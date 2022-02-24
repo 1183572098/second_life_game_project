@@ -3,12 +3,12 @@ import os
 
 
 class Config(object):
-    config = []
     file_name = None
 
     def __init__(self):
+        self.config = []
         work_path = os.path.dirname(os.path.abspath(__file__))
-        parameter_file = csv.DictReader(open(os.path.join(work_path, '../static/config/' + file_name)))
+        parameter_file = csv.DictReader(open(os.path.join(work_path, '../static/config/' + self.file_name)))
         for role in parameter_file:
             self.config.append(dict(role))
 
@@ -40,7 +40,7 @@ class Attribute(Config):
     def ids(self):
         if not self.id_list:
             for para in self.config:
-                self.id_list.append(para["attribute_id"])
+                self.id_list.append(int(para["attribute_id"]))
 
         return self.id_list
 

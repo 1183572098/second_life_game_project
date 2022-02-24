@@ -55,6 +55,8 @@ class DataProcess(object):
         if isinstance(key, str):
             if self.data_cache.has_key(key):
                 return self.data_cache.get(key)
+            else:
+                return None
 
         elif isinstance(key, list):
             data_list = []
@@ -149,9 +151,14 @@ class DataProcess(object):
         :param kwargs: keyword arguments. eg. first_name="Bruce", last_name="Springsteen"
         :return: None
         """
-        obj = self.__get_model_by_name(model)
-        o = obj.objects.create(**kwargs)
-        o.save()
+        try:
+            obj = self.__get_model_by_name(model)
+            o = obj.objects.create(**kwargs)
+            o.save()
+            return True
+        except Exception as e:
+            print(e)
+            return False
 
     def update(self, data_objs, **kwargs):
         """
@@ -162,15 +169,20 @@ class DataProcess(object):
         """
         # Get the class name of the first object in the list, because the objects of a group of update operations
         # must be instances of the same class
-        cache_head = data_objs[0].__class__.__name__
-        self.__delete_cache(cache_head)
-        for data_obj in data_objs:
-            for key in kwargs:
-                setattr(data_obj, key, kwargs[key])
-            data_obj.save()
+        try:
+            cache_head = data_objs[0].__class__.__name__
+            self.__delete_cache(cache_head)
+            for data_obj in data_objs:
+                for key in kwargs:
+                    setattr(data_obj, key, kwargs[key])
+                data_obj.save()
 
-        # Delayed double deletion
-        self.__delete_cache(cache_head)
+            # Delayed double deletion
+            self.__delete_cache(cache_head)
+            return True
+        except Exception as e:
+            print(e)
+            return False
 
     def __delete_cache(self, key_str):
         for key in self.data_cache.keys():
