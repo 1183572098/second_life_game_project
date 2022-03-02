@@ -1,0 +1,7 @@
+ID,Goods,Tpye,money,value1,value2,value3,value4,value5,event trigger ID,num,notes
+2001,Health pills,0,10,2,0,0,0,0,,-1,
+2002,Aladdin's lamp,0,20,,,,-2,5,,-1,Aladdin bless you
+2003,Rebirth Pills,1,100,,,,,,3001,2,"Life restarts, back to 0 years old, and the all attributes are reset to 4"
+2004,Fairy Amulet,0,20,3,-3,1,1,1,,,
+2005,Wandering Symphony,0,50,,,,,,,5,"Random one attribute +5, random one attribute -3"
+2006,immortal love,1,150,,,,,,,1,Selecting a property to 10 triggers a property-specific event 
