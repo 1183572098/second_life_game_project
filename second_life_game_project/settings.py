@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'CAXiao$second_life', #second_life
         'USER': 'CAXiao', #root
         'PASSWORD': 'secondlife', #123456
-        'HOST': 'CAXio.mysql.pythonanywhere-servies.com', #localhost
+        'HOST': 'CAXiao.mysql.pythonanywhere-servies.com', #localhost
         'PORT': '3306',
     }
 }
