@@ -1,0 +1,22 @@
+{% extends 'game/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+	Login
+{% endblock %}
+
+{% block body_block %}
+
+	{% if registered %}
+        {{ user.username }} welcome!
+    
+  	  {% endif %}
+	<form id="login_form" method="post" action="/game/login/">
+		{% csrf_token %}
+		Username: <input type="text" name="username" value="" size="50" />
+		<br />
+		Password: <input type="password" name="password" value="" size="50" />
+		<br />
+		<input type="submit" value="Begin!" />
+	</form>
+{% endblock %}

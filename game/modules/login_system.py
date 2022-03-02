@@ -8,10 +8,10 @@ from game.forms import UserForm, UserProfileForm
 
 def register(request):
     registered = False
-    if request.met == 'POST':
+
+    if request.method == 'POST':
         user_form = UserForm(request.POST)
         profile_form = UserProfileForm(request.POST)
-        registered = False
 
         if user_form.is_valid() and profile_form.is_valid():
             user = user_form.save()
@@ -20,7 +20,7 @@ def register(request):
 
             profile = profile_form.save(commit=False)
             profile.user = user
-
+            
             profile.save()
             registered = True
         else:
@@ -28,11 +28,9 @@ def register(request):
     else:
         user_form = UserForm()
         profile_form = UserProfileForm()
-    return render(request, 'register.html',
-                  context={'user_form': user_form,
-                           'profile_form': profile_form,
-                           'registered': registered})
-
+    
+    return render(request, 'game/register.html', context={'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
+   
 
 def user_login(request):
     if request.method == 'POST':

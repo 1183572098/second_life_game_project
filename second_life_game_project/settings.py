@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -26,6 +26,8 @@ SECRET_KEY = 'gj&m!)v4sk$6vog%%)s4s@gu5%jt)05c5cm-61mpvp9*z1liz('
 DEBUG = True
 
 ALLOWED_HOSTS = ['caxiao.pythonanywhere.com', '127.0.0.1']
+
+LOGIN_URL = 'game:login'
 
 
 # Application definition
@@ -55,7 +57,7 @@ ROOT_URLCONF = 'second_life_game_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': os.path.join(BASE_DIR, 'templates')
+        'DIRS': [TEMPLATE_DIR,]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -78,10 +80,10 @@ WSGI_APPLICATION = 'second_life_game_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'CAXiao$second_life',  # second_life
-        'USER': 'CAXiao',  # root
-        'PASSWORD': 'secondlife',  # 123456
-        'HOST': 'CAXiao.mysql.pythonanywhere-services.com',  # localhost
+        'NAME': 'second_life',
+        'USER': 'root',
+        'PASSWORD': '123456',
+        'HOST': 'localhost',
         'PORT': '3306',
     }
 }
@@ -141,4 +143,4 @@ MEDIA_ROOT = MEDIA_DIR
 
 MEDIA_URL = '/media/'
 
-TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+	<head>
+	<title>
+		Second Life
+	{% block title_block %}
+		Welcome to Your New Life
+	{% endblock %}
+ </title>
+	</head>
+
+	<body>
+	<div>
+		{% block body_block %}
+	
+		{% endblock %}
+
+	<div>
+		{% block sidebar_block %}
+	
+		{% endblock %}
+	</div>
+
+	</div>
+
+
+	<div>
+		<a href="/game/register/">Register</a>
+		<a href="/game/login/">Login</a></li>
+		<a href="/game/logout/">Logout</a></li>
+		</div>
+</body>
+</html>

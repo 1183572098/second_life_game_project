@@ -1,0 +1,19 @@
+{% extends 'game/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+	Homepage
+{% endblock %}
+
+{% block body_block %}
+<h1>Welcome to SecondLife</h1>
+<div>
+    {% if user.is_authenticated %}
+        Hello {{ user.username }}.
+    {% else %}
+        Hello.
+    {% endif %}
+    <br />
+    <strong>{{ boldmessage }}</strong><br />
+</div>
+{% endblock %}
