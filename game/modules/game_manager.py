@@ -46,7 +46,59 @@ class Manager:
         game.role.first_name = request_data.get("first_name")
         game.role.last_name = request_data.get("last_name")
         game.role.head_portrait = request_data.get("head_portrait")
-        return game.next()
+        result = {}
+        result.update({"attribute": game.role.attribute})
+        result.update({"event": game.next_year()})
+        return result
+
+    def open_shop(self, request_data):
+        print("info: open_shop")
+        game = self.data.get_cache(request_data.get("user_id"))
+        bag = game.get_bag()
+        shop = game.get_shop()
+
+        result = {}
+        result.update({"bag": bag})
+        result.update({"shop": shop})
+        return result
+
+    def purchase(self, request_data):
+        print("info: purchase")
+        game = self.data.get_cache(request_data.get("user_id"))
+        good_id = request_data.get("good_id")
+        shop = game.get_shop()
+        result = {}
+        if shop.get(good_id) is None:
+            print("error: can't purchase")
+            result.update({"success": False})
+            result.update({"reason": "The good is not in the store"})
+        if shop.get(good_id) == -1 or shop.get(good_id) > 0:
+            game.purchase(good_id)
+            result.update({"success": True})
+            result.update(self.open_shop(request_data))
+        else:
+            print("info: can't purchase")
+            result.update({"success": False})
+            result.update({"reason": "Insufficient number of the good available for purchase"})
+
+        return result
+
+    def use_good(self, request_data):
+        print("info: use good")
+        game = self.data.get_cache(request_data.get("user_id"))
+        good_id = request_data.get("good_id")
+        bag = game.get_bag()
+        result = {}
+        if bag.get(good_id) is not None:
+            game.use_good(good_id)
+            result.update({"success": True})
+            result.update(self.open_shop(request_data))
+        else:
+            print("error: can't purchase")
+            result.update({"success": False})
+            result.update({"reason": "The good is not in the bag"})
+
+        return result
 
     def serialize(self, request_data):
         user_id = request_data.get("user_id")

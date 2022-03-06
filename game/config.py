@@ -46,3 +46,51 @@ class Attribute(Config):
 
 
 attribute = Attribute()
+
+
+class Event(Config):
+
+    def __init__(self):
+        self.file_name = 'event.csv'
+        super(Event, self).__init__()
+
+
+event = Event()
+
+
+class StoreTable(Config):
+    goods = {}
+
+    def __init__(self):
+        self.file_name = 'StoreTable.csv'
+        super(StoreTable, self).__init__()
+
+    def get_goods(self):
+        if not self.goods:
+            for para in self.config:
+                self.goods.update({int(para["ID"]): int(para["num"])})
+
+    def get_type(self, good_id):
+        for para in self.config:
+            if para["ID"] == str(good_id):
+                return int(para["Type"])
+
+    def get_values(self, good_id):
+        values = {}
+        for para in self.config:
+            if para["ID"] == str(good_id):
+                values.update({"value1": int(para["value1"]),
+                               "value2": int(para["value2"]),
+                               "value3": int(para["value3"]),
+                               "value4": int(para["value4"]),
+                               "value5": int(para["value5"])})
+
+        return values
+
+    def get_event(self, good_id):
+        for para in self.config:
+            if para["ID"] == str(good_id):
+                return int(para["event trigger ID"])
+
+
+store_table = StoreTable()
