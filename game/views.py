@@ -31,6 +31,7 @@ def game_confirm(request):
     data = json.loads(request.body.decode())
     manager = game_manager.Manager()
     result = manager.start_game(data)
+    return HttpResponse(result)
 
 
 def register(request):
@@ -78,10 +79,37 @@ def user_login(request):
     else:
         return render(request, 'game/login.html')
 
+
 def user_logout(request):
     logout(request)
     return redirect('/game/index/')
 
+
 def start_game(request):
     return render(request, 'game/start.html')
 
+
+def click_shop(request):
+    data = json.loads(request.body.decode())
+    manager = game_manager.Manager()
+    result = manager.open_shop(data)
+    return HttpResponse(result)
+
+
+def purchase_good(request):
+    data = json.loads(request.body.decode())
+    manager = game_manager.Manager()
+    result = manager.purchase(data)
+    return HttpResponse(result)
+
+
+def use_good(request):
+    data = json.loads(request.body.decode())
+    manager = game_manager.Manager()
+    result = manager.use_good(data)
+    return HttpResponse(result)
+
+
+def test(request):
+    new_game = game_manager.Manager()
+    return HttpResponse(200)
