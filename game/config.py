@@ -3,6 +3,12 @@ import csv
 import os
 
 
+def modify_ternary_expression(expression_str):
+    formula, results = expression_str.split("?")
+    option1, option2 = results.split(":")
+    return option1 + " if " + formula + " else " + option2
+
+
 class Config(object):
     file_name = None
 
@@ -77,7 +83,7 @@ class Event(Config):
             age_min, age_max = age_group.split(",")
             if (int(age_min) == -1 or age > int(age_min)) and (int(age_max) == -1 or age < int(age_max)):
                 if int(para["EventType"]) == 0 and (para["pre_event"] == "" or int(para["pre_event"]) in event_history):
-                    event_list.update({int(para["event ID"]): eval(para["probability"])})
+                    event_list.update({int(para["event ID"]): eval(modify_ternary_expression(para["probability"]))})
 
         return event_list
 
@@ -92,7 +98,7 @@ class Event(Config):
             if (int(age_min) == -1 or age > int(age_min)) and (int(age_max) == -1 or age < int(age_max)):
                 if int(para["EventType"]) == 1 and (para["pre_event"] == "" or int(para["pre_event"]) in event_history):
                     if int(para["maximum"]) > attributes[int(para["attribute threshold"])] > int(para["minimum"]):
-                        event_list.update({int(para["event ID"]): eval(para["probability"])})
+                        event_list.update({int(para["event ID"]): eval(modify_ternary_expression(para["probability"]))})
 
         return event_list
 
