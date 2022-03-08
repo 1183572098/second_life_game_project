@@ -110,6 +110,13 @@ def use_good(request):
     return HttpResponse(result)
 
 
+def choose_option(request):
+    data = json.loads(request.body.decode())
+    manager = game_manager.Manager()
+    result = manager.choose_option(data)
+    return HttpResponse(result)
+
+
 def test(request):
     new_game = game_manager.Manager()
     return HttpResponse(200)

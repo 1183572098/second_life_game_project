@@ -5,7 +5,7 @@
 # @Software: PyCharm
 import random
 
-from game.config import attribute, parameter, store_table, option_config, event
+from game.config import attribute, parameter, store_table, option_config, event, option_table
 
 
 class Process:
@@ -37,9 +37,11 @@ class Process:
             self.role.age += 1
             self.mechanism_process()
             event_id = self._get_event()
-            self.event_history.append(event_id)
+            self._execute_event(event_id)
             result.update({"is_end": False})
             result.update({self.role.age: event_id})
+            result.update({"event_id": event_id})
+            result.update({"attribute": self.role.attribute})
         else:
             result.update({"is_end": True})
             result.update({"attribute_id": is_end})
@@ -156,6 +158,14 @@ class Process:
 
         else:
             print("error: unknown type of good")
+
+    def choose_option(self, option_id):
+        event_id = option_table.get_event(self.event_history[-1], option_id)
+        result = {}
+        self._execute_event(event_id)
+        result.update({"event_id": event_id})
+        result.update({"attribute": self.role.attribute})
+        return result
 
 
 class Role:

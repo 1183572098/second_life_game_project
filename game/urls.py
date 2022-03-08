@@ -16,4 +16,5 @@ urlpatterns = [
     path('shop/', views.click_shop, name='shop'),
     path('purchase/', views.purchase_good, name='purchase'),
     path('use/', views.use_good, name='use'),
+    path('option/', views.choose_option, name='choose_option'),
 ]

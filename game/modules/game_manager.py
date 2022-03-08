@@ -58,8 +58,7 @@ class Manager:
         for k, v in attributes:
             game.role.set_attribute(k, v)
 
-        result.update({"attribute": game.role.attribute})
-        result.update({"event": game.next_year()})
+        result.update(game.next_year())
         result.update({"success": True})
         return result
 
@@ -111,6 +110,12 @@ class Manager:
             result.update({"reason": "The good is not in the bag"})
 
         return result
+
+    def choose_option(self, request_data):
+        print("info: choose option")
+        game = self.data.get_cache(request_data.get("user_id"))
+        option_id = request_data.get("event_id")
+        return game.choose_option(option_id)
 
     def serialize(self, request_data):
         user_id = request_data.get("user_id")

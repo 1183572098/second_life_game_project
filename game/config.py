@@ -178,3 +178,18 @@ class OptionConfig(Config):
 
 
 option_config = OptionConfig()
+
+
+class OptionTable(Config):
+
+    def __init__(self):
+        self.file_name = 'OptionTable.csv'
+        super(OptionTable, self).__init__()
+
+    def get_event(self, event_id, option_id):
+        for para in self.config:
+            if para["event_id"] == str(event_id):
+                return int(para["event" + str(option_id)])
+
+
+option_table = OptionTable()
