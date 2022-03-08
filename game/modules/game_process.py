@@ -5,7 +5,7 @@
 # @Software: PyCharm
 import random
 
-from game.config import attribute, parameter, store_table
+from game.config import attribute, parameter, store_table, option_config, event
 
 
 class Process:
@@ -13,9 +13,11 @@ class Process:
     bag = {}
     __consumed_bag = {}
     event_history = []
+    initial_attribute = None
 
     def __init__(self):
         self.role = Role()
+        self.initial_attribute = self.role.attribute
 
     def random_attribute(self):
         random_numbers = [random.random() for _ in range(len(self.role.attribute))]
@@ -29,16 +31,79 @@ class Process:
             index += 1
 
     def next_year(self):
-        self.role.age += 1
-        event_id = self._get_event(self.role.age)
-        self.event_history.append(event_id)
-        return {self.role.age: event_id}
+        is_end = self.end
+        result = {}
+        if is_end > 0:
+            self.role.age += 1
+            self.mechanism_process()
+            event_id = self._get_event()
+            self.event_history.append(event_id)
+            result.update({"is_end": False})
+            result.update({self.role.age: event_id})
+        else:
+            result.update({"is_end": True})
+            result.update({"attribute_id": is_end})
 
-    def _get_event(self, age):
-        pass
+        return result
+
+    @property
+    def end(self):
+        for k, v in self.role.attribute:
+            if v <= 0:
+                return k
+
+        return -1
+
+    def mechanism_process(self):
+        if parameter.value(2005) > self.role.age > parameter.value(2004):
+            effect_str = parameter.str_value(2006)
+        elif self.role.age > parameter.value(2005):
+            effect_str = parameter.str_value(2007)
+        else:
+            return
+
+        effects = effect_str.split(",")
+        for e in effects:
+            e, p = e.split(":")
+            self.role.set_attribute(int(e), self.role.get_attribute(int(e)) + int(p))
+
+    def _get_event(self):
+        if self.role.age in option_config.ages():
+            event_dict = option_config.get_event(self.role.age)
+        else:
+            event_dict = event.get_high_event(self.role.age, self.event_history, self.role.attribute)
+            if len(event_dict) == 0:
+                event_dict = event.get_event(self.role.age, self.event_history)
+
+        if len(event_dict) == 1:
+            return event_dict.keys()[0]
+        else:
+            return self._get_random_by_weights(event_dict)
+
+    def _get_random_by_weights(self, obj_dict):
+        sum_weights = sum(obj_dict.values())
+        random_num = random.random()
+        weight = 0
+        for k, v in obj_dict:
+            weight += v
+            if weight / sum_weights * 1.0 >= random_num:
+                return k
 
     def _execute_event(self, event_id):
-        pass
+        if event_id == 3001:
+            self.rebirth()
+            return
+
+        self.event_history.append(event_id)
+        effect_dict = event.get_effect(event_id)
+        for k, v in effect_dict:
+            self.role.set_attribute(k, self.role.get_attribute(k) + v)
+
+    def rebirth(self):
+        self.role.age = 0
+        self.role.attribute = self.initial_attribute
+        self.event_history.clear()
+        self.event_history.append(3001)
 
     def get_bag(self):
         return self.bag
@@ -76,14 +141,18 @@ class Process:
     def _use_good(self, good_id):
         good_type = store_table.get_type(good_id)
         if good_type == 0:
-            for k, v in store_table.get_type(good_id):
+            for k, v in store_table.get_values(good_id):
                 if v != 0:
-                    attribute_id = int(k[5:])
-                    self.role.set_attribute(attribute_id, self.role.get_attribute(attribute_id) + v)
+                    self.role.set_attribute(k, self.role.get_attribute(k) + v)
 
         elif good_type == 1:
             event_id = store_table.get_event(good_id)
             self._execute_event(event_id)
+
+        elif good_type == 2:
+            weight_dict = store_table.get_weight(good_id)
+            attribute_id = self._get_random_by_weights(weight_dict)
+            self.role.set_attribute(attribute_id, self.role.get_attribute(attribute_id) + store_table.get_values(good_id)[attribute_id])
 
         else:
             print("error: unknown type of good")
