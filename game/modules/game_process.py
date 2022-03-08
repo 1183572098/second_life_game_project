@@ -50,7 +50,7 @@ class Process:
 
     @property
     def end(self):
-        for k, v in self.role.attribute:
+        for k, v in self.role.attribute.items():
             if v <= 0:
                 return k
 
@@ -75,7 +75,7 @@ class Process:
         else:
             event_dict = event.get_high_event(self.role.age, self.event_history, self.role.attribute)
             if len(event_dict) == 0:
-                event_dict = event.get_event(self.role.age, self.event_history)
+                event_dict = event.get_event(self.role.age, self.event_history, self.role.attribute)
 
         if len(event_dict) == 1:
             return event_dict.keys()[0]

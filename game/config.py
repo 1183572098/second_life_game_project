@@ -52,6 +52,11 @@ class Attribute(Config):
 
         return self.id_list
 
+    def name(self, attribute_id):
+        for para in self.config:
+            if para["attribute_id"] == str(attribute_id):
+                return para["attribute_name"]
+
 
 attribute = Attribute()
 
@@ -62,14 +67,17 @@ class Event(Config):
         self.file_name = 'event.csv'
         super(Event, self).__init__()
 
-    def get_event(self, age, event_history):
+    def get_event(self, age, event_history, attributes):
         event_list = {}
+        for k, v in attributes.items():
+            exec('{} = {}'.format(attribute.name(k), v))
+
         for para in self.config:
             age_group = para["age group"]
             age_min, age_max = age_group.split(",")
             if (int(age_min) == -1 or age > int(age_min)) and (int(age_max) == -1 or age < int(age_max)):
-                if int(para["EventType"]) == 0 and (int(para["pre_event"]) is None or int(para["pre_event"]) in event_history):
-                    event_list.update({int(para["event ID"]): int(para["probability"])})
+                if int(para["EventType"]) == 0 and (para["pre_event"] == "" or int(para["pre_event"]) in event_history):
+                    event_list.update({int(para["event ID"]): eval(para["probability"])})
 
         return event_list
 
@@ -79,7 +87,7 @@ class Event(Config):
             age_group = para["age group"]
             age_min, age_max = age_group.split(",")
             if (int(age_min) == -1 or age > int(age_min)) and (int(age_max) == -1 or age < int(age_max)):
-                if int(para["EventType"]) == 1 and (int(para["pre_event"]) is None or int(para["pre_event"]) in event_history):
+                if int(para["EventType"]) == 1 and (para["pre_event"] == "" or int(para["pre_event"]) in event_history):
                     if int(para["maximum"]) > attributes[int(para["attribute threshold"])] > int(para["minimum"]):
                         event_list.update({int(para["event ID"]): int(para["probability"])})
 
@@ -88,7 +96,7 @@ class Event(Config):
     def get_effect(self, event_id):
         effect_dict = {}
         for para in self.config:
-            if para["event ID"] == event_id:
+            if para["event ID"] == str(event_id):
                 if para["effect"] is not None:
                     effects = para["effect"].split(",")
                     for effect in effects:
@@ -99,7 +107,6 @@ class Event(Config):
 
 
 event = Event()
-
 
 class StoreTable(Config):
     goods = {}
