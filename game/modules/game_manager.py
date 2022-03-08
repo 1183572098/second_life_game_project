@@ -7,6 +7,7 @@ from game.data import data
 from game.modules import game_process
 from game.models import Record
 import pickle
+from game.config import parameter
 
 
 class Manager:
@@ -46,9 +47,20 @@ class Manager:
         game.role.first_name = request_data.get("first_name")
         game.role.last_name = request_data.get("last_name")
         game.role.head_portrait = request_data.get("head_portrait")
+        attributes = request_data.get("attribute")
         result = {}
+        for v in attributes.values():
+            if v < parameter.value(2002) or v > parameter.value(2003):
+                result.update({"success": False})
+                result.update({"reason": "The initial attribute cannot be lower than 10 and cannot be higher than 50"})
+                return result
+
+        for k, v in attributes:
+            game.role.set_attribute(k, v)
+
         result.update({"attribute": game.role.attribute})
         result.update({"event": game.next_year()})
+        result.update({"success": True})
         return result
 
     def open_shop(self, request_data):
