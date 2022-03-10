@@ -35,17 +35,17 @@ def game_confirm(request):
     return HttpResponse(result)
 
 
+@login_required()
 def add_announcement(request):
+    announcement_form = AnnouncementForm()
     if request.method == 'POST':
         announcement_form = AnnouncementForm(request.POST)
         if announcement_form.is_valid():
             announcement = announcement_form.save(commit=False)
-            return redirect('game/admin.html')
+            return redirect('/game/index/')
         else:
             print(announcement_form.errors)
-            return HttpResponse("Invalid announcement. ")
-    else:
-        return render(request, 'game/announcement.html')
+    return render(request, 'game/announcement.html', {'form':announcement_form})
 
 
 def show_announcement(request):
