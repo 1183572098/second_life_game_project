@@ -99,3 +99,7 @@ def choose_option(request):
 def test(request):
     new_game = game_manager.Manager()
     return HttpResponse(200)
+
+
+def game(request):
+    return render(request, 'game/game.html')

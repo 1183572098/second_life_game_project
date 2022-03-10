@@ -88,10 +88,10 @@ WSGI_APPLICATION = 'second_life_game_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'CAXiao$second_life', #second_life
-        'USER': 'CAXiao', #root
-        'PASSWORD': 'secondlife', #123456
-        'HOST': 'CAXiao.mysql.pythonanywhere-services.com', #localhost
+        'NAME': 'zhihao$second_life', #second_life
+        'USER': 'root', #root
+        'PASSWORD': '123456', #123456
+        'HOST': 'localhost', #localhost
         'PORT': '3306',
     }
 }
