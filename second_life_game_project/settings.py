@@ -35,7 +35,6 @@ LOGOUT_REDIRECT_URL = '/game/index'
 
 LOGIN_URL = 'auth_login'
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -64,7 +63,7 @@ ROOT_URLCONF = 'second_life_game_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR,]
+        'DIRS': [TEMPLATE_DIR, ]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -74,12 +73,14 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries': {
+                'staticfiles': 'django.templatetags.static',
+            }
         },
     },
 ]
 
 WSGI_APPLICATION = 'second_life_game_project.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -120,7 +121,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
@@ -133,7 +133,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
@@ -149,5 +148,3 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 MEDIA_ROOT = MEDIA_DIR
 
 MEDIA_URL = '/media/'
-
-

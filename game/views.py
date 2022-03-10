@@ -20,6 +20,7 @@ def initial_game(request):
     result = manager.initial_game(data, game_process.Process())
     return HttpResponse(result)
 
+
 def random_attribute(request):
     data = json.loads(request.body.decode())
     manager = game_manager.Manager()
@@ -32,6 +33,7 @@ def game_confirm(request):
     manager = game_manager.Manager()
     result = manager.start_game(data)
     return HttpResponse(result)
+
 
 def add_announcement(request):
     if request.method == 'POST':
@@ -47,13 +49,12 @@ def add_announcement(request):
 
 
 def show_announcement(request):
-    context_dict = {}
-    context_dict['testing'] = 'This is a test since no announcements currently exist.'
+    context_dict = {'testing': 'This is a test since no announcements currently exist.'}
     try:
         announcements = Announcement.objects.all()
         context_dict['announcements'] = announcements
     except Announcement.DoesNotExist:
-       context_dict['announcements'] = None
+        context_dict['announcements'] = None
     return render(request, 'game/admin.html', context=context_dict)
 
 
@@ -97,4 +98,3 @@ def choose_option(request):
 def test(request):
     new_game = game_manager.Manager()
     return HttpResponse(200)
-
