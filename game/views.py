@@ -58,6 +58,7 @@ def show_announcement(request):
     return render(request, 'game/admin.html', context=context_dict)
 
 
+@login_required()
 def user_logout(request):
     logout(request)
     return redirect('/game/index/')

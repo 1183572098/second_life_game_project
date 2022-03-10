@@ -33,13 +33,15 @@
 
 
 	<div class="baseFoot">
+        {% if user.is_authenticated %}
+		<a href="{% url 'auth_logout' %}?next="game/index/">Logout</a>
+		<a href="/game/game/">Game</a>
+        {% else %}
 		<a href="{% url 'registration_register' %}">Register</a>
-		<a href="{% url 'auth_login' %}">Login</a></li>
-		<a href="{% url 'auth_logout' %}?next="game/index/">Logout</a></li>
+		<a href="{% url 'auth_login' %}">Login</a>
+        {% endif %}
 		<a href="/game/post/">Post</a>
 		<a href="/game/announcements/">Announcements</a>
-		<a href="/game/game/">Game</a>
-
 	</div>
 	<script src="../../static/js/store.js"></script>
 

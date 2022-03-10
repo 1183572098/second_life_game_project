@@ -21,7 +21,7 @@ a:visited { text-decoration: none;color: green}
 	height: 100px;
 	width: 1200px;
 	/*background-color: #1E90FF;*/
-	background-image: url("../image/image/background/E.png");
+	/* background-image: url("../image/image/background/E.png");*/
 	position: absolute;
 	margin: 0 auto;
 	top: 20px;
