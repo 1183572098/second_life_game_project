@@ -1,0 +1,72 @@
+{% extends 'game/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+	Game
+
+{% endblock %}
+{% block body_block %}
+
+<div class="main">
+    <div class="game">
+         <div class="top">
+            <span class="health">Health</span>
+            <span class="strength">Strength</span>  
+            <span class="art">Art</span>
+            <span class="intelligence">Intelligence</span>
+            <span class="lucky">Lucky</span>
+        </div>
+       <a href="#"><span onclick="openBag()" class="shop"></span></a>
+    <br>
+    <div class="top2">
+        <span class="health">Value</span>
+        <span class="strength">Value</span>
+        <span class="art">Value</span>
+        <span class="intelligence">Value</span>
+        <span class="lucky">Value</span>
+        <span class="point">BAG---></span>
+    </div>
+    <div class="middle">
+        <div class="store hide" id="store">
+            <div class="left">
+                <table>
+                    <thead class="tableTop">Bag</thead>
+                    <tr class="tableTop">Function</tr>
+                    <tr>
+                        <td>StuffName</td>
+                        <td>StuffPicture</td>
+                        <td>StuffNumber</td></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                </table>
+            </div>
+            
+        </div>
+
+        <div class="subMiddle">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+        <div class="subMiddle">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+        <div class="subMiddle">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+        <div class="subMiddle">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+        <div class="subMiddle">
+            <!-- <div class="left"></div> -->
+            <div class="downRight"><a href="#">Next</a></div>
+        </div>
+    </div>
+  
+    </div>
+</div>
+{% endblock %}

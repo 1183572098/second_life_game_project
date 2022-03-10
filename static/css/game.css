@@ -1,0 +1,154 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+a:link{ text-decoration: none; color: black;}
+a:active { text-decoration:none;color: black;}
+a:hover { text-decoration:none;color: yellow; background-image: url("../image/image/background/E.png");} 
+a:visited { text-decoration: none;color: green}
+
+body{
+	font-family: "Microsoft Yahei";
+}
+
+.main{
+	height: 600px;
+	width: auto;
+	background-image: url("../image/image/background/E.png");
+	background-repeat: no-repeat;
+}
+
+.game{
+	height: 460px;
+	width: 1170px;
+	position: absolute;
+	top: 100px;
+	left: 50px;
+}
+
+.top{
+	position: relative;
+	height: 50px;
+	width: 900px;
+	background-color: #FAEBD7;
+	background-image: url("../image/image/background/E.png");
+}
+
+.top span{
+	padding-left: 50px;
+	height: 100px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 20px;
+}
+
+.top2{
+	position: relative;
+	height: 50px;
+	width: 900px;
+	background-color: #FAEBD7;
+	background-image: url("../image/image/background/E.png");
+}
+.top2 span{
+	padding-left: 50px;
+	height: 100px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 20px;
+}
+
+.top2 .strength{
+	padding-left: 70px;
+}
+
+.top2 .art{
+	padding-left: 65px;
+}
+
+.top2 .intelligence{
+	padding-left: 66px;
+}
+
+.top2 .lucky{
+	padding-left: 76px;
+}
+
+.top2 .point{
+	padding-left: 180px;
+}
+.shop{
+	position: absolute;
+	top: 65px;
+	right: 50px;
+	width: 100px;
+	height: 100px;
+	border: 1px solid red;
+	border-radius: 50%;
+	background-color: #6495ED;
+	text-align: center;
+	margin-top: -40px;
+	background-image: url("../image/image/background/E.png");
+
+	background-size: 200px;
+    opacity:0.6;
+    border-image: url("../image/image/background/A.png");
+}
+
+.middle{
+	position: relative;
+	top: 10px;
+	height: 300px;
+	width: 900px;
+	background-color: #FAEBD7;
+	opacity: 0.3;
+
+}
+.middle .tabletop{
+	width: 200px;
+	height: 20px;
+}
+.subMiddle{
+	height: 50px;
+	width: auto;
+	background-image: url("../image/image/background/E.png");
+	border: solid;
+	margin-top: 10px;
+	opacity: 0.8;
+	z-index: 0;
+
+}
+
+.subMiddle .left{
+	width: 200px;
+	height: 50px;
+	border: solid;
+	border-color: darkorange;	
+
+}
+
+.subMiddle .downRight{
+	height: 100px;
+	text-indent: 800px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 30px;
+}
+
+.store{
+	position: absolute;
+	height: 300px;
+	width: 900px;
+	background-color: red;
+	background-image: url("../image/image/background/book.jpg");
+	opacity: 1;
+	z-index: 1;
+}
+
+.store .row{
+	height: 20px;
+	width: 160px;
+	background-image: url("../image/image/background/book.jpg");
+}
+
+	
