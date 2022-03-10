@@ -7,6 +7,7 @@ from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from game.models import Announcement
+from django.contrib.admin.views.decorators import staff_member_required
 
 
 def index(request):
@@ -34,8 +35,7 @@ def game_confirm(request):
     result = manager.start_game(data)
     return HttpResponse(result)
 
-
-@login_required()
+@staff_member_required()
 def add_announcement(request):
     announcement_form = AnnouncementForm()
     if request.method == 'POST':
