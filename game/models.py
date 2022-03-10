@@ -38,3 +38,4 @@ class Record(models.Model):
     data = models.BinaryField()
     state = models.BooleanField(default=True)
     time = models.DateTimeField(auto_now=True)
+    location = models.IntegerField(blank=False)
