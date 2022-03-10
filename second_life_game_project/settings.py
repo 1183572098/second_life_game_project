@@ -27,7 +27,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['caxiao.pythonanywhere.com', '127.0.0.1']
 
-LOGIN_URL = 'game:login'
+REGISTRATION_AUTO_LOGIN = True
+
+LOGIN_REDIRECT_URL = '/game/index'
+
+LOGOUT_REDIRECT_URL = '/game/index'
+
+LOGIN_URL = 'auth_login'
 
 
 # Application definition
@@ -40,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'game',
+    'registration',
 ]
 
 MIDDLEWARE = [
@@ -80,10 +87,10 @@ WSGI_APPLICATION = 'second_life_game_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'CAXiao$second_life', #second_life
+        'NAME': 'CAXiao$second_life', # second_life
         'USER': 'CAXiao', #root
         'PASSWORD': 'secondlife', #123456
-        'HOST': 'CAXiao.mysql.pythonanywhere-servies.com', #localhost
+        'HOST': 'CAXiao.mysql.pythonanywhere-services.com', #localhost
         'PORT': '3306',
     }
 }
