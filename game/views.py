@@ -2,10 +2,12 @@ import json
 from django.http import HttpResponse
 from game.modules import game_manager, game_process
 from django.shortcuts import render, redirect
-from game.forms import UserForm, UserProfileForm
+from game.forms import UserForm, UserProfileForm, AnnouncementForm
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from game.modules import login_system
+from game.models import Announcement
 
 
 def index(request):
@@ -48,7 +50,7 @@ def register(request):
 
             profile = profile_form.save(commit=False)
             profile.user = user
-            
+
             profile.save()
             registered = True
         else:
@@ -56,8 +58,9 @@ def register(request):
     else:
         user_form = UserForm()
         profile_form = UserProfileForm()
-    
-    return render(request, 'game/register.html', context={'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
+
+    return render(request, 'game/register.html', context={'user_form': user_form, 'profile_form': profile_form,
+                                                          'registered': registered})
 
 
 def user_login(request):
@@ -78,6 +81,29 @@ def user_login(request):
             return HttpResponse("Invalid login details supplied.")
     else:
         return render(request, 'game/login.html')
+
+
+def add_announcement(request):
+    if request.method == 'POST':
+        announcement_form = AnnouncementForm(request.POST)
+        if announcement_form.is_valid():
+            announcement = announcement_form.save(commit=False)
+            return redirect('admin.html')
+        else:
+            print(announcement_form.errors)
+            return HttpResponse("Invalid announcement. ")
+    else:
+        return render(request, 'announcement.html')
+
+
+def show_announcement(request):
+    context_dict = {}
+    try:
+        announcements = Announcement.objects.all()
+        context_dict['announcements'] = announcements
+    except Announcement.DoesNotExist:
+        context_dict['announcements'] = None
+    return render(request, 'admin.html', context=announcements)
 
 
 def user_logout(request):
@@ -120,3 +146,4 @@ def choose_option(request):
 def test(request):
     new_game = game_manager.Manager()
     return HttpResponse(200)
+
