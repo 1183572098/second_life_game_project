@@ -2,11 +2,27 @@
 {% load staticfiles %}
 
 {% block title_block %}
-	Announcements
+	Add Announcement
 {% endblock %}
 
 {% block body_block %}
 <div>
-	I don't know what this page is supposed to be used for.
+	<div>
+
+<form id="AnnouncementForm" method="post" action="/game/post/">
+        {% csrf_token %}
+ {% for hidden in form.hidden_fields %}
+ 	{{ hidden }}
+ {% endfor %}
+ 
+{% for field in form.visible_fields %}
+ 	{{ field.errors }}
+ 	{{ field.help_text }}
+ 	{{ field }}
+ {% endfor %}
+        
+	</form>
+	<input type="submit" name="submit" value="Add Announcement" />
+ </form>
 </div>
 {% endblock %}

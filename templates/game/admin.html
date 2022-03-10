@@ -2,28 +2,12 @@
 {% load staticfiles %}
 
 {% block title_block %}
-	Announcements
+	View Announcements
 {% endblock %}
 
 {% block body_block %}
 <div>
-	
 	{{ testing }}
 
-</div>
-
-<div>
-	
-	<form id="announcement_form" method="post" action="/game/add_announcement/">
-		{% csrf_token %}
-
-		Title<input type="text" name="title" value="" size="50" />
-		<br />
-
-		Content:<input type="text" name="content" value="" size="100" />
-		<br />
-
-		<input type="submit" value="Submit" />
-	</form>
 </div>
 {% endblock %}
