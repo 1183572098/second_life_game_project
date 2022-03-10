@@ -6,7 +6,6 @@ from game.forms import UserForm, UserProfileForm, AnnouncementForm
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from game.modules import login_system
 from game.models import Announcement
 
 
@@ -21,7 +20,6 @@ def initial_game(request):
     result = manager.initial_game(data, game_process.Process())
     return HttpResponse(result)
 
-
 def random_attribute(request):
     data = json.loads(request.body.decode())
     manager = game_manager.Manager()
@@ -35,75 +33,28 @@ def game_confirm(request):
     result = manager.start_game(data)
     return HttpResponse(result)
 
-
-def register(request):
-    registered = False
-
-    if request.method == 'POST':
-        user_form = UserForm(request.POST)
-        profile_form = UserProfileForm(request.POST)
-
-        if user_form.is_valid() and profile_form.is_valid():
-            user = user_form.save()
-            user.set_password(user.password)
-            user.save()
-
-            profile = profile_form.save(commit=False)
-            profile.user = user
-
-            profile.save()
-            registered = True
-        else:
-            print(user_form.errors, profile_form.errors)
-    else:
-        user_form = UserForm()
-        profile_form = UserProfileForm()
-
-    return render(request, 'game/register.html', context={'user_form': user_form, 'profile_form': profile_form,
-                                                          'registered': registered})
-
-
-def user_login(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-
-        user = authenticate(username=username, password=password)
-
-        if user:
-            if user.is_active:
-                login(request, user)
-                return redirect('/game/index/')
-            else:
-                return HttpResponse("Your SecondLife account is disabled.")
-        else:
-            print(f"Invalid login details: {username}, {password}")
-            return HttpResponse("Invalid login details supplied.")
-    else:
-        return render(request, 'game/login.html')
-
-
 def add_announcement(request):
     if request.method == 'POST':
         announcement_form = AnnouncementForm(request.POST)
         if announcement_form.is_valid():
             announcement = announcement_form.save(commit=False)
-            return redirect('admin.html')
+            return redirect('game/admin.html')
         else:
             print(announcement_form.errors)
             return HttpResponse("Invalid announcement. ")
     else:
-        return render(request, 'announcement.html')
+        return render(request, 'game/announcement.html')
 
 
 def show_announcement(request):
     context_dict = {}
+    context_dict['testing'] = 'This is a test since no announcements currently exist.'
     try:
         announcements = Announcement.objects.all()
         context_dict['announcements'] = announcements
     except Announcement.DoesNotExist:
-        context_dict['announcements'] = None
-    return render(request, 'admin.html', context=announcements)
+       context_dict['announcements'] = None
+    return render(request, 'game/admin.html', context=context_dict)
 
 
 def user_logout(request):
