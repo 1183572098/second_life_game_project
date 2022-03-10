@@ -25,7 +25,7 @@ SECRET_KEY = 'gj&m!)v4sk$6vog%%)s4s@gu5%jt)05c5cm-61mpvp9*z1liz('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['caxiao.pythonanywhere.com', '127.0.0.1']
+ALLOWED_HOSTS = ['caxiao.pythonanywhere.com', '127.0.0.1', 'localhost', ]
 
 REGISTRATION_AUTO_LOGIN = True
 
@@ -64,7 +64,7 @@ ROOT_URLCONF = 'second_life_game_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR,]
+        'DIRS': [TEMPLATE_DIR, ]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -74,6 +74,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries': {
+                'staticfiles': 'django.templatetags.static',
+            },
         },
     },
 ]

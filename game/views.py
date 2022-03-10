@@ -20,6 +20,7 @@ def initial_game(request):
     result = manager.initial_game(data, game_process.Process())
     return HttpResponse(result)
 
+
 def random_attribute(request):
     data = json.loads(request.body.decode())
     manager = game_manager.Manager()
