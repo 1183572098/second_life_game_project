@@ -13,15 +13,14 @@
 
 
 a:link{ text-decoration: none;}
-a:active { text-decoration:green}
-a:hover { text-decoration:underline;color: green;} 
-a:visited { text-decoration: none;color: green}
+a:active { text-decoration:none; color: black;}
+a:hover { text-decoration:none;color: black;} 
+a:visited { text-decoration: none;color: black;}
+
 
 .baseTop{
 	height: 100px;
 	width: 1200px;
-	/*background-color: #1E90FF;*/
-	/* background-image: url("../image/image/background/E.png");*/
 	position: absolute;
 	margin: 0 auto;
 	top: 20px;
@@ -30,20 +29,16 @@ a:visited { text-decoration: none;color: green}
 }
 
 .baseFoot{
-	/*height: 20px;*/
 	width: 1200px;
-	/*background-color: #A9A9A9;*/
+	height: 30px;
 	background-image: url("../image/image/background/E.png");
 	position: absolute;
+	font-size: 15px;
+	color: black;
 	margin: 0 auto;
 	bottom: 20px;
 	left: 20px;	
 	text-align: center;
 	opacity: 0.7;
-}
-.baseFoot span{
-	height: 20px;
-	width: 100px;
-	margin-left: 100px;
 }
 

@@ -1,0 +1,43 @@
+{% extends 'game/base.html' %}
+
+{% block title_block %}
+    initialization
+{% endblock %}
+
+{% block body_block %}
+<div class="main">
+<div class="position">
+    <h1><span class="subTitle">Customize your life</span></h1>
+    <div class="name">
+        <label>First Name</label>
+        <input type="text">
+    </div>
+    <div class="name">
+        <label>Last Name</label>
+        <input type="text">
+    </div>
+
+    <div class="profile">
+        <div class="picture"></div>
+    </div>
+    <div class="direction">
+        <div class="down prev"><a href="#">Prev</a></div>
+        <div class="down next"><a href="#">Next</a></div>
+    </div>
+    <a href="" id="random"><div class="deal random" >Random Again</div></a>
+    <a href=""><div class="deal confirm">Confirm</div></a>
+<!--    table-->
+    <table class="table1 table-bordered table-striped table-condensed">
+        <thead><td>Attr Name&nbsp;&nbsp;&nbsp;</td><td>Value</td></thead>
+        <tr><td>Health</td><td><a href="javascript:void(0)" onclick="minus()" class="glyphicon glyphicon-chevron-left"></a><span class="healthValue">0</span><a href="javascript:void(0)" onclick="plus()" class="glyphicon glyphicon-chevron-right"></a></td></tr>
+        <tr><td>Sport</td><td><a href="javascript:void(0)" onclick="minus()" class="glyphicon glyphicon-chevron-left"></a><span class="healthValue">0</span><a href="javascript:void(0)" onclick="plus()" class="glyphicon glyphicon-chevron-right"></a></td></tr>
+        <tr><td>Art</td><td><a href="javascript:void(0)" onclick="minus()" class="glyphicon glyphicon-chevron-left"></a><span class="healthValue">0</span><a href="javascript:void(0)" onclick="plus()" class="glyphicon glyphicon-chevron-right"></a></td></tr>
+        <tr><td>Intelligence</td><td><a href="javascript:void(0)" onclick="minus()" class="glyphicon glyphicon-chevron-left"></a><span class="healthValue">0</span><span onclick="plus()" class="glyphicon glyphicon-chevron-right"></span></td></tr>
+        <tr><td>Luck</td><td><a href="javascript:void(0)" onclick="minus()" class="glyphicon glyphicon-chevron-left"></a><span class="healthValue">0</span><a href="javascript:void(0)" onclick="plus()" class="glyphicon glyphicon-chevron-right"></a></td></tr>
+
+    </table>
+
+    </div>
+</div>
+
+{% endblock %}

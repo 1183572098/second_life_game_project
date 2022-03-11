@@ -35,6 +35,7 @@ def game_confirm(request):
     result = manager.start_game(data)
     return HttpResponse(result)
 
+
 @staff_member_required()
 def add_announcement(request):
     announcement_form = AnnouncementForm()
@@ -103,3 +104,7 @@ def test(request):
 
 def game(request):
     return render(request, 'game/game.html')
+
+
+def initialization(request):
+    return render(request, 'game/initialization.html')

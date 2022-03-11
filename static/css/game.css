@@ -5,11 +5,15 @@
 
 a:link{ text-decoration: none; color: black;}
 a:active { text-decoration:none;color: black;}
-a:hover { text-decoration:none;color: yellow; background-image: url("../image/image/background/E.png");} 
-a:visited { text-decoration: none;color: green}
+a:hover { text-decoration:none;color: black;} 
+a:visited { text-decoration: none;color: black;}
 
 body{
 	font-family: "Microsoft Yahei";
+}
+
+.glyphicon{
+	cursor: pointer;
 }
 
 .main{
@@ -75,7 +79,9 @@ body{
 }
 
 .top2 .point{
-	padding-left: 180px;
+	position: absolute;
+	right: 30px;
+	color: black;
 }
 .shop{
 	position: absolute;
@@ -85,11 +91,9 @@ body{
 	height: 100px;
 	border: 1px solid red;
 	border-radius: 50%;
-	background-color: #6495ED;
 	text-align: center;
 	margin-top: -40px;
 	background-image: url("../image/image/background/E.png");
-
 	background-size: 200px;
     opacity:0.6;
     border-image: url("../image/image/background/A.png");
@@ -101,7 +105,7 @@ body{
 	height: 300px;
 	width: 900px;
 	background-color: #FAEBD7;
-	opacity: 0.3;
+	opacity: 0.7;
 
 }
 .middle .tabletop{
@@ -114,7 +118,6 @@ body{
 	background-image: url("../image/image/background/E.png");
 	border: solid;
 	margin-top: 10px;
-	opacity: 0.8;
 	z-index: 0;
 
 }
@@ -139,10 +142,10 @@ body{
 	position: absolute;
 	height: 300px;
 	width: 900px;
-	background-color: red;
 	background-image: url("../image/image/background/book.jpg");
-	opacity: 1;
 	z-index: 1;
+	opacity: 1;
+	opacity: !important;
 }
 
 .store .row{
