@@ -1,6 +1,6 @@
 from django.urls import path
 from game import views
-
+from django.views import View
 
 app_name = 'second_life'
 
