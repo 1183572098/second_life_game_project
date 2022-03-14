@@ -24,7 +24,7 @@ class Process:
         random_sum = sum(random_numbers)
         random_attributes = [int(value/random_sum*parameter.value(2001)) for value in random_numbers]
         if sum(random_attributes) != int(parameter.value(2001)):
-            random_attributes[-1] += 1
+            random_attributes[-1] += int(parameter.value(2001)) - sum(random_attributes)
         index = 0
         for key in self.role.attribute.keys():
             self.role.set_attribute(key, random_attributes[index])
