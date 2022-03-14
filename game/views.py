@@ -17,6 +17,7 @@ def index(request):
     return render(request, 'game/index.html', context=context_dict)
 
 
+@csrf_exempt
 def initial_game(request):
     manager = game_manager.Manager()
     result = manager.initial_game(request, game_process.Process())
