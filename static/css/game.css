@@ -126,8 +126,16 @@ body{
 	width: 200px;
 	height: 50px;
 	border: solid;
-	border-color: darkorange;	
+	background-color: red;
+	color: white;
+	font-size: 20px;
+}
 
+.subMiddle .right{
+	width: 200px;
+	height: 50px;
+	border: solid;
+	border-color: black;	
 }
 
 .subMiddle .downRight{
