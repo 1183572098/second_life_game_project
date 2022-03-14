@@ -36,8 +36,10 @@ body{
 	position: relative;
 	height: 50px;
 	width: 900px;
-	background-color: #FAEBD7;
-	background-image: url("../image/image/background/E.png");
+	/*background-color: #FAEBD7;*/
+	/*background-image: url("../image/image/background/E.png");*/
+	background-color:#6A5ACD;
+
 }
 
 .top span{
@@ -52,8 +54,8 @@ body{
 	position: relative;
 	height: 50px;
 	width: 900px;
-	background-color: #FAEBD7;
-	background-image: url("../image/image/background/E.png");
+	/*background-image: url("../image/image/background/E.png");*/
+	background-color: #B0E0E6;
 }
 .top2 span{
 	padding-left: 50px;
@@ -90,6 +92,10 @@ body{
 	right: 50px;
 	width: 100px;
 	height: 100px;
+	font-style: oblique;
+	font-size: 20px;
+	line-height: 40px;
+	color: #B0E0E6 ;
 	border: 1px solid red;
 	border-radius: 50%;
 	text-align: center;
@@ -162,14 +168,19 @@ body{
 }
 
 .store .tableTop{
-	background-color: red;
+	background-color: #6B8E23;
 	color: darkorange;
+	text-align: center;
+	color: #FFA500;
+	text-align: center;
+	font-style: oblique;
 }
 
 .store .left{
 	float: left;
 	width: 430px;
 	background-color: #B0E0E6;
+
 }
 
 .store .right{
