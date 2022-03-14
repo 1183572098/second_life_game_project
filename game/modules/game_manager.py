@@ -38,7 +38,7 @@ class Manager:
 
     def initial_game(self, request_data, game):
         print("info: initial_game")
-        attribute = self.random_attribute(request_data.user.id, game)
+        attribute = self.random_attribute(request_data, game)
         return attribute
 
     def start_game(self, request_data):

@@ -16,16 +16,17 @@ def index(request):
 
 
 def initial_game(request):
-    data = json.loads(request.body.decode())
     manager = game_manager.Manager()
-    result = manager.initial_game(data, game_process.Process())
-    return HttpResponse(result)
+    result = manager.initial_game(request, game_process.Process())
+    print("result: " + str(result))
+    return render(request, 'game/initialization.html', context=result)
 
 
 def random_attribute(request):
     data = json.loads(request.body.decode())
     manager = game_manager.Manager()
     result = manager.random_attribute(data)
+    print("result: " + str(result))
     return HttpResponse(result)
 
 
@@ -33,6 +34,7 @@ def game_confirm(request):
     data = json.loads(request.body.decode())
     manager = game_manager.Manager()
     result = manager.start_game(data)
+    print("result: " + str(result))
     return HttpResponse(result)
 
 
@@ -79,6 +81,7 @@ def click_shop(request):
     data = json.loads(request.body.decode())
     manager = game_manager.Manager()
     result = manager.open_shop(data)
+    print("result: " + str(result))
     return HttpResponse(result)
 
 
@@ -86,6 +89,7 @@ def purchase_good(request):
     data = json.loads(request.body.decode())
     manager = game_manager.Manager()
     result = manager.purchase(data)
+    print("result: " + str(result))
     return HttpResponse(result)
 
 
@@ -93,6 +97,7 @@ def use_good(request):
     data = json.loads(request.body.decode())
     manager = game_manager.Manager()
     result = manager.use_good(data)
+    print("result: " + str(result))
     return HttpResponse(result)
 
 
@@ -100,6 +105,7 @@ def choose_option(request):
     data = json.loads(request.body.decode())
     manager = game_manager.Manager()
     result = manager.choose_option(data)
+    print("result: " + str(result))
     return HttpResponse(result)
 
 
@@ -110,11 +116,3 @@ def test(request):
 
 def game(request):
     return render(request, 'game/game.html')
-
-
-def initialization(request):
-    context_dict = {}
-    user_id = request.user.id
-    context_dict["user_id"] = user_id
-    print(user_id)
-    return render(request, 'game/initialization.html', context=context_dict)
