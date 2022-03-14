@@ -31,7 +31,7 @@ a:visited { text-decoration: none;color: black;}
 .baseFoot{
 	width: 1200px;
 	height: 30px;
-	background-image: url("../image/image/background/E.png");
+	background-image: url("../image/background/E.png");
 	position: absolute;
 	font-size: 15px;
 	color: black;

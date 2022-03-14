@@ -100,10 +100,10 @@ body{
 	border-radius: 50%;
 	text-align: center;
 	margin-top: -40px;
-	background-image: url("../image/image/background/A.png");
+	background-image: url("../image/background/A.png");
 	background-size: 200px;
     opacity:0.6;
-    border-image: url("../image/image/background/A.png");
+    border-image: url("../image/background/A.png");
 }
 
 .middle{
@@ -120,7 +120,7 @@ body{
 .subMiddle{
 	height: 50px;
 	width: auto;
-	background-image: url("../image/image/background/E.png");
+	background-image: url("../image/background/E.png");
 	border: solid;
 	margin-top: 10px;
 	z-index: 1;
@@ -131,7 +131,7 @@ body{
 	width: 200px;
 	height: 50px;
 	border: solid;
-	background-image: url("../image/image/background/B.png");
+	background-image: url("../image/background/B.png");
 	color: white;
 	font-color:red;
 	font-size: 20px;
@@ -161,7 +161,7 @@ body{
 	position: absolute;
 	height: 300px;
 	width: 900px;
-	background-image: url("../image/image/background/book.jpg");
+	background-image: url("../image/background/book.jpg");
 	z-index: 0;
 	opacity: 1;
 	opacity: !important;

@@ -1,0 +1,10 @@
+.position{
+	width: 500px;
+	height: 480px;
+	margin-left: 300px;
+	margin-right: 300px;
+	position: relative;
+	text-align: center;
+	color: black;
+	opacity: 0.8;
+}
