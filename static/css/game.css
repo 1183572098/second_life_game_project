@@ -14,6 +14,7 @@ body{
 
 .glyphicon{
 	cursor: pointer;
+
 }
 
 .main{
@@ -93,7 +94,7 @@ body{
 	border-radius: 50%;
 	text-align: center;
 	margin-top: -40px;
-	background-image: url("../image/image/background/E.png");
+	background-image: url("../image/image/background/A.png");
 	background-size: 200px;
     opacity:0.6;
     border-image: url("../image/image/background/A.png");
@@ -108,10 +109,8 @@ body{
 	opacity: 0.7;
 
 }
-.middle .tabletop{
-	width: 200px;
-	height: 20px;
-}
+
+/*enent*/
 .subMiddle{
 	height: 50px;
 	width: auto;
@@ -126,16 +125,19 @@ body{
 	width: 200px;
 	height: 50px;
 	border: solid;
-	background-color: red;
+	background-image: url("../image/image/background/B.png");
 	color: white;
+	font-color:red;
 	font-size: 20px;
 }
 
 .subMiddle .right{
-	width: 200px;
-	height: 50px;
+	width: 690px;
+	height: 46px;
+	margin-top: -50px;
 	border: solid;
-	border-color: black;	
+	border-color: #F0E68C;	
+	float: right;
 }
 
 .subMiddle .downRight{
@@ -146,27 +148,44 @@ body{
 	font-size: 30px;
 }
 
+
+/*bag and shop*/
+
 .store{
 	position: absolute;
 	height: 300px;
-	width: 300px;
+	width: 900px;
 	background-image: url("../image/image/background/book.jpg");
 	z-index: 0;
 	opacity: 1;
 	opacity: !important;
 }
 
-.store .row{
-	height: 20px;
-	width: 80px;
-	background-image: url("../image/image/background/book.jpg");
+.store .tableTop{
+	background-color: red;
+	color: darkorange;
 }
-
 
 .store .left{
 	float: left;
+	width: 430px;
+	background-color: #B0E0E6;
 }
 
 .store .right{
 	float: right;
+	width: 416px;
+	background-color:#6A5ACD;
+}
+
+.store tr{
+	height: 50px;
+}
+
+.effect{
+	font-size: 16px;
+	line-height: 20px;
+	color: #EE82EE;
+	text-align: center;
+	font-style: oblique;
 }
