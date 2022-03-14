@@ -25,7 +25,7 @@ class Manager:
 
     def random_attribute(self, request_data, game=None):
         print("info: random attribute")
-        user_id = request_data.user.id
+        user_id = str(request_data.user.id)
         if game is None:
             game = self.data.get_cache(user_id)
 

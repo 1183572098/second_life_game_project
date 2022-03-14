@@ -1,5 +1,7 @@
 import json
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+
 from game.modules import game_manager, game_process
 from django.shortcuts import render, redirect
 from game.forms import UserForm, UserProfileForm, AnnouncementForm
@@ -22,18 +24,18 @@ def initial_game(request):
     return render(request, 'game/initialization.html', context=result)
 
 
+@csrf_exempt
 def random_attribute(request):
-    data = json.loads(request.body.decode())
     manager = game_manager.Manager()
-    result = manager.random_attribute(data)
+    result = manager.random_attribute(request)
     print("result: " + str(result))
-    return HttpResponse(result)
+    return HttpResponse(json.dumps(result), content_type='application/json')
 
 
+@csrf_exempt
 def game_confirm(request):
-    data = json.loads(request.body.decode())
     manager = game_manager.Manager()
-    result = manager.start_game(data)
+    result = manager.start_game(request)
     print("result: " + str(result))
     return HttpResponse(result)
 
@@ -72,39 +74,38 @@ def start_game(request):
 
 
 def archive(request):
-    data = json.loads(request.body.decode())
     manage = game_manager.Manager()
-    manage.serialize(data)
+    manage.serialize(request)
 
 
+@csrf_exempt
 def click_shop(request):
-    data = json.loads(request.body.decode())
     manager = game_manager.Manager()
-    result = manager.open_shop(data)
+    result = manager.open_shop(request)
     print("result: " + str(result))
     return HttpResponse(result)
 
 
+@csrf_exempt
 def purchase_good(request):
-    data = json.loads(request.body.decode())
     manager = game_manager.Manager()
-    result = manager.purchase(data)
+    result = manager.purchase(request)
     print("result: " + str(result))
     return HttpResponse(result)
 
 
+@csrf_exempt
 def use_good(request):
-    data = json.loads(request.body.decode())
     manager = game_manager.Manager()
-    result = manager.use_good(data)
+    result = manager.use_good(request)
     print("result: " + str(result))
     return HttpResponse(result)
 
 
+@csrf_exempt
 def choose_option(request):
-    data = json.loads(request.body.decode())
     manager = game_manager.Manager()
-    result = manager.choose_option(data)
+    result = manager.choose_option(request)
     print("result: " + str(result))
     return HttpResponse(result)
 
