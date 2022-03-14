@@ -22,7 +22,8 @@ def initial_game(request):
     manager = game_manager.Manager()
     result = manager.initial_game(request, game_process.Process())
     print("result: " + str(result))
-    return render(request, 'game/initialization.html', context=result)
+    # return render(request, 'game/initialization.html', context=result)
+    return HttpResponse(result)
 
 
 @csrf_exempt
