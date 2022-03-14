@@ -107,4 +107,6 @@ def game(request):
 
 
 def initialization(request):
+    user_id = request.user.id
+    print(user_id)
     return render(request, 'game/initialization.html')
