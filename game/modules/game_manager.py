@@ -34,7 +34,9 @@ class Manager:
 
         game.random_attribute()
         data.set_cache(user_id, game)
-        return game.role.attribute
+        result = {}
+        result.update({"attribute": game.role.attribute})
+        return result
 
     def initial_game(self, request_data, game):
         print("info: initial_game")

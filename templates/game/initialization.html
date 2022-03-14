@@ -5,7 +5,10 @@
 {% endblock %}
 
 {% block body_block %}
-<div class="main">
+    <script type="text/javascript">
+        var attribute = {{ attribute }};
+    </script>
+    <div class="main">
 <div class="position">
     <h1><span class="subTitle">Customize your life</span></h1>
     <a href="#" id="initial" data-userid="{{user_id}}"></a>

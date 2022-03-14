@@ -19,16 +19,10 @@ def index(request):
 
 @csrf_exempt
 def initial_game(request):
-    context_dict = {}
     manager = game_manager.Manager()
     result = manager.initial_game(request, game_process.Process())
-    context_dict['healthValue'] = result[1]
-    context_dict['sportValue'] = result[2]
     print("result: " + str(result))
-    print(result)
-
-    return render(request, 'game/initialization.html', context=context_dict)
-    # return HttpResponse(result)
+    return render(request, 'game/initialization.html', context=result)
 
 
 @csrf_exempt
