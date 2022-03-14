@@ -79,6 +79,37 @@
 }
 
 
+.available{
+	width: 220px;
+	height: 50px;
+	position: absolute;
+	top: 230px;
+	left: 280px;
+	color: black;
+	background-image: url(../image/image/background/EE.png);
+	opacity: 0.7;
+}
+
+.available .down{
+	height: 50px;
+	width: 30px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 20px;
+	text-decoration: none;
+}
+
+.available .left{
+	float: left;
+	margin-left: 20px;
+}
+
+.available .right{
+	float: right;
+	margin-right: 30px;
+}
+
+
 .table1{
 	width: 240px;
 	height: 300px;
