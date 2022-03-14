@@ -118,3 +118,14 @@ def test(request):
 
 def game(request):
     return render(request, 'game/game.html')
+
+
+def initialization(request):
+    context_dict = {}
+    user_id = request.user.id
+    context_dict["user_id"] = user_id
+    print(user_id)
+    return render(request, 'game/initialization.html', context=context_dict)
+
+
+
