@@ -69,6 +69,12 @@ def start_game(request):
     return render(request, 'game/start.html')
 
 
+def archive(request):
+    user_id = request.user.id
+    manage = game_manager.Manager()
+    manage.serialize(user_id)
+
+
 def click_shop(request):
     data = json.loads(request.body.decode())
     manager = game_manager.Manager()
@@ -107,6 +113,8 @@ def game(request):
 
 
 def initialization(request):
+    context_dict = {}
     user_id = request.user.id
+    context_dict["user_id"] = user_id
     print(user_id)
-    return render(request, 'game/initialization.html')
+    return render(request, 'game/initialization.html', context=context_dict)

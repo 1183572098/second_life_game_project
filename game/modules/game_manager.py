@@ -117,7 +117,6 @@ class Manager:
         option_id = request_data.get("event_id")
         return game.choose_option(option_id)
 
-    def serialize(self, request_data):
-        user_id = request_data.get("user_id")
+    def serialize(self, user_id):
         p_stream = pickle.dumps(self.data.get_cache(user_id))
         return self.data.create(Record, user_id=user_id, data=p_stream)
