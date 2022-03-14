@@ -25,7 +25,7 @@ class Manager:
 
     def random_attribute(self, request_data, game=None):
         print("info: random attribute")
-        user_id = request_data.get("user_id")
+        user_id = request_data.user.id
         if game is None:
             game = self.data.get_cache(user_id)
 
@@ -38,12 +38,12 @@ class Manager:
 
     def initial_game(self, request_data, game):
         print("info: initial_game")
-        attribute = self.random_attribute(request_data.get("user_id"), game)
+        attribute = self.random_attribute(request_data.user.id, game)
         return attribute
 
     def start_game(self, request_data):
         print("info: start_game")
-        game = self.data.get_cache(request_data.get("user_id"))
+        game = self.data.get_cache(request_data.user.id)
         game.role.first_name = request_data.get("first_name")
         game.role.last_name = request_data.get("last_name")
         game.role.head_portrait = request_data.get("head_portrait")
@@ -64,7 +64,7 @@ class Manager:
 
     def open_shop(self, request_data):
         print("info: open_shop")
-        game = self.data.get_cache(request_data.get("user_id"))
+        game = self.data.get_cache(request_data.user.id)
         bag = game.get_bag()
         shop = game.get_shop()
 
@@ -75,7 +75,7 @@ class Manager:
 
     def purchase(self, request_data):
         print("info: purchase")
-        game = self.data.get_cache(request_data.get("user_id"))
+        game = self.data.get_cache(request_data.user.id)
         good_id = request_data.get("good_id")
         shop = game.get_shop()
         result = {}
@@ -96,7 +96,7 @@ class Manager:
 
     def use_good(self, request_data):
         print("info: use good")
-        game = self.data.get_cache(request_data.get("user_id"))
+        game = self.data.get_cache(request_data.user.id)
         good_id = request_data.get("good_id")
         bag = game.get_bag()
         result = {}
@@ -113,10 +113,10 @@ class Manager:
 
     def choose_option(self, request_data):
         print("info: choose option")
-        game = self.data.get_cache(request_data.get("user_id"))
+        game = self.data.get_cache(request_data.user.id)
         option_id = request_data.get("event_id")
         return game.choose_option(option_id)
 
-    def serialize(self, user_id):
-        p_stream = pickle.dumps(self.data.get_cache(user_id))
-        return self.data.create(Record, user_id=user_id, data=p_stream)
+    def serialize(self, request_data):
+        p_stream = pickle.dumps(self.data.get_cache(request_data.user.id))
+        return self.data.create(Record, user_id=request_data.user.id, data=p_stream)

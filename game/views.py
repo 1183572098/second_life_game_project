@@ -70,9 +70,9 @@ def start_game(request):
 
 
 def archive(request):
-    user_id = request.user.id
+    data = json.loads(request.body.decode())
     manage = game_manager.Manager()
-    manage.serialize(user_id)
+    manage.serialize(data)
 
 
 def click_shop(request):
