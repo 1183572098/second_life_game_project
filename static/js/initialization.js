@@ -52,18 +52,24 @@ $(document).ready(function(){
 		$.post('/game/initial/random/',
 			{'user_id': user_id},
 			function (data) {
-       //         $('#healthVlaue').html(data.get('healthValue'));
-			    // $('#sportValue').html(data.get('sportValue'));
-			    // $('#artValue').html(data.get('artValue'));
-			    // $('#intelligenceValue').html(data.get('intelligenceValue'));
-			    // $('#luckValue').html(data.get('luckValue'));
-                console.log(data);
+                $('#healthValue').html(data.attribute['1']);
+			    $('#sportValue').html(data.attribute['2']);
+			    $('#artValue').html(data.attribute['3']);
+			    $('#intelligenceValue').html(data.attribute['4']);
+			    $('#luckValue').html(data.attribute['5']);
 			})
 	});
 
-
+	document.getElementById("healthValue").innerHTML = attribute["1"];
+	document.getElementById("sportValue").innerHTML = attribute["2"];
+	document.getElementById("artValue").innerHTML = attribute["3"];
+	document.getElementById("intelligenceValue").innerHTML = attribute["4"];
+	document.getElementById("luckValue").innerHTML = attribute["5"];
 });
 
 function minus(){
 
 }
+
+
+
