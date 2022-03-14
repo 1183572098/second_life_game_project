@@ -17,6 +17,8 @@
     <strong>{{ boldmessage }}</strong><br />
 </div>
 <h3>
+    {% if user.is_authenticated %}
     <a href="{% url 'second_life:initialization' %}">Initialize your life here.</a>
+    {% endif %}
 </h3>
 {% endblock %}

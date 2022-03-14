@@ -24,10 +24,8 @@
         <div class="down prev"><a href="#">Prev</a></div>
         <div class="down next"><a href="#">Next</a></div>
     </div>
-    {% if Record %}
-        <a href="#" id="random" data-userid="Record.user_id"><div class="deal random" >Random Again</div></a>
-    <a href="#"><div class="deal confirm">Confirm</div></a>
-    {% endif %}
+        <a href="#" id="random" data-userid="{{user_id}}"><div class="deal random" >Random Again</div></a>
+        <a href="#"><div class="deal confirm">Confirm</div></a>
     <table class="table1 table-bordered table-striped table-condensed">
         <thead><td>Attr Name&nbsp;&nbsp;&nbsp;</td><td>Value</td></thead>
         <tr><td id="health">Health</td><td><a href="javascript:void(0)" onclick="minus()" class="glyphicon glyphicon-chevron-left"></a><span id="healthValue">0</span><a href="javascript:void(0)" onclick="plus()" class="glyphicon glyphicon-chevron-right"></a></td></tr>
@@ -35,9 +33,7 @@
         <tr><td id="art">Art</td><td><a href="javascript:void(0)" onclick="minus()" class="glyphicon glyphicon-chevron-left"></a><span id="artValue">0</span><a href="javascript:void(0)" onclick="plus()" class="glyphicon glyphicon-chevron-right"></a></td></tr>
         <tr><td id="intelligence">Intelligence</td><td><a href="javascript:void(0)" onclick="minus()" class="glyphicon glyphicon-chevron-left"></a><span id="intelligenceValue">0</span><span onclick="plus()" class="glyphicon glyphicon-chevron-right"></span></td></tr>
         <tr><td id="luck">Luck</td><td><a href="javascript:void(0)" onclick="minus()" class="glyphicon glyphicon-chevron-left"></a><span id="luckValue">0</span><a href="javascript:void(0)" onclick="plus()" class="glyphicon glyphicon-chevron-right"></a></td></tr>
-
     </table>
-
     </div>
 </div>
 {% endblock %}

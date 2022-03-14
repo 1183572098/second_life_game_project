@@ -4,9 +4,7 @@ sportValue = byId("sportValue"),
 artValue = byId("artValue"),
 intelligenceValue = byId("intelligenceValue"),
 luckValue = byId("luckValue");
-//window.onload = function(){
-//	alert("test");
-//}
+
 
 function byId(id){
 	return typeof(id)==="string"?document.getElementById(id):id;
@@ -15,7 +13,8 @@ function byId(id){
 $(document).ready(function(){
 	$('#random').click(function(){
 		user_id = $(this).attr('data-userid');
-		$.get('/game/initial/random/',
+        console.log("user_id: "+user_id);
+		$.post('/game/initial/random/',
 			{'user_id': user_id},
 			function (data) {
                 $('#healthVlaue').html(data.get('healthValue'));
@@ -27,6 +26,6 @@ $(document).ready(function(){
 	});
 });
 
+function minus(){
 
-
-
+}

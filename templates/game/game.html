@@ -3,7 +3,6 @@
 
 {% block title_block %}
 	Game
-
 {% endblock %}
 {% block body_block %}
 
@@ -11,7 +10,7 @@
     <div class="game">
          <div class="top">
             <span class="health">Health</span>
-            <span class="strength">Strength</span>  
+            <span class="strength">Strength</span>
             <span class="art">Art</span>
             <span class="intelligence">Intelligence</span>
             <span class="lucky">Lucky</span>
@@ -19,17 +18,16 @@
        <a href="#"><span onclick="openBag()" class="shop"></span></a>
     <br>
     <div class="top2">
-        <span class="health">0</span>
-        <span class="strength">0</span>
-        <span class="art">0</span>
-        <span class="intelligence">0</span>
-        <span class="lucky">0</span>
+        <span id="health"  class="health">0</span>
+        <span id="strength" class="strength">0</span>
+        <span id="art" class="art">0</span>
+        <span id="intelligence" class="intelligence">0</span>
+        <span id="lucky" class="lucky">0</span>
         <span class="point">BAG---></span>
     </div>
     <div class="middle">
         <div class="store hide" id="store">
             <div class="left">
-
                  <table class="table table-bordered table-striped table-condensed">
                     <thead class="tableTop">Bag</thead>
                     <tr class="tableTop">Function</tr>
@@ -42,9 +40,21 @@
                     <tr></tr>
                     <tr></tr>
                 </table>
-
             </div>
-            
+            <div class="right">
+                 <table class="table table-bordered table-striped table-condensed">
+                    <thead class="tableTop">Bag</thead>
+                    <tr class="tableTop">Function</tr>
+                    <tr>
+                        <td>GoodsName</td>
+                        <td>GoodsPicture</td>
+                        <td>GoodsNumber</td></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                </table>
+            </div>
         </div>
 
         <div class="subMiddle">

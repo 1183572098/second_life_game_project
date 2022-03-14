@@ -118,7 +118,7 @@ body{
 	background-image: url("../image/image/background/E.png");
 	border: solid;
 	margin-top: 10px;
-	z-index: 0;
+	z-index: 1;
 
 }
 
@@ -141,17 +141,24 @@ body{
 .store{
 	position: absolute;
 	height: 300px;
-	width: 900px;
+	width: 300px;
 	background-image: url("../image/image/background/book.jpg");
-	z-index: 1;
+	z-index: 0;
 	opacity: 1;
 	opacity: !important;
 }
 
 .store .row{
 	height: 20px;
-	width: 160px;
+	width: 80px;
 	background-image: url("../image/image/background/book.jpg");
 }
 
-	
+
+.store .left{
+	float: left;
+}
+
+.store .right{
+	float: right;
+}
