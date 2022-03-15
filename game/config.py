@@ -134,7 +134,7 @@ class StoreTable(Config):
             for para in self.config:
                 self.goods.update({int(para["ID"]): int(para["num"])})
 
-        return self.goods
+        return self.goods.copy()
 
     def get_type(self, good_id):
         for para in self.config:

@@ -14,9 +14,11 @@ class Process:
     __consumed_bag = {}
     event_history = []
     initial_attribute = None
+    shop = None
 
     def __init__(self):
         self.role = Role()
+        self.shop = store_table.get_goods()
 
     def random_attribute(self):
         random_numbers = [random.random() for _ in range(len(self.role.attribute))]
@@ -31,7 +33,7 @@ class Process:
 
     def next_year(self):
         if self.initial_attribute is None:
-            self.initial_attribute = self.role.attribute
+            self.initial_attribute = self.role.attribute.copy()
 
         is_end = self.end
         result = {}
@@ -118,15 +120,15 @@ class Process:
         return self.bag
 
     def get_shop(self):
-        shop = store_table.get_goods()
-        for k, v in self.bag:
-            if shop.get(k) != -1:
-                shop.update(k, shop.get(k)-v)
+        return self.shop
 
-        for k, v in self.__consumed_bag:
+    def _update_shop(self, shop, bag_dict):
+        for k, v in bag_dict.items():
             if shop.get(k) != -1:
-                shop.update(k, shop.get(k)-v)
-
+                if shop.get(k)-v == 0:
+                    del shop[k]
+                else:
+                    shop.update({k: shop.get(k)-v})
         return shop
 
     def purchase(self, good_id):
@@ -134,6 +136,12 @@ class Process:
             self.bag.update({good_id: 1})
         else:
             self.bag.update({good_id: self.bag.get(good_id) + 1})
+
+        if self.shop.get(good_id) != -1:
+            if self.shop.get(good_id) != 1:
+                self.shop.update({good_id: self.shop.get(good_id) - 1})
+            else:
+                del self.shop[good_id]
 
     def use_good(self, good_id):
         if self.bag.get(good_id) == 1:
@@ -145,12 +153,12 @@ class Process:
         if self.__consumed_bag.get(good_id) is None:
             self.__consumed_bag.update({good_id: 1})
         else:
-            self.bag.update({good_id: self.__consumed_bag.get(good_id) + 1})
+            self.__consumed_bag.update({good_id: self.__consumed_bag.get(good_id) + 1})
 
     def _use_good(self, good_id):
         good_type = store_table.get_type(good_id)
         if good_type == 0:
-            for k, v in store_table.get_values(good_id):
+            for k, v in store_table.get_values(good_id).items():
                 if v != 0:
                     self.role.set_attribute(k, self.role.get_attribute(k) + v)
 

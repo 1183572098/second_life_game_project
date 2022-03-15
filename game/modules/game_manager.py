@@ -89,7 +89,7 @@ class Manager:
     def purchase(self, request_data):
         print("info: purchase")
         game = self.player_games.get(request_data.user.id)
-        good_id = request_data.POST.get("good_id")
+        good_id = int(request_data.POST.get("good_id"))
         shop = game.get_shop()
         result = {}
         if shop.get(good_id) is None:
@@ -110,12 +110,15 @@ class Manager:
     def use_good(self, request_data):
         print("info: use good")
         game = self.player_games.get(request_data.user.id)
-        good_id = request_data.POST.get("good_id")
+        good_id = int(request_data.POST.get("good_id"))
         bag = game.get_bag()
         result = {}
         if bag.get(good_id) is not None:
             game.use_good(good_id)
             result.update({"success": 1})
+            result.update({"age": game.role.age})
+            result.update({"event_id": game.event_history[-1]})
+            result.update({"attribute": game.role.attribute})
             result.update(self.open_shop(request_data))
         else:
             print("error: can't purchase")
