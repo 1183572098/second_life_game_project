@@ -6,7 +6,7 @@
 .formPosition{
 	width: 800px;
 	height: 200px;
-	margin-left: 200px;
+	margin-left: 325px;
 	position: absolute;
 	padding-top:50px;
 	color: black;
@@ -16,7 +16,7 @@
 
 h1{
   font-family: "papyrus"; 
-  font-size: 700%;
+  font-size: 600%;
   text-align: center;
 }
 
