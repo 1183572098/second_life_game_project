@@ -151,3 +151,16 @@ function choose(val){
             document.getElementById("next").className = "";
         })
 }
+
+document.onkeydown = function ()
+{
+    if (event.keyCode === 116) {
+        event.keyCode = 0;
+        event.cancelBubble = true;
+        return false;
+    }
+}
+
+document.oncontextmenu = function () {
+    return false;
+}
