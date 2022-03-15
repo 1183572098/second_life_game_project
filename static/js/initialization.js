@@ -104,7 +104,7 @@ function setValue(val){
 
 $('#random').click(function(){
 	let user_id = $(this).attr('data-userid');
-	$.post('/game/initial/random/',
+	$.post('../initial/random/',
 		{'user_id': user_id},
 		function (data) {
 			let map = new Map(Object.entries(data.attribute));
@@ -133,14 +133,14 @@ $('#confirm').click(function(){
 		attributeMap.set(key, attributeValue);
 	}
 
-	$.post('/game/initial/confirm/',
+	$.post('../initial/confirm/',
 		{'user_id': user_id,
 		'attribute': JSON.stringify(Object.fromEntries(attributeMap.entries())),
 		'first_name': first_name,
 		'last_name': last_name,
 		'head_portrait': window.initalImg},
 		function (data) {
-			if(data.success === true){
+			if(Boolean(data.success) === true){
 				window.location.href ="../game/";
 			}
 			else{

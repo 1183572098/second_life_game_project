@@ -114,6 +114,7 @@ def game(request):
     manager = game_manager.Manager()
     result = manager.enter_game(request)
     print("result: " + str(result))
+    result["user_id"] = request.user.id
     return render(request, 'game/game.html', context=result)
 
 
@@ -121,7 +122,6 @@ def initialization(request):
     context_dict = {}
     user_id = request.user.id
     context_dict["user_id"] = user_id
-    print(user_id)
     return render(request, 'game/initialization.html', context=context_dict)
 
 

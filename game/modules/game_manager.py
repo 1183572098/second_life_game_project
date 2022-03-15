@@ -54,20 +54,23 @@ class Manager:
         result = {}
         for v in attributes.values():
             if v < parameter.value(2002) or v > parameter.value(2003):
-                result.update({"success": False})
+                result.update({"success": 0})
                 result.update({"reason": "The initial attribute cannot be lower than 10 and cannot be higher than 50"})
                 return result
 
         for k, v in attributes.items():
             game.role.set_attribute(k, v)
 
-        result.update({"success": True})
+        result.update({"success": 1})
         return result
 
     def enter_game(self, request_data):
         print("info: enter_game")
         game = self.data.get_cache(str(request_data.user.id))
-        result = game.next_year()
+        if game is not None:
+            result = game.next_year()
+        else:
+            result = None
         return result
 
     def open_shop(self, request_data):
@@ -89,15 +92,15 @@ class Manager:
         result = {}
         if shop.get(good_id) is None:
             print("error: can't purchase")
-            result.update({"success": False})
+            result.update({"success": 0})
             result.update({"reason": "The good is not in the store"})
         if shop.get(good_id) == -1 or shop.get(good_id) > 0:
             game.purchase(good_id)
-            result.update({"success": True})
+            result.update({"success": 1})
             result.update(self.open_shop(request_data))
         else:
             print("info: can't purchase")
-            result.update({"success": False})
+            result.update({"success": 0})
             result.update({"reason": "Insufficient number of the good available for purchase"})
 
         return result
@@ -110,11 +113,11 @@ class Manager:
         result = {}
         if bag.get(good_id) is not None:
             game.use_good(good_id)
-            result.update({"success": True})
+            result.update({"success": 1})
             result.update(self.open_shop(request_data))
         else:
             print("error: can't purchase")
-            result.update({"success": False})
+            result.update({"success": 0})
             result.update({"reason": "The good is not in the bag"})
 
         return result
