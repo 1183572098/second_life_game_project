@@ -40,12 +40,12 @@ class Process:
             self.mechanism_process()
             event_id = self._get_event()
             self._execute_event(event_id)
-            result.update({"is_end": False})
+            result.update({"is_end": 0})
             result.update({"age": self.role.age})
             result.update({"event_id": event_id})
             result.update({"attribute": self.role.attribute})
         else:
-            result.update({"is_end": True})
+            result.update({"is_end": 1})
             result.update({"attribute_id": is_end})
 
         return result

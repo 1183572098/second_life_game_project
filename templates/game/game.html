@@ -6,26 +6,22 @@
 {% endblock %}
 {% block body_block %}
 <link rel="stylesheet" href="../../static/css/game.css">
-
+    <script type="text/javascript">
+        var userId = {{user_id}};
+        var attribute = {{attribute}};
+        var age = {{age}};
+        var eventId = {{event_id}};
+        var isEnd = Boolean({{is_end}});
+    </script>
 <div class="main">
     <div class="game">
-         <div class="top">
-            <span class="health">Health</span>
-            <span class="strength">Strength</span>
-            <span class="art">Art</span>
-            <span class="intelligence">Intelligence</span>
-            <span class="lucky">Lucky</span>
-        </div>
+        <table>
+            <div class="top">
+                <thead></thead>
+                <tbody></tbody>
+            </div>
+        </table>
        <a href="#"><span onclick="openBag()" class="shop">BAG STORE </span></a>
-    <br>
-    <div class="top2">
-        <span id="health"  class="health">0</span>
-        <span id="strength" class="strength">0</span>
-        <span id="art" class="art">0</span>
-        <span id="intelligence" class="intelligence">0</span>
-        <span id="lucky" class="lucky">0</span>
-        <span class="point">BAG---></span>
-    </div>
     <div class="middle">
 <!--        class=hide-->
         <div class="store hide" id="store">
@@ -84,24 +80,14 @@
         </div>
 
         <div class="subMiddle">
-            <div class="left">The First year:</div>
-            <div class="right"></div>
-        </div>
-        <div class="subMiddle">
-            <div class="left"></div>
-            <div class="right"></div>
-        </div>
-        <div class="subMiddle">
-            <div class="left"></div>
-            <div class="right"></div>
-        </div>
-        <div class="subMiddle">
-            <div class="left"></div>
-            <div class="right"></div>
+            <table>
+                <thead><td>Year</td><td>Event</td></thead>
+                <tbody></tbody>
+            </table>
         </div>
         <div class="subMiddle">
             <!-- <div class="left"></div> -->
-            <div class="downRight"><a href="#">Next</a></div>
+            <div class="downRight"><a href="#" id="next">Next</a></div>
         </div>
     </div>
 <!--    event select-->
@@ -114,5 +100,6 @@
     </div>
 </div>
 <script src="../../static/js/store.js"></script>
+<script src="../../static/js/game.js"></script>
 
 {% endblock %}
