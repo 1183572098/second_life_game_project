@@ -12,9 +12,19 @@
 <div class="formPosition">
     
       <h1 class="gradient-text">Second Life</h1>
+
+<div>
 <p>
-    Welcome to your new life
+    {% if user.is_authenticated %}
+        Welcome, {{ user.username }}.
+    {% else %}
+        Welcome to your new life
+    {% endif %}
 </p>
+    <br />
+</div>
+    
+
     </div>
 </div>
 

@@ -29,11 +29,13 @@ ALLOWED_HOSTS = ['caxiao.pythonanywhere.com', '127.0.0.1', 'localhost', ]
 
 REGISTRATION_AUTO_LOGIN = True
 
-LOGIN_REDIRECT_URL = '/game/index'
-
-LOGOUT_REDIRECT_URL = '/game/index'
+LOGIN_REDIRECT_URL = 'second_life:initial'
 
 LOGIN_URL = 'auth_login'
+
+LOGOUT_URL ='auth_logout'
+
+LOGOUT_REDIRECT_URL = 'second_life:index'
 
 # Application definition
 

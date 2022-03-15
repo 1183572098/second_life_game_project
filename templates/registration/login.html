@@ -17,12 +17,13 @@
     {{ form.as_p }}
 
     <input type="submit" value="Begin" />
-    <button type="button">Back</button>
+    <a href="/game/index">
+   <input type="button" value="Back" />
+</a>
 </form>
 
 <p>
-    Not registered?
-    <a href="{% url 'registration_register' %}">Register here!</a>
+    <a href="{% url 'registration_register' %}">Register here</a>
 </p>
     </div>
 </div>

@@ -48,7 +48,7 @@ def add_announcement(request):
         announcement_form = AnnouncementForm(request.POST)
         if announcement_form.is_valid():
             announcement = announcement_form.save(commit=False)
-            return redirect('/game/index/')
+            return redirect('secondlife:index')
         else:
             print(announcement_form.errors)
     return render(request, 'game/announcement.html', {'form':announcement_form})
@@ -62,12 +62,6 @@ def show_announcement(request):
     except Announcement.DoesNotExist:
         context_dict['announcements'] = None
     return render(request, 'game/admin.html', context=context_dict)
-
-
-@login_required()
-def user_logout(request):
-    logout(request)
-    return redirect('/game/index/')
 
 
 def start_game(request):
