@@ -5,12 +5,14 @@
 
 
 .main{
+    position: fixed;
+	height: 100%;
+	width: 100%;
 	background-image: url("../image/background/CC.png");
 	background-size: 1400px;
-	height:590px;
 }
 
-.position1{
+.formPosition{
 	width: 800px;
 	height: 400px;
 	margin-left: 200px;
@@ -19,6 +21,6 @@
 	padding-top:50px;
 	/*text-align: center;*/
 	color: black;
-	opacity: 0.8;
-	background-color: red;
+	opacity: 0.6;
+	background-color: #B0E0E6;;
 }
