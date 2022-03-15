@@ -59,7 +59,7 @@ body{
 	background-color: #B0E0E6;
 }
 .top2 span{
-	padding-left: 50px;
+	padding-left: 70px;
 	height: 100px;
 	text-align: center;
 	line-height: 50px;
@@ -67,19 +67,19 @@ body{
 }
 
 .top2 .strength{
-	padding-left: 70px;
+	padding-left: 100px;
 }
 
 .top2 .art{
-	padding-left: 65px;
+	padding-left: 110px;
 }
 
 .top2 .intelligence{
-	padding-left: 66px;
+	padding-left: 95px;
 }
 
 .top2 .lucky{
-	padding-left: 76px;
+	padding-left: 130px;
 }
 
 .top2 .point{
