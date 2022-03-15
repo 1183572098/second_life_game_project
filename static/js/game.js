@@ -1,5 +1,6 @@
 var attributeMap = new Map();
 var eventMap = new Map();
+var attributeValueMap = new Map(Object.entries(attribute));
 
 $(document).ready(function(){
     $.ajax({
@@ -55,7 +56,7 @@ function csvToArray(text) {
 function createTop(){
     let topHead = document.querySelectorAll("thead")[0];
     let topBody = document.querySelectorAll("tbody")[0];
-    let map = new Map(Object.entries(attribute));
+
     for(let [key, value] of attributeMap){
         let td = document.createElement('td');
         td.innerHTML = value;
@@ -63,7 +64,8 @@ function createTop(){
         topHead.appendChild(td);
 
         let td2 = document.createElement('td');
-        td2.innerHTML = map.get(String(key));
+        td2.id = "value" + key;
+        td2.innerHTML = attributeValueMap.get(String(key));
         topBody.appendChild(td2);
     }
 }
@@ -71,16 +73,38 @@ function createTop(){
 function createEventTable(){
     let eventBody = document.querySelectorAll("tbody")[3];
 
+    let tr = document.createElement('tr');
+    eventBody.appendChild(tr);
     let td = document.createElement('td');
     td.id = "value" + eventId;
     td.innerHTML = "The " + age + " year";
-    eventBody.appendChild(td);
+    tr.appendChild(td);
     let td2 = document.createElement('td');
     td2.id = "event" + eventId;
     td2.innerHTML = eventMap.get(String(eventId));
-    eventBody.appendChild(td2);
+    tr.appendChild(td2);
 }
 
-$('#confirm').click(function(){
-
+$('#next').click(function(){
+    $.post('../next/',
+        {'user_id': userId},
+        function (data) {
+            if(Boolean(data.is_end) === true){
+                alert("game over.")
+            }
+            else{
+                age = data.age;
+                eventId = data.event_id;
+                attribute = data.attribute;
+                attributeValueMap = new Map(Object.entries(attribute));
+                setAttribute();
+                createEventTable();
+            }
+        })
 });
+
+function setAttribute(){
+    for(let [key, value] of attributeValueMap){
+        document.getElementById("value"+key).innerHTML = value;
+    }
+}

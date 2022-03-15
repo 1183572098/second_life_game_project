@@ -39,7 +39,9 @@ class Process:
             self.role.age += 1
             self.mechanism_process()
             event_id = self._get_event()
-            self._execute_event(event_id)
+            if event_id / 1000 == 3:
+                self._execute_event(event_id)
+
             result.update({"is_end": 0})
             result.update({"age": self.role.age})
             result.update({"event_id": event_id})
@@ -80,7 +82,7 @@ class Process:
                 event_dict = event.get_event(self.role.age, self.event_history, self.role.attribute)
 
         if len(event_dict) == 1:
-            return event_dict.keys()[0]
+            return list(event_dict.keys())[0]
         else:
             return self._get_random_by_weights(event_dict)
 

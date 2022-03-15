@@ -105,11 +105,6 @@ def choose_option(request):
     return HttpResponse(result)
 
 
-def test(request):
-    new_game = game_manager.Manager()
-    return HttpResponse(200)
-
-
 def game(request):
     manager = game_manager.Manager()
     result = manager.enter_game(request)
@@ -125,4 +120,9 @@ def initialization(request):
     return render(request, 'game/initialization.html', context=context_dict)
 
 
-
+@csrf_exempt
+def next_year(request):
+    manager = game_manager.Manager()
+    result = manager.enter_game(request)
+    print("result: " + str(result))
+    return HttpResponse(json.dumps(result), content_type='application/json')

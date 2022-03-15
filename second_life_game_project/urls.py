@@ -21,6 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('git_push/', include('git_webhook.urls')),
     path('', views.index, name='index'),
-    path('game/', include('game.urls')),
-    path('accounts/', include('registration.backends.simple.urls'))
+    path('second_life/', include('game.urls')),
+    path('accounts/', include('registration.backends.simple.urls')),
 ]
