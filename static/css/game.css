@@ -37,9 +37,6 @@ body{
 	position: relative;
 	height: 50px;
 	width: 900px;
-	/*background-color: #FAEBD7;*/
-	/*background-image: url("../image/image/background/E.png");*/
-	/*background-color:#6A5ACD;*/
 	padding-right: 50px;
 	/*height: 100px;*/
 	text-align: center;
@@ -54,28 +51,8 @@ body{
 	text-align: center;
 	line-height: 50px;
 	font-size: 20px;
-	background-color: #FAEBD7;
-	/*background-color: red;*/
+	background-color: #7B68EE;
 }
-
-/*.top2{
-	position: absolute;
-	top: 60px;
-	left: 0;
-	height: 50px;
-	width: 900px;
-	background-color: #B0E0E6;
-	text-align: center;
-	line-height: 50px;
-	font-size: 20px;
-}*/
-/*.top2 span{
-	padding-left: 70px;
-	height: 100px;
-	text-align: center;
-	line-height: 50px;
-	font-size: 20px;
-}*/
 
 
 .top2 .point{
