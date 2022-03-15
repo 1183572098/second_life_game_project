@@ -127,7 +127,7 @@ class Manager:
     def choose_option(self, request_data):
         print("info: choose option")
         game = self.player_games.get(request_data.user.id)
-        option_id = request_data.POST.get("event_id")
+        option_id = request_data.POST.get("option")[6:]
         return game.choose_option(option_id)
 
     def serialize(self, request_data):

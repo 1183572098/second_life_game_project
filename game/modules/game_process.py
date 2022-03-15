@@ -41,6 +41,8 @@ class Process:
             event_id = self._get_event()
             if event_id / 1000 == 3:
                 self._execute_event(event_id)
+            else:
+                self.event_history.append(event_id)
 
             result.update({"is_end": 0})
             result.update({"age": self.role.age})

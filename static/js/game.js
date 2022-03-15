@@ -1,6 +1,9 @@
 var attributeMap = new Map();
 var eventMap = new Map();
 var attributeValueMap = new Map(Object.entries(attribute));
+var option1Map = new Map();
+var option2Map = new Map();
+var option3Map = new Map();
 
 $(document).ready(function(){
     $.ajax({
@@ -13,6 +16,10 @@ $(document).ready(function(){
         dataType: "text",
     }).done(readEventSuccess);
 
+    $.ajax({
+        url: "../../static/config/OptionTable.csv",
+        dataType: "text",
+    }).done(readOptionSuccess);
 });
 
 function readSuccess(data){
@@ -35,6 +42,18 @@ function readEventSuccess(data){
         }
     }
     createEventTable();
+}
+
+function readOptionSuccess(data){
+    let newData = data.split(/\r?\n|\r/)
+    for(let i=1;i<newData.length;i++){
+        let dataCell = csvToArray(newData[i]);
+        if(dataCell[0]!==""){
+            option1Map.set(dataCell[0], dataCell[1]);
+            option2Map.set(dataCell[0], dataCell[3]);
+            option3Map.set(dataCell[0], dataCell[5]);
+        }
+    }
 }
 
 function csvToArray(text) {
@@ -72,7 +91,7 @@ function createTop(){
 
 function createEventTable(){
     let eventBody = document.querySelectorAll("tbody")[3];
-
+    //todo how to deal with F5 page
     let tr = document.createElement('tr');
     eventBody.appendChild(tr);
     let td = document.createElement('td');
@@ -93,12 +112,21 @@ $('#next').click(function(){
                 alert("game over.")
             }
             else{
-                age = data.age;
-                eventId = data.event_id;
-                attribute = data.attribute;
-                attributeValueMap = new Map(Object.entries(attribute));
-                setAttribute();
-                createEventTable();
+                if(parseInt((data.event_id%10000) / 1000) === 3){
+                    age = data.age;
+                    eventId = data.event_id;
+                    attribute = data.attribute;
+                    attributeValueMap = new Map(Object.entries(attribute));
+                    setAttribute();
+                    createEventTable();
+                }
+                else{
+                    document.getElementById("option1").innerHTML = option1Map.get(String(data.event_id));
+                    document.getElementById("option2").innerHTML = option2Map.get(String(data.event_id));
+                    document.getElementById("option3").innerHTML = option3Map.get(String(data.event_id));
+                    document.getElementById("select").className = "select";
+                    document.getElementById("next").className = "hide";
+                }
             }
         })
 });
@@ -107,4 +135,19 @@ function setAttribute(){
     for(let [key, value] of attributeValueMap){
         document.getElementById("value"+key).innerHTML = value;
     }
+}
+
+function choose(val){
+    $.post('../option/',
+        {'user_id': userId,
+        'option': $(val).attr("id")},
+        function (data) {
+            eventId = data.event_id;
+            attribute = data.attribute;
+            attributeValueMap = new Map(Object.entries(attribute));
+            setAttribute();
+            createEventTable();
+            document.getElementById("select").className = "select hide";
+            document.getElementById("next").className = "";
+        })
 }

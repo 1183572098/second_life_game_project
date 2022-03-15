@@ -102,7 +102,7 @@ def choose_option(request):
     manager = game_manager.Manager()
     result = manager.choose_option(request)
     print("result: " + str(result))
-    return HttpResponse(result)
+    return HttpResponse(json.dumps(result), content_type='application/json')
 
 
 def game(request):
