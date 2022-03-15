@@ -1,0 +1,24 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+.main{
+	background-image: url("../image/background/CC.png");
+	background-size: 1400px;
+	height:590px;
+}
+
+.position1{
+	width: 800px;
+	height: 400px;
+	margin-left: 200px;
+	position: absolute;
+
+	padding-top:50px;
+	/*text-align: center;*/
+	color: black;
+	opacity: 0.8;
+	background-color: red;
+}
