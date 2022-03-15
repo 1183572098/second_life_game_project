@@ -3,21 +3,11 @@
 	padding: 0;
 }
 
-
-.main{
-    position: fixed;
-	height: 100%;
-	width: 100%;
-	background-image: url("../image/background/CC.png");
-	background-size: 1400px;
-}
-
 .formPosition{
 	width: 800px;
 	height: 200px;
 	margin-left: 200px;
 	position: absolute;
-
 	padding-top:50px;
 	color: black;
 	opacity: 0.6;
@@ -26,7 +16,6 @@
 
 h1{
   font-family: "papyrus"; 
-
   font-size: 700%;
   text-align: center;
 }

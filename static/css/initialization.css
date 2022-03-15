@@ -3,15 +3,6 @@
 	padding: 0;
 }
 
-
-.main{
-	background-image: url("../image/background/CC.png");
-	background-size: 1400px;
-	position: fixed;
-	height: 100%;
-	width: 100%;
-}
-
 .subTitle{
 	color: #FF4500;
 	color: darkorange;

@@ -48,7 +48,7 @@ def add_announcement(request):
         announcement_form = AnnouncementForm(request.POST)
         if announcement_form.is_valid():
             announcement = announcement_form.save(commit=False)
-            return redirect('secondlife:index')
+            return redirect('second_life:index')
         else:
             print(announcement_form.errors)
     return render(request, 'game/announcement.html', {'form':announcement_form})

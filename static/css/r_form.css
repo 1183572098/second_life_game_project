@@ -3,15 +3,6 @@
 	padding: 0;
 }
 
-
-.main{
-    position: fixed;
-	height: 100%;
-	width: 100%;
-	background-image: url("../image/background/CC.png");
-	background-size: 1400px;
-}
-
 .formPosition{
 	width: 800px;
 	height: 500px;
