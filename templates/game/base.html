@@ -39,8 +39,10 @@
         {% else %}
 		<a href="{% url 'registration_register' %}">Register</a>
 		<a href="{% url 'auth_login' %}">Login</a>
-        {% endif %}
 		<a href="/game/announcements/">Announcements</a>
+		<a href="{% url 'second_life:index' %}">Home</a>
+        {% endif %}
+		
 	</div>
 
 

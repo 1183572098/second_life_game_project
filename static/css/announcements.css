@@ -14,32 +14,24 @@
 
 .formPosition{
 	width: 800px;
-	height: 400px;
+	height: 200px;
 	margin-left: 200px;
 	position: absolute;
 
 	padding-top:50px;
 	color: black;
 	opacity: 0.6;
-	background-color: black;;
-}
-
-.gradient-text {
-    background-image: linear-gradient(45deg, #f3ec78, #af4261);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+	background-color: #B0E0E6;;
 }
 
 h1{
-  font-family: "Papyrus";
+  font-family: "papyrus"; 
+
   font-size: 700%;
   text-align: center;
-  font-weight: bold;
 }
 
 p{
-  font-family: "Papyrus";
   color: white;
   font-size: 150%;
-  text-align: center;
 }

@@ -1,0 +1,17 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+h1 {
+	color: white;
+	font-size: 150%;
+	text-align: center;
+}
+
+p {
+	color: white;
+	font-size: 70%
+	text-align: center;
+}
