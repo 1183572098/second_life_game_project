@@ -20,7 +20,7 @@ body{
 .main{
 	height: 600px;
 	width: auto;
-	background-image: url("../image/image/background/E.png");
+	background-image: url("../image/background/E.png");
 	background-repeat: no-repeat;
 }
 
@@ -129,7 +129,7 @@ body{
 
 .subMiddle .left{
 	width: 200px;
-	height: 50px;
+	height: 46px;
 	border: solid;
 	background-image: url("../image/background/B.png");
 	color: white;
