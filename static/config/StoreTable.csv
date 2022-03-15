@@ -2,6 +2,6 @@ ID,Goods,Tpye,money,value1,value2,value3,value4,value5,event trigger ID,num,note
 2001,Health pills,0,10,2,0,0,0,0,,-1,,second_life_game_project/static/image/image/medicine/health.gif,
 2002,Aladdin's lamp,0,20,,,,-2,5,,-1,Aladdin bless you,second_life_game_project/static/image/image/medicine/AladdinLight.gif,
 2003,Rebirth Pills,1,100,,,,,,3001,2,"Life restarts, back to 0 years old, and the all attributes are reset to 4",second_life_game_project/static/image/image/medicine/rebirth.png,
-2004,Fairy Amulet,0,20,3,-3,1,1,1,,,,second_life_game_project/static/image/image/medicine/fairy.gif,
+2004,Fairy Amulet,0,20,3,-3,1,1,1,,5,,second_life_game_project/static/image/image/medicine/fairy.gif,
 2005,Wandering Symphony,2,50,-3,-3,-3,-3,-3,,5,"Random one attribute +5, random one attribute -3",second_life_game_project/static/image/image/medicine/wander.gif,"1,1,1,1,1"
 2006,immortal love,2,150,10,10,10,10,10,,1,add 10 value to one attribute randomly ,second_life_game_project/static/image/image/medicine/love.gif,"1,1,1,1,1"
