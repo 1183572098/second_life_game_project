@@ -6,7 +6,8 @@ luckValue = byId("luckValue"),
 initial = byId("initial");
 var available = document.getElementById("available");
 var attributeMap = new Map();
-var random = Math.ceil(Math.random()*4);
+var parameterMap = new Map();
+
 
 
 function byId(id){
@@ -19,23 +20,44 @@ $(document).ready(function(){
 		dataType: "text",
 	}).done(readSuccess);
 
-	function readSuccess(data){
-		let newData = data.split(/\r?\n|\r/)
-		for(let i=1;i<newData.length;i++){
-			let dataCell = newData[i].split(",");
-			if(dataCell[0]!==""){
-				attributeMap.set(dataCell[0], dataCell[1]);
-			}
-		}
-
-		createTable();
-	}
-
-	if(random === 0){
-		random = 1;
-	}
-	document.getElementById("head").src = "../../static/image/head/" + String(random) + ".png";
+	$.ajax({
+		url: "../../static/config/parameter.csv",
+		dataType: "text",
+	}).done(readParaSuccess);
 });
+
+function readSuccess(data){
+	let newData = data.split(/\r?\n|\r/)
+	for(let i=1;i<newData.length;i++){
+		let dataCell = newData[i].split(",");
+		if(dataCell[0]!==""){
+			attributeMap.set(dataCell[0], dataCell[1]);
+		}
+	}
+
+	createTable();
+}
+
+function readParaSuccess(data){
+	let newData = data.split(/\r?\n|\r/)
+	for(let i=1;i<newData.length;i++){
+		let dataCell = newData[i].split(",");
+		if(dataCell[0]!==""){
+			parameterMap.set(parseInt(dataCell[0]), dataCell[1]);
+
+		}
+	}
+
+	window.initalImg = Math.ceil(Math.random()*parseInt(parameterMap.get(2008)));
+	if(window.initalImg === 0 || isNaN(window.initalImg)){
+		window.initalImg = 1;
+	}
+	setImg(window.initalImg);
+}
+
+function setImg(img){
+	document.getElementById("head").src = "../../static/image/head/" + String(img) + ".png";
+}
 
 
 function minus(val){
@@ -91,11 +113,6 @@ $('#random').click(function(){
 			}
 
 			available.innerHTML = String(0);
-			// $('#healthValue').html(data.attribute['1']);
-			// $('#sportValue').html(data.attribute['2']);
-			// $('#artValue').html(data.attribute['3']);
-			// $('#intelligenceValue').html(data.attribute['4']);
-			// $('#luckValue').html(data.attribute['5']);
 		})
 });
 
@@ -105,10 +122,40 @@ $('#confirm').click(function(){
 	let last_name = $("#last_name").val();
 	if(first_name === "" || last_name === ""){
 		alert("Please choose a nice name");
+		return;
 	}
 	for(let [key, value] of attributeMap){
-		attributeMap.set(key, document.getElementById(key).parentNode.children[1].innerText);
+		let attributeValue = parseInt(document.getElementById(key).parentNode.children[1].innerText);
+		if(attributeValue < parseInt(parameterMap.get(2002)) || attributeValue > parseInt(parameterMap.get(2003))){
+			alert("Attribute value must be between 10 and 50");
+			return;
+		}
+		attributeMap.set(key, attributeValue);
 	}
-	alert(attributeMap);
+
+	$.post('/game/initial/confirm/',
+		{'user_id': user_id,
+		'attribute': JSON.stringify(Object.fromEntries(attributeMap.entries())),
+		'first_name': first_name,
+		'last_name': last_name,
+		'head_portrait': window.initalImg},
+		function (data) {
+
+		})
 });
 
+$('#pre').click(function(){
+	window.initalImg -= 1;
+	if(window.initalImg <= 0){
+		window.initalImg = parameterMap.get(2008);
+	}
+	setImg(window.initalImg);
+});
+
+$('#next').click(function(){
+	window.initalImg += 1;
+	if(window.initalImg > parameterMap.get(2008)){
+		window.initalImg = 1;
+	}
+	setImg(window.initalImg);
+});

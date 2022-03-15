@@ -184,4 +184,4 @@ class Role:
         return self.attribute.get(attribute_id)
 
     def set_attribute(self, attribute_id, value):
-        return self.attribute.update({attribute_id: value})
+        return self.attribute.update({int(attribute_id): value})

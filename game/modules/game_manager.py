@@ -8,6 +8,7 @@ from game.modules import game_process
 from game.models import Record
 import pickle
 from game.config import parameter
+import json
 
 
 class Manager:
@@ -45,11 +46,12 @@ class Manager:
 
     def start_game(self, request_data):
         print("info: start_game")
-        game = self.data.get_cache(request_data.user.id)
-        game.role.first_name = request_data.get("first_name")
-        game.role.last_name = request_data.get("last_name")
-        game.role.head_portrait = request_data.get("head_portrait")
-        attributes = request_data.get("attribute")
+        game = self.data.get_cache(str(request_data.user.id))
+        game.role.first_name = request_data.POST.get("first_name")
+        game.role.last_name = request_data.POST.get("last_name")
+        game.role.head_portrait = request_data.POST.get("head_portrait")
+        attributes = json.loads(request_data.POST.get("attribute"))
+        print(attributes)
         result = {}
         for v in attributes.values():
             if v < parameter.value(2002) or v > parameter.value(2003):
@@ -57,7 +59,7 @@ class Manager:
                 result.update({"reason": "The initial attribute cannot be lower than 10 and cannot be higher than 50"})
                 return result
 
-        for k, v in attributes:
+        for k, v in attributes.items():
             game.role.set_attribute(k, v)
 
         result.update(game.next_year())
@@ -66,7 +68,7 @@ class Manager:
 
     def open_shop(self, request_data):
         print("info: open_shop")
-        game = self.data.get_cache(request_data.user.id)
+        game = self.data.get_cache(str(request_data.user.id))
         bag = game.get_bag()
         shop = game.get_shop()
 
@@ -77,8 +79,8 @@ class Manager:
 
     def purchase(self, request_data):
         print("info: purchase")
-        game = self.data.get_cache(request_data.user.id)
-        good_id = request_data.get("good_id")
+        game = self.data.get_cache(str(request_data.user.id))
+        good_id = request_data.POST.get("good_id")
         shop = game.get_shop()
         result = {}
         if shop.get(good_id) is None:
@@ -98,8 +100,8 @@ class Manager:
 
     def use_good(self, request_data):
         print("info: use good")
-        game = self.data.get_cache(request_data.user.id)
-        good_id = request_data.get("good_id")
+        game = self.data.get_cache(str(request_data.user.id))
+        good_id = request_data.POST.get("good_id")
         bag = game.get_bag()
         result = {}
         if bag.get(good_id) is not None:
@@ -115,10 +117,10 @@ class Manager:
 
     def choose_option(self, request_data):
         print("info: choose option")
-        game = self.data.get_cache(request_data.user.id)
-        option_id = request_data.get("event_id")
+        game = self.data.get_cache(str(request_data.user.id))
+        option_id = request_data.POST.get("event_id")
         return game.choose_option(option_id)
 
     def serialize(self, request_data):
-        p_stream = pickle.dumps(self.data.get_cache(request_data.user.id))
+        p_stream = pickle.dumps(self.data.get_cache(str(request_data.user.id)))
         return self.data.create(Record, user_id=request_data.user.id, data=p_stream)
