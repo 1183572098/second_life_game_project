@@ -6,7 +6,7 @@
 .formPosition{
 	width: 800px;
 	height: 500px;
-	margin-left: 200px;
+	margin-left: 325px;
 	position: absolute;
 	padding-top:50px;
 	color: black;
@@ -44,10 +44,4 @@ h1 {
   font-size: 700%;
   text-align: center;
   font-weight: bold;
-}
-
-.register {
-  font-weight:bold;
-  text-decoration-line: underline;
-  text-decoration-style: solid;
 }

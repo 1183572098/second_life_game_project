@@ -37,9 +37,6 @@ body{
 	position: relative;
 	height: 50px;
 	width: 900px;
-	/*background-color: #FAEBD7;*/
-	/*background-image: url("../image/image/background/E.png");*/
-	/*background-color:#6A5ACD;*/
 	padding-right: 50px;
 	/*height: 100px;*/
 	text-align: center;
@@ -54,28 +51,8 @@ body{
 	text-align: center;
 	line-height: 50px;
 	font-size: 20px;
-	background-color: #FAEBD7;
-	/*background-color: red;*/
+	background-color: #7B68EE;
 }
-
-/*.top2{
-	position: absolute;
-	top: 60px;
-	left: 0;
-	height: 50px;
-	width: 900px;
-	background-color: #B0E0E6;
-	text-align: center;
-	line-height: 50px;
-	font-size: 20px;
-}*/
-/*.top2 span{
-	padding-left: 70px;
-	height: 100px;
-	text-align: center;
-	line-height: 50px;
-	font-size: 20px;
-}*/
 
 
 .top2 .point{
@@ -108,7 +85,7 @@ body{
 	top: 10px;
 	height: 300px;
 	width: 900px;
-	background-color: #FAEBD7;
+	/*background-color: #FAEBD7;*/
 	opacity: 0.7;
 
 }
@@ -116,10 +93,11 @@ body{
 /*enent*/
 .subMiddle{
 	position: relative;
-	height: 50px;
+	height: 250px;
 	width: auto;
 	background-image: url("../image/background/E.png");
 	border: solid;
+	/*margin-bottom: 70px;*/
 	margin-top: 70px;
 	z-index: 1;
 
@@ -127,6 +105,7 @@ body{
 
 .subMiddle td{
 	width: 500px;
+	height: 60px;
 	background-color: red;
 	color: yellow;
 	background-image: url("../image/background/AA.png");	
@@ -144,7 +123,7 @@ body{
 	width: auto;
 	background-image: url("../image/background/E.png");
 	border: solid;
-	margin-top: 198px;
+	margin-top: 10px;
 	z-index: 1;
 
 }
@@ -165,7 +144,7 @@ body{
 
 .store{
 	position: absolute;
-	top: 50px;
+	top: 80px;
 	height: 300px;
 	width: 900px;
 	background-image: url("../image/background/book.jpg");

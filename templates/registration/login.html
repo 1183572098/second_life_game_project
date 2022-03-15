@@ -13,6 +13,7 @@
         
 <h1>Login</h1><br />
 
+<p>
 <form method="post" action=".">
     {% csrf_token %}
 
@@ -21,6 +22,7 @@
    <input type="submit" class="gradient-button gradient-button-1" value="Begin!" /> 
    <a href="{% url 'second_life:index' %}"><input type="button" class="gradient-button gradient-button-1" value="Back" /></a>
 </form>
+</p>
 <br />
 <p class="register">
     <a href="{% url 'registration_register' %}">Register here</a>
