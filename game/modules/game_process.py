@@ -30,7 +30,9 @@ class Process:
             index += 1
 
     def next_year(self):
-        print(self.role.attribute)
+        if self.initial_attribute is None:
+            self.initial_attribute = self.role.attribute
+
         is_end = self.end
         result = {}
         if is_end < 0:
@@ -39,7 +41,7 @@ class Process:
             event_id = self._get_event()
             self._execute_event(event_id)
             result.update({"is_end": False})
-            result.update({self.role.age: event_id})
+            result.update({"age": self.role.age})
             result.update({"event_id": event_id})
             result.update({"attribute": self.role.attribute})
         else:

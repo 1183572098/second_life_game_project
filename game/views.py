@@ -38,7 +38,7 @@ def game_confirm(request):
     manager = game_manager.Manager()
     result = manager.start_game(request)
     print("result: " + str(result))
-    return HttpResponse(result)
+    return HttpResponse(json.dumps(result), content_type='application/json')
 
 
 @staff_member_required()
@@ -117,7 +117,10 @@ def test(request):
 
 
 def game(request):
-    return render(request, 'game/game.html')
+    manager = game_manager.Manager()
+    result = manager.enter_game(request)
+    print("result: " + str(result))
+    return render(request, 'game/game.html', context=result)
 
 
 def initialization(request):

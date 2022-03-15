@@ -140,7 +140,17 @@ $('#confirm').click(function(){
 		'last_name': last_name,
 		'head_portrait': window.initalImg},
 		function (data) {
-
+			if(data.success === true){
+				window.location.href ="../game/";
+			}
+			else{
+				if(data.reason === undefined){
+					alert("Please refresh the page and try again.");
+				}
+				else{
+					alert(data.reason);
+				}
+			}
 		})
 });
 

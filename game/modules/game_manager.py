@@ -60,12 +60,14 @@ class Manager:
 
         for k, v in attributes.items():
             game.role.set_attribute(k, v)
-            
-        # record for rebirth
-        game.initial_attribute = game.role.attribute
 
-        result.update(game.next_year())
         result.update({"success": True})
+        return result
+
+    def enter_game(self, request_data):
+        print("info: enter_game")
+        game = self.data.get_cache(str(request_data.user.id))
+        result = game.next_year()
         return result
 
     def open_shop(self, request_data):
