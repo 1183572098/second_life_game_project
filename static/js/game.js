@@ -91,7 +91,7 @@ function createTop(){
 
 function createEventTable(){
     let eventBody = document.querySelectorAll("tbody")[3];
-    //todo how to deal with F5 page
+
     let tr = document.createElement('tr');
     eventBody.appendChild(tr);
     let td = document.createElement('td');
@@ -125,7 +125,7 @@ $('#next').click(function(){
                     document.getElementById("option2").innerHTML = option2Map.get(String(data.event_id));
                     document.getElementById("option3").innerHTML = option3Map.get(String(data.event_id));
                     document.getElementById("select").className = "select";
-                    document.getElementById("next").className = "hide";
+                    document.getElementById("downRight").className = "downRight hide";
                 }
             }
         })
@@ -148,7 +148,7 @@ function choose(val){
             setAttribute();
             createEventTable();
             document.getElementById("select").className = "select hide";
-            document.getElementById("next").className = "";
+            document.getElementById("downRight").className = "downRight";
         })
 }
 

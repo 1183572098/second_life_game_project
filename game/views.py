@@ -78,7 +78,7 @@ def click_shop(request):
     manager = game_manager.Manager()
     result = manager.open_shop(request)
     print("result: " + str(result))
-    return HttpResponse(result)
+    return HttpResponse(json.dumps(result), content_type='application/json')
 
 
 @csrf_exempt
@@ -86,7 +86,7 @@ def purchase_good(request):
     manager = game_manager.Manager()
     result = manager.purchase(request)
     print("result: " + str(result))
-    return HttpResponse(result)
+    return HttpResponse(json.dumps(result), content_type='application/json')
 
 
 @csrf_exempt
@@ -94,7 +94,7 @@ def use_good(request):
     manager = game_manager.Manager()
     result = manager.use_good(request)
     print("result: " + str(result))
-    return HttpResponse(result)
+    return HttpResponse(json.dumps(result), content_type='application/json')
 
 
 @csrf_exempt

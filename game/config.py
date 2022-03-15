@@ -134,6 +134,8 @@ class StoreTable(Config):
             for para in self.config:
                 self.goods.update({int(para["ID"]): int(para["num"])})
 
+        return self.goods
+
     def get_type(self, good_id):
         for para in self.config:
             if para["ID"] == str(good_id):
