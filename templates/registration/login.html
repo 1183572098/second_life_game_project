@@ -7,22 +7,22 @@
 {% block body_block %}
 
 <link rel="stylesheet" href="../../static/css/form.css">
+
 <div class="main">
     <div class="formPosition">
-        <h1>Login</h1>
+        
+<h1>Login</h1><br />
 
-        <form method="post" action=".">
+<form method="post" action=".">
     {% csrf_token %}
 
     {{ form.as_p }}
 
-    <input type="submit" value="Begin" />
-    <a href="/game/index">
-   <input type="button" value="Back" />
-</a>
+   <input type="submit" class="gradient-button gradient-button-1" value="Begin!" /> 
+   <a href="/game/index"><input type="button" class="gradient-button gradient-button-1" value="Back" /></a>
 </form>
-
-<p>
+<br />
+<p class="register">
     <a href="{% url 'registration_register' %}">Register here</a>
 </p>
     </div>
