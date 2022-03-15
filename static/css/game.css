@@ -108,7 +108,7 @@ body{
 	top: 10px;
 	height: 300px;
 	width: 900px;
-	background-color: #FAEBD7;
+	/*background-color: #FAEBD7;*/
 	opacity: 0.7;
 
 }
@@ -116,10 +116,11 @@ body{
 /*enent*/
 .subMiddle{
 	position: relative;
-	height: 50px;
+	height: 250px;
 	width: auto;
 	background-image: url("../image/background/E.png");
 	border: solid;
+	/*margin-bottom: 70px;*/
 	margin-top: 70px;
 	z-index: 1;
 
@@ -144,7 +145,7 @@ body{
 	width: auto;
 	background-image: url("../image/background/E.png");
 	border: solid;
-	margin-top: 198px;
+	margin-top: 10px;
 	z-index: 1;
 
 }
@@ -165,7 +166,7 @@ body{
 
 .store{
 	position: absolute;
-	top: 50px;
+	top: 80px;
 	height: 300px;
 	width: 900px;
 	background-image: url("../image/background/book.jpg");
