@@ -201,3 +201,35 @@ body{
 	text-align: center;
 	font-style: oblique;
 }
+
+.select{
+	width: 220px;
+	height: 200px;
+	background-color: red;
+	position: absolute;
+	top: 170px;
+	right: 20px;
+	opacity: 0.8;
+}
+
+.selectHead{
+	height: 40px;
+	background-color: #2E8B57;
+	color: #B0E0E6;
+	line-height: 40px;
+	font: bold;
+	font-style: oblique;
+	text-align: center;
+	font-size: 16px	;
+}
+
+.subSelect{
+	height: 66px;
+	background-color: #FFE4B5;
+	border: solid #87CEEB;
+	line-height: 66px;
+	font: bold;
+	font-style: oblique;
+	text-align: center;
+	font-size: 16px	;
+}
