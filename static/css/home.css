@@ -1,0 +1,43 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+.main{
+    position: fixed;
+	height: 100%;
+	width: 100%;
+	background-image: url("../image/background/CC.png");
+	background-size: 1400px;
+}
+
+.formPosition{
+	width: 800px;
+	height: 400px;
+	margin-left: 200px;
+	position: absolute;
+
+	padding-top:50px;
+	color: black;
+	opacity: 0.6;
+	background-color: black;;
+}
+
+.gradient-text {
+    background-image: linear-gradient(45deg, #f3ec78, #af4261);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h1{
+  font-size: 700%;
+  text-align: center;
+  font-weight: bold;
+}
+
+p{
+  color: white;
+  font-size: 150%;
+  text-align: center;
+}

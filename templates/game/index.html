@@ -1,24 +1,21 @@
 {% extends 'game/base.html' %}
-{% load staticfiles %}
 
 {% block title_block %}
-	Homepage
+    Login
+<link rel="stylesheet" href="../../static/css/home.css">
 {% endblock %}
 
 {% block body_block %}
-<h1>Welcome to SecondLife</h1>
-<div>
-    {% if user.is_authenticated %}
-        Hello {{ user.username }}.
-    {% else %}
-        Hello.
-    {% endif %}
-    <br />
-    <strong>{{ boldmessage }}</strong><br />
+
+<link rel="stylesheet" href="../../static/css/home.css">
+<div class="main">
+<div class="formPosition">
+    
+      <h1 class="gradient-text">Second Life</h1>
+<p>
+    Welcome to your new life
+</p>
+    </div>
 </div>
-<h3>
-    {% if user.is_authenticated %}
-    <a href="{% url 'second_life:initial' %}">Initialize your life here.</a>
-    {% endif %}
-</h3>
+
 {% endblock %}
