@@ -38,8 +38,21 @@ h1{
 }
 
 p{
-  font-family: "Papyrus";
+  font-family: "papyrus";
   color: white;
   font-size: 150%;
   text-align: center;
+  font-weight: bold;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 88%;
+  animation: animate 6s linear;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
 }
