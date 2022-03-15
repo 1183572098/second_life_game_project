@@ -112,8 +112,8 @@ $('#next').click(function(){
                 alert("game over.")
             }
             else{
+                age = data.age;
                 if(parseInt((data.event_id%10000) / 1000) === 3){
-                    age = data.age;
                     eventId = data.event_id;
                     attribute = data.attribute;
                     attributeValueMap = new Map(Object.entries(attribute));
