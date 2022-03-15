@@ -17,4 +17,5 @@ urlpatterns = [
     path('option/', views.choose_option, name='choose_option'),
     path('post/', views.add_announcement, name='add_announcement'),
     path('announcements/', views.show_announcement, name='show_announcement'),
+    path('next/', views.next_year, name='next_year'),
 ]
