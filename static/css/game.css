@@ -39,48 +39,44 @@ body{
 	width: 900px;
 	/*background-color: #FAEBD7;*/
 	/*background-image: url("../image/image/background/E.png");*/
-	background-color:#6A5ACD;
-
-}
-
-.top span{
-	padding-left: 50px;
-	height: 100px;
+	/*background-color:#6A5ACD;*/
+	padding-right: 50px;
+	/*height: 100px;*/
 	text-align: center;
 	line-height: 50px;
 	font-size: 20px;
+	opacity: 1;
 }
 
-.top2{
-	position: relative;
+.top td{
+	padding-left: 80px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 20px;
+	background-color: #FAEBD7;
+	/*background-color: red;*/
+}
+
+/*.top2{
+	position: absolute;
+	top: 60px;
+	left: 0;
 	height: 50px;
 	width: 900px;
-	/*background-image: url("../image/image/background/E.png");*/
 	background-color: #B0E0E6;
-}
-.top2 span{
+	text-align: center;
+	line-height: 50px;
+	font-size: 20px;
+}*/
+/*.top2 span{
 	padding-left: 70px;
 	height: 100px;
 	text-align: center;
 	line-height: 50px;
 	font-size: 20px;
-}
+}*/
 
-.top2 .strength{
-	padding-left: 100px;
-}
-
-.top2 .art{
-	padding-left: 110px;
-}
-
-.top2 .intelligence{
-	padding-left: 95px;
-}
-
-.top2 .lucky{
-	padding-left: 130px;
-}
 
 .top2 .point{
 	position: absolute;
@@ -119,40 +115,49 @@ body{
 
 /*enent*/
 .subMiddle{
+	position: relative;
 	height: 50px;
 	width: auto;
 	background-image: url("../image/background/E.png");
 	border: solid;
-	margin-top: 10px;
+	margin-top: 70px;
 	z-index: 1;
 
 }
 
-.subMiddle .left{
-	width: 200px;
+.subMiddle td{
+	width: 500px;
+	background-color: red;
+	color: yellow;
+	background-image: url("../image/background/AA.png");	
+
+}
+
+.subMiddle .body{
+	height: 45px;
+
+}
+
+.subMiddle2{
+	position: relative;
 	height: 50px;
+	width: auto;
+	background-image: url("../image/background/E.png");
 	border: solid;
-	background-image: url("../image/background/B.png");
-	color: white;
-	font-color:red;
-	font-size: 20px;
+	margin-top: 198px;
+	z-index: 1;
+
 }
 
-.subMiddle .right{
-	width: 690px;
-	height: 46px;
-	margin-top: -50px;
-	border: solid;
-	border-color: #F0E68C;	
-	float: right;
-}
-
-.subMiddle .downRight{
-	height: 100px;
-	text-indent: 800px;
+.subMiddle2 .downRight{
+	height: 48px;
+	width: 80px;
 	text-align: center;
 	line-height: 50px;
 	font-size: 30px;
+	margin-left: 810px;
+	background-color: #6A5ACD;
+	opacity: 0.8;
 }
 
 
