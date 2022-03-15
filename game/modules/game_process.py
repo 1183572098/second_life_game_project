@@ -17,7 +17,6 @@ class Process:
 
     def __init__(self):
         self.role = Role()
-        self.initial_attribute = self.role.attribute
 
     def random_attribute(self):
         random_numbers = [random.random() for _ in range(len(self.role.attribute))]
@@ -31,9 +30,10 @@ class Process:
             index += 1
 
     def next_year(self):
+        print(self.role.attribute)
         is_end = self.end
         result = {}
-        if is_end > 0:
+        if is_end < 0:
             self.role.age += 1
             self.mechanism_process()
             event_id = self._get_event()
@@ -86,7 +86,7 @@ class Process:
         sum_weights = sum(obj_dict.values())
         random_num = random.random()
         weight = 0
-        for k, v in obj_dict:
+        for k, v in obj_dict.items():
             weight += v
             if weight / sum_weights * 1.0 >= random_num:
                 return k
@@ -98,8 +98,9 @@ class Process:
 
         self.event_history.append(event_id)
         effect_dict = event.get_effect(event_id)
-        for k, v in effect_dict:
-            self.role.set_attribute(k, self.role.get_attribute(k) + v)
+        if effect_dict is not None:
+            for k, v in effect_dict.items():
+                self.role.set_attribute(k, self.role.get_attribute(k) + v)
 
     def rebirth(self):
         self.role.age = 0

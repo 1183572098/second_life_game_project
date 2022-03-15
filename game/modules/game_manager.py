@@ -51,7 +51,6 @@ class Manager:
         game.role.last_name = request_data.POST.get("last_name")
         game.role.head_portrait = request_data.POST.get("head_portrait")
         attributes = json.loads(request_data.POST.get("attribute"))
-        print(attributes)
         result = {}
         for v in attributes.values():
             if v < parameter.value(2002) or v > parameter.value(2003):
@@ -61,6 +60,9 @@ class Manager:
 
         for k, v in attributes.items():
             game.role.set_attribute(k, v)
+            
+        # record for rebirth
+        game.initial_attribute = game.role.attribute
 
         result.update(game.next_year())
         result.update({"success": True})

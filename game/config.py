@@ -81,9 +81,13 @@ class Event(Config):
         for para in self.config:
             age_group = para["age group"]
             age_min, age_max = age_group.split(",")
-            if (int(age_min) == -1 or age > int(age_min)) and (int(age_max) == -1 or age < int(age_max)):
+            if (int(age_min) == -1 or age >= int(age_min)) and (int(age_max) == -1 or age <= int(age_max)):
                 if int(para["EventType"]) == 0 and (para["pre_event"] == "" or int(para["pre_event"]) in event_history):
-                    event_list.update({int(para["event ID"]): eval(modify_ternary_expression(para["probability"]))})
+                    try:
+                        weight = int(para["probability"])
+                    except Exception as e:
+                        weight = eval(modify_ternary_expression(para["probability"]))
+                    event_list.update({int(para["event ID"]): weight})
 
         return event_list
 
