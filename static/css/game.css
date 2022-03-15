@@ -165,6 +165,7 @@ body{
 
 .store{
 	position: absolute;
+	top: 50px;
 	height: 300px;
 	width: 900px;
 	background-image: url("../image/background/book.jpg");

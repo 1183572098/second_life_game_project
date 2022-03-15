@@ -1,6 +1,7 @@
 var store = byId("store"),
-	process = document.getElementsByClassName("subMiddle"),
-	flag;
+	subMiddle = byId("subMiddle"),
+	subMiddle2 = byId('subMiddle2'),
+	flag=false;
 
 
 function byId(id){
@@ -10,11 +11,13 @@ function byId(id){
 function openBag(){
 	if(flag){
 		store.className="store hide";
-		process.className="subMiddle active";
+		subMiddle.className="subMiddle active";
+		subMiddle2.className="subMiddle2 active"
 		flag=false;
 	}else{
 		store.className="store active";
-		process.className="subMiddle hide";
+		subMiddle.className="subMiddle hide";
+		subMiddle2.className="subMiddle2 hide";
 		flag=true;
 	}
 }
