@@ -112,9 +112,16 @@ body{
 
 }
 
-.subMiddle .body{
-	height: 45px;
+.subMiddle thead{
+	position: fixed;
+	width: 880px;
+}
 
+.subMiddle .body{
+	padding-top: 60px;
+	display: block;
+	height: 250px;
+	overflow: auto;
 }
 
 .subMiddle2{
@@ -166,13 +173,18 @@ body{
 	float: left;
 	width: 430px;
 	background-color: #B0E0E6;
-
+	height: 300px;
+	display: block;
+	overflow: auto;
 }
 
 .store .right{
 	float: right;
 	width: 416px;
 	background-color:#6A5ACD;
+	height: 300px;
+	display: block;
+	overflow: auto;
 }
 
 .store tr{
