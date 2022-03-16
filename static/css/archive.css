@@ -3,6 +3,11 @@
 	padding: 0;
 }
 
+a:hover{
+  color: yellow;
+  text-decoration: none;
+}
+
 .formPosition{
 	width: 800px;
 	height: 460px;
@@ -67,11 +72,80 @@ p{
 }
 
 .one{
-  height: 80px;
-  width: 200px;
+  height: 200px;
+  width: 150px;
   position: absolute;
-  top: 30px;
-  left: 50px;
+  top: 10px;
+  left: 0px;
   background-color: red;
   position: !important;
+}
+
+.two{
+  height: 200px;
+  width: 150px;
+  position: absolute;
+  top: 10px;
+  left: 160px;
+  position: !important;
+}
+
+.three{
+  height: 200px;
+  width: 150px;
+  position: absolute;
+  top: 10px;
+  left: 320px;
+  position: !important;
+}
+
+.archive{
+  height: 30px;
+  background-color: black;
+  color: blueviolet;
+}
+
+.rowHead{
+  text-align: center;
+  font-size: 20px;
+  color: black;
+  background-color: #228B22;
+}
+
+.row{
+  height: 43px;
+  width: 150px;
+  margin-left: 0px;
+  border-color: black;
+  background-color: #6495ED;
+  font-size: 16px;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.saveFile{
+  height: 43px;
+  width: 100px;
+   font-size: 16px;
+  line-height: 43px;
+  text-align: center;
+  text-decoration: none;
+  position: absolute;
+  top: 280px;
+  right: 20px;
+  background-color: #6495ED;
+}
+
+.readFile{
+  height: 43px;
+  width: 100px;
+   font-size: 16px;
+  line-height: 43px;
+  text-align: center;
+  text-decoration: none;
+  position: absolute;
+  top: 340px;
+  right: 20px;
+  background-color: #6495ED;
 }
