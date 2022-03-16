@@ -13,6 +13,12 @@
     <div class="formPosition">
 
 <h1>Register</h1>
+{%if registered %}
+<p class="test">Thank you for registering.</p>
+
+   <a href="{% url 'auth_login' %}"><input type="button" class="gradient-button gradient-button-1" value="Log in" /></a>
+
+{% else %}
 
 <form id="user_form" method="post" action="{% url 'second_life:register' %}" enctype="multipart/form-data">
 
@@ -21,8 +27,10 @@
 	{{ user_form.as_p }}
 	{{ profile_form.as_p}}
 
-	<input type="submit" class="gradient-button gradient-button-1" value="Register" />
+    <button name="player" type="submit" class="gradient-button gradient-button-1" value="player">player</button>
+    <button name="administrator" type="submit" class="gradient-button gradient-button-1" value="player">administrator</button>
 </form>
+{% endif %}
     </div>
 </div>
 {% endblock %}

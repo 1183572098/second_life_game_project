@@ -21,7 +21,7 @@ h1{
   text-align: center;
 }
 
-p{
+p.test{
   color: white;
   font-size: 120%;
 }
