@@ -2,7 +2,7 @@ import json
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
-from game.modules import game_manager, game_process
+from game.modules import game_manager, game_process, archive_module
 from django.shortcuts import render, redirect
 from game.forms import UserForm, UserProfileForm, AnnouncementForm
 from django.urls import reverse
@@ -70,14 +70,15 @@ def start_game(request):
 
 
 def archive(request):
-    user_id = request.user.id
-    context_dict = {'testing': 'This is a test since no announcements currently exist.'}
-    try:
-        archives = Record.objects.get(user_id=user_id)
-        context_dict['archives'] = archives
-    except Record.DoesNotExist:
-        context_dict['archives'] = None
-    return render(request, 'game/saveArchive.html', context=context_dict)
+    # user_id = request.user.id
+    # context_dict = {'testing': 'This is a test since no announcements currently exist.'}
+    # try:
+    #     archives = Record.objects.get(user_id=user_id)
+    #     context_dict['archives'] = archives
+    # except Record.DoesNotExist:
+    #     context_dict['archives'] = None
+    result = archive_module.enter_archive(request)
+    return render(request, 'game/readArchive.html', context=result)
     # return render(request, 'game/saveArchive.html')
 
 
@@ -100,7 +101,7 @@ def load_game(request):
         return render(request, 'game/game.html')
     else:
         return render(request, 'game/index.html')
-    return render(request, 'game/saveArchive.html')
+
 
 @csrf_exempt
 def click_shop(request):

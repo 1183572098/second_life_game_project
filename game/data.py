@@ -128,13 +128,14 @@ class DataProcess(object):
             return result_data
 
     def __transform_to_cache_key(self, tables, *args, **kwargs):
-        cache_key = None
+        cache_key = ""
+        if type(tables) != list:
+            tables = [tables]
+
         for table in tables:
             for obj, n, v in self.classes:
                 if table == obj or table == n:
-                    cache_key += str(table)
-                else:
-                    raise Exception(table + " not exists in models.")
+                    cache_key += n
 
         for arg in args:
             cache_key += str(arg)

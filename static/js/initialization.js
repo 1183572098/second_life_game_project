@@ -18,7 +18,7 @@ $(document).ready(function(){
 	$.ajax({
 		url: "../../static/config/attribute.csv",
 		dataType: "text",
-	}).done(readSuccess);
+	}).done(readAttributeSuccess);
 
 	$.ajax({
 		url: "../../static/config/parameter.csv",
@@ -26,7 +26,7 @@ $(document).ready(function(){
 	}).done(readParaSuccess);
 });
 
-function readSuccess(data){
+function readAttributeSuccess(data){
 	let newData = data.split(/\r?\n|\r/)
 	for(let i=1;i<newData.length;i++){
 		let dataCell = newData[i].split(",");

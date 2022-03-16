@@ -9,7 +9,7 @@ $(document).ready(function(){
     $.ajax({
         url: "../../static/config/attribute.csv",
         dataType: "text",
-    }).done(readSuccess);
+    }).done(readAttributeSuccess);
 
     $.ajax({
         url: "../../static/config/event.csv",
@@ -20,9 +20,10 @@ $(document).ready(function(){
         url: "../../static/config/OptionTable.csv",
         dataType: "text",
     }).done(readOptionSuccess);
+
 });
 
-function readSuccess(data){
+function readAttributeSuccess(data){
     let newData = data.split(/\r?\n|\r/)
     for(let i=1;i<newData.length;i++){
         let dataCell = newData[i].split(",");

@@ -10,7 +10,12 @@
 
 <link rel="stylesheet" href="../../static/css/archive.css">
 <!--<link rel="stylesheet" href="../../static/css/base.css">-->
-
+    <script type="text/javascript">
+        var archive = [];
+        archive[0] = {{archive1}};
+        archive[1] = {{archive2}};
+        archive[2] = {{archive3}};
+    </script>
 <div class="main">
     <div class="formPosition">
         <h1 class="gradient-text">Read Archive</h1>
@@ -34,27 +39,27 @@
                 <td>Archive3<td>
             </tr>
             <tr>
-                <td>name</td>
-                <td>name</td>
-                <td>name</td>
+                <td id="name1"></td>
+                <td id="name2"></td>
+                <td id="name3"></td>
             </tr>
             <tr>
-                <td>profile</td>
-                <td>profile</td>
-                <td>profile</td>
+                <td id="portrait1"></td>
+                <td id="portrait2"></td>
+                <td id="portrait3"></td>
             </tr>
             <tr>
-                <td>Age:Last Event</td>
-                <td>Age:Last Event</td>
-                <td>Age:Last Event</td>
+                <td id="detail1"></td>
+                <td id="detail2"></td>
+                <td id="detail3"></td>
             </tr>
             <tr class="tail">
-                <td>save time</td>
-                <td>save time</td>
-                <td>save time</td>
+                <td id="time1"></td>
+                <td id="time2"></td>
+                <td id="time3"></td>
             </tr>
         </table>
     </div>
 </div>
-
+<script src="../../static/js/readArchive.js"></script>
 {% endblock %}
