@@ -44,15 +44,19 @@ def game_confirm(request):
 
 @login_required()
 def add_announcement(request):
-    announcement_form = AnnouncementForm()
-    if request.method == 'POST':
-        announcement_form = AnnouncementForm(request.POST)
-        if announcement_form.is_valid():
-            announcement_form.save(commit=True)
-            return redirect('second_life:index')
-        else:
-            print(announcement_form.errors)
-    return render(request, 'game/announcement.html', {'form': announcement_form})
+    user = request.user
+    if user.is_staff:
+        announcement_form = AnnouncementForm()
+        if request.method == 'POST':
+            announcement_form = AnnouncementForm(request.POST)
+            if announcement_form.is_valid():
+                announcement_form.save(commit=True)
+                return redirect('second_life:index')
+            else:
+                print(announcement_form.errors)
+        return render(request, 'game/announcement.html', {'form': announcement_form})
+    else:
+        return render(request, 'game/login.html')
 
 
 def show_announcement(request):
@@ -63,6 +67,25 @@ def show_announcement(request):
     except Announcement.DoesNotExist:
         context_dict['announcements'] = None
     return render(request, 'game/admin.html', context=context_dict)
+
+
+def user_login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(username=username, password=password)
+        if user:
+            if user.is_active:
+                login(request, user)
+                return redirect(reverse('second_life:index'))
+            else:
+                return HttpResponse("Your account is disabled.")
+        else:
+            print(f"Invalid login details: {username}, {password}")
+            return HttpResponse("Invalid login details supplied.")
+    else:
+        return render(request, 'game/login.html')
 
 
 @login_required
