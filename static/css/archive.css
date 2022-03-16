@@ -65,3 +65,13 @@ p{
     background-position: -500%;
   }
 }
+
+.one{
+  height: 80px;
+  width: 200px;
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  background-color: red;
+  position: !important;
+}

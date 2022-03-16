@@ -81,6 +81,11 @@ def archive(request):
     return render(request, 'game/readArchive.html', context=result)
     # return render(request, 'game/saveArchive.html')
 
+def readArchive(request):
+    return render(request, 'game/readArchive.html')
+
+def saveArchive(request):
+    return render(request, 'game/saveArchive.html')
 
 def save_game(request):
     if request.method == 'POST':

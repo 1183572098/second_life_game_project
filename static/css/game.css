@@ -147,6 +147,24 @@ body{
 }
 
 
+.save{
+	position: absolute;
+	top: px;
+	right: 100px;
+	width: 100px;
+	height: 100px;
+	font-style: oblique;
+	font-size: 20px;
+	line-height: 100px;
+	color: #B0E0E6 ;
+	border: 1px solid red;
+	border-radius: 50%;
+	text-align: center;
+	margin-top: -40px;
+	background-image: url("../image/background/A.png");
+
+	
+}
 /*bag and shop*/
 
 .store{
@@ -230,3 +248,4 @@ body{
 	text-align: center;
 	font-size: 16px	;
 }
+
