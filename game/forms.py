@@ -5,6 +5,7 @@ from game.models import UserProfile, Post, Announcement
 
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
+    email = forms.EmailField()
 
     class Meta:
         model = User
@@ -12,6 +13,8 @@ class UserForm(forms.ModelForm):
 
 
 class UserProfileForm(forms.ModelForm):
+    phone_no = forms.CharField(max_length=UserProfile.PHONE_NO_MAX_LENGTH)
+
     class Meta:
         model = UserProfile
         fields = ('phone_no',)
