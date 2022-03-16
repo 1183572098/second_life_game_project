@@ -70,22 +70,25 @@ def start_game(request):
 
 
 def archive(request):
-    # user_id = request.user.id
-    # context_dict = {'testing': 'This is a test since no announcements currently exist.'}
-    # try:
-    #     archives = Record.objects.get(user_id=user_id)
-    #     context_dict['archives'] = archives
-    # except Record.DoesNotExist:
-    #     context_dict['archives'] = None
+    user_id = request.user.id
+    context_dict = {'testing': 'This is a test since no announcements currently exist.'}
+    try:
+        archives = Record.objects.get(user_id=user_id)
+        context_dict['archives'] = archives
+    except Record.DoesNotExist:
+        context_dict['archives'] = None
     result = archive_module.enter_archive(request)
     return render(request, 'game/readArchive.html', context=result)
     # return render(request, 'game/saveArchive.html')
 
+
 def readArchive(request):
     return render(request, 'game/readArchive.html')
 
+
 def saveArchive(request):
     return render(request, 'game/saveArchive.html')
+
 
 def save_game(request):
     if request.method == 'POST':

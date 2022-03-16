@@ -150,18 +150,18 @@ body{
 .save{
 	position: absolute;
 	top: px;
-	right: 100px;
-	width: 100px;
-	height: 100px;
+	right: 150px;
+	width: 80px;
+	height: 80px;
 	font-style: oblique;
 	font-size: 20px;
-	line-height: 100px;
+	line-height: 80px;
 	color: #B0E0E6 ;
-	border: 1px solid red;
 	border-radius: 50%;
 	text-align: center;
 	margin-top: -40px;
-	background-image: url("../image/background/A.png");
+	background-image: url("../image/background/EE.png");
+	opacity: 0.6;
 
 	
 }
