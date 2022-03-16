@@ -19,6 +19,7 @@
     <p>
         {% if user.is_authenticated %}
             Welcome, {{ user.username }}.
+
         {% else %}
             Welcome to your new life
         {% endif %}
@@ -27,14 +28,13 @@
 </div>
 
 </div>
+</div>
 
-    <div class="one gradient-text">
+<div class="one gradient-text">
         <a href="{% url 'second_life:initial' %}">Start Game</a>
     </div>
     <div class="second gradient-text">
         <a href="{% url 'second_life:archive' %}">Read Archive</a>
     </div>
-</div>
-
 
 {% endblock %}

@@ -17,7 +17,7 @@ def index(request):
     context_dict = {'boldmessage': 'test'}
     return render(request, 'game/index.html', context=context_dict)
 
-
+@login_required
 @csrf_exempt
 def initial_game(request):
     manager = game_manager.Manager()
@@ -64,11 +64,7 @@ def show_announcement(request):
         context_dict['announcements'] = None
     return render(request, 'game/admin.html', context=context_dict)
 
-
-def start_game(request):
-    return render(request, 'game/start.html')
-
-
+@login_required
 def archive(request):
     user_id = request.user.id
     context_dict = {'testing': 'This is a test since no announcements currently exist.'}

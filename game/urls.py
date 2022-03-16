@@ -11,7 +11,6 @@ urlpatterns = [
     path('initial/', views.initial_game, name='initial'),
     path('initial/random/', views.random_attribute, name='random'),
     path('initial/confirm/', views.game_confirm, name='confirm'),
-    path('start/', views.start_game, name='start_game'),
     path('archive/', views.archive, name='archive'),
     path('readArchive/', views.readArchive, name='readArchive'),
     path('saveArchive/', views.saveArchive, name='saveArchive'),
