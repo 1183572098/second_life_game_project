@@ -23,12 +23,24 @@ h1{
 
 p{
   color: white;
-  font-size: 150%;
-  position: relative;
-  top: 6px;
+  font-size: 120%;
 }
 
 .button{
 	position:center;
 }
 
+table.test{
+  border-collapse: separate;
+  border-spacing: 20px;
+  text-align: left;
+  font-weight:bold;
+}
+
+.head {
+  font-family: "papyrus";
+  font-size: 220%;
+  background: -webkit-linear-gradient(#5887c4, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

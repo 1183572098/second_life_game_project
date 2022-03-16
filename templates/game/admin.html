@@ -11,11 +11,17 @@
 
 <div class="main">
 <div class="formPosition">
+
 <h1>Announcements</h1> <br /><br />
-{% if announcement %}
-	{% for announcement in announcement %}
-	{{ announcement.content }}
+
+{% if announcements %}
+{% for announcement in announcements %}
+<table class="test">
+	<td><div class="head">{{ announcement.title }}</div></td>
+        <td><p>{{ announcement.content }}</p></td>
+</table>
 {% endfor %}
+
 {% else %}
 <p>There are no announcements.</p>
 {% endif %}

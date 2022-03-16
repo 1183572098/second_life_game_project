@@ -35,14 +35,14 @@
         {% if user.is_authenticated %}
 		<a href="{% url 'auth_logout' %}?next={% url 'second_life:index' %}">Logout</a></li>
             {% if user.is_staff %}
-		    <a href="/second_life/post/">Post</a>
+		    <a href="{% url 'second_life:add_announcement' %}">Post</a>
             {% endif %}
         {% else %}
 		<a href="{% url 'registration_register' %}">Register</a>
 		<a href="{% url 'auth_login' %}">Login</a>
 		
         {% endif %}
-		<a href="/second_life/announcements/">Announcements</a>
+		<a href="{% url 'second_life:show_announcement' %}">Announcements</a>
 		<a href="{% url 'second_life:index' %}">Home</a>
 	</div>
 
