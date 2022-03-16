@@ -51,9 +51,15 @@ class Manager:
         game = self.player_games.get(request_data.user.id)
         game.role.first_name = request_data.POST.get("first_name")
         game.role.last_name = request_data.POST.get("last_name")
+        result = {}
+        if game.role.first_name is None or game.role.last_name is None:
+            result.update({"success": 0})
+            result.update({"reason": "Player's name should not be null"})
+            return result
+
         game.role.head_portrait = request_data.POST.get("head_portrait")
         attributes = json.loads(request_data.POST.get("attribute"))
-        result = {}
+
         for v in attributes.values():
             if v < parameter.value(2002) or v > parameter.value(2003):
                 result.update({"success": 0})
