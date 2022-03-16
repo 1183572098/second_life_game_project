@@ -42,17 +42,16 @@ def game_confirm(request):
     return HttpResponse(json.dumps(result), content_type='application/json')
 
 
-@staff_member_required()
 def add_announcement(request):
     announcement_form = AnnouncementForm()
     if request.method == 'POST':
         announcement_form = AnnouncementForm(request.POST)
         if announcement_form.is_valid():
-            announcement = announcement_form.save(commit=False)
+            announcement_form.save(commit=True)
             return redirect('second_life:index')
         else:
             print(announcement_form.errors)
-    return render(request, 'game/announcement.html', {'form':announcement_form})
+    return render(request, 'game/announcement.html', {'form': announcement_form})
 
 
 def show_announcement(request):
@@ -63,6 +62,7 @@ def show_announcement(request):
     except Announcement.DoesNotExist:
         context_dict['announcements'] = None
     return render(request, 'game/admin.html', context=context_dict)
+
 
 @login_required
 def archive(request):
