@@ -99,7 +99,7 @@ def load_game(request):
         return render(request, 'game/game.html')
     else:
         return render(request, 'game/index.html')
-
+    return render(request, 'game/archive.html')
 
 @csrf_exempt
 def click_shop(request):

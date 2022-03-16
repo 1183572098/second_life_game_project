@@ -36,6 +36,7 @@
 		<a href="{% url 'auth_logout' %}?next={% url 'second_life:index' %}">Logout</a></li>
 		<a href="{% url 'second_life:game' %}">Game</a>
 		<a href="/second_life/post/">Post</a>
+		<a href="/second_life/archive/">Archive</a>
         {% else %}
 		<a href="{% url 'registration_register' %}">Register</a>
 		<a href="{% url 'auth_login' %}">Login</a>

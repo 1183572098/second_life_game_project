@@ -1,0 +1,59 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.formPosition{
+	width: 800px;
+	height: 460px;
+	margin-left: 325px;
+	position: absolute;
+
+	padding-top:50px;
+	color: black;
+	opacity: 0.6;
+	background-color: black;;
+}
+
+.archive{
+  position: absolute;
+  top: 230px;
+  left: 200px;
+  height: 220px;
+  width: 400px;
+  background-color: black;
+  opacity: 0.8;
+}
+
+.gradient-text {
+    background-image: linear-gradient(45deg, #f3ec78, #af4261);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h1{
+  font-family: "Papyrus";
+  font-size: 700%;
+  text-align: center;
+  font-weight: bold;
+}
+
+p{
+  font-family: "papyrus";
+  color: white;
+  font-size: 150%;
+  text-align: center;
+  font-weight: bold;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 88%;
+  animation: animate 6s linear;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+}
