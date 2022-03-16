@@ -3,11 +3,13 @@
 	padding: 0;
 }
 
+.
+
 .formPosition{
 	width: 800px;
 	height: 400px;
 	margin-left: 325px;
-	position: absolute;
+	position: relative;
 
 	padding-top:50px;
 	color: black;
@@ -46,4 +48,14 @@ p{
   0% {
     background-position: -500%;
   }
+}
+
+.last{
+  position: absolute;
+  bottom: 200px;
+  left: 350px;
+  height: 200px;
+  width: 200px;
+  background-color: red;
+  color: red;
 }

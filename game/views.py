@@ -77,15 +77,15 @@ def archive(request):
         context_dict['archives'] = archives
     except Record.DoesNotExist:
         context_dict['archives'] = None
-    return render(request, 'game/archive.html', context=context_dict)
-    # return render(request, 'game/archive.html')
+    return render(request, 'game/saveArchive.html', context=context_dict)
+    # return render(request, 'game/saveArchive.html')
 
 
 def save_game(request):
     if request.method == 'POST':
         manage = game_manager.Manager()
         manage.serialize(request)
-        return render(request, 'game/archive.html')
+        return render(request, 'game/saveArchive.html')
     else:
         return render(request, 'game/index.html')
 
@@ -100,7 +100,7 @@ def load_game(request):
         return render(request, 'game/game.html')
     else:
         return render(request, 'game/index.html')
-    return render(request, 'game/archive.html')
+    return render(request, 'game/saveArchive.html')
 
 @csrf_exempt
 def click_shop(request):
