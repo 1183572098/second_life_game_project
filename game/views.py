@@ -17,6 +17,7 @@ def index(request):
     context_dict = {'boldmessage': 'test'}
     return render(request, 'game/index.html', context=context_dict)
 
+
 @login_required
 @csrf_exempt
 def initial_game(request):
@@ -40,6 +41,7 @@ def game_confirm(request):
     result = manager.start_game(request)
     print("result: " + str(result))
     return HttpResponse(json.dumps(result), content_type='application/json')
+
 
 @login_required
 def add_announcement(request):
@@ -66,6 +68,39 @@ def show_announcement(request):
     except Announcement.DoesNotExist:
         context_dict['announcements'] = None
     return render(request, 'game/admin.html', context=context_dict)
+
+
+def register(request):
+    registered = False
+    if request.method == 'POST':
+        user_form = UserForm(request.POST)
+        profile_form = UserProfileForm(request.POST)
+
+        if user_form.is_valid() and profile_form.is_valid():
+            user = user_form.save()
+            user.set_password(user.password)
+            if 'player' in request.POST:
+                user.is_staff = False
+            if 'administrator' in request.POST:
+                user.is_staff = True
+            user.save()
+
+            profile = profile_form.save(commit=False)
+            profile.user = user
+
+            if 'picture' in request.FILES:
+                profile.picture = request.FILES['picture']
+            profile.save()
+            registered = True
+        else:
+            print(user_form.errors, profile_form.errors)
+    else:
+        user_form = UserForm()
+        profile_form = UserProfileForm()
+    return render(request, 'game/register.html',
+                  context={'user_form': user_form,
+                           'profile_form': profile_form,
+                           'registered': registered})
 
 
 def user_login(request):
