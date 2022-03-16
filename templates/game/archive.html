@@ -6,10 +6,44 @@
 {% endblock %}
 
 {% block body_block %}
-<h1><strong>Archive</strong></h1>
+<!--<h1><strong>Archive</strong></h1>-->
 
-<div>
-    This is where the archive content will go once the view has been created.
+<!--<div>-->
+<!--    This is where the archive content will go once the view has been created.-->
+<!--</div>-->
+
+<link rel="stylesheet" href="../../static/css/archive.css">
+<!--<link rel="stylesheet" href="../../static/css/base.css">-->
+
+<div class="main">
+    <div class="formPosition">
+        <h1 class="gradient-text">Archive</h1>
+        <div>
+            <p>
+            {% if user.is_authenticated %}
+                Choose an Archive
+            {% else %}
+                Welcome to your new life
+            {% endif %}
+            </p>
+            <br />
+
+
+        </div>
+        <table class="archive table-bordered">
+<!--            <thead>archive1</thead>-->
+            <tr>
+                <td>archive1</td>
+                <td>archive2</td>
+                <td>archive3<td>
+            </tr>
+            <tr>
+                <td>content</td>
+                <td>content</td>
+                <td>content</td>
+            </tr>
+        </table>
+    </div>
 </div>
 
 {% endblock %}
