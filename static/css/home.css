@@ -3,7 +3,9 @@
 	padding: 0;
 }
 
-.
+.main{
+  position: relative;
+}
 
 .formPosition{
 	width: 800px;
@@ -52,7 +54,7 @@ p{
 
 .last{
   position: absolute;
-  bottom: 200px;
+  bottom: 0px;
   left: 350px;
   height: 200px;
   width: 200px;
