@@ -17,7 +17,50 @@ def index(request):
     context_dict = {'boldmessage': 'test'}
     return render(request, 'game/index.html', context=context_dict)
 
+def register(request):
+    registered = False
 
+    if request.method == 'POST':
+        user_form = UserForm(request.POST)
+        profile_form = UserProfileForm(request.POST)
+
+        if user_form.is_valid() and profile_form.is_valid():
+            user = user_form.save()
+            user.set_password(user.password)
+            user.save()
+
+            profile = profile_form.save(commit=False)
+            profile.user = user
+            
+            profile.save()
+            registered = True
+
+            return redirect(reverse('second_life:login'))
+        else:
+            print(user_form.errors, profile_form.errors)
+    else:
+        user_form = UserForm()
+        profile_form = UserProfileForm()
+    
+    return render(request, 'game/register.html', context={'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
+
+def user_login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username=username, password=password)
+        if user:
+            if user.is_active:
+                login(request, user)
+                return redirect(reverse('second_life:index'))
+            else:
+                return HttpResponse("Your account is disabled.")
+        else:
+            print(f"Invalid login details: {username}, {password}")
+            return HttpResponse("Invalid login details supplied.")
+    else:
+        return render(request, 'game/login.html')
+        
 @csrf_exempt
 def initial_game(request):
     manager = game_manager.Manager()
@@ -56,7 +99,7 @@ def add_announcement(request):
 
 
 def show_announcement(request):
-    context_dict = {'testing': 'This is a test since no announcements currently exist.'}
+    context_dict = {}
     try:
         announcements = Announcement.objects.all()
         context_dict['announcements'] = announcements

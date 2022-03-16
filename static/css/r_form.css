@@ -7,6 +7,7 @@
 	width: 800px;
 	height: 500px;
 	margin-left: 325px;
+	text-align: justify;
 	position: absolute;
 	padding-top:50px;
 	color: black;
@@ -33,7 +34,7 @@
     margin: 8px 10px 12px;
 }
 
-.gradient-button-1 {background-image: linear-gradient(to right, #DD5E89 0%, #F7BB97 51%, #DD5E89 100%);
+.gradient-button-1 {opacity: 1; background-image: linear-gradient(to right, #DD5E89 0%, #F7BB97 51%, #DD5E89 100%);
 }
 
 .gradient-button-1:hover { background-position: right center; 

@@ -1,0 +1,29 @@
+{% extends 'game/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+	Login
+{% endblock %}
+
+{% block body_block %}
+<link rel="stylesheet" href="../../static/css/form.css">
+
+
+<div class="main">
+    <div class="formPosition">
+
+	{% if registered %}
+        <h1>{{ user.username }} welcome!</h1>
+    
+  	  {% endif %}
+	<h1>Log In</h1> <br />
+	<form id="login_form" method="post" action="/second_life/login/">
+		{% csrf_token %}
+		Username: <input type="text" name="username" value="" size="50" />
+		<br />
+		Password: <input type="password" name="password" value="" size="50" />
+		<br />
+		<input type="submit" class="gradient-button gradient-button-1" value="Begin!" /> 
+  		<a href="{% url 'second_life:index' %}"><input type="button" class="gradient-button gradient-button-1" value="Back" /></a>
+	</form>
+{% endblock %}

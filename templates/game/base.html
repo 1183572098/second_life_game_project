@@ -34,11 +34,11 @@
 	<div class="baseFoot">
         {% if user.is_authenticated %}
 		<a href="{% url 'auth_logout' %}?next={% url 'second_life:index' %}">Logout</a></li>
-		<a href="{% url 'second_life:game' %}">Game</a>
+		<a href="{% url 'second_life:initial' %}">Game</a>
 		<a href="/second_life/post/">Post</a>
         {% else %}
-		<a href="{% url 'registration_register' %}">Register</a>
-		<a href="{% url 'auth_login' %}">Login</a>
+		<a href="{% url 'second_life:register' %}">Register</a>
+		<a href="{% url 'second_life:login' %}">Login</a>
 		
         {% endif %}
 		<a href="/second_life/announcements">Announcements</a>
