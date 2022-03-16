@@ -8,6 +8,7 @@ a:hover{
   text-decoration: none;
 }
 
+
 .formPosition{
 	width: 800px;
 	height: 460px;
@@ -31,6 +32,7 @@ a:hover{
   background-color: black;
   opacity: 0.8;
 }
+
 
 .gradient-text {
     background-image: linear-gradient(45deg, #f3ec78, #af4261);
@@ -141,5 +143,31 @@ p{
   position: absolute;
   top: 340px;
   right: 20px;
+  background-color: #6495ED;
+}
+
+.game{
+  height: 43px;
+  width: 100px;
+   font-size: 16px;
+  line-height: 43px;
+  text-align: center;
+  text-decoration: none;
+  position: absolute;
+  top: 480px;
+  left: 580px;
+  background-color: #6495ED;
+}
+
+.index{
+  height: 43px;
+  width: 100px;
+  font-size: 16px;
+  line-height: 43px;
+  text-align: center;
+  text-decoration: none;
+  position: absolute;
+  top: 480px;
+  left: 780px;
   background-color: #6495ED;
 }
