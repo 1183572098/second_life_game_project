@@ -82,9 +82,8 @@ def archive(request):
 
 def save_game(request):
     if request.method == 'POST':
-        loc = request.POST.get('location')
         manage = game_manager.Manager()
-        manage.serialize(request, loc)
+        manage.serialize(request)
         return render(request, 'game/archive.html')
     else:
         return render(request, 'game/index.html')
