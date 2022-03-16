@@ -8,8 +8,9 @@ from game.forms import UserForm, UserProfileForm, AnnouncementForm
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from game.models import Announcement
+from game.models import Announcement, Record
 from django.contrib.admin.views.decorators import staff_member_required
+import pickle
 
 
 def index(request):
@@ -69,8 +70,36 @@ def start_game(request):
 
 
 def archive(request):
-    manage = game_manager.Manager()
-    manage.serialize(request)
+    user_id = request.user.id
+    context_dict = {'testing': 'This is a test since no announcements currently exist.'}
+    try:
+        archives = Record.objects.get(user_id=user_id)
+        context_dict['archives'] = archives
+    except Record.DoesNotExist:
+        context_dict['archives'] = None
+    return render(request, 'game/archive.html', context=context_dict)
+
+
+def save_game(request):
+    if request.method == 'POST':
+        loc = request.POST.get('location')
+        manage = game_manager.Manager()
+        manage.serialize(request, loc)
+        return render(request, 'game/archive.html')
+    else:
+        return render(request, 'game/index.html')
+
+
+def load_game(request):
+    context_dict = {'testing': 'This is a test since no announcements currently exist.'}
+    if request.method == 'GET':
+        user_id = request.user.id
+        loc = request.GET.get('location')
+        archive = Record.objects.get(user_id=user_id, location=loc)
+        archive_data = pickle.load(archive['data'])
+        return render(request, 'game/game.html')
+    else:
+        return render(request, 'game/index.html')
 
 
 @csrf_exempt
