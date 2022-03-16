@@ -42,6 +42,7 @@ def game_confirm(request):
     return HttpResponse(json.dumps(result), content_type='application/json')
 
 
+@login_required()
 def add_announcement(request):
     announcement_form = AnnouncementForm()
     if request.method == 'POST':

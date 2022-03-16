@@ -26,7 +26,7 @@ class Announcement(models.Model):
     TITLE_MAX_LENGTH = 100
     title = models.CharField(max_length=TITLE_MAX_LENGTH, blank=False)
     CONTENT_MAX_LENGTH = 500
-    content = models.CharField(max_length=CONTENT_MAX_LENGTH, blank=False)
+    content = models.TextField(max_length=CONTENT_MAX_LENGTH, blank=False)
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
