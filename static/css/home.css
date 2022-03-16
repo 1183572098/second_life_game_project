@@ -3,7 +3,9 @@
 	padding: 0;
 }
 
-.
+.main{
+  position: relative;
+}
 
 .formPosition{
 	width: 800px;
@@ -50,12 +52,29 @@ p{
   }
 }
 
-.last{
+.one{
   position: absolute;
-  bottom: 200px;
-  left: 350px;
-  height: 200px;
-  width: 200px;
+  bottom: 60px;
+  left: 540px;
+  height: 50px;
+  width: 300px;
   background-color: red;
-  color: red;
+  color: white;
+  /*position: !important;*/
+  line-height: 50px;
+  text-align: center;
+}
+
+
+.second{
+  position: absolute;
+  bottom: 60px;
+  left: 660px;
+  height: 50px;
+  width: 300px;
+  background-color: red;
+  color: white;
+  /*position: !important;*/
+  line-height: 50px;
+  text-align: center;
 }
