@@ -11,10 +11,12 @@
 
 <div class="main">
 <div class="formPosition">
-<h1>Announcements</h1> <br />
-
-	<li><p>{{ announcements }}</p></li></div>
-
-
-
+<h1>Announcements</h1> <br /><br />
+{% if announcement %}
+	{% for announcement in announcement %}
+	<p>{{ announcements.content }}</p></div>
+{% endfor %}
+{% else %}
+<p>There are no announcements.</p>
+{% endif %}
 {% endblock %}

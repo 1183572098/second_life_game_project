@@ -41,7 +41,7 @@ def game_confirm(request):
     print("result: " + str(result))
     return HttpResponse(json.dumps(result), content_type='application/json')
 
-
+@staff_member_required
 def add_announcement(request):
     announcement_form = AnnouncementForm()
     if request.method == 'POST':
@@ -55,7 +55,7 @@ def add_announcement(request):
 
 
 def show_announcement(request):
-    context_dict = {'testing': 'This is a test since no announcements currently exist.'}
+    context_dict = {}
     try:
         announcements = Announcement.objects.all()
         context_dict['announcements'] = announcements

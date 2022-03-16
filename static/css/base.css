@@ -52,7 +52,7 @@ a:visited { text-decoration: none;color: black;}
 }
 
 .baseFoot{
-	width: 1450px;
+	width: 1550px;
 	height: 30px;
 	background-image: url("../image/background/E.png");
 	position: absolute;
@@ -60,7 +60,7 @@ a:visited { text-decoration: none;color: black;}
 	color: black;
 	margin: 0 auto;
 	bottom: 20px;	
-	text-align: left;
+	text-align: center;
 	opacity: 0.7;
 }
 
