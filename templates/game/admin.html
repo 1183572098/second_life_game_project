@@ -14,7 +14,7 @@
 <h1>Announcements</h1> <br /><br />
 {% if announcement %}
 	{% for announcement in announcement %}
-	<p>{{ announcements.content }}</p></div>
+	{{ announcement.content }}
 {% endfor %}
 {% else %}
 <p>There are no announcements.</p>
