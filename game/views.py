@@ -121,13 +121,13 @@ def archive(request):
     except Record.DoesNotExist:
         context_dict['archives'] = None
     return render(request, 'game/archive.html', context=context_dict)
+    # return render(request, 'game/archive.html')
 
 
 def save_game(request):
     if request.method == 'POST':
-        loc = request.POST.get('location')
         manage = game_manager.Manager()
-        manage.serialize(request, loc)
+        manage.serialize(request)
         return render(request, 'game/archive.html')
     else:
         return render(request, 'game/index.html')
@@ -143,7 +143,7 @@ def load_game(request):
         return render(request, 'game/game.html')
     else:
         return render(request, 'game/index.html')
-
+    return render(request, 'game/archive.html')
 
 @csrf_exempt
 def click_shop(request):
@@ -181,6 +181,8 @@ def game(request):
     manager = game_manager.Manager()
     result = manager.enter_game(request)
     print("result: " + str(result))
+    if request is None:
+        return redirect('second_life:index')
     result["user_id"] = request.user.id
     return render(request, 'game/game.html', context=result)
 

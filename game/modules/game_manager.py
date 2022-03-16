@@ -51,9 +51,15 @@ class Manager:
         game = self.player_games.get(request_data.user.id)
         game.role.first_name = request_data.POST.get("first_name")
         game.role.last_name = request_data.POST.get("last_name")
+        result = {}
+        if game.role.first_name is None or game.role.last_name is None:
+            result.update({"success": 0})
+            result.update({"reason": "Player's name should not be null"})
+            return result
+
         game.role.head_portrait = request_data.POST.get("head_portrait")
         attributes = json.loads(request_data.POST.get("attribute"))
-        result = {}
+
         for v in attributes.values():
             if v < parameter.value(2002) or v > parameter.value(2003):
                 result.update({"success": 0})
@@ -133,7 +139,33 @@ class Manager:
         option_id = request_data.POST.get("option")[6:]
         return game.choose_option(option_id)
 
-    def serialize(self, request_data, loc):
+    def serialize(self, request_data):
+        print("info: serialize")
         p_stream = pickle.dumps(self.player_games.get(request_data.user.id))
-        return self.data.create(Record, user_id=request_data.user.id, data=p_stream, location=loc)
+        loc = request_data.POST.get('location')
+        record = self.data.select(Record.objects.get, Record, location=loc)
+        if record is None:
+            return self.data.create(Record, user_id=request_data.user.id, data=p_stream, location=loc)
+        else:
+            return self.data.update(record, data=p_stream)
 
+    def deserialize(self, request_data):
+        print("info: deserialize")
+        loc = request_data.POST.get('location')
+        record = self.data.select(Record.objects.get, Record, location=loc)
+        result = {}
+        if record is None:
+            print("record is none")
+            result.update({"success": 0})
+            result.update({"reason": "Archive is lost"})
+            return result
+
+        else:
+            game = pickle.load(record['data'])
+            self.player_games.update({request_data.user.id: game})
+            result.update({"success": 1})
+            result.update({"is_end": game.end})
+            result.update({"age": game.role.age})
+            result.update({"event_id": game.event_history})
+            result.update({"attribute": game.role.attribute})
+            return result

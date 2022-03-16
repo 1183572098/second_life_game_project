@@ -12,6 +12,7 @@ urlpatterns = [
     path('initial/random/', views.random_attribute, name='random'),
     path('initial/confirm/', views.game_confirm, name='confirm'),
     path('start/', views.start_game, name='start_game'),
+    path('archive/', views.archive, name='archive'),
     path('shop/', views.click_shop, name='shop'),
     path('purchase/', views.purchase_good, name='purchase'),
     path('use/', views.use_good, name='use'),
