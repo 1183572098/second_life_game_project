@@ -138,7 +138,7 @@ def game(request):
     manager = game_manager.Manager()
     result = manager.enter_game(request)
     print("result: " + str(result))
-    if request is None:
+    if result is None:
         return redirect('second_life:index')
     result["user_id"] = request.user.id
     return render(request, 'game/game.html', context=result)
