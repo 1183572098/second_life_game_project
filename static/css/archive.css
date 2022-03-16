@@ -15,12 +15,20 @@
 	background-color: black;;
 }
 
+
+.archive .head{
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
 .archive{
   position: absolute;
   top: 230px;
   left: 200px;
   height: 220px;
   width: 400px;
+  color: white;
   background-color: black;
   opacity: 0.8;
 }

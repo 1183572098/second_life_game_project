@@ -78,6 +78,7 @@ def archive(request):
     except Record.DoesNotExist:
         context_dict['archives'] = None
     return render(request, 'game/archive.html', context=context_dict)
+    # return render(request, 'game/archive.html')
 
 
 def save_game(request):
