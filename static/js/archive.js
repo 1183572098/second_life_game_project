@@ -26,6 +26,7 @@ function showArchive(){
     if(state === 1){
         document.getElementById("saveBtn").disabled = false;
         document.getElementById("saveBtn").hidden = false;
+        document.getElementById("gamePage").style.display = "block";
     }
     for(let i=0;i<archive.length;i++){
         if(archive[i] !== null){

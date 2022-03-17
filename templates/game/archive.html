@@ -87,7 +87,7 @@
         <button onclick="read()"><div class="readFile">Read Archive</div></button>
 
     </div>
-<a href="{% url 'second_life:game' %}"><div class="game">Game Page</div></a>
+<a id="gamePage" href="{% url 'second_life:game' %}" style="display: none"><div class="game">Game Page</div></a>
         <a href="{% url 'second_life:index' %}"><div class="index">Main Page</div></a>
 </div>
 <script src="../../static/js/archive.js"></script>
