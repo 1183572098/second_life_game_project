@@ -15,7 +15,7 @@
         archive[0] = {{archive1}};
         archive[1] = {{archive2}};
         archive[2] = {{archive3}};
-        var state = {{ state }}
+        var state = {{ state }};
     </script>
 <div class="main">
     <div class="formPosition">
@@ -83,8 +83,8 @@
 
         </div>
 
-        <button onclick="save()" disabled hidden><div class="saveFile">Save Archive</div></button>
-        <button onclick="read()"><div class="readFile">Read Archive</div></button>
+        <button id="saveBtn" onclick="save()" disabled hidden><div class="saveFile">Save Archive</div></button>
+        <button id="readBtn" onclick="read()"><div class="readFile">Read Archive</div></button>
 
     </div>
 <a id="gamePage" href="{% url 'second_life:game' %}" style="display: none"><div class="game">Game Page</div></a>

@@ -123,8 +123,15 @@ class DataProcess(object):
             return cache_data
         else:
             print("Get data from database")
-            result_data = select_func(*args, **kwargs)
-            self.data_cache.set(cache_key, result_data, parameter.value(1001))
+            try:
+                result_data = select_func(*args, **kwargs)
+                if not isinstance(result_data, list):
+                    result_data = [result_data]
+                self.data_cache.set(cache_key, result_data, parameter.value(1001))
+            except Exception as e:
+                print("no record exists.")
+                result_data = None
+
             return result_data
 
     def __transform_to_cache_key(self, tables, *args, **kwargs):

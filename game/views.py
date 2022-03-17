@@ -125,6 +125,7 @@ def user_login(request):
 @login_required
 def archive(request):
     result = archive_module.enter_archive(request)
+    print("result:" + str(result))
     return render(request, 'game/archive.html', context=result)
 
 
@@ -132,8 +133,12 @@ def archive(request):
 def save_game(request):
     if request.method == 'POST':
         manage = game_manager.Manager()
-        manage.serialize(request)
-        return render(request, 'game/saveArchive.html')
+        result = manage.serialize(request)
+        if result.get("success") == 1:
+            archive_result = archive(request)
+            print(archive_result)
+            result.update(archive_result)
+        return HttpResponse(json.dumps(result), content_type='application/json')
     else:
         return render(request, 'game/index.html')
 

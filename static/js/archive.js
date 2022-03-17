@@ -48,7 +48,18 @@ function save(){
     $.post('../archive/save/',
         {'location': currentSelect},
         function (data) {
-
+            if(Boolean(data.success) === true){
+               alert("save archive success");
+               showArchive();
+            }
+            else{
+                if(data.reason === undefined){
+                    alert("Please refresh the page and try again.");
+                }
+                else{
+                    alert(data.reason);
+                }
+            }
         })
 }
 
