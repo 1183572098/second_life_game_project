@@ -15,6 +15,8 @@ import pickle
 
 def index(request):
     context_dict = {'boldmessage': 'test'}
+    manager = game_manager.Manager()
+    manager.exit_game(request)
     return render(request, 'game/index.html', context=context_dict)
 
 
