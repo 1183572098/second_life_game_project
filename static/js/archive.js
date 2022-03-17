@@ -29,7 +29,7 @@ function showArchive(){
         document.getElementById("gamePage").style.display = "block";
     }
     for(let i=0;i<archive.length;i++){
-        if(archive[i] !== null || archive[i] !== "null"){
+        if(archive[i] !== null && archive[i] !== "null"){
             archiveMap = new Map(Object.entries(archive[i]));
             document.getElementById("name" + String(i+1)).innerHTML = archiveMap.get("nickname");
             document.getElementById("portrait" + String(i+1)).innerHTML = getPortrait(archiveMap.get("portrait"));
