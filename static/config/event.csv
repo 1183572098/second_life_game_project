@@ -5,7 +5,7 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3004,"1,2",You grew up in a big city.,5:1,0,,,,10,,,3005,1
 3005,"1,2",You grew up in the countryside.,5:1,0,,,,10,,,3004,1
 3006,"3,3",You started preschool.,1:0,0,,,,10,,3 years old,,1
-3007,"4,6",Kids in kindergarden like you.,5:3,0,,,,10,,,,1
+3007,"4,6",Kids in kindergarden like you.,5:3,0,,,,10,3006,,,1
 3008,"4,6",Mom and dad punished you for always bullying other kids.,5:-3,0,,,,10,,,,1
 3009,"4,6","You had a crush for the first time in your life, but you weren't brave enough to tell that person.",5:1,0,,,,10,,,,0
 3010,"7,10",You started playing the violin.,3:3,0,,,,10,,,,0
@@ -15,7 +15,7 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3016,"11,17",Join school soccer team,2:4,1,2,10,20,20,,,,1
 3020,"11,17",Covid-positive,1:-5,0,,,,10,,,,1
 3021,"11,17",You won championship in a soccer game.,2:8,1,2,20,30,20,,,,1
-3022,"18,22",become a soccer star,2:10,1,2,30,50,10,,,,0
+3022,"18,22",become a soccer star,2:10,1,2,30,50,10,3016,,,0
 3023,"18,22",,,0,,,,10,,,,1
 3024,"23,29",,,0,,,,10,,,,1
 3025,"23,29",,,0,,,,10,,,,1
@@ -58,13 +58,28 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3203,"5,-1",Adopted a cat named Schrödinger.,5:3,0,,,,10,,,,0
 3204,"5,-1",Schrödinger gave birth to 3 kittens.,5:3,0,,,,10,3203,,3208,1
 3205,"5,-1","Schrödinger ran away from home, in a superposition of life and death.",,0,,,,10,3203,,3208,0
-3206,"5,-1",Schrödinger came home alive.,,1,5,10,100,10,3205,,"3207,3208",0
+3206,"5,-1",Schrödinger came home alive.,,1,5,25,-1,10,3205,,"3207,3208",0
 3207,"5,-1",You saw the dead Schrödinger on your way home.,,1,5,-10,10,10,3205,,"3206,3208",0
 3208,"5,-1",Schrödinger is dead.,,0,,,,10,3203,,3205,0
 3209,"5,-1",Pavlov would drool after hearing the bell.,,0,,,,10,3200,,3201,0
-3210,"5,-1",Pavlov died while giving birth to a puppy.,"",1,5,-10,10,10,3200,,3201,0
+3210,"5,-1",Pavlov died while giving birth to a puppy.,5:0,1,5,-10,10,10,3200,,3201,0
 3211,"5,-1",Schrödinger died while giving birth to kittens.,,1,5,-10,10,10,3203,,"3205,3208",0
 3212,"1,2",You smiled when you hear some music.,3:2,0,,,,10,,,,1
 3213,"1,2",You learned to walk.,2:1,0,,,,10,,,3003,1
 3214,"1,2",You liked to hear stories.,4:3,0,,,,10,,,,1
 3215,"1,2",You were kissed by the goddess of luck.,5:3,0,,,,10,,,,1
+3216,"3,5",You won second prize in the Toddler Music Competition.,3:3,1,3,15,25,10,,,,1
+3217,"3,5",You won first prize in the Toddler Music Competition.,"3:5,6:3",1,3,25,50,10,,,,1
+3218,"3,5",You won the participation award in the Toddler Music Competition.,3:0,1,3,0,15,10,,,,1
+3219,"3,5",You shined in the Toddler Music Competition and were hailed as a genius.,"3:8,6:5",1,3,50,-1,10,,,,1
+3220,"3,5",You won second prize in the Toddler Soccer Competition.,2:3,1,2,15,25,10,,,,1
+3221,"3,5",You won first prize in the Toddler Soccer Competition.,"2:5,6:3",1,2,25,50,10,,,,1
+3222,"3,5",You won the participation award in the Toddler Soccer Competition.,2:0,1,2,0,15,10,,,,1
+3223,"3,5",You shined in the Toddler Soccer Competition and were hailed as a genius.,"2:8,6:5",1,2,50,-1,10,,,,1
+3224,"3,5",You did well in your studies and got a top 10 grade in your class.,4:3,1,4,15,25,10,,,,1
+3225,"3,5",Your academic performance is excellent and you got the first place in your class.,"4:5,6:3",1,4,25,50,10,,,,1
+3226,"3,5",Your academic performance is average.,4:0,1,4,0,15,10,,,,1
+3227,"3,5",You are a genius in learning.,"4:8,6:5",1,4,50,-1,10,,,,1
+3228,"3,5",You're called a nerd because your grades are so good,1:-1,1,4,40,-1,10,,,,1
+3229,"3,10",You made a wish to a shooting star and said you wanted to see aliens.,,1,5,20,-1,10,,,,1
+3230,"3,18",You were kidnapped by aliens.,5:-150,1,5,20,35,10,3229,,,0
