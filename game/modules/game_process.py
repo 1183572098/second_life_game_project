@@ -9,14 +9,14 @@ from game.config import attribute, parameter, store_table, option_config, event,
 
 
 class Process:
-    role = None
-    bag = {}
-    __consumed_bag = {}
-    event_history = []
-    initial_attribute = None
-    shop = None
 
     def __init__(self):
+        self.role = None
+        self.bag = {}
+        self.__consumed_bag = {}
+        self.event_history = []
+        self.initial_attribute = None
+        self.shop = None
         self.role = Role()
         self.shop = store_table.get_goods()
 
@@ -189,13 +189,13 @@ class Process:
 
 
 class Role:
-    attribute = {}
-    first_name = None
-    last_name = None
-    head_portrait = None
-    age = None
 
     def __init__(self):
+        self.attribute = {}
+        self.first_name = None
+        self.last_name = None
+        self.head_portrait = None
+        self.age = None
         for attribute_id in attribute.ids():
             self.attribute.update({attribute_id: 0})
         self.age = -1  # unborn

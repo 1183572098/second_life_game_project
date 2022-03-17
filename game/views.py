@@ -15,6 +15,8 @@ import pickle
 
 def index(request):
     context_dict = {'boldmessage': 'test'}
+    manager = game_manager.Manager()
+    manager.exit_game(request)
     return render(request, 'game/index.html', context=context_dict)
 
 
@@ -135,9 +137,8 @@ def save_game(request):
         manage = game_manager.Manager()
         result = manage.serialize(request)
         if result.get("success") == 1:
-            archive_result = archive(request)
-            print(archive_result)
-            result.update(archive_result)
+            result.update(archive_module.enter_archive(request))
+        print("result: " + str(result))
         return HttpResponse(json.dumps(result), content_type='application/json')
     else:
         return render(request, 'game/index.html')
@@ -148,6 +149,7 @@ def load_game(request):
     if request.method == 'POST':
         manager = game_manager.Manager()
         result = manager.deserialize(request)
+        print("result: " + str(result))
         return HttpResponse(json.dumps(result), content_type='application/json')
     else:
         return render(request, 'game/index.html')

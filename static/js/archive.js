@@ -29,7 +29,7 @@ function showArchive(){
         document.getElementById("gamePage").style.display = "block";
     }
     for(let i=0;i<archive.length;i++){
-        if(archive[i] !== null){
+        if(archive[i] !== null && archive[i] !== "null"){
             archiveMap = new Map(Object.entries(archive[i]));
             document.getElementById("name" + String(i+1)).innerHTML = archiveMap.get("nickname");
             document.getElementById("portrait" + String(i+1)).innerHTML = getPortrait(archiveMap.get("portrait"));
@@ -57,6 +57,9 @@ function save(){
         function (data) {
             if(Boolean(data.success) === true){
                alert("save archive success");
+               archive[0] = data.archive1;
+               archive[1] = data.archive2;
+               archive[2] = data.archive3;
                showArchive();
             }
             else{

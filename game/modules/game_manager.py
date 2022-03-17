@@ -165,8 +165,7 @@ class Manager:
             return result
 
         else:
-            assert len(record) == 1
-            game = pickle.loads(record[0].data)
+            game = pickle.loads(record.data)
             self.player_games.update({request_data.user.id: game})
             result.update({"success": 1})
             return result
@@ -193,3 +192,8 @@ class Manager:
             result.update({"attribute": game.role.attribute})
 
         return result
+
+    def exit_game(self, request_data):
+        user_id = request_data.user.id
+        if user_id in self.player_games.keys():
+            del self.player_games[user_id]
