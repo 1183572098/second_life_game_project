@@ -11,7 +11,6 @@ from game.config import attribute, parameter, store_table, option_config, event,
 class Process:
 
     def __init__(self):
-        self.role = None
         self.bag = {}
         self.__consumed_bag = {}
         self.event_history = []
@@ -86,10 +85,7 @@ class Process:
         if self.role.age in option_config.ages():
             event_dict = option_config.get_event(self.role.age)
         else:
-            high_event_dict = event.get_high_event(self.role.age, self.event_history, self.role.attribute)
-            event_dict = event.get_event(self.role.age, self.event_history, self.role.attribute)
-            if len(high_event_dict) == 0:
-                event_dict.update(high_event_dict)
+            event_dict = event.get_event(self.role, self.event_history)
 
         if len(event_dict) == 1:
             return list(event_dict.keys())[0]
@@ -106,6 +102,9 @@ class Process:
                 return k
 
     def _execute_event(self, event_id):
+        if event.get_after_state(event_id) is not None:
+            self.role.state = event.get_after_state(event_id)
+            
         if event_id == 3001:
             self.rebirth()
             return
@@ -200,6 +199,7 @@ class Role:
         for attribute_id in attribute.ids():
             self.attribute.update({attribute_id: 0})
         self.age = -1  # unborn
+        self.state = None
 
     def get_attribute(self, attribute_id):
         return self.attribute.get(attribute_id)
