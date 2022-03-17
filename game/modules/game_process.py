@@ -21,11 +21,16 @@ class Process:
         self.shop = store_table.get_goods()
 
     def random_attribute(self):
-        random_numbers = [random.random() for _ in range(len(self.role.attribute))]
-        random_sum = sum(random_numbers)
-        random_attributes = [int(value/random_sum*parameter.value(2001)) for value in random_numbers]
-        if sum(random_attributes) != int(parameter.value(2001)):
-            random_attributes[-1] += int(parameter.value(2001)) - sum(random_attributes)
+        random_attributes = []
+        attribute_num = len(self.role.attribute)
+        available_value = int(parameter.value(2001))
+        for i in range(attribute_num - 1):
+            random_num = random.randint(int(parameter.value(2002)), min([int(parameter.value(2003)), available_value, available_value - (attribute_num - i - 1) * int(parameter.value(2002))]))
+
+            available_value -= random_num
+            random_attributes.append(random_num)
+
+        random_attributes.append(available_value)
         index = 0
         for key in self.role.attribute.keys():
             self.role.set_attribute(key, random_attributes[index])

@@ -82,12 +82,13 @@ class Event(Config):
             age_group = para["age group"]
             age_min, age_max = age_group.split(",")
             if (int(age_min) == -1 or age >= int(age_min)) and (int(age_max) == -1 or age <= int(age_max)):
-                if int(para["EventType"]) == 0 and (para["pre_event"] == "" or int(para["pre_event"]) in event_history):
-                    try:
-                        weight = int(para["probability"])
-                    except Exception as e:
-                        weight = eval(modify_ternary_expression(para["probability"]))
-                    event_list.update({int(para["event ID"]): weight})
+                if int(para["EventType"]) == 0 and (para["pre_event"] == "" or self._satisfy_pre(para["pre_event"].split(","), event_history)) and (para["exclusive_events"] == "" or self._satisfy_exclusive(para["exclusive_events"].split(","), event_history)):
+                    if int(para["IsRepeated"]) == 1 or int(para["event ID"]) not in event_history:
+                        try:
+                            weight = int(para["probability"])
+                        except Exception as e:
+                            weight = eval(modify_ternary_expression(para["probability"]))
+                        event_list.update({int(para["event ID"]): weight})
 
         return event_list
 
@@ -100,11 +101,25 @@ class Event(Config):
             age_group = para["age group"]
             age_min, age_max = age_group.split(",")
             if (int(age_min) == -1 or age > int(age_min)) and (int(age_max) == -1 or age < int(age_max)):
-                if int(para["EventType"]) == 1 and (para["pre_event"] == "" or int(para["pre_event"]) in event_history):
-                    if int(para["maximum"]) > attributes[int(para["attribute threshold"])] > int(para["minimum"]):
-                        event_list.update({int(para["event ID"]): eval(modify_ternary_expression(para["probability"]))})
+                if int(para["EventType"]) == 1 and (para["pre_event"] == "" or self._satisfy_pre(para["pre_event"].split(","), event_history)) and (para["exclusive_events"] == "" or self._satisfy_exclusive(para["exclusive_events"].split(","), event_history)):
+                    if int(para["IsRepeated"]) == 1 or int(para["event ID"]) not in event_history:
+                        if int(para["maximum"]) > attributes[int(para["attribute threshold"])] > int(para["minimum"]):
+                            event_list.update({int(para["event ID"]): eval(modify_ternary_expression(para["probability"]))})
 
         return event_list
+
+    def _satisfy_pre(self, pre_events, event_history):
+        for pre_events in pre_events:
+            if int(pre_events) in event_history:
+                continue
+            return False
+        return True
+
+    def _satisfy_exclusive(self, exclusive_events, event_history):
+        for exclusive_event in exclusive_events:
+            if int(exclusive_event) in event_history:
+                return False
+        return True
 
     def get_effect(self, event_id):
         effect_dict = {}
