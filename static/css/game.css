@@ -232,15 +232,15 @@ body{
 	background-color: red;
 	position: absolute;
 	top: 170px;
-	right: 20px;
+	right: 724px;
 	opacity: 0.8;
 }
 
 .selectHead{
-	height: 40px;
+	height: 100px;
 	background-color: #2E8B57;
 	color: #B0E0E6;
-	line-height: 40px;
+	line-height: 100px;
 	font: bold;
 	font-style: oblique;
 	text-align: center;
@@ -248,7 +248,7 @@ body{
 }
 
 .subSelect{
-	height: 66px;
+	height: 80px;
 	background-color: #FFE4B5;
 	border: solid #87CEEB;
 	line-height: 66px;
