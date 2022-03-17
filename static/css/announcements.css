@@ -7,7 +7,7 @@
 	width: 800px;
 	height: 200px;
 	margin-left: 325px;
-	position: absolute;
+	position: relative;
 	text-align:center;
 	padding-top:50px;
 	color: black;
@@ -21,7 +21,7 @@ h1{
   text-align: center;
 }
 
-p.test{
+p{
   color: white;
   font-size: 120%;
 }

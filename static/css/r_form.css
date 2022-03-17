@@ -5,39 +5,14 @@
 
 .formPosition{
 	width: 800px;
-	height: 550px;
+	height: 500px;
 	margin-left: 325px;
-	text-align: justify;
-	position: absolute;
+	position: relative;
+	text-align:left;
 	padding-top:50px;
 	color: black;
 	opacity: 0.6;
 	background-color: #B0E0E6;;
-}
-	
-.gradient-button {
-    margin: 10px;
-    font-size: 16px;
-    padding: 10px;
-    text-align: center;
-    background-size: 200% auto;
-    color: #FFF;
-    box-shadow: 0 0 20px #eee;
-    border-radius: 10px;
-    width: 200px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    display: inline-block;
-
-}
-.gradient-button:hover{
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    margin: 8px 10px 12px;
-}
-
-.gradient-button-1 {opacity: 1; background-image: linear-gradient(to right, #DD5E89 0%, #F7BB97 51%, #DD5E89 100%);
-}
-
-.gradient-button-1:hover { background-position: right center; 
 }
 
 h1 {
@@ -46,8 +21,11 @@ h1 {
   text-align: center;
   font-weight: bold;
 }
+p {
+   colour: black;
+   text-align:left;
+}
 
-p{
-  color: white;
-  font-size: 120%;
+.button{
+  text-align: center;
 }

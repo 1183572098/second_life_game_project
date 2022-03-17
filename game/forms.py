@@ -32,7 +32,7 @@ class UserProfileForm(forms.ModelForm):
 class AnnouncementForm(forms.ModelForm):
     title = forms.CharField(max_length=Announcement.TITLE_MAX_LENGTH,
                             help_text="Please enter the title of announcement")
-    content = forms.CharField(max_length=Announcement.CONTENT_MAX_LENGTH,
+    content = forms.CharField(max_length=Announcement.CONTENT_MAX_LENGTH, widget=forms.Textarea(attrs={"rows":15, "cols":70}),
                               help_text="Please enter the content of announcement")
 
     class Meta:
