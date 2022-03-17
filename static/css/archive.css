@@ -7,12 +7,13 @@ a:hover{
   color: yellow;
   text-decoration: none;
 }
-
+/*initial*/
 
 .formPosition{
-	width: 800px;
+	/*width: 1000px;*/
 	height: 460px;
-	margin-left: 325px;
+  width: 100%;
+  margin: 0 auto;
 	position: absolute;
 
 	padding-top:50px;
