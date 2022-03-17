@@ -12,8 +12,6 @@ urlpatterns = [
     path('initial/random/', views.random_attribute, name='random'),
     path('initial/confirm/', views.game_confirm, name='confirm'),
     path('archive/', views.archive, name='archive'),
-    path('readArchive/', views.readArchive, name='readArchive'),
-    path('saveArchive/', views.saveArchive, name='saveArchive'),
     path('shop/', views.click_shop, name='shop'),
     path('purchase/', views.purchase_good, name='purchase'),
     path('use/', views.use_good, name='use'),
@@ -22,4 +20,7 @@ urlpatterns = [
     path('post/', views.add_announcement, name='add_announcement'),
     path('announcements/', views.show_announcement, name='show_announcement'),
     path('next/', views.next_year, name='next_year'),
+    path('archive/read/', views.load_game, name='load_game'),
+    path('archive/save/', views.save_game, name='save_game'),
+    path('reload/', views.reload, name='reload'),
 ]

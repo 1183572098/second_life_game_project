@@ -57,21 +57,6 @@ function readOptionSuccess(data){
     }
 }
 
-function csvToArray(text) {
-    let p = '', row = [''], ret = [row], i = 0, r = 0, s = !0, l;
-    for (l of text) {
-        if ('"' === l) {
-            if (s && l === p) row[i] += l;
-            s = !s;
-        } else if (',' === l && s) l = row[++i] = '';
-        else if ('\n' === l && s) {
-            if ('\r' === p) row[i] = row[i].slice(0, -1);
-            row = ret[++r] = [l = '']; i = 0;
-        } else row[i] += l;
-        p = l;
-    }
-    return row;
-}
 
 function createTop(){
     let topHead = document.querySelectorAll("thead")[0];
@@ -91,23 +76,28 @@ function createTop(){
 }
 
 function createEventTable(){
-    let eventBody = document.querySelectorAll("tbody")[3];
+    if(typeof eventId == "number"){
+        let eventBody = document.querySelectorAll("tbody")[3];
 
-    let tr = document.createElement('tr');
-    eventBody.appendChild(tr);
-    let td = document.createElement('td');
-    td.id = "value" + eventId;
-    td.innerHTML = "The " + age + " year";
-    tr.appendChild(td);
-    let td2 = document.createElement('td');
-    td2.id = "event" + eventId;
-    td2.innerHTML = eventMap.get(String(eventId));
-    tr.appendChild(td2);
+        let tr = document.createElement('tr');
+        eventBody.appendChild(tr);
+        let td = document.createElement('td');
+        td.id = "value" + eventId;
+        td.innerHTML = "The " + age + " year";
+        tr.appendChild(td);
+        let td2 = document.createElement('td');
+        td2.id = "event" + eventId;
+        td2.innerHTML = eventMap.get(String(eventId));
+        tr.appendChild(td2);
+    }
+    else{
+        //TODO reload game
+    }
 }
 
 $('#next').click(function(){
     $.post('../next/',
-        {'user_id': userId},
+        {},
         function (data) {
             if(Boolean(data.is_end) === true){
                 alert("game over.")
@@ -140,8 +130,7 @@ function setAttribute(){
 
 function choose(val){
     $.post('../option/',
-        {'user_id': userId,
-        'option': $(val).attr("id")},
+        {'option': $(val).attr("id")},
         function (data) {
             eventId = data.event_id;
             attribute = data.attribute;

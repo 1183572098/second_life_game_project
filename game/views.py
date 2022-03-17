@@ -124,26 +124,11 @@ def user_login(request):
 
 @login_required
 def archive(request):
-    user_id = request.user.id
-    context_dict = {'testing': 'This is a test since no announcements currently exist.'}
-    try:
-        archives = Record.objects.get(user_id=user_id)
-        context_dict['archives'] = archives
-    except Record.DoesNotExist:
-        context_dict['archives'] = None
     result = archive_module.enter_archive(request)
     return render(request, 'game/archive.html', context=result)
-    # return render(request, 'game/saveArchive.html')
 
 
-def readArchive(request):
-    return render(request, 'game/archive.html')
-
-
-def saveArchive(request):
-    return render(request, 'game/saveArchive.html')
-
-
+@csrf_exempt
 def save_game(request):
     if request.method == 'POST':
         manage = game_manager.Manager()
@@ -153,14 +138,12 @@ def save_game(request):
         return render(request, 'game/index.html')
 
 
+@csrf_exempt
 def load_game(request):
-    context_dict = {'testing': 'This is a test since no announcements currently exist.'}
-    if request.method == 'GET':
-        user_id = request.user.id
-        loc = request.GET.get('location')
-        archive = Record.objects.get(user_id=user_id, location=loc)
-        archive_data = pickle.load(archive['data'])
-        return render(request, 'game/game.html')
+    if request.method == 'POST':
+        manager = game_manager.Manager()
+        result = manager.deserialize(request)
+        return HttpResponse(json.dumps(result), content_type='application/json')
     else:
         return render(request, 'game/index.html')
 
@@ -203,15 +186,7 @@ def game(request):
     print("result: " + str(result))
     if result is None:
         return redirect('second_life:index')
-    result["user_id"] = request.user.id
     return render(request, 'game/game.html', context=result)
-
-
-def initialization(request):
-    context_dict = {}
-    user_id = request.user.id
-    context_dict["user_id"] = user_id
-    return render(request, 'game/initialization.html', context=context_dict)
 
 
 @csrf_exempt
@@ -220,3 +195,13 @@ def next_year(request):
     result = manager.enter_game(request)
     print("result: " + str(result))
     return HttpResponse(json.dumps(result), content_type='application/json')
+
+
+@csrf_exempt
+def reload(request):
+    manager = game_manager.Manager()
+    result = manager.reload_game(request)
+    print("result: " + str(result))
+    if result is None:
+        return redirect('second_life:index')
+    return render(request, 'game/game.html', context=result)
