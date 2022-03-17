@@ -30,7 +30,7 @@ body{
 .game{
 	height: 300px;
 	width: 700px;
-	margin: -150px 0 0 -350px;
+	margin: -200px 0 0 -380px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -67,8 +67,8 @@ body{
 }
 .shop{
 	position: absolute;
-	top: 0px;
-	right: 0px;
+	top: -70px;
+	right: 800px;
 	width: 100px;
 	height: 100px;
 	font-style: oblique;
@@ -78,12 +78,32 @@ body{
 	border: 1px solid red;
 	border-radius: 50%;
 	text-align: center;
-	margin-top: -100px;
-	margin-left: -500px;
 	background-image: url("../image/background/A.png");
 	background-size: 200px;
     opacity:0.6;
     border-image: url("../image/background/A.png");
+}
+
+.save{
+	position: absolute;
+	top: 60px;
+	right: 800px;
+	width: 80px;
+	height: 80px;
+	font-style: oblique;
+	font-size: 20px;
+	line-height: 80px;
+	color: #B0E0E6 ;
+	/*border: 1px solid red;*/
+	border-radius: 50%;
+	text-align: center;
+	/*background-image: url("../image/background/EE.png");*/
+	background-image: url("../image/background/A.png");
+    border-image: url("../image/background/A.png");
+
+
+	opacity: 0.7;
+	
 }
 
 .middle{
@@ -104,6 +124,7 @@ body{
 	background-image: url("../image/background/E.png");
 	border: solid;
 	/*margin-bottom: 70px;*/
+	background-color: red;
 	margin-top: 70px;
 	z-index: 1;
 
@@ -112,25 +133,20 @@ body{
 .subMiddle td{
 	width: 500px;
 	height: 60px;
-	background-color: red;
+	line-height: 60px;
 	color: yellow;
 	background-image: url("../image/background/AA.png");	
-
 }
 
 .subMiddle thead{
 	position: fixed;
-	/*width: 880px;*/
-	width: 100%;
-	border: solid 1px;
+	width: 878px;
 }
 
 .subMiddle .body{
-	padding-top: 60px;
+	margin-top: 58px;
 	display: block;
 	height: 250px;
-	width: 100%;
-	border: solid 1px;
 	overflow: auto;
 }
 
@@ -157,26 +173,7 @@ body{
 }
 
 
-.save{
-	position: absolute;
-	top: px;
-	/*right: 150px;*/
-	width: 80px;
-	height: 80px;
-	font-style: oblique;
-	font-size: 20px;
-	line-height: 80px;
-	color: #B0E0E6 ;
-	/*border: 1px solid red;*/
-	border-radius: 50%;
-	text-align: center;
-	margin-left: -400px;
-	/*margin-top: -100px;*/
-	background-image: url("../image/background/EE.png");
-	opacity: 0.7;
 
-	
-}
 /*bag and shop*/
 
 .store{
