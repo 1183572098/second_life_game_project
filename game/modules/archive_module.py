@@ -11,6 +11,7 @@ from game.modules import game_manager
 
 
 def enter_archive(request):
+    print("info:enter_archive")
     result = {}
     user_id = request.user.id
     manager = game_manager.Manager()
@@ -19,25 +20,21 @@ def enter_archive(request):
     else:
         result.update({"state": 0})
 
-    try:
-        records = data.select(Record.objects.get, Record, user_id=user_id)
-    except Exception as e:
-        print("no records exist")
-        records = None
-
+    records = data.select(Record.objects.get, Record, user_id=user_id)
     if records is None:
         result.update({"archive1": "null"})
         result.update({"archive2": "null"})
         result.update({"archive3": "null"})
     else:
         for record in records:
-            game = pickle.load(record['data'])
+            game = pickle.loads(record.data)
             nickname = game.role.first_name + " " + game.role.last_name
             portrait = game.role.head_portrait
             age = game.role.age
+            print(game.event_history)
             last_event = game.event_history[-1]
-            save_time = record["time"]
-            location = record["location"]
+            save_time = record.time
+            location = record.location
             result_key = "archive" + str(location)
             result_body = {"nickname": nickname,
                            "portrait": portrait,

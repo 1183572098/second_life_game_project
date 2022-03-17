@@ -79,6 +79,7 @@ class Manager:
             result = game.next_year()
         else:
             result = None
+        print(game.event_history)
         return result
 
     def open_shop(self, request_data):
@@ -144,18 +145,18 @@ class Manager:
         p_stream = pickle.dumps(self.player_games.get(request_data.user.id))
         loc = request_data.POST.get('location')
         record = self.data.select(Record.objects.get, Record, location=loc)
+        result = {}
         if record is None:
-            return self.data.create(Record, user_id=request_data.user.id, data=p_stream, location=loc)
+            result_code = self.data.create(Record, user_id=request_data.user.id, data=p_stream, location=loc)
         else:
-            return self.data.update(record, data=p_stream)
+            result_code = self.data.update(record, data=p_stream)
+        result.update({"success": 1 if result_code else 0})
+        return result
 
     def deserialize(self, request_data):
         print("info: deserialize")
         loc = request_data.POST.get('location')
-        try:
-            record = self.data.select(Record.objects.get, Record, location=loc)
-        except Exception as e:
-            record = None
+        record = self.data.select(Record.objects.get, Record, location=loc)
         result = {}
         if record is None:
             print("record is none")
@@ -164,7 +165,7 @@ class Manager:
             return result
 
         else:
-            game = pickle.load(record['data'])
+            game = pickle.loads(record.data)
             self.player_games.update({request_data.user.id: game})
             result.update({"success": 1})
             return result
