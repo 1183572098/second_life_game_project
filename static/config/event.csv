@@ -1,59 +1,3 @@
-<<<<<<< HEAD
-event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,probability,pre_event,notes
-3001,"0,0",You were born.,1:0,0,,,,95,,
-3002,"0,0",You were stillborn.,1:0,0,,,,5,,
-3003,"1,2",You can walk faster than any kids in your age.,"1:2,2:2",0,,,,10,,year 1-2
-3004,"1,2",You grew up in a big city.,5:1,0,,,,10,,
-3005,"1,2",You grew up in the countryside.,5:1,0,,,,10,,
-3006,"3,3",You started preschool.,1:0,0,,,,10,,3 years old
-3007,"4,6",Kids in kindergarden like you.,5:3,0,,,,10,,
-3008,"4,6",Mom and dad punished you for always bullying other kids.,5:-3,0,,,,10,,
-3009,"4,6","You had a crush for the first time in your life, but you weren't brave enough to tell that person.",5:1,0,,,,10,,
-3010,"7,10",You started playing the violin.,3:3,0,,,,10,,
-3011,"7,10",You started playing the piano.,3:3,0,,,,10,,
-3012,"7,10",You start playing soccer,2:3,0,,,,10,,
-3013,"7,10",You start playing basketball,2:3,0,,,,10,,
-3016,"11,17",Join school soccer team,2:4,1,2,10,20,20,,
-3020,"11,17",Covid-positive,1:-5,0,,,,10,,
-3021,"11,17",You won championship in a soccer game.,2:8,1,2,20,30,20,,
-3022,"18,22",become a soccer star,2:10,1,2,30,50,10,,
-3023,"18,22",,,0,,,,10,,
-3024,"23,29",,,0,,,,11,,
-3025,"23,29",,,0,,,,11,,
-3026,"30,44",,,0,,,,12,,
-3027,"30,44",,,0,,,,12,,
-3028,"30,44",,,0,,,,13,,
-3029,"30,44",,,0,,,,13,,
-3030,"45,59",,,0,,,,14,,
-3031,"45,59",,,0,,,,14,,
-3032,"45,59",,,0,,,,15,,
-3033,"45,59",,,0,,,,15,,
-3034,"60,74",,,0,,,,16,,
-3035,"60,74",,,0,,,,16,,
-3036,"60,74",,,0,,,,17,,
-3037,"60,74",,,0,,,,17,,
-3038,"75,89",,,0,,,,18,,
-3039,"75,89",,,0,,,,18,,
-3040,"75,89",,,0,,,,19,,
-3041,"90,150",,,0,,,,19,,
-3042,"90,150",had cancer,1:-100,0,,,,5+age*1+(health-50)>0?(health-50):0,,
-3043,"90,150",,,0,,,,10,,
-3044,"80,-1",die of oldness,1:-100,0,,,,999,,
-3045,"0,-1",die of disease,1:-100,1,1,-80,0,999,,no age limitation
-3046,"0,-1",die of Stupidity,4:-100,1,4,-100,0,999,,
-3500,"0,-1",studying hard all year,4:5,2,,,,10,,"option events begin here, ID starts from 3500"
-3501,"0,-1",falling for a new game,"4:-2,1:-1",2,,,,10,,
-3502,"0,-1",learning a musical instrument,3:3,2,,,,10,,
-3503,"0,-1",were rejected by your crush,"4:-1,5:2",2,,,,10,,
-3504,"0,-1",realised you're gay,5:2,2,,,,10,,
-3505,"0,-1",just broke up with someone,1:-1,2,,,,10,,fell for your classmate
-3506,"0,-1",took a gap year,4:-3,2,,,,10,,
-3507,"0,-1",looking for a job,4:-3,2,,,,10,,didn't pass your final exam
-3508,"0,-1",applied for college,4:5,2,,,,10,,
-3509,"0,-1",have a try,,,,,,10,,
-3510,"0,-1",not to be curious,,,,,,10,,
-3511,"0,-1",report to his parents,,,,,,10,,
-=======
 event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,probability,pre_event,notes,exclusive_events,IsRepeated
 3001,"0,0",You were born.,1:0,0,,,,95,,,,1
 3002,"0,0",You were stillborn.,1:-100,0,,,,5,,,,1
@@ -139,4 +83,3 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3228,"3,5",You're called a nerd because your grades are so good,1:-1,1,4,40,-1,10,,,,1
 3229,"3,10",You made a wish to a shooting star and said you wanted to see aliens.,,1,5,20,-1,10,,,,1
 3230,"3,18",You were kidnapped by aliens.,5:-150,1,5,20,35,10,3229,,,0
->>>>>>> a700224535be23b63f79ee5dd2dc18ea7cf5d7dd
