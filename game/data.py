@@ -8,6 +8,8 @@
 # module when calling data
 
 from django.core.cache import cache
+from django.db.models import QuerySet
+
 import game.models as models
 import inspect
 from game.config import parameter
@@ -125,9 +127,7 @@ class DataProcess(object):
             print("Get data from database")
             try:
                 result_data = select_func(*args, **kwargs)
-                if not isinstance(result_data, list):
-                    result_data = [result_data]
-                self.data_cache.set(cache_key, result_data, parameter.value(1001))
+                # self.data_cache.set(cache_key, result_data, parameter.value(1001))
             except Exception as e:
                 print("no record exists.")
                 result_data = None
@@ -178,15 +178,23 @@ class DataProcess(object):
         # Get the class name of the first object in the list, because the objects of a group of update operations
         # must be instances of the same class
         try:
-            cache_head = data_objs[0].__class__.__name__
-            self.__delete_cache(cache_head)
-            for data_obj in data_objs:
+            if isinstance(data_objs, list):
+                cache_head = data_objs[0].__class__.__name__
+            else:
+                cache_head = data_objs.__class__.__name__
+            # self.__delete_cache(cache_head)
+            if isinstance(data_objs, list):
+                for data_obj in data_objs:
+                    for key in kwargs:
+                        setattr(data_obj, key, kwargs[key])
+                    data_obj.save()
+            else:
                 for key in kwargs:
-                    setattr(data_obj, key, kwargs[key])
-                data_obj.save()
+                    setattr(data_objs, key, kwargs[key])
+                data_objs.save()
 
             # Delayed double deletion
-            self.__delete_cache(cache_head)
+            # self.__delete_cache(cache_head)
             return True
         except Exception as e:
             print(e)

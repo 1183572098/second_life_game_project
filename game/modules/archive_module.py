@@ -20,7 +20,7 @@ def enter_archive(request):
     else:
         result.update({"state": 0})
 
-    records = data.select(Record.objects.get, Record, user_id=user_id)
+    records = data.select(Record.objects.all().filter, Record, user_id=user_id)
     result.update({"archive1": "null"})
     result.update({"archive2": "null"})
     result.update({"archive3": "null"})
@@ -30,7 +30,6 @@ def enter_archive(request):
             nickname = game.role.first_name + " " + game.role.last_name
             portrait = game.role.head_portrait
             age = game.role.age
-            print(game.event_history)
             last_event = game.event_history[-1]
             save_time = record.time.strftime("%Y-%m-%d %H:%M:%S")
             location = record.location
