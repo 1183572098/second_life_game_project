@@ -132,12 +132,12 @@ def archive(request):
     except Record.DoesNotExist:
         context_dict['archives'] = None
     result = archive_module.enter_archive(request)
-    return render(request, 'game/readArchive.html', context=result)
+    return render(request, 'game/archive.html', context=result)
     # return render(request, 'game/saveArchive.html')
 
 
 def readArchive(request):
-    return render(request, 'game/readArchive.html')
+    return render(request, 'game/archive.html')
 
 
 def saveArchive(request):
