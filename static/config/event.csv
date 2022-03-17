@@ -1,7 +1,7 @@
 event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,probability,pre_event,notes,exclusive_events,IsRepeated
 3001,"0,0",You were born.,1:0,0,,,,95,,,,1
 3002,"0,0",You were stillborn.,1:-100,0,,,,5,,,,1
-3003,"1,2",You can walk faster than any kids in your age.,"1:2,2:2",0,,,,10,,year 1-2,3213,0
+3003,"1,2",You can walk faster than any kids in your age.,"1:2,2:3",0,,,,10,,year 1-2,3213,0
 3004,"1,2",You grew up in a big city.,5:1,0,,,,10,,,3005,1
 3005,"1,2",You grew up in the countryside.,5:1,0,,,,10,,,3004,1
 3006,"3,3",You started preschool.,1:0,0,,,,10,,3 years old,,1
@@ -52,7 +52,7 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3509,"0,-1",have a try,"1:-5,4:-3",2,,,,10,,,,1
 3510,"0,-1",not to be curious,5:3,2,,,,10,,,,1
 3511,"0,-1",report to his parents,5:1,2,,,,10,,,,1
-3200,"5,-1",adopted a puppy named Pavlov.,5:3,0,,,,10,,,,0
+3200,"5,-1",Adopted a puppy named Pavlov.,5:3,0,,,,10,,,,0
 3201,"5,-1",Pavlov is dead.,,0,,,,10,3200,,,0
 3202,"5,-1",Pavlov gave birth to 3 puppies.,5:3,0,,,,10,"3200,3210",,3201,1
 3203,"5,-1",Adopted a cat named Schrödinger.,5:3,0,,,,10,,,,0
@@ -61,9 +61,10 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3206,"5,-1",Schrödinger came home alive.,,1,5,10,100,10,3205,,"3207,3208",0
 3207,"5,-1",You saw the dead Schrödinger on your way home.,,1,5,-10,10,10,3205,,"3206,3208",0
 3208,"5,-1",Schrödinger is dead.,,0,,,,10,3203,,3205,0
-3209,"5,-1",Pavlov would drool after hearing the bell.,,0,,,,,3200,,3201,0
+3209,"5,-1",Pavlov would drool after hearing the bell.,,0,,,,10,3200,,3201,0
 3210,"5,-1",Pavlov died while giving birth to a puppy.,"",1,5,-10,10,10,3200,,3201,0
 3211,"5,-1",Schrödinger died while giving birth to kittens.,,1,5,-10,10,10,3203,,"3205,3208",0
 3212,"1,2",You smiled when you hear some music.,3:2,0,,,,10,,,,1
 3213,"1,2",You learned to walk.,2:1,0,,,,10,,,3003,1
 3214,"1,2",You liked to hear stories.,4:3,0,,,,10,,,,1
+3215,"1,2",You were kissed by the goddess of luck.,5:3,0,,,,10,,,,1
