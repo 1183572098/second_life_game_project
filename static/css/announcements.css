@@ -4,7 +4,7 @@
 }
 
 .formPosition{
-	height: 160px;
+	height: 140px;
 	margin: auto;
   	width: 50%;
   	padding: 10px;
@@ -15,7 +15,7 @@
 
 h1{
   font-family: "papyrus"; 
-  font-size: 500%;
+  font-size: 400%;
   text-align: center;
 }
 
@@ -46,6 +46,7 @@ table.test{
 html {
 min-height: 100%;
 }
+
 b {
 overflow-y: scroll;
 }
