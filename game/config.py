@@ -103,7 +103,7 @@ class Event(Config):
             if (int(age_min) == -1 or age > int(age_min)) and (int(age_max) == -1 or age < int(age_max)):
                 if int(para["EventType"]) == 1 and (para["pre_event"] == "" or self._satisfy_pre(para["pre_event"].split(","), event_history)) and (para["exclusive_events"] == "" or self._satisfy_exclusive(para["exclusive_events"].split(","), event_history)):
                     if int(para["IsRepeated"]) == 1 or int(para["event ID"]) not in event_history:
-                        if int(para["maximum"]) > attributes[int(para["attribute threshold"])] > int(para["minimum"]):
+                        if int(para["maximum"]) > attributes[int(para["attribute threshold"])] >= int(para["minimum"]):
                             try:
                                 weight = int(para["probability"])
                             except Exception as e:
