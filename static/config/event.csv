@@ -83,3 +83,4 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3228,"3,5",You're called a nerd because your grades are so good,1:-1,1,4,40,-1,10,,,,1
 3229,"3,10",You made a wish to a shooting star and said you wanted to see aliens.,,1,5,20,-1,10,,,,1
 3230,"3,18",You were kidnapped by aliens.,5:-150,1,5,20,35,10,3229,,,0
+3512,"0,-1",report to his parents,5:1,2,,,,10,,,,
