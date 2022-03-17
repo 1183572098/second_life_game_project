@@ -46,7 +46,7 @@ class Process:
             self.role.age += 1
             self.mechanism_process()
             event_id = self._get_event()
-            if event_id / 1000 == 3:
+            if str(event_id)[0] == "3":
                 self._execute_event(event_id)
             else:
                 self.event_history.append(event_id)
