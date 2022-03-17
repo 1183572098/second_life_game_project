@@ -7,7 +7,6 @@
 {% block body_block %}
 <link rel="stylesheet" href="../../static/css/game.css">
     <script type="text/javascript">
-        var userId = {{user_id}};
         var attribute = {{attribute}};
         var age = {{age}};
         var eventId = {{event_id}};
@@ -21,7 +20,7 @@
                 <tbody class="top2"></tbody>
             </table>
         </div>
-        <a href="% url 'second_life:archive' %}" class="save">Save</a>
+        <a href="{% url 'second_life:archive' %}" class="save">Save</a>
        <a href="#" onclick="openBag()" class="shop">BAG STORE</a>
     <div class="middle">
 <!--        class=hide-->
@@ -64,5 +63,6 @@
 </div>
 <script src="../../static/js/store.js"></script>
 <script src="../../static/js/game.js"></script>
+<script src="../../static/js/common.js"></script>
 
 {% endblock %}

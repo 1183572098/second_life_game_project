@@ -15,6 +15,7 @@
         archive[0] = {{archive1}};
         archive[1] = {{archive2}};
         archive[2] = {{archive3}};
+        var state = {{ state }}
     </script>
 <div class="main">
     <div class="formPosition">
@@ -36,18 +37,14 @@
                 <div class="rowHead">
                     Archive One
                 </div>
-                <a href="#" onclick="">
-                    <div class="row">
-                    Name
+                <a href="#" onclick="select1()">
+                    <div id="name1" class="row">
                     </div>
-                    <div class="row">
-                        Profile
+                    <div id="portrait1" class="row">
                     </div>
-                    <div class="row">
-                        Age:Last Event
+                    <div id="detail1" class="row">
                     </div>
-                    <div class="row">
-                        Save time
+                    <div id="time1" class="row">
                     </div>
                 </a>
             </div>
@@ -56,18 +53,14 @@
                 <div class="rowHead">
                     Archive Two
                 </div>
-                <a href="#" onclick="">
-                    <div class="row">
-                    Name
+                <a href="#" onclick="select2()">
+                    <div id="name2" class="row">
                     </div>
-                    <div class="row">
-                        Profile
+                    <div id="portrait2" class="row">
                     </div>
-                    <div class="row">
-                        Age:Last Event
+                    <div id="detail2" class="row">
                     </div>
-                    <div class="row">
-                        Save time
+                    <div id="time2" class="row">
                     </div>
                 </a>
             </div>
@@ -76,30 +69,27 @@
                 <div class="rowHead">
                     Archive Three
                 </div>
-                <a href="#" onclick="">
-                    <div class="row">
-                    Name
+                <a href="#" onclick="select3">
+                    <div id="name3" class="row">
                     </div>
-                    <div class="row">
-                        Profile
+                    <div id="portrait3" class="row">
                     </div>
-                    <div class="row">
-                        Age:Last Event
+                    <div id="detail3" class="row">
                     </div>
-                    <div class="row">
-                        Save time
+                    <div id="time3" class="row">
                     </div>
                 </a>
             </div>
 
         </div>
 
-        <a href=""><div class="saveFile">Save Archive</div></a>
-        <a href=""><div class="readFile">Read Archive</div></a>
+        <button onclick="save()" disabled hidden><div class="saveFile">Save Archive</div></button>
+        <button onclick="read()"><div class="readFile">Read Archive</div></button>
 
     </div>
-<a href="{% url 'second_life:game' %}"><div class="game">Game Page</div></a>
+<a id="gamePage" href="{% url 'second_life:game' %}" style="display: none"><div class="game">Game Page</div></a>
         <a href="{% url 'second_life:index' %}"><div class="index">Main Page</div></a>
 </div>
-<script src="../../static/js/readArchive.js"></script>
+<script src="../../static/js/archive.js"></script>
+<script src="../../static/js/common.js"></script>
 {% endblock %}

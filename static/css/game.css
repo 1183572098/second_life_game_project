@@ -115,12 +115,15 @@ body{
 .subMiddle thead{
 	position: fixed;
 	width: 880px;
+	border: solid 1px;
 }
 
 .subMiddle .body{
 	padding-top: 60px;
 	display: block;
 	height: 250px;
+	width: 880px;
+	border: solid 1px;
 	overflow: auto;
 }
 
@@ -136,11 +139,11 @@ body{
 }
 
 .subMiddle2 .downRight{
-	height: 48px;
+	height: 46px;
 	width: 80px;
 	text-align: center;
 	line-height: 50px;
-	font-size: 30px;
+	font-size: 27px;
 	margin-left: 810px;
 	background-color: #6A5ACD;
 	opacity: 0.8;
@@ -157,11 +160,12 @@ body{
 	font-size: 20px;
 	line-height: 80px;
 	color: #B0E0E6 ;
+	border: 1px solid red;
 	border-radius: 50%;
 	text-align: center;
 	margin-top: -40px;
 	background-image: url("../image/background/EE.png");
-	opacity: 0.6;
+	opacity: 0.7;
 
 	
 }
