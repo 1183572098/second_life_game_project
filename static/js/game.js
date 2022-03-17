@@ -4,6 +4,7 @@ var attributeValueMap = new Map(Object.entries(attribute));
 var option1Map = new Map();
 var option2Map = new Map();
 var option3Map = new Map();
+var questionMap = new Map();
 
 $(document).ready(function(){
     $.ajax({
@@ -53,6 +54,7 @@ function readOptionSuccess(data){
             option1Map.set(dataCell[0], dataCell[1]);
             option2Map.set(dataCell[0], dataCell[3]);
             option3Map.set(dataCell[0], dataCell[5]);
+            questionMap.set(dataCell[0], dataCell[7]);
         }
     }
 }
@@ -112,6 +114,7 @@ $('#next').click(function(){
                     createEventTable();
                 }
                 else{
+                    document.getElementById("question").innerHTML = questionMap.get(String(data.event_id));
                     document.getElementById("option1").innerHTML = option1Map.get(String(data.event_id));
                     document.getElementById("option2").innerHTML = option2Map.get(String(data.event_id));
                     document.getElementById("option3").innerHTML = option3Map.get(String(data.event_id));
