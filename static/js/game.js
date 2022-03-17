@@ -6,6 +6,7 @@ var option2Map = new Map();
 var option3Map = new Map();
 var questionMap = new Map();
 
+
 $(document).ready(function(){
     $.ajax({
         url: "../../static/config/attribute.csv",
@@ -23,6 +24,7 @@ $(document).ready(function(){
     }).done(readOptionSuccess);
 
 });
+
 
 function readAttributeSuccess(data){
     let newData = data.split(/\r?\n|\r/)
@@ -131,10 +133,15 @@ $('#next').click(function(){
                     document.getElementById("option3").innerHTML = option3Map.get(String(data.event_id));
                     document.getElementById("select").className = "select";
                     document.getElementById("downRight").className = "downRight hide";
+                    showShadow();
                 }
             }
         })
 });
+
+function showShadow(){
+    document.getElementById("shadow").className = "shadow block";
+}
 
 function setAttribute(){
     for(let [key, value] of attributeValueMap){
@@ -153,6 +160,8 @@ function choose(val){
             createEventTable();
             document.getElementById("select").className = "select hide";
             document.getElementById("downRight").className = "downRight";
+            document.getElementById("shadow").className = "shadow hide";
+
         })
 }
 

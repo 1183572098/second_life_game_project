@@ -4,13 +4,17 @@
 }
 
 .formPosition{
-	height: 50%;
+	height: 580px;
 	margin: auto;
-  	width: 50%;
-  	padding: 10px;
+  width: 50%;
+  padding: 10px;
 	color: black;
 	opacity: 0.6;
 	background-color: black;
+}
+
+.welcome{
+  font-size: 40px;
 }
 
 .gradient-text {
@@ -49,19 +53,21 @@ p{
 .one{
   position: fixed;
   left: 40%;
-  bottom: 60px;
+  bottom: 45px;
   transform: translate(-50%, -50%);
   margin: 0 auto;
   font-weight: bold;
   font-weight: bold;
+  font-size: 18px;
 }
 
 
 .second{
   position: fixed;
   left: 58%;
-  bottom: 60px;
+  bottom: 45px;
   transform: translate(-50%, -50%);
   margin: 0 auto;
   font-weight: bold;
+  font-size: 18px;
 }
