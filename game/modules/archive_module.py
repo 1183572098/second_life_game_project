@@ -21,11 +21,10 @@ def enter_archive(request):
         result.update({"state": 0})
 
     records = data.select(Record.objects.get, Record, user_id=user_id)
-    if records is None:
-        result.update({"archive1": "null"})
-        result.update({"archive2": "null"})
-        result.update({"archive3": "null"})
-    else:
+    result.update({"archive1": "null"})
+    result.update({"archive2": "null"})
+    result.update({"archive3": "null"})
+    if records is not None:
         for record in records:
             game = pickle.loads(record.data)
             nickname = game.role.first_name + " " + game.role.last_name
@@ -33,7 +32,7 @@ def enter_archive(request):
             age = game.role.age
             print(game.event_history)
             last_event = game.event_history[-1]
-            save_time = record.time
+            save_time = record.time.strftime("%Y-%m-%d %H:%M:%S")
             location = record.location
             result_key = "archive" + str(location)
             result_body = {"nickname": nickname,

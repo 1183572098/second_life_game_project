@@ -30,13 +30,20 @@ function showArchive(){
     }
     for(let i=0;i<archive.length;i++){
         if(archive[i] !== null){
-            archiveMap = Object.entries(archive[i]);
+            archiveMap = new Map(Object.entries(archive[i]));
             document.getElementById("name" + String(i+1)).innerHTML = archiveMap.get("nickname");
-            document.getElementById("portrait" + String(i+1)).innerHTML = archiveMap.get("portrait");
+            document.getElementById("portrait" + String(i+1)).innerHTML = getPortrait(archiveMap.get("portrait"));
             document.getElementById("detail" + String(i+1)).innerHTML = archiveMap.get("age") + ": " + eventMap.get(String(archiveMap.get("event")));
             document.getElementById("time" + String(i+1)).innerHTML = archiveMap.get("time");
         }
     }
+}
+
+function getPortrait(val){
+    let innerHtml = "<img src='../../static/image/head/";
+    innerHtml += String(val);
+    innerHtml += ".png' alt='portrait' >";
+    return innerHtml;
 }
 
 function save(){
