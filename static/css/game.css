@@ -122,6 +122,7 @@ body{
 	padding-top: 60px;
 	display: block;
 	height: 250px;
+	width: 880px;
 	border: solid 1px;
 	overflow: auto;
 }
@@ -138,7 +139,7 @@ body{
 }
 
 .subMiddle2 .downRight{
-	height: 48px;
+	height: 46px;
 	width: 80px;
 	text-align: center;
 	line-height: 50px;
