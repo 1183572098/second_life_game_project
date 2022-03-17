@@ -7,11 +7,18 @@ import pickle
 
 from game.data import data
 from game.models import Record
+from game.modules import game_manager
 
 
 def enter_archive(request):
     result = {}
     user_id = request.user.id
+    manager = game_manager.Manager()
+    if manager.has_game(user_id):
+        result.update({"state": 1})
+    else:
+        result.update({"state": 0})
+
     try:
         records = data.select(Record.objects.get, Record, user_id=user_id)
     except Exception as e:

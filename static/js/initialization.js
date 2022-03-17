@@ -103,9 +103,8 @@ function setValue(val){
 }
 
 $('#random').click(function(){
-	let user_id = $(this).attr('data-userid');
 	$.post('../initial/random/',
-		{'user_id': user_id},
+		{},
 		function (data) {
 			let map = new Map(Object.entries(data.attribute));
 			for( [key, value] of map){
@@ -117,7 +116,6 @@ $('#random').click(function(){
 });
 
 $('#confirm').click(function(){
-	let user_id = $(this).attr('data-userid');
 	let first_name = $("#first_name").val();
 	let last_name = $("#last_name").val();
 	if(first_name === "" || last_name === ""){
@@ -134,8 +132,7 @@ $('#confirm').click(function(){
 	}
 
 	$.post('../initial/confirm/',
-		{'user_id': user_id,
-		'attribute': JSON.stringify(Object.fromEntries(attributeMap.entries())),
+		{'attribute': JSON.stringify(Object.fromEntries(attributeMap.entries())),
 		'first_name': first_name,
 		'last_name': last_name,
 		'head_portrait': window.initalImg},

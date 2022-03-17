@@ -152,20 +152,42 @@ class Manager:
     def deserialize(self, request_data):
         print("info: deserialize")
         loc = request_data.POST.get('location')
-        record = self.data.select(Record.objects.get, Record, location=loc)
+        try:
+            record = self.data.select(Record.objects.get, Record, location=loc)
+        except Exception as e:
+            record = None
         result = {}
         if record is None:
             print("record is none")
             result.update({"success": 0})
-            result.update({"reason": "Archive is lost"})
+            result.update({"reason": "Archive is not exist."})
             return result
 
         else:
             game = pickle.load(record['data'])
             self.player_games.update({request_data.user.id: game})
             result.update({"success": 1})
+            return result
+
+    def has_game(self, user_id):
+        return user_id in self.player_games.keys()
+
+    def reload_game(self, request_data):
+        print("info: reload_game")
+        user_id = request_data.user.id
+        game = self.player_games.get(user_id)
+        result = {}
+        if game is None:
+            print("error: game not exist.")
+            result.update({"success": 0})
+            result.update({"reason": "game is lost"})
+            return result
+
+        else:
+            result.update({"success": 1})
             result.update({"is_end": game.end})
             result.update({"age": game.role.age})
             result.update({"event_id": game.event_history})
             result.update({"attribute": game.role.attribute})
-            return result
+
+        return result
