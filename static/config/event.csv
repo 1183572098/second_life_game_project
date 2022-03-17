@@ -12,7 +12,7 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3011,"7,10",You started playing the piano.,3:3,0,,,,10,,,,0
 3012,"7,10",You start playing soccer,2:3,0,,,,10,,,,0
 3013,"7,10",You start playing basketball,2:3,0,,,,10,,,,0
-3016,"11,17",Join school soccer team,2:4,1,2,10,20,20,,,,1
+3016,"11,17",Join school soccer team,2:4,1,2,10,20,20,,,,0
 3020,"11,17",Covid-positive,1:-5,0,,,,10,,,,1
 3021,"11,17",You won championship in a soccer game.,2:8,1,2,20,30,20,,,,1
 3022,"18,22",become a soccer star,2:10,1,2,30,50,10,3016,,,0
@@ -65,7 +65,7 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3210,"5,-1",Pavlov died while giving birth to a puppy.,5:0,1,5,-10,10,10,3200,,3201,0
 3211,"5,-1",Schrödinger died while giving birth to kittens.,,1,5,-10,10,10,3203,,"3205,3208",0
 3212,"1,2",You smiled when you hear some music.,3:2,0,,,,10,,,,1
-3213,"1,2",You learned to walk.,2:1,0,,,,10,,,3003,1
+3213,"1,2",You learned to walk.,2:1,0,,,,10,,,3003,0
 3214,"1,2",You liked to hear stories.,4:3,0,,,,10,,,,1
 3215,"1,2",You were kissed by the goddess of luck.,5:3,0,,,,10,,,,1
 3216,"3,5",You won second prize in the Toddler Music Competition.,3:3,1,3,15,25,10,,,,1
@@ -82,4 +82,26 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3227,"3,5",You are a genius in learning.,"4:8,6:5",1,4,50,-1,10,,,,1
 3228,"3,5",You're called a nerd because your grades are so good,1:-1,1,4,40,-1,10,,,,1
 3229,"3,10",You made a wish to a shooting star and said you wanted to see aliens.,,1,5,20,-1,10,,,,1
-3230,"3,18",You were kidnapped by aliens.,5:-150,1,5,20,35,10,3229,,,0
+3230,"3,18",You were kidnapped by aliens.,1:-150,1,5,25,40,10,3229,,,0
+3231,"3,5",You often play football on grass.,"1:1,2:2",0,,,,10,,,,1
+3232,"3,5",You like listening to your mother tell fairy tales.,4:2,0,,,,10,,,,1
+3233,"3,5",You like listening to music very much.,3:2,0,,,,10,,,,1
+3234,"4,5",You go to elementary school.,,0,,,,20,,,,0
+3235,"6,10",You are studying hard.,4:1,0,,,,10,,,,1
+3236,"6,10",You practice the violin every day.,3:1,0,,,,10,3010,,,1
+3237,"6,10",You play football every week.,2:1,0,,,,10,3012,,,1
+3238,"6,10",You practice the piano every day.,3:1,0,,,,10,3011,,,1
+3239,"6,10",You play basketball every week.,2:1,0,,,,10,3013,,,1
+3240,"6,8",You're studying too fast so you skipped a grade.,4:2,1,4,40,70,10,,,,0
+3241,"6,8","You are far smarter than ordinary people, so you were taken away and subjected to human experiments.",1:-100,1,4,70,-1,10,,,,0
+3242,"6,18",You were robbed by a bunch of punks.,1:-3,1,5,0,30,10,,,,1
+3243,"6,18",You got hurt by a bunch of punks.,1:-8,1,5,0,10,10,,,,1
+3244,"6,18",You secretly drank your dad's wine.,"1:-1,7:2",0,,,,10,,,3250,1
+3245,"6,18",You were shared a cigarette from a friend.,"1:-1,7:2",0,,,,10,,,,1
+3246,"6,18",You stole your family's money to buy the latest iPhone,7:2,0,,,,10,"",,3250,1
+3247,"6,18",Your dad caught you stealing money and beat you.,"1:-2,7:2",1,5,-1,30,10,3246,,"3248,3250",0
+3248,"6,18","Your dad found out you were stealing money, he criticized you mildly, you were ashamed.",7:2,1,5,30,50,10,3246,,"3247,3250",0
+3249,"6,18",You made your first money with a summer job.,7:4,0,,,,10,,,,0
+3250,"6,18",You ran away from home.,7:-2,1,7,-1,5,10,,,"",1
+3251,"6,18",You had no money to eat and had to go home.,7:-2,1,4,-1,10,10,3250,,,1
+3252,"6,18",You robbed people to stay alive,7:-2,1,2,30,-1,10,3250,,,1

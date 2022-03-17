@@ -1,6 +1,6 @@
 id,value,notes
 1001,1,System cache expiration time(s)
-2001,100,Total number of initial attribute values
+2001,140,Total number of initial attribute values
 2002,10,Initial property minimum value
 2003,50,Initial property maximum value
 2004,60,The first special mechanism age
