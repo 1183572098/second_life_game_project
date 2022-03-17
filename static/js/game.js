@@ -85,7 +85,7 @@ function createEventTable(){
         let eventArray = Array.from(eventId);
         let year = 0;
         for(let event of eventArray){
-            if(parseInt((event%10000) / 1000) === 3){
+            if(parseInt((parseInt(event)%10000) / 1000) === 3){
                 createEvent(year, event);
                 year ++;
             }
