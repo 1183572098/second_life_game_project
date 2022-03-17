@@ -87,7 +87,7 @@ body{
 .save{
 	position: absolute;
 	top: 60px;
-	right: 800px;
+	left: -120px;
 	width: 80px;
 	height: 80px;
 	font-style: oblique;
@@ -143,11 +143,14 @@ body{
 	width: 878px;
 }
 
+.subMiddle .event{
+	display: block;
+	overflow: auto;
+}
+
 .subMiddle .body{
 	margin-top: 58px;
-	display: block;
 	height: 250px;
-	overflow: auto;
 }
 
 .subMiddle2{
@@ -229,18 +232,18 @@ body{
 .select{
 	width: 220px;
 	height: 200px;
-	background-color: red;
+	/*background-color: red;*/
 	position: absolute;
 	top: 170px;
-	right: 724px;
+	right: 719px;
 	opacity: 0.8;
 }
 
 .selectHead{
-	height: 100px;
+	height: 90px;
 	background-color: #2E8B57;
 	color: #B0E0E6;
-	line-height: 100px;
+	line-height: 90px;
 	font: bold;
 	font-style: oblique;
 	text-align: center;
