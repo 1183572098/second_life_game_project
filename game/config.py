@@ -104,7 +104,11 @@ class Event(Config):
                 if int(para["EventType"]) == 1 and (para["pre_event"] == "" or self._satisfy_pre(para["pre_event"].split(","), event_history)) and (para["exclusive_events"] == "" or self._satisfy_exclusive(para["exclusive_events"].split(","), event_history)):
                     if int(para["IsRepeated"]) == 1 or int(para["event ID"]) not in event_history:
                         if int(para["maximum"]) > attributes[int(para["attribute threshold"])] > int(para["minimum"]):
-                            event_list.update({int(para["event ID"]): eval(modify_ternary_expression(para["probability"]))})
+                            try:
+                                weight = int(para["probability"])
+                            except Exception as e:
+                                weight = eval(modify_ternary_expression(para["probability"]))
+                            event_list.update({int(para["event ID"]): weight})
 
         return event_list
 
@@ -125,9 +129,10 @@ class Event(Config):
         effect_dict = {}
         for para in self.config:
             if para["event ID"] == str(event_id):
-                if para["effect"] is not None:
+                if para["effect"] != "":
                     effects = para["effect"].split(",")
                     for effect in effects:
+                        print(para["event ID"])
                         attribute_id, value = effect.split(":")
                         effect_dict.update({int(attribute_id): int(value)})
 
