@@ -1,4 +1,4 @@
-from unittest import TestCase
+from django.test import TestCase
 from django.contrib.auth.models import User
 from game.models import Announcement
 
@@ -52,3 +52,27 @@ class AnnouncementClassTest(TestCase):
         announcement.save()
         self.assertEqual((announcement.title == 'test'), True)
 
+
+class LoginViewTests(TestCase):
+    def setUp(self):
+        self.player = {
+            'username': 'player',
+            'password': 'player',
+        }
+        User.objects.create_user(**self.player)
+        self.administrator = {
+            'username': 'administrator',
+            'password': 'administrator',
+            'is_staff': True,
+        }
+        User.objects.create_user(**self.administrator)
+
+    def test_player_login(self):
+        response = self.client.post('/accounts/login/', self.player, follow=True)
+        self.assertTrue(response.context['user'].is_active)
+        self.assertEqual(response.context['user'].is_staff, False)
+
+    def test_administrator_login(self):
+        response = self.client.post('/accounts/login/', self.administrator, follow=True)
+        self.assertTrue(response.context['user'].is_active)
+        self.assertTrue(response.context['user'].is_staff)
