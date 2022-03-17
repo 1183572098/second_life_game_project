@@ -4,20 +4,18 @@
 }
 
 .formPosition{
-	width: 800px;
-	height: 200px;
-	margin-left: 325px;
-	position: relative;
-	text-align:center;
-	padding-top:50px;
+	height: 160px;
+	margin: auto;
+  	width: 50%;
+  	padding: 10px;
 	color: black;
 	opacity: 0.6;
-	background-color: #B0E0E6;;
+	background-color: #B0E0E6;
 }
 
 h1{
   font-family: "papyrus"; 
-  font-size: 600%;
+  font-size: 500%;
   text-align: center;
 }
 
@@ -27,7 +25,7 @@ p{
 }
 
 .button{
-	position:center;
+  position:center;
 }
 
 table.test{
@@ -44,3 +42,11 @@ table.test{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+html {
+min-height: 100%;
+}
+b {
+overflow-y: scroll;
+}
+
