@@ -1,7 +1,5 @@
-event_id,option1,event1,option2,event2,option3,event3
-4001,studied hard all year,3047,fell for a new game,3046,learned to play the piano,3049
-4002,fell for your classmate,3050,realised you're gay,3051,broke up,3052
-4003,didn't pass your final exam,3053,got expelled,3054,went to college,3055
-4004,,,,,,
-4005,,,,,,
-4006,,,,,,
+event_id,option1,event1,option2,event2,option3,event3,question,notes
+4001,studying hard all year,3500,falling for a new game,3501,learning a musical instrument,3502,"It's your first year in primary school, your year plan will be",year 7
+4002,were rejected by your crush,3503,realised you're gay,3504,just broke up with someone,3505,"Everyone seems to be involved in a relationship, you",year 13
+4003,took a gap year,3506,looking for a job,3507,applied for college,3508,"This year you turn 18, you decided",year 18
+4004,have a try,3509,not to be curious,3510,report to his parents,3511,"You went to a party, saw your friends smoking weeds, you decided to",year 18
