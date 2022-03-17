@@ -86,9 +86,10 @@ class Process:
         if self.role.age in option_config.ages():
             event_dict = option_config.get_event(self.role.age)
         else:
-            event_dict = event.get_high_event(self.role.age, self.event_history, self.role.attribute)
-            if len(event_dict) == 0:
-                event_dict = event.get_event(self.role.age, self.event_history, self.role.attribute)
+            high_event_dict = event.get_high_event(self.role.age, self.event_history, self.role.attribute)
+            event_dict = event.get_event(self.role.age, self.event_history, self.role.attribute)
+            if len(high_event_dict) == 0:
+                event_dict.update(high_event_dict)
 
         if len(event_dict) == 1:
             return list(event_dict.keys())[0]
