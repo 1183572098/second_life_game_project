@@ -3,18 +3,14 @@
 	padding: 0;
 }
 
-.main{
-  position: relative;
-}
-
 .formPosition{
-	height: 400px;
+	height: 50%;
 	margin: auto;
   	width: 50%;
   	padding: 10px;
 	color: black;
 	opacity: 0.6;
-	background-color: black;;
+	background-color: black;
 }
 
 .gradient-text {
@@ -51,29 +47,21 @@ p{
 }
 
 .one{
-  position: absolute;
+  position: fixed;
+  left: 40%;
   bottom: 60px;
-  left: 580px;
-  height: 50px;
-  width: 100px;
-  background-color: red;
-  color: white;
-  /*position: !important;*/
-  line-height: 50px;
-  text-align: center;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  font-weight: bold;
   font-weight: bold;
 }
 
 
 .second{
-  position: absolute;
+  position: fixed;
+  left: 58%;
   bottom: 60px;
-  left: 800px;
-  height: 50px;
-  width: 100px;
-  color: white;
-  /*position: !important;*/
-  line-height: 50px;
-  text-align: center;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
   font-weight: bold;
 }

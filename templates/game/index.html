@@ -7,15 +7,10 @@
 {% block body_block %}
 
 <link rel="stylesheet" href="../../static/css/home.css">
-<link rel="stylesheet" href="../../static/css/base.css">
-
-<div class="main">
-
-<div class="formPosition">
     
+<div class ="formPosition">
       <h1 class="gradient-text">Second Life</h1>
 
-<div>
     <p>
         {% if user.is_authenticated %}
             Welcome, {{ user.username }}.
@@ -26,8 +21,8 @@
     </p>
     <br />
 </div>
-
 </div>
+
 </div>
 
 <div class="one gradient-text">
