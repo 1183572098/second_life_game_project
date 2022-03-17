@@ -5,3 +5,4 @@ attribute_id,attribute_name,notes
 4,intelligence,
 5,luck,
 6,reputation,
+7,mood,
