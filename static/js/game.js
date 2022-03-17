@@ -79,22 +79,31 @@ function createTop(){
 
 function createEventTable(){
     if(typeof eventId == "number"){
-        let eventBody = document.querySelectorAll("tbody")[3];
-
-        let tr = document.createElement('tr');
-        eventBody.appendChild(tr);
-        let td = document.createElement('td');
-        td.id = "value" + eventId;
-        td.innerHTML = "The " + age + " year";
-        tr.appendChild(td);
-        let td2 = document.createElement('td');
-        td2.id = "event" + eventId;
-        td2.innerHTML = eventMap.get(String(eventId));
-        tr.appendChild(td2);
+        createEvent(age, eventId);
     }
     else{
-        //TODO reload game
+        let eventArray = Array.from(eventId);
+        let year = 0;
+        for(let event of eventArray){
+            createEvent(year, event);
+            year ++;
+        }
     }
+}
+
+function createEvent(age, eventId){
+    let eventBody = document.querySelectorAll("tbody")[3];
+
+    let tr = document.createElement('tr');
+    eventBody.appendChild(tr);
+    let td = document.createElement('td');
+    td.id = "value" + eventId;
+    td.innerHTML = "The " + age + " year";
+    tr.appendChild(td);
+    let td2 = document.createElement('td');
+    td2.id = "event" + eventId;
+    td2.innerHTML = eventMap.get(String(eventId));
+    tr.appendChild(td2);
 }
 
 $('#next').click(function(){
