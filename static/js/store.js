@@ -7,7 +7,9 @@ var bagMap = new Map();
 var ShopMap = new Map();
 var goodsNameMap = new Map();
 var goodsIconMap = new Map();
+var goodsMoneyMap = new Map();
 var goodsNotesMap = new Map();
+var attributeStoreMap = new Map();
 
 
 function byId(id){
@@ -19,7 +21,6 @@ $(document).ready(function(){
 		url: "../../static/config/StoreTable.csv",
 		dataType: "text",
 	}).done(readTableSuccess);
-
 });
 
 function readTableSuccess(data){
@@ -29,6 +30,7 @@ function readTableSuccess(data){
 		if(dataCell[0]!==""){
 			goodsNameMap.set(dataCell[0], dataCell[1]);
 			goodsIconMap.set(dataCell[0], dataCell[12]);
+			goodsMoneyMap.set(dataCell[0], dataCell[3]);
 			goodsNotesMap.set(dataCell[0], dataCell[11]);
 		}
 	}
@@ -64,16 +66,17 @@ function openStore(){
 
 function showStore(){
 	let bagBody = document.querySelectorAll("tbody")[1];
-	let storeBody = document.querySelectorAll("tbody")[2];
+
 	$("#bag tbody").html("");
 	$("#store tbody").html("");
 	for(let [key, value] of bagMap){
 		bagBody.appendChild(createTr(key, value, 0));
 	}
 
-	for(let [key, value] of ShopMap){
-		storeBody.appendChild(createTr(key, value, 1));
-	}
+	$.ajax({
+		url: "../../static/config/attribute.csv",
+		dataType: "text",
+	}).done(readStoreAttributeSuccess);
 }
 
 function createTr(key, value, type){
@@ -103,7 +106,35 @@ function createTr(key, value, type){
 	td4.innerHTML = goodsNotesMap.get(String(key));
 	tr.appendChild(td4);
 
+	if(type === 1){
+		let td5 = document.createElement('td');
+		let str = goodsMoneyMap.get(String(key)).split(":");
+		td5.innerHTML = attributeStoreMap.get(str[0]);
+		td5.innerHTML += "-";
+		td5.innerHTML += str[1];
+		tr.appendChild(td5);
+	}
 	return tr;
+}
+
+function readStoreAttributeSuccess(data){
+	let newData = data.split(/\r?\n|\r/)
+	for(let i=1;i<newData.length;i++){
+		let dataCell = newData[i].split(",");
+		if(dataCell[0]!==""){
+			if(parseInt(dataCell[2]) !== 1) {
+				attributeStoreMap.set(dataCell[0], dataCell[1]);
+			}
+		}
+	}
+	createStoreBody();
+}
+
+function createStoreBody(){
+	let storeBody = document.querySelectorAll("tbody")[2];
+	for(let [key, value] of ShopMap){
+		storeBody.appendChild(createTr(key, value, 1));
+	}
 }
 
 function setIcon(val, type){

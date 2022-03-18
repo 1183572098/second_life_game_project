@@ -164,6 +164,13 @@ class StoreTable(Config):
             if para["ID"] == str(good_id):
                 return int(para["Type"])
 
+    def get_money(self, good_id):
+        for para in self.config:
+            if para["ID"] == str(good_id):
+                attribute_id, value = para["money"].split(":")
+                money_dict = {attribute_id: value}
+                return money_dict
+
     def get_values(self, good_id):
         values = {}
         for para in self.config:

@@ -24,7 +24,7 @@ class Process:
         attribute_num = len(self.role.attribute)
         available_value = int(parameter.value(2001))
         for i in range(attribute_num - 1):
-            random_num = random.randint(int(parameter.value(2002)), min([int(parameter.value(2003)), available_value, available_value - (attribute_num - i - 1) * int(parameter.value(2002))]))
+            random_num = random.randint(int(parameter.value(2002)), min([int(parameter.value(2003)), available_value - (attribute_num - i - 1) * int(parameter.value(2002))]))
 
             available_value -= random_num
             random_attributes.append(random_num)
@@ -147,6 +147,12 @@ class Process:
         return shop
 
     def purchase(self, good_id):
+        money_dict = store_table.get_money(good_id)
+        for k, v in money_dict.items():
+            if self.role.attribute.get(k) < v:
+                return False
+            else:
+                self.role.attribute.update({k, self.role.attribute.get(k) - v})
 
         if self.bag.get(good_id) is None:
             self.bag.update({good_id: 1})
@@ -158,6 +164,7 @@ class Process:
                 self.shop.update({good_id: self.shop.get(good_id) - 1})
             else:
                 del self.shop[good_id]
+        return True
 
     def use_good(self, good_id):
         if self.bag.get(good_id) == 1:

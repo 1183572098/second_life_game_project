@@ -104,9 +104,13 @@ class Manager:
             result.update({"success": 0})
             result.update({"reason": "The good is not in the store"})
         if shop.get(good_id) == -1 or shop.get(good_id) > 0:
-            game.purchase(good_id)
-            result.update({"success": 1})
-            result.update(self.open_shop(request_data))
+            success = game.purchase(good_id)
+            if success:
+                result.update({"success": 1})
+                result.update(self.open_shop(request_data))
+            else:
+                result.update({"success": 0})
+                result.update({"reason": "Attribute value is not enough"})
         else:
             print("info: can't purchase")
             result.update({"success": 0})
