@@ -1,3 +1,4 @@
 state_id,state_name,notes
 1,free,Players can do anything
 2,off_home,Player is not at home right now
+3,on_alien_plant,Player is on an alien planet
