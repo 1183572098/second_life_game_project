@@ -53,7 +53,7 @@ class Process:
             result.update({"is_end": 0})
             result.update({"age": self.role.age})
             result.update({"event_id": event_id})
-            result.update({"attribute": self.role.attribute})
+            result.update({"attribute": self.role.visible_attribute})
         else:
             result.update({"is_end": 1})
             result.update({"attribute_id": is_end})

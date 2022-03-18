@@ -92,10 +92,11 @@ class Event(Config):
                         if int(para["IsRepeated"]) == 1 or int(para["event ID"]) not in event_history:
                             pre_state_list = para["pre_state_id"].split(",")
                             is_ready = True
-                            for current_state in role.state:
-                                if current_state not in pre_state_list:
-                                    is_ready = False
-                                    break
+                            if pre_state_list[0] != "":
+                                for pre_state in pre_state_list:
+                                    if pre_state not in role.state:
+                                        is_ready = False
+                                        break
 
                             if is_ready:
                                 try:

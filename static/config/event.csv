@@ -1,5 +1,5 @@
 event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,probability,pre_event,notes,exclusive_events,IsRepeated,pre_state_id,after_state_id
-3001,"0,0",You were born.,1:0,0,,,,95,,,,1,-1,"1,3,4,8"
+3001,"0,0",You were born.,1:0,0,,,,95,,,,1,,"1,3,4,8"
 3002,"0,0",You were stillborn.,1:-100,0,,,,5,,,,1,-1,
 3003,"1,2",You can walk faster than any kids in your age.,"1:2,2:3",0,,,,10,,year 1-2,3213,0,1,
 3004,"1,2",You grew up in a big city.,5:1,0,,,,10,,,3005,1,1,
