@@ -147,6 +147,7 @@ class Process:
         return shop
 
     def purchase(self, good_id):
+
         if self.bag.get(good_id) is None:
             self.bag.update({good_id: 1})
         else:
@@ -199,7 +200,7 @@ class Process:
         result = {}
         self._execute_event(event_id)
         result.update({"event_id": event_id})
-        result.update({"attribute": self.role.attribute})
+        result.update({"attribute": self.role.visible_attribute})
         return result
 
 
