@@ -61,6 +61,7 @@ body{
 
 }
 
+
 .shop{
 	position: absolute;
 	top: -70px;
@@ -137,14 +138,21 @@ body{
 	width: 878px;
 }
 
+.subMiddle tbody{
+	display: block;
+	overflow: auto;
+	margin-top: 40px;
+}
+
+/*
 .subMiddle .event{
 	display: block;
 	overflow: auto;
 }
-
+*/
 .subMiddle .body{
-	margin-top: 99px;
-	height: 260px;
+	margin-top: 61px;
+	height: 190px;
 }
 
 .subMiddle2{
@@ -165,9 +173,21 @@ body{
 	line-height: 50px;
 	font-size: 27px;
 	margin-left: 810px;
-	/*background-image: url("../image/background/E.png");*/
-
 	opacity: 0.8;
+}
+
+.restart{
+	position: absolute;
+	/*bottom: 20px;*/
+	/*background-image: url("../image/background/A.png");*/
+	left: 250px;
+}
+
+.return{
+	position: absolute;
+	/*bottom: 20px;*/
+	/*background-image: url("../image/background/A.png");*/
+	left: 450px;	
 }
 
 
@@ -198,7 +218,7 @@ body{
 	float: left;
 	width: 430px;
 	/*background-color: #B0E0E6;*/
-	background-image: url("../image/background/A.png");
+	background-image: url("../image/background/BB.png");
 	height: 300px;
 	display: block;
 	overflow: auto;
@@ -216,6 +236,7 @@ body{
 	color: 	wheat;
 
 }
+
 
 .store tr{
 	height: 50px;
@@ -278,6 +299,7 @@ body{
 	height: 100%;
 	opacity: !important;
 }
+
 
 .baseFoot{
 	background-image: url("../image/background/EE.png");	
