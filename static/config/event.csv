@@ -212,3 +212,9 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3330,"18,60",Your job was replaced by AI and you lost your job.,"7:-3,8:-5",0,,,,3,,,,0,7,8
 3331,"18,60",Your job didn't change when AI hited.,"7:3,8:5",0,,,,3,,,,0,9,
 3332,"1,-1",7.0 magnitude earthquake hits Japan.,7:-1,0,,,,3,,,,0,,
+3333,"18,-1",Pork prices had risen.,7:-1,0,,,,2,,,,1,,
+3334,"18,-1",Scientists had successfully built a Dyson sphere.,,0,,,,3,,,,0,,
+3335,"18,-1",Novel flu had spread around the world.,,0,,,,2,,,,1,,
+3336,"18,-1",An actor became the president of the United States.,,0,,,,2,,,,0,,
+3337,"18,-1",Scientists discovered aliens.,,0,,,,2,,,3230,0,,
+3338,"18,-1",Virtual reality technology has been vigorously developed.,,0,,,,2,,,,0,,
