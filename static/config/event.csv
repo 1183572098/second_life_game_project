@@ -1,220 +1,220 @@
-event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,probability,pre_event,notes,exclusive_events,IsRepeated,pre_state_id,after_state_id
-2999,"0,0",You were born.,1:0,0,,,,95,,,,0,,"1,3,4,8,10"
-2998,"0,0",You were stillborn.,1:-100,0,,,,5,,,,0,"",
-3003,"1,2",You can walk faster than any kids in your age.,"1:2,2:3",0,,,,10,,year 1-2,3213,0,1,
-3004,"1,2",You grew up in a big city.,5:1,0,,,,10,,,3005,1,1,
-3005,"1,2",You grew up in the countryside.,5:1,0,,,,10,,,3004,1,1,
-3006,"3,3",You started preschool.,1:0,0,,,,10,,3 years old,,1,1,
-3007,"4,6",Kids in kindergarden like you.,5:3,0,,,,10,3006,,,1,1,
-3008,"4,6",Mom and dad punished you for always bullying other kids.,5:-3,0,,,,10,,,,1,1,
-3009,"4,6","You had a crush for the first time in your life, but you weren't brave enough to tell that person.",5:1,0,,,,10,,,,0,1,
-3010,"7,10",You started playing the violin.,3:3,0,,,,10,,,,0,1,
-3011,"7,10",You started playing the piano.,3:3,0,,,,10,,,,0,1,
-3012,"7,10",You start playing soccer,2:3,0,,,,10,,,,0,1,
-3013,"7,10",You start playing basketball,2:3,0,,,,10,,,,0,1,
-3014,"11,17",You joined school soccer team.,2:4,1,2,10,20,20,3012,changes starts from here Thur,,1,1,
-3015,"11,17",You got Covid and lost your sense of smell.,1:-5,0,,,,10,,,,,,
-3016,"11,17",You won championship in a soccer game.,2:8,1,2,20,30,20,3012,,,,,
-3017,"11,17",You were grounded for drinking.,"1:-4,4:-5",0,,,,,,,,,,
-3018,"11,17","You had a huge fight with your parents, you thought no one really understood you in this house.","4:-3,5:-1",0,,,,,,,,,,
-3019,"11,17",You got a pair of expensive sneakers as your birthday gift.,5:3,0,,,,,,,,,,
-3020,"11,17",You were bullied by elder kids and called names.,7:-5,0,,,,,,,,,,
-3021,"11,17",You can't bare the bullying and killed yourself.,7:-100,0,,,,2,3020,,3008,,,
-3022,"11,17",You had a baby brother.,5:3,0,,,,10,,,,,,
-3023,"11,17",You had a baby sister.,5:3,0,,,,10,,,,,,
-3024,"11,17",You joined school basketball team.,2:4,0,,,,10,3013,,,,,
-3025,"18,22",You worked out every week and became muscular.,"1:5,2:2",0,,,,10,,Update Fri,,,,
-3026,"18,22",You broke your leg in an car accident.,"1:-8,7:-5",0,,,,10,,18-22,,,,
-3027,"19,19",You were admitted by University of Glasgow.,7:5,1,4,15,25,10,3508,,,,,
-3030,"19,22",You became a soccer star.,"2:10,6:5",1,2,30,50,10,3016,,,0,,
-3031,"18,22",You won scholarship and celebrated by having a big meal.,"5:3,7:5",0,,,,10,3033,Update from here,,0,,
-3032,"19,19",You were turned down by every college.,7:-5,1,4,1,14,10,3508,3508:applied for college,,0,,
-3033,"19,19",You were admitted by Harvard.,7:5,1,4,26,80,10,,,,0,,
-3034,"19,22",You learned skiing this year.,"1:2,2:5",0,,,,10,,,,0,,
-3035,"19,22",My father went bankrupt.,"6:-5,7:-5",0,,,,10,,,,0,,
-3036,"19,22",You were broken and had to find a part-time job in a coffee shop.,5:2,0,,,,10,3035,,3038,0,,
-3037,"19,22",You met a girl at the coffee shop.,"5:2,7:3",0,,,,10,3036,,,0,,
-3038,"19,22",You went to Paris for summer vacation.,"3:2,7:5",0,,,,10,,,3035,0,,
-3039,"19,22",You bought some dog coins as investigation.,"8:-8,5:5",0,,,,10,,,,0,,
-3040,"19,22",You decided to attend a reallife TV show.,"6:5,8:3",0,,,,10,,,,0,,
-3041,"19,22",You had your first job.,"8:8,7:-3",0,,,,10,,,3036,0,,
-3050,"23,24",You rented a small apartment.,"8:-5,7:5",0,,,,20,,,,0,,
-3041,"23,29",You got promoted and your salary has doubled.,"8:8,7:5",0,,,,10,,,3041,0,,
-3041,"23,29",You proposed and got married.,"6:5,7:5",0,,,,10,,,,0,10,11
-3050,"23,29",A friend of mine got married.,"7:3,8:-2",0,,,,10,,,,0,,
-3400,"12,-1",You were robbed and all your documents are lost.,"3:-2,7:-5",1,5,0,10,10,,flexible age limitation,,1,1,
-3401,"12,20",You came out with your parents. Dad couldn't accept it and lost his temper.,7:-5,0,,,,,3504,come out,,0,1,
-3402,"12,20",You came out with your parents. Dad and mom were supportive.,7:5,0,,,,,3504,,,0,1,
-3600,"0,-1",die of disease,1:-100,1,1,-80,0,999,,no age limitation,,1,1,
-3601,"0,-1",die of Stupidity,4:-100,1,4,-200,0,999,,,,1,1,
-3602,"0,-1",You died of depression.,,1,7,-200,0,999,3021,,,1,1,
-3603,"0,-1",You died on the operating table.,,1,1,-200,0,999,3026,,,1,1,
-3604,"0,-1",Nothing special happened this year.,,0,,,,5,,,,1,1,
-3605,"90,150",You had cancer,1:-100,0,,,,5+age*1+(50-health)>0?(50-health):0,,,,,,
-3500,"0,-1",You studied hard all year,4:5,2,,,,10,,"option events begin here, ID starts from 3500",,1,1,
-3501,"0,-1",You fell for a new game,"4:-2,1:-1",2,,,,10,,,,1,1,
-3502,"0,-1",You started to learn guitar.,3:3,2,,,,10,,,,1,1,
-3503,"0,-1",You were rejected by your crush,5:-2,2,,,,10,,,,1,1,
-3504,"0,-1",You wanted to come out but didn't know how.,5:2,2,,,,10,,,,1,1,
-3505,"0,-1",just broke up with someone,"5:-2,4:2",2,,,,10,,fell for your classmate,,1,1,
-3506,"0,-1",took a gap year,1:5,2,,,,10,,,,1,1,
-3507,"0,-1",looking for a job,4:-3,2,,,,10,,didn't pass your final exam,,1,1,
-3508,"0,-1",applied for college,4:5,2,,,,10,,,,1,1,
-3509,"0,-1",have a try,"1:-5,4:-3",2,,,,10,,,,1,1,
-3510,"0,-1",not to be curious,5:3,2,,,,10,,,,1,1,
-3511,"0,-1",report to his parents,5:1,2,,,,10,,,,1,1,
-3512,"0,-1",You went to Harvard.,7:3,2,,,,10,,,,1,1,
-3513,"0,-1",You went to Oxford.,7:3,2,,,,10,,,,1,1,
-3514,"0,-1",You went to MIT.,7:3,2,,,,10,,,,1,1,
-3515,"0,-1",You still didn't tell her/him your feelings.,"7:-1,5:1",2,,,,10,,Update from here,,10,,
-3516,"0,-1",You fianlly said the words and got a "yes"!,7:8,2,,,,10,,,,10,11,
-3517,"0,-1",She/He told you you were better off as friends.,"7:-5,5:1",2,,,,10,,,,10,,
-3518,"0,-1",A possitive answer made you the happiest person in the world.,7:8,2,,,,10,,,,10,11,
-3200,"5,-1",Adopted a puppy named Pavlov.,5:3,0,,,,10,,,,0,1,
-3201,"5,-1",Pavlov is dead.,,0,,,,10,3200,,,0,1,
-3202,"5,-1",Pavlov gave birth to 3 puppies.,5:3,0,,,,3,"3200,3210",,3201,1,1,
-3203,"5,-1",Adopted a cat named Schrödinger.,5:3,0,,,,10,,,,0,1,
-3204,"5,-1",Schrödinger gave birth to 3 kittens.,5:3,0,,,,3,3203,,3208,1,1,
-3205,"5,-1","Schrödinger ran away from home, in a superposition of life and death.",,0,,,,10,3203,,3208,0,1,
-3206,"5,-1",Schrödinger came home alive.,,1,5,25,-1,10,3205,,"3207,3208",0,1,
-3207,"5,-1",You saw the dead Schrödinger on your way home.,,1,5,-10,10,10,3205,,"3206,3208",0,1,
-3208,"5,-1",Schrödinger is dead.,,0,,,,10,3203,,3205,0,1,
-3209,"5,-1",Pavlov would drool after hearing the bell.,,0,,,,10,3200,,3201,0,1,
-3210,"5,-1",Pavlov died while giving birth to a puppy.,5:0,1,5,-10,10,10,3200,,3201,0,1,
-3211,"5,-1",Schrödinger died while giving birth to kittens.,,1,5,-10,10,10,3203,,"3205,3208",0,1,
-3212,"1,2",You smiled when you hear some music.,3:2,0,,,,10,,,,1,1,
-3213,"1,2",You learned to walk.,2:1,0,,,,10,,,3003,0,1,
-3214,"1,2",You liked to hear stories.,4:3,0,,,,10,,,,1,1,
-3215,"1,2",You were kissed by the goddess of luck.,5:3,0,,,,10,,,,1,1,
-3216,"3,5",You won second prize in the Toddler Music Competition.,3:3,1,3,15,25,10,,,,1,1,
-3217,"3,5",You won first prize in the Toddler Music Competition.,"3:5,6:3",1,3,25,50,10,,,,1,1,
-3218,"3,5",You won the participation award in the Toddler Music Competition.,3:0,1,3,0,15,10,,,,1,1,
-3219,"3,5",You shined in the Toddler Music Competition and were hailed as a genius.,"3:8,6:5",1,3,50,-1,10,,,,1,1,
-3220,"3,5",You won second prize in the Toddler Soccer Competition.,2:3,1,2,15,25,10,,,,1,1,
-3221,"3,5",You won first prize in the Toddler Soccer Competition.,"2:5,6:3",1,2,25,50,10,,,,1,1,
-3222,"3,5",You won the participation award in the Toddler Soccer Competition.,2:0,1,2,0,15,10,,,,1,1,
-3223,"3,5",You shined in the Toddler Soccer Competition and were hailed as a genius.,"2:8,6:5",1,2,50,-1,10,,,,1,1,
-3224,"3,5",You did well in your studies and got a top 10 grade in your class.,4:3,1,4,15,25,10,,,,1,1,
-3225,"3,5",Your academic performance is excellent and you got the first place in your class.,"4:5,6:3",1,4,25,50,10,,,,1,1,
-3226,"3,5",Your academic performance is average.,4:0,1,4,0,15,10,,,,1,1,
-3227,"3,5",You are a genius in learning.,"4:8,6:5",1,4,50,-1,10,,,,1,1,
-3228,"3,5",You're called a nerd because your grades are so good,1:-1,1,4,40,-1,10,,,,1,1,
-3229,"3,10",You made a wish to a shooting star and said you wanted to see aliens.,,1,5,20,-1,10,,,,0,4,
-3230,"3,18",You were kidnapped by aliens.,1:-30,1,5,25,40,10,3229,,,0,4,5
-3231,"3,5",You often play football on grass.,"1:1,2:2",0,,,,10,,,,1,1,
-3232,"3,5",You like listening to your mother tell fairy tales.,4:2,0,,,,10,,,,1,1,
-3233,"3,5",You like listening to music very much.,3:2,0,,,,10,,,,1,1,
-3234,"4,5",You go to elementary school.,,0,,,,20,,,,0,1,
-3235,"6,18",You are studying hard.,4:1,0,,,,20,,,,1,1,
-3236,"6,18",You practice the violin every day.,3:1,0,,,,20,3010,,,1,1,
-3237,"6,18",You play football every week.,2:1,0,,,,20,3012,,,1,1,
-3238,"6,18",You practice the piano every day.,3:1,0,,,,20,3011,,,1,1,
-3239,"6,18",You play basketball every week.,2:1,0,,,,20,3013,,,1,1,
-3240,"6,8",You're studying too fast so you skipped a grade.,4:2,1,4,40,70,10,,,,0,1,
-3241,"6,8","You are far smarter than ordinary people, so you were taken away and subjected to human experiments.",1:-100,1,4,70,-1,10,,,,0,1,
-3242,"6,18",You were robbed by a bunch of punks.,1:-3,1,5,0,30,10,,,,1,1,
-3243,"6,18",You got hurt by a bunch of punks.,1:-8,1,5,0,10,10,,,,1,1,
-3244,"6,18",You secretly drank your dad's wine.,"1:-1,7:2",0,,,,10,,,3250,1,1,
-3245,"6,18",You were shared a cigarette from a friend.,"1:-1,7:2",0,,,,10,,,,1,1,
-3246,"6,18",You stole your family's money to buy the latest iPhone.,7:2,0,,,,10,"",,3250,1,1,
-3247,"6,18",Your dad caught you stealing money and beat you.,"1:-2,7:2",1,5,-1,30,10,3246,,"3248,3250",0,1,
-3248,"6,18","Your dad found out you were stealing money, he criticized you mildly, you were ashamed.",7:2,1,5,30,50,10,3246,,"3247,3250",0,1,
-3249,"6,18",You made your first money with a summer job.,7:4,0,,,,10,,,,0,1,
-3250,"13,18",You ran away from home.,7:-2,1,7,-1,5,10,,,"",1,3,2
-3251,"13,18",You had no money to buy food and had to go home.,7:-2,1,4,-1,30,10,3250,,"3255,3256",1,2,3
-3252,"13,18",You robbed people to stay alive.,7:-2,1,2,30,-1,20,"3250,3246",,3248,1,2,
-3253,"13,18",You made a living by playing the violin.,7:2,1,3,30,-1,20,"3250,3010",,,1,2,
-3254,"13,18",You make a living by doing temporary work.,7:2,1,2,30,-1,20,3250,,,1,2,
-3255,"13,18",You were caught by the police and sent home.,7:-2,1,5,30,50,20,"3250,3252",,"3256,3251",1,2,3
-3256,"13,18",You were found by your parents and brought home.,7:2,0,,,,10,3250,,"3255,3251",1,2,3
-3256,"6,-1",Your mother died.,7:-2,0,,,,5,,,,0,1,
-3257,"6,-1",You made a wish to the meteor that your mother would come back.,,1,5,20,-1,5,3256,,,0,1,
-3258,"6,-1",You saw your mother's ghost in the cemetery.,7:2,1,5,25,-1,10,3257,,3259,0,1,
-3259,"6,-1","You heard your 'mother' knock on the door, but you didn't dare to open it.",7:-2,1,5,-1,10,10,3257,,3258,0,1,
-3260,"6,-1",Your father died.,7:-2,0,,,,5,,,,0,1,
-3261,"6,-1",You made a wish to the meteor that your father would come back.,,1,5,20,-1,5,3260,,,0,1,
-3262,"6,-1",You saw your father's ghost in the cemetery.,7:2,1,5,25,-1,10,3261,,3263,0,1,
-3263,"6,-1","You heard your 'father' knock on the door, but you didn't dare to open it.",7:-2,1,5,-1,10,10,3261,,3262,0,1,
-3264,"12,-1",You hit the jackpot and took the whole family on a beach trip.,7:5,1,5,50,-1,5,,,,1,1,
-3265,"3,-1",You fell in love at first sight by an alien leader.,"1:10,7:5",1,5,50,-1,999,3230,,,0,5,
-3266,"3,-1",Aliens experimented on you.,"1:-150,7:-10",0,,,,10,3230,,3265,0,5,
-3267,"3,-1",You found a weakness in alien defense.,4:8,1,4,50,-1,999,3230,,3265,0,5,
-3268,"3,-1",You successfully escaped from the alien base.,2:8,1,2,40,-1,999,3267,,3273,0,5,
-3269,"3,-1",You were hidden in your home by kind aliens.,5:8,1,5,30,-1,999,3268,,3275,0,5,
-3270,"3,-1",The alien who helped you would drive a spaceship and send you back to Earth.,5:8,1,5,50,-1,999,3269,,,0,5,
-3271,"3,-1",You were back on earth.,5:8,0,,,,999,3270,,,0,5,4
-3272,"3,-1","You were reported by alien neighbors,  captured and killed.",1:-150,1,5,-1,50,999,3269,,3270,0,5,
-3273,"3,-1",You were caught and returned during the escape.,5:-8,1,2,-1,40,999,3267,,3268,0,5,
-3274,"3,-1","Because of your cleverness,  you were taken out of your brain by aliens for experiments.",1:-150,0,,,,999,3273,,,0,5,
-3275,"3,-1","No one can help you, you had to send a SOS signal to the earth.",,1,5,-1,30,999,3268,,3269,0,5,
-3276,"3,-1",You were captured and killed by aliens before earthlings came to rescue you.,1:-150,0,,,,999,3275,,,0,5,
-3277,"3,-1",You have a mixed-race child.,7:5,0,,,,999,3265,,,0,5,
-3278,"3,-1",You lived to be 200 years old and then died.,1:-150,0,,,,999,3277,,,0,5,
-3279,"3,-1",You have learned the advanced technology of aliens.,4:10,1,4,60,-1,999,3265,,,0,5,
-3280,"3,-1",You learned to drive a spaceship.,2:10,1,2,40,-1,999,3265,,,0,5,
-3281,"3,-1",You have returned to earth yourself.,"7:10,6:10",0,,,,999,3280,,"3277,3282",0,5,4
-3282,"3,-1",You have returned to Earth with advanced alien technology.,"7:10,6:20",0,,,,999,"3280,3279",,"3277,3281",0,5,4
-3283,"6,18",You often travel.,"3:1,7:5",0,,,,10,,,,1,1,
-3284,"6,18",You play games every day.,"2:-1,3:-1,4:-1,7:2",0,,,,10,,,,1,1,
-3285,"6,18",You have nothing to do every day.,"2:-1,3:-1,4:-1",0,,,,5,,,,1,1,
-3286,"6,18",You often go out on dates with different people.,"2:-1,3:-1,4:-1,7:2",0,,,,5,,,,1,1,
-3287,"6,18",You often go out and fight people.,"2:1,3:-1,4:-1",1,2,20,-1,5,,,,1,1,
-3288,"6,18",You've become the boss of the gangster on this block.,"2:5,3:-1,4:2",1,2,30,-1,5,3287,,,1,1,
-3289,"18,60",You joined a big company with a great salary.,"4:2,7:5,8:10",1,4,40,-1,10,,,"",1,8,7
-3290,"18,60",You joined a company with friendly colleagues.,"4:1,7:5,8:8",1,4,15,40,10,,,,1,8,7
-3291,"18,60",You found a job.,"7:5,8:5",1,4,-1,15,10,,,,1,8,7
-3292,"18,60","Your colleague has a bad relationship with you, you resigned.",7:-2,0,,,,5,"3289,3290,3291",,"",1,7,8
-3293,"18,60",You made a great contribution to the company.,"4:1,6:3,7:3,8:8",0,,,,5,"3289,3290,3291",,"",1,7,
-3294,"18,60",You worked hard.,"4:1,7:1,6:1,8:5",0,,,,10,,,,1,7,
-3295,"18,60",You were invited by another company to work there.,"4:1,7:1",1,6,15,-1,10,,,,1,7,
-3296,"18,60",You had to leave this company because you lost a battle within the company.,7:-2,0,,,,5,,,,1,7,8
-3297,"18,60",You got promoted.,"4:2,7:5,6:3",1,6,15,-1,10,,,,1,7,
-3298,"18,60",You became the boss of the company.,"4:3,7:8,6:5",1,6,25,-1,10,,,,1,7,9
-3299,"18,60",You created your own company and started a business.,"4:3,7:8,6:5,8:100",1,6,25,-1,10,"3289,3290,3291",,,1,8,9
-3300,"18,60",Your company went bankrupt.,"7:-5,6:-5,8:-100",1,6,-1,10,3,3299,,,1,9,8
-3301,"18,60",You worked hard for your own company.,"4:1,7:1,6:1,8:8",0,,,,10,,,,1,9,
-3302,"18,60","You used your work email to flirt with coworkers, and you got fired.","7:-3,8:-5,6:-3",0,,,,3,,,,1,"7,9",8
-3303,"18,60","The economic situation was not good, and your company's profitability declines.","7:-3,8:-5,6:-2",0,,,,5,3299,,,1,9,
-2997,"0,0",You were born into a wealthy family.,,1,8,25,-1,999,,,,0,,"1,3,4,8,10"
-2996,"0,0",You were born into a poor family.,,1,8,-1,10,999,,,,0,,"1,3,4,8,10"
-2995,"0,0",You were kissed by the goddess of luck when you were born.,,1,5,25,-1,999,,,,0,,"1,3,4,8,10"
-2994,"0,0",You were born with a difficult birth and you don't seem lucky enough.,,1,5,-1,10,999,,,,0,,"1,3,4,8,10"
-2993,"0,0",You were born into a prestigious family.,,1,6,25,-1,999,,,,0,,"1,3,4,8,10"
-2992,"0,0",You were born into a notorious family.,,1,6,-1,10,999,,,,0,,"1,3,4,8,10"
-2991,"0,0",You were born crying loudly.,,1,1,25,-1,999,,,,0,,"1,3,4,8,10"
-2990,"0,0",You were born weak and cried weakly.,,1,1,-1,10,999,,,,0,,"1,3,4,8,10"
-3304,"18,-1",You often go to concerts.,"3:2,7:1",0,"",,,art>15?15:art,,,,1,,
-3305,"18,-1",You often play football with your friends.,"2:2,7:1",0,,,,sport>15?15:sport,,,,1,,
-3306,"18,-1",You often play basketball with your friends.,"2:2,7:1",0,,,,sport>15?15:sport,,,,1,,
-3307,"18,-1",You often go to galleries.,"3:2,7:1",0,,,,art>15?15:art,,,,1,,
-3308,"18,-1",You and your friends formed a band.,"3:2,7:1",1,3,20,-1,10,,,,0,,
-3309,"18,-1",Your band released the first album.,"3:2,7:1,6:1",1,3,20,-1,10,3308,,,0,,
-3310,"18,-1",Your band's album was very popular with friends.,"3:2,7:1,6:2",1,3,-1,40,10,3309,,3310,0,,
-3311,"18,-1",Your band's album went viral and were loved.,"3:2,7:2,6:5,8:5",1,3,20,-1,10,3310,,3311,0,,
-3312,"18,-1",Your band had released another album.,"3:2,7:1,6:1",1,3,20,-1,10,3308,,,1,,
-3313,"18,-1",Your album went viral.,"3:2,7:2,6:5,8:5",1,3,20,-1,5,3312,,3314,1,,
-3314,"18,-1",Your album is loved by neighbors and friends.,"3:2,7:1,6:2",1,3,-1,40,5,3312,,3313,1,,
-3315,"1,-1",Oil prices have risen.,,0,,,,3,,,,1,,
-3316,"1,-1",The third world war broke out.,7:-5,0,,,,3,,,,0,,
-3317,"1,-1",The world war is over.,7:5,0,,,,3,3316,,,0,,
-3318,"1,-1",You were killed by a bomb.,1:-150,0,,,,3,3316,,3317,0,,
-3319,"50,-1",You started to feel that money was useless and  health was the most important thing.,"",0,,,,3,,,,0,,
-3320,"50,-1",You felt aging and tire easily.,,0,,,,3,,,,0,,
-3321,"50,-1",You always thought back to the good old days.,,0,,,,3,,,,0,,
-3322,"50,-1","You liked to chat with lively young people, it made you feel alive.",,0,,,,3,,,,0,,
-3323,"40,-1",You started to like fishing.,7:2,0,,,,3,,,,0,,
-3324,"18,-1",You often hiking.,"2:2,7:2",0,,,,3,,,,1,,
-3325,"18,60",A leader of your company was arrested for corruption.,7:-2,0,,,,3,,,,0,,
-3326,"1,-1",6G signals covered the world.,,0,,,,3,,,,0,,
-3327,"1,-1",Scientists created a true AI.,,0,,,,3,,,,0,,
-3328,"1,-1","AI took most jobs in the world, people protested against AI.",,0,,,,3,3327,,,0,,
-3329,"1,-1",AI destroys the world.,1:-150,0,,,,3,3327,,,0,,
-3330,"18,60",Your job was replaced by AI and you lost your job.,"7:-3,8:-5",0,,,,3,,,,0,7,8
-3331,"18,60",Your job didn't change when AI hited.,"7:3,8:5",0,,,,3,,,,0,9,
-3332,"1,-1",7.0 magnitude earthquake hits Japan.,7:-1,0,,,,3,,,,0,,
-3333,"18,-1",Pork prices had risen.,7:-1,0,,,,2,,,,1,,
-3334,"18,-1",Scientists had successfully built a Dyson sphere.,,0,,,,3,,,,0,,
-3335,"18,-1",Novel flu had spread around the world.,,0,,,,2,,,,1,,
-3336,"18,-1",An actor became the president of the United States.,,0,,,,2,,,,0,,
-3337,"18,-1",Scientists discovered aliens.,,0,,,,2,,,3230,0,,
-3338,"18,-1",Virtual reality technology has been vigorously developed.,,0,,,,2,,,,0,,
+event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,probability,pre_event,notes,exclusive_events,IsRepeated,pre_state_id,after_state_id,is_end
+2999,"0,0",You were born.,1:0,0,,,,95,,,,0,,"1,3,4,8,10",0
+2998,"0,0",You were stillborn.,1:-100,0,,,,5,,,,0,"",,0
+3003,"1,2",You can walk faster than any kids in your age.,"1:2,2:3",0,,,,10,,year 1-2,3213,0,1,,0
+3004,"1,2",You grew up in a big city.,5:1,0,,,,10,,,3005,1,1,,0
+3005,"1,2",You grew up in the countryside.,5:1,0,,,,10,,,3004,1,1,,0
+3006,"3,3",You started preschool.,1:0,0,,,,10,,3 years old,,1,1,,0
+3007,"4,6",Kids in kindergarden like you.,5:3,0,,,,10,3006,,,1,1,,0
+3008,"4,6",Mom and dad punished you for always bullying other kids.,5:-3,0,,,,10,,,,1,1,,0
+3009,"4,6","You had a crush for the first time in your life, but you weren't brave enough to tell that person.",5:1,0,,,,10,,,,0,1,,0
+3010,"7,10",You started playing the violin.,3:3,0,,,,10,,,,0,1,,0
+3011,"7,10",You started playing the piano.,3:3,0,,,,10,,,,0,1,,0
+3012,"7,10",You start playing soccer,2:3,0,,,,10,,,,0,1,,0
+3013,"7,10",You start playing basketball,2:3,0,,,,10,,,,0,1,,0
+3014,"11,17",You joined school soccer team.,2:4,1,2,10,20,20,3012,changes starts from here Thur,,1,1,,0
+3015,"11,17",You got Covid and lost your sense of smell.,1:-5,0,,,,10,,,,,,,0
+3016,"11,17",You won championship in a soccer game.,2:8,1,2,20,30,20,3012,,,,,,0
+3017,"11,17",You were grounded for drinking.,"1:-4,4:-5",0,,,,,,,,,,,0
+3018,"11,17","You had a huge fight with your parents, you thought no one really understood you in this house.","4:-3,5:-1",0,,,,,,,,,,,0
+3019,"11,17",You got a pair of expensive sneakers as your birthday gift.,5:3,0,,,,,,,,,,,0
+3020,"11,17",You were bullied by elder kids and called names.,7:-5,0,,,,,,,,,,,0
+3021,"11,17",You can't bare the bullying and killed yourself.,7:-100,0,,,,2,3020,,3008,,,,0
+3022,"11,17",You had a baby brother.,5:3,0,,,,10,,,,,,,0
+3023,"11,17",You had a baby sister.,5:3,0,,,,10,,,,,,,0
+3024,"11,17",You joined school basketball team.,2:4,0,,,,10,3013,,,,,,0
+3025,"18,22",You worked out every week and became muscular.,"1:5,2:2",0,,,,10,,Update Fri,,,,,0
+3026,"18,22",You broke your leg in an car accident.,"1:-8,7:-5",0,,,,10,,18-22,,,,,0
+3027,"19,19",You were admitted by University of Glasgow.,7:5,1,4,15,25,10,3508,,,,,,0
+3030,"19,22",You became a soccer star.,"2:10,6:5",1,2,30,50,10,3016,,,0,,,0
+3031,"18,22",You won scholarship and celebrated by having a big meal.,"5:3,7:5",0,,,,10,3033,Update from here,,0,,,0
+3032,"19,19",You were turned down by every college.,7:-5,1,4,1,14,10,3508,3508:applied for college,,0,,,0
+3033,"19,19",You were admitted by Harvard.,7:5,1,4,26,80,10,,,,0,,,0
+3034,"19,22",You learned skiing this year.,"1:2,2:5",0,,,,10,,,,0,,,0
+3035,"19,22",My father went bankrupt.,"6:-5,7:-5",0,,,,10,,,,0,,,0
+3036,"19,22",You were broken and had to find a part-time job in a coffee shop.,5:2,0,,,,10,3035,,3038,0,,,0
+3037,"19,22",You met a girl at the coffee shop.,"5:2,7:3",0,,,,10,3036,,,0,,,0
+3038,"19,22",You went to Paris for summer vacation.,"3:2,7:5",0,,,,10,,,3035,0,,,0
+3039,"19,22",You bought some dog coins as investigation.,"8:-8,5:5",0,,,,10,,,,0,,,0
+3040,"19,22",You decided to attend a reallife TV show.,"6:5,8:3",0,,,,10,,,,0,,,0
+3041,"19,22",You had your first job.,"8:8,7:-3",0,,,,10,,,3036,0,,,0
+3050,"23,24",You rented a small apartment.,"8:-5,7:5",0,,,,20,,,,0,,,0
+3041,"23,29",You got promoted and your salary has doubled.,"8:8,7:5",0,,,,10,,,3041,0,,,0
+3041,"23,29",You proposed and got married.,"6:5,7:5",0,,,,10,,,,0,10,11,0
+3050,"23,29",A friend of mine got married.,"7:3,8:-2",0,,,,10,,,,0,,,0
+3400,"12,-1",You were robbed and all your documents are lost.,"3:-2,7:-5",1,5,0,10,10,,flexible age limitation,,1,1,,0
+3401,"12,20",You came out with your parents. Dad couldn't accept it and lost his temper.,7:-5,0,,,,,3504,come out,,0,1,,0
+3402,"12,20",You came out with your parents. Dad and mom were supportive.,7:5,0,,,,,3504,,,0,1,,0
+3600,"0,-1",die of disease,1:-100,1,1,-80,0,999,,no age limitation,,1,1,,0
+3601,"0,-1",die of Stupidity,4:-100,1,4,-200,0,999,,,,1,1,,0
+3602,"0,-1",You died of depression.,,1,7,-200,0,999,3021,,,1,1,,0
+3603,"0,-1",You died on the operating table.,,1,1,-200,0,999,3026,,,1,1,,0
+3604,"0,-1",Nothing special happened this year.,,0,,,,5,,,,1,1,,0
+3605,"90,150",You had cancer,1:-100,0,,,,5+age*1+(50-health)>0?(50-health):0,,,,,,,0
+3500,"0,-1",You studied hard all year,4:5,2,,,,10,,"option events begin here, ID starts from 3500",,1,1,,0
+3501,"0,-1",You fell for a new game,"4:-2,1:-1",2,,,,10,,,,1,1,,0
+3502,"0,-1",You started to learn guitar.,3:3,2,,,,10,,,,1,1,,0
+3503,"0,-1",You were rejected by your crush,5:-2,2,,,,10,,,,1,1,,0
+3504,"0,-1",You wanted to come out but didn't know how.,5:2,2,,,,10,,,,1,1,,0
+3505,"0,-1",just broke up with someone,"5:-2,4:2",2,,,,10,,fell for your classmate,,1,1,,0
+3506,"0,-1",took a gap year,1:5,2,,,,10,,,,1,1,,0
+3507,"0,-1",looking for a job,4:-3,2,,,,10,,didn't pass your final exam,,1,1,,0
+3508,"0,-1",applied for college,4:5,2,,,,10,,,,1,1,,0
+3509,"0,-1",have a try,"1:-5,4:-3",2,,,,10,,,,1,1,,0
+3510,"0,-1",not to be curious,5:3,2,,,,10,,,,1,1,,0
+3511,"0,-1",report to his parents,5:1,2,,,,10,,,,1,1,,0
+3512,"0,-1",You went to Harvard.,7:3,2,,,,10,,,,1,1,,0
+3513,"0,-1",You went to Oxford.,7:3,2,,,,10,,,,1,1,,0
+3514,"0,-1",You went to MIT.,7:3,2,,,,10,,,,1,1,,0
+3515,"0,-1",You still didn't tell her/him your feelings.,"7:-1,5:1",2,,,,10,,Update from here,,10,,,0
+3516,"0,-1",You fianlly said the words and got a "yes"!,7:8,2,,,,10,,,,10,11,,0
+3517,"0,-1",She/He told you you were better off as friends.,"7:-5,5:1",2,,,,10,,,,10,,,0
+3518,"0,-1",A possitive answer made you the happiest person in the world.,7:8,2,,,,10,,,,10,11,,0
+3200,"5,-1",Adopted a puppy named Pavlov.,5:3,0,,,,10,,,,0,1,,0
+3201,"5,-1",Pavlov is dead.,,0,,,,10,3200,,,0,1,,0
+3202,"5,-1",Pavlov gave birth to 3 puppies.,5:3,0,,,,3,"3200,3210",,3201,1,1,,0
+3203,"5,-1",Adopted a cat named Schrödinger.,5:3,0,,,,10,,,,0,1,,0
+3204,"5,-1",Schrödinger gave birth to 3 kittens.,5:3,0,,,,3,3203,,3208,1,1,,0
+3205,"5,-1","Schrödinger ran away from home, in a superposition of life and death.",,0,,,,10,3203,,3208,0,1,,0
+3206,"5,-1",Schrödinger came home alive.,,1,5,25,-1,10,3205,,"3207,3208",0,1,,0
+3207,"5,-1",You saw the dead Schrödinger on your way home.,,1,5,-10,10,10,3205,,"3206,3208",0,1,,0
+3208,"5,-1",Schrödinger is dead.,,0,,,,10,3203,,3205,0,1,,0
+3209,"5,-1",Pavlov would drool after hearing the bell.,,0,,,,10,3200,,3201,0,1,,0
+3210,"5,-1",Pavlov died while giving birth to a puppy.,5:0,1,5,-10,10,10,3200,,3201,0,1,,0
+3211,"5,-1",Schrödinger died while giving birth to kittens.,,1,5,-10,10,10,3203,,"3205,3208",0,1,,0
+3212,"1,2",You smiled when you hear some music.,3:2,0,,,,10,,,,1,1,,0
+3213,"1,2",You learned to walk.,2:1,0,,,,10,,,3003,0,1,,0
+3214,"1,2",You liked to hear stories.,4:3,0,,,,10,,,,1,1,,0
+3215,"1,2",You were kissed by the goddess of luck.,5:3,0,,,,10,,,,1,1,,0
+3216,"3,5",You won second prize in the Toddler Music Competition.,3:3,1,3,15,25,10,,,,1,1,,0
+3217,"3,5",You won first prize in the Toddler Music Competition.,"3:5,6:3",1,3,25,50,10,,,,1,1,,0
+3218,"3,5",You won the participation award in the Toddler Music Competition.,3:0,1,3,0,15,10,,,,1,1,,0
+3219,"3,5",You shined in the Toddler Music Competition and were hailed as a genius.,"3:8,6:5",1,3,50,-1,10,,,,1,1,,0
+3220,"3,5",You won second prize in the Toddler Soccer Competition.,2:3,1,2,15,25,10,,,,1,1,,0
+3221,"3,5",You won first prize in the Toddler Soccer Competition.,"2:5,6:3",1,2,25,50,10,,,,1,1,,0
+3222,"3,5",You won the participation award in the Toddler Soccer Competition.,2:0,1,2,0,15,10,,,,1,1,,0
+3223,"3,5",You shined in the Toddler Soccer Competition and were hailed as a genius.,"2:8,6:5",1,2,50,-1,10,,,,1,1,,0
+3224,"3,5",You did well in your studies and got a top 10 grade in your class.,4:3,1,4,15,25,10,,,,1,1,,0
+3225,"3,5",Your academic performance is excellent and you got the first place in your class.,"4:5,6:3",1,4,25,50,10,,,,1,1,,0
+3226,"3,5",Your academic performance is average.,4:0,1,4,0,15,10,,,,1,1,,0
+3227,"3,5",You are a genius in learning.,"4:8,6:5",1,4,50,-1,10,,,,1,1,,0
+3228,"3,5",You're called a nerd because your grades are so good,1:-1,1,4,40,-1,10,,,,1,1,,0
+3229,"3,10",You made a wish to a shooting star and said you wanted to see aliens.,,1,5,20,-1,10,,,,0,4,,0
+3230,"3,18",You were kidnapped by aliens.,1:-30,1,5,25,40,10,3229,,,0,4,5,0
+3231,"3,5",You often play football on grass.,"1:1,2:2",0,,,,10,,,,1,1,,0
+3232,"3,5",You like listening to your mother tell fairy tales.,4:2,0,,,,10,,,,1,1,,0
+3233,"3,5",You like listening to music very much.,3:2,0,,,,10,,,,1,1,,0
+3234,"4,5",You go to elementary school.,,0,,,,20,,,,0,1,,0
+3235,"6,18",You are studying hard.,4:1,0,,,,20,,,,1,1,,0
+3236,"6,18",You practice the violin every day.,3:1,0,,,,20,3010,,,1,1,,0
+3237,"6,18",You play football every week.,2:1,0,,,,20,3012,,,1,1,,0
+3238,"6,18",You practice the piano every day.,3:1,0,,,,20,3011,,,1,1,,0
+3239,"6,18",You play basketball every week.,2:1,0,,,,20,3013,,,1,1,,0
+3240,"6,8",You're studying too fast so you skipped a grade.,4:2,1,4,40,70,10,,,,0,1,,0
+3241,"6,8","You are far smarter than ordinary people, so you were taken away and subjected to human experiments.",1:-100,1,4,70,-1,10,,,,0,1,,0
+3242,"6,18",You were robbed by a bunch of punks.,1:-3,1,5,0,30,10,,,,1,1,,0
+3243,"6,18",You got hurt by a bunch of punks.,1:-8,1,5,0,10,10,,,,1,1,,0
+3244,"6,18",You secretly drank your dad's wine.,"1:-1,7:2",0,,,,10,,,3250,1,1,,0
+3245,"6,18",You were shared a cigarette from a friend.,"1:-1,7:2",0,,,,10,,,,1,1,,0
+3246,"6,18",You stole your family's money to buy the latest iPhone.,7:2,0,,,,10,"",,3250,1,1,,0
+3247,"6,18",Your dad caught you stealing money and beat you.,"1:-2,7:2",1,5,-1,30,10,3246,,"3248,3250",0,1,,0
+3248,"6,18","Your dad found out you were stealing money, he criticized you mildly, you were ashamed.",7:2,1,5,30,50,10,3246,,"3247,3250",0,1,,0
+3249,"6,18",You made your first money with a summer job.,7:4,0,,,,10,,,,0,1,,0
+3250,"13,18",You ran away from home.,7:-2,1,7,-1,5,10,,,"",1,3,2,0
+3251,"13,18",You had no money to buy food and had to go home.,7:-2,1,4,-1,30,10,3250,,"3255,3256",1,2,3,0
+3252,"13,18",You robbed people to stay alive.,7:-2,1,2,30,-1,20,"3250,3246",,3248,1,2,,0
+3253,"13,18",You made a living by playing the violin.,7:2,1,3,30,-1,20,"3250,3010",,,1,2,,0
+3254,"13,18",You make a living by doing temporary work.,7:2,1,2,30,-1,20,3250,,,1,2,,0
+3255,"13,18",You were caught by the police and sent home.,7:-2,1,5,30,50,20,"3250,3252",,"3256,3251",1,2,3,0
+3256,"13,18",You were found by your parents and brought home.,7:2,0,,,,10,3250,,"3255,3251",1,2,3,0
+3256,"6,-1",Your mother died.,7:-2,0,,,,5,,,,0,1,,0
+3257,"6,-1",You made a wish to the meteor that your mother would come back.,,1,5,20,-1,5,3256,,,0,1,,0
+3258,"6,-1",You saw your mother's ghost in the cemetery.,7:2,1,5,25,-1,10,3257,,3259,0,1,,0
+3259,"6,-1","You heard your 'mother' knock on the door, but you didn't dare to open it.",7:-2,1,5,-1,10,10,3257,,3258,0,1,,0
+3260,"6,-1",Your father died.,7:-2,0,,,,5,,,,0,1,,0
+3261,"6,-1",You made a wish to the meteor that your father would come back.,,1,5,20,-1,5,3260,,,0,1,,0
+3262,"6,-1",You saw your father's ghost in the cemetery.,7:2,1,5,25,-1,10,3261,,3263,0,1,,0
+3263,"6,-1","You heard your 'father' knock on the door, but you didn't dare to open it.",7:-2,1,5,-1,10,10,3261,,3262,0,1,,0
+3264,"12,-1",You hit the jackpot and took the whole family on a beach trip.,7:5,1,5,50,-1,5,,,,1,1,,0
+3265,"3,-1",You fell in love at first sight by an alien leader.,"1:10,7:5",1,5,50,-1,999,3230,,,0,5,,0
+3266,"3,-1",Aliens experimented on you.,"1:-150,7:-10",0,,,,10,3230,,3265,0,5,,0
+3267,"3,-1",You found a weakness in alien defense.,4:8,1,4,50,-1,999,3230,,3265,0,5,,0
+3268,"3,-1",You successfully escaped from the alien base.,2:8,1,2,40,-1,999,3267,,3273,0,5,,0
+3269,"3,-1",You were hidden in your home by kind aliens.,5:8,1,5,30,-1,999,3268,,3275,0,5,,0
+3270,"3,-1",The alien who helped you would drive a spaceship and send you back to Earth.,5:8,1,5,50,-1,999,3269,,,0,5,,0
+3271,"3,-1",You were back on earth.,5:8,0,,,,999,3270,,,0,5,4,0
+3272,"3,-1","You were reported by alien neighbors,  captured and killed.",1:-150,1,5,-1,50,999,3269,,3270,0,5,,0
+3273,"3,-1",You were caught and returned during the escape.,5:-8,1,2,-1,40,999,3267,,3268,0,5,,0
+3274,"3,-1","Because of your cleverness,  you were taken out of your brain by aliens for experiments.",1:-150,0,,,,999,3273,,,0,5,,0
+3275,"3,-1","No one can help you, you had to send a SOS signal to the earth.",,1,5,-1,30,999,3268,,3269,0,5,,0
+3276,"3,-1",You were captured and killed by aliens before earthlings came to rescue you.,1:-150,0,,,,999,3275,,,0,5,,0
+3277,"3,-1",You have a mixed-race child.,7:5,0,,,,999,3265,,,0,5,,0
+3278,"3,-1",You lived to be 200 years old and then died.,1:-150,0,,,,999,3277,,,0,5,,0
+3279,"3,-1",You have learned the advanced technology of aliens.,4:10,1,4,60,-1,999,3265,,,0,5,,0
+3280,"3,-1",You learned to drive a spaceship.,2:10,1,2,40,-1,999,3265,,,0,5,,0
+3281,"3,-1",You have returned to earth yourself.,"7:10,6:10",0,,,,999,3280,,"3277,3282",0,5,4,0
+3282,"3,-1",You have returned to Earth with advanced alien technology.,"7:10,6:20",0,,,,999,"3280,3279",,"3277,3281",0,5,4,0
+3283,"6,18",You often travel.,"3:1,7:5",0,,,,10,,,,1,1,,0
+3284,"6,18",You play games every day.,"2:-1,3:-1,4:-1,7:2",0,,,,10,,,,1,1,,0
+3285,"6,18",You have nothing to do every day.,"2:-1,3:-1,4:-1",0,,,,5,,,,1,1,,0
+3286,"6,18",You often go out on dates with different people.,"2:-1,3:-1,4:-1,7:2",0,,,,5,,,,1,1,,0
+3287,"6,18",You often go out and fight people.,"2:1,3:-1,4:-1",1,2,20,-1,5,,,,1,1,,0
+3288,"6,18",You've become the boss of the gangster on this block.,"2:5,3:-1,4:2",1,2,30,-1,5,3287,,,1,1,,0
+3289,"18,60",You joined a big company with a great salary.,"4:2,7:5,8:10",1,4,40,-1,10,,,"",1,8,7,0
+3290,"18,60",You joined a company with friendly colleagues.,"4:1,7:5,8:8",1,4,15,40,10,,,,1,8,7,0
+3291,"18,60",You found a job.,"7:5,8:5",1,4,-1,15,10,,,,1,8,7,0
+3292,"18,60","Your colleague has a bad relationship with you, you resigned.",7:-2,0,,,,5,"3289,3290,3291",,"",1,7,8,0
+3293,"18,60",You made a great contribution to the company.,"4:1,6:3,7:3,8:8",0,,,,5,"3289,3290,3291",,"",1,7,,0
+3294,"18,60",You worked hard.,"4:1,7:1,6:1,8:5",0,,,,10,,,,1,7,,0
+3295,"18,60",You were invited by another company to work there.,"4:1,7:1",1,6,15,-1,10,,,,1,7,,0
+3296,"18,60",You had to leave this company because you lost a battle within the company.,7:-2,0,,,,5,,,,1,7,8,0
+3297,"18,60",You got promoted.,"4:2,7:5,6:3",1,6,15,-1,10,,,,1,7,,0
+3298,"18,60",You became the boss of the company.,"4:3,7:8,6:5",1,6,25,-1,10,,,,1,7,9,0
+3299,"18,60",You created your own company and started a business.,"4:3,7:8,6:5,8:100",1,6,25,-1,10,"3289,3290,3291",,,1,8,9,0
+3300,"18,60",Your company went bankrupt.,"7:-5,6:-5,8:-100",1,6,-1,10,3,3299,,,1,9,8,0
+3301,"18,60",You worked hard for your own company.,"4:1,7:1,6:1,8:8",0,,,,10,,,,1,9,,0
+3302,"18,60","You used your work email to flirt with coworkers, and you got fired.","7:-3,8:-5,6:-3",0,,,,3,,,,1,"7,9",8,0
+3303,"18,60","The economic situation was not good, and your company's profitability declines.","7:-3,8:-5,6:-2",0,,,,5,3299,,,1,9,,0
+2997,"0,0",You were born into a wealthy family.,,1,8,25,-1,999,,,,0,,"1,3,4,8,10",0
+2996,"0,0",You were born into a poor family.,,1,8,-1,10,999,,,,0,,"1,3,4,8,10",0
+2995,"0,0",You were kissed by the goddess of luck when you were born.,,1,5,25,-1,999,,,,0,,"1,3,4,8,10",0
+2994,"0,0",You were born with a difficult birth and you don't seem lucky enough.,,1,5,-1,10,999,,,,0,,"1,3,4,8,10",0
+2993,"0,0",You were born into a prestigious family.,,1,6,25,-1,999,,,,0,,"1,3,4,8,10",0
+2992,"0,0",You were born into a notorious family.,,1,6,-1,10,999,,,,0,,"1,3,4,8,10",0
+2991,"0,0",You were born crying loudly.,,1,1,25,-1,999,,,,0,,"1,3,4,8,10",0
+2990,"0,0",You were born weak and cried weakly.,,1,1,-1,10,999,,,,0,,"1,3,4,8,10",0
+3304,"18,-1",You often go to concerts.,"3:2,7:1",0,"",,,art>15?15:art,,,,1,,,0
+3305,"18,-1",You often play football with your friends.,"2:2,7:1",0,,,,sport>15?15:sport,,,,1,,,0
+3306,"18,-1",You often play basketball with your friends.,"2:2,7:1",0,,,,sport>15?15:sport,,,,1,,,0
+3307,"18,-1",You often go to galleries.,"3:2,7:1",0,,,,art>15?15:art,,,,1,,,0
+3308,"18,-1",You and your friends formed a band.,"3:2,7:1",1,3,20,-1,10,,,,0,,,0
+3309,"18,-1",Your band released the first album.,"3:2,7:1,6:1",1,3,20,-1,10,3308,,,0,,,0
+3310,"18,-1",Your band's album was very popular with friends.,"3:2,7:1,6:2",1,3,-1,40,10,3309,,3310,0,,,0
+3311,"18,-1",Your band's album went viral and were loved.,"3:2,7:2,6:5,8:5",1,3,20,-1,10,3310,,3311,0,,,0
+3312,"18,-1",Your band had released another album.,"3:2,7:1,6:1",1,3,20,-1,10,3308,,,1,,,0
+3313,"18,-1",Your album went viral.,"3:2,7:2,6:5,8:5",1,3,20,-1,5,3312,,3314,1,,,0
+3314,"18,-1",Your album is loved by neighbors and friends.,"3:2,7:1,6:2",1,3,-1,40,5,3312,,3313,1,,,0
+3315,"1,-1",Oil prices have risen.,,0,,,,3,,,,1,,,0
+3316,"1,-1",The third world war broke out.,7:-5,0,,,,3,,,,0,,,0
+3317,"1,-1",The world war is over.,7:5,0,,,,3,3316,,,0,,,0
+3318,"1,-1",You were killed by a bomb.,1:-150,0,,,,3,3316,,3317,0,,,0
+3319,"50,-1",You started to feel that money was useless and  health was the most important thing.,"",0,,,,3,,,,0,,,0
+3320,"50,-1",You felt aging and tire easily.,,0,,,,3,,,,0,,,0
+3321,"50,-1",You always thought back to the good old days.,,0,,,,3,,,,0,,,0
+3322,"50,-1","You liked to chat with lively young people, it made you feel alive.",,0,,,,3,,,,0,,,0
+3323,"40,-1",You started to like fishing.,7:2,0,,,,3,,,,0,,,0
+3324,"18,-1",You often hiking.,"2:2,7:2",0,,,,3,,,,1,,,0
+3325,"18,60",A leader of your company was arrested for corruption.,7:-2,0,,,,3,,,,0,,,0
+3326,"1,-1",6G signals covered the world.,,0,,,,3,,,,0,,,0
+3327,"1,-1",Scientists created a true AI.,,0,,,,3,,,,0,,,0
+3328,"1,-1","AI took most jobs in the world, people protested against AI.",,0,,,,3,3327,,,0,,,0
+3329,"1,-1",AI destroys the world.,1:-150,0,,,,3,3327,,,0,,,0
+3330,"18,60",Your job was replaced by AI and you lost your job.,"7:-3,8:-5",0,,,,3,,,,0,7,8,0
+3331,"18,60",Your job didn't change when AI hited.,"7:3,8:5",0,,,,3,,,,0,9,,0
+3332,"1,-1",7.0 magnitude earthquake hits Japan.,7:-1,0,,,,3,,,,0,,,0
+3333,"18,-1",Pork prices had risen.,7:-1,0,,,,2,,,,1,,,0
+3334,"18,-1",Scientists had successfully built a Dyson sphere.,,0,,,,3,,,,0,,,0
+3335,"18,-1",Novel flu had spread around the world.,,0,,,,2,,,,1,,,0
+3336,"18,-1",An actor became the president of the United States.,,0,,,,2,,,,0,,,0
+3337,"18,-1",Scientists discovered aliens.,,0,,,,2,,,3230,0,,,0
+3338,"18,-1",Virtual reality technology has been vigorously developed.,,0,,,,2,,,,0,,,0
