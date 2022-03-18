@@ -144,6 +144,11 @@ class Event(Config):
                     after_state_ids = para["after_state_id"].split(",")
                     return after_state_ids
 
+    def get_is_end(self, event_id):
+        for para in self.config:
+            if para["event ID"] == str(event_id):
+                return int(para["is_end"])
+
 
 event = Event()
 

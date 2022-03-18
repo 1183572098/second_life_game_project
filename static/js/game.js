@@ -116,13 +116,13 @@ $('#next').click(function(){
     $.post('../next/',
         {},
         function (data) {
+            eventId = data.event_id;
             if(Boolean(data.is_end) === true){
-                endPage();
+                endPage(eventMap.get(String(eventId)));
             }
             else{
                 age = data.age;
                 if(parseInt((data.event_id%10000) / 1000) === 3){
-                    eventId = data.event_id;
                     attribute = data.attribute;
                     attributeValueMap = new Map(Object.entries(attribute));
                     setAttribute();
@@ -180,10 +180,13 @@ document.oncontextmenu = function () {
     return false;
 }
 
-function endPage(){
+function endPage(val){
+    document.getElementById("content").innerHTML = val;
     document.getElementById("end").className="overshadow";
     document.getElementById("restart").hidden = false;
     document.getElementById("next").hidden = true;
 }
 
-
+function clickReturn(){
+    document.getElementById("end").className="overshadow hide";
+}

@@ -18,6 +18,7 @@ class Process:
         self.shop = None
         self.role = Role()
         self.shop = store_table.get_goods()
+        self.is_end = 0
 
     def random_attribute(self):
         random_attributes = []
@@ -52,12 +53,10 @@ class Process:
             else:
                 self.event_history.append(event_id)
 
-            result.update({"is_end": 0})
             result.update({"age": self.role.age})
             result.update({"event_id": event_id})
             result.update({"attribute": self.role.visible_attribute})
         else:
-            result.update({"is_end": 1})
             result.update({"attribute_id": is_end})
 
         return result
@@ -116,6 +115,8 @@ class Process:
         if effect_dict is not None:
             for k, v in effect_dict.items():
                 self.role.set_attribute(k, self.role.get_attribute(k) + v)
+
+        self.is_end = event.get_is_end(event_id)
 
     def _change_state(self, state_list):
         for state in state_list:
