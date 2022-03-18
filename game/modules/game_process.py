@@ -216,3 +216,12 @@ class Role:
 
     def set_attribute(self, attribute_id, value):
         return self.attribute.update({int(attribute_id): value})
+
+    @property
+    def visible_attribute(self):
+        visible_attribute = {}
+        for k, v in self.attribute.items():
+            if attribute.visible(k):
+                visible_attribute.update({k: v})
+
+        return visible_attribute

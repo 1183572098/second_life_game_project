@@ -38,7 +38,7 @@ class Manager:
 
         self.player_games.update({user_id: game})
         result = {}
-        result.update({"attribute": game.role.attribute})
+        result.update({"attribute": game.role.visible_attribute})
         return result
 
     def initial_game(self, request_data, game):

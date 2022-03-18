@@ -30,7 +30,7 @@ function readAttributeSuccess(data){
 	let newData = data.split(/\r?\n|\r/)
 	for(let i=1;i<newData.length;i++){
 		let dataCell = newData[i].split(",");
-		if(dataCell[0]!==""){
+		if(dataCell[0]!=="" && parseInt(dataCell[2]) !== 1){
 			attributeMap.set(dataCell[0], dataCell[1]);
 		}
 	}
@@ -44,7 +44,6 @@ function readParaSuccess(data){
 		let dataCell = newData[i].split(",");
 		if(dataCell[0]!==""){
 			parameterMap.set(parseInt(dataCell[0]), dataCell[1]);
-
 		}
 	}
 

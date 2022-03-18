@@ -63,6 +63,11 @@ class Attribute(Config):
             if para["attribute_id"] == str(attribute_id):
                 return para["attribute_name"]
 
+    def visible(self, parameter_id):
+        for para in self.config:
+            if para["attribute_id"] == str(parameter_id):
+                return int(para["is_hidden"]) == 0
+
 
 attribute = Attribute()
 
