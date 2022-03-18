@@ -21,7 +21,7 @@ body{
 	position: fixed;
 	height: 100%;
 	width: 100%;
-	background-image: url("../image/background/QQ.png");
+	background-image: url("../image/background/CC.png");
 	background-repeat: no-repeat;
 	text-align: center;
 	line-height: 100%;
@@ -56,7 +56,8 @@ body{
 	line-height: 50px;
 	font-size: 20px;
 	/*background-color: #7B68EE;*/
-	background-image: url("../image/background/QQ.png");
+	background-image: url("../image/background/CC.png");
+	color: wheat;
 
 }
 
@@ -73,10 +74,10 @@ body{
 	border: 1px solid red;
 	border-radius: 50%;
 	text-align: center;
-	background-image: url("../image/background/RR.png");
+	background-image: url("../image/background/A.png");
 	background-size: 200px;
     opacity:0.6;
-    border-image: url("../image/background/A.png");
+    border-image: url("../image/background/CC.png");
 }
 
 .save{
@@ -115,7 +116,7 @@ body{
 	position: relative;
 	height: 250px;
 	width: auto;
-	background-image: url("../image/background/QQ.png");
+	background-image: url("../image/background/A.png");
 	border: solid;
 	/*margin-bottom: 70px;*/	
 	margin-top: 70px;
@@ -128,7 +129,7 @@ body{
 	height: 60px;
 	line-height: 60px;
 	color: yellow;
-	background-image: url("../image/background/QQ.png");	
+	background-image: url("../image/background/A.png");	
 }
 
 .subMiddle thead{
@@ -197,7 +198,7 @@ body{
 	float: left;
 	width: 430px;
 	/*background-color: #B0E0E6;*/
-	background-image: url("../image/background/BB.png");
+	background-image: url("../image/background/A.png");
 	height: 300px;
 	display: block;
 	overflow: auto;
@@ -211,7 +212,7 @@ body{
 	display: block;
 	overflow: auto;
 	/*background-image: url("../image/background/QQ.png");*/
-	background-image: url("../image/background/WW.png");
+	background-image: url("../image/background/A.png");
 	color: 	wheat;
 
 }
