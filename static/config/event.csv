@@ -50,7 +50,7 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3602,"0,-1",You died of depression.,,1,7,-200,0,999,3021,,,1,1,
 3603,"0,-1",You died on the operating table.,,1,1,-200,0,999,3026,,,1,1,
 3604,"0,-1",Nothing special happened this year.,,0,,,,5,,,,1,1,
-3042,"90,150",You had cancer,1:-100,0,,,,5+age*1+(50-health)>0?(50-health):0,,,,,,
+3605,"90,150",You had cancer,1:-100,0,,,,5+age*1+(50-health)>0?(50-health):0,,,,,,
 3500,"0,-1",You studied hard all year,4:5,2,,,,10,,"option events begin here, ID starts from 3500",,1,1,
 3501,"0,-1",You fell for a new game,"4:-2,1:-1",2,,,,10,,,,1,1,
 3502,"0,-1",You started to learn guitar.,3:3,2,,,,10,,,,1,1,
