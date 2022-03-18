@@ -7,6 +7,7 @@ var bagMap = new Map();
 var ShopMap = new Map();
 var goodsNameMap = new Map();
 var goodsIconMap = new Map();
+var goodsNotesMap = new Map();
 
 
 function byId(id){
@@ -28,6 +29,7 @@ function readTableSuccess(data){
 		if(dataCell[0]!==""){
 			goodsNameMap.set(dataCell[0], dataCell[1]);
 			goodsIconMap.set(dataCell[0], dataCell[12]);
+			goodsNotesMap.set(dataCell[0], dataCell[11]);
 		}
 	}
 }
@@ -96,6 +98,11 @@ function createTr(key, value, type){
 		td3.innerHTML = value;
 	}
 	tr.appendChild(td3);
+
+	let td4 = document.createElement('td');
+	td4.innerHTML = goodsNotesMap.get(String(key));
+	tr.appendChild(td4);
+
 	return tr;
 }
 

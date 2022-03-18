@@ -85,7 +85,14 @@ class Event(Config):
                 if (int(age_min) == -1 or role.age >= int(age_min)) and (int(age_max) == -1 or role.age <= int(age_max)):
                     if (para["pre_event"] == "" or self._satisfy_pre(para["pre_event"].split(","), event_history)) and (para["exclusive_events"] == "" or self._satisfy_exclusive(para["exclusive_events"].split(","), event_history)):
                         if int(para["IsRepeated"]) == 1 or int(para["event ID"]) not in event_history:
-                            if int(para["pre_state_id"]) == -1 or int(para["pre_state_id"]) == role.state:
+                            pre_state_list = para["pre_state_id"].split(",")
+                            is_ready = True
+                            for current_state in role.state:
+                                if current_state not in pre_state_list:
+                                    is_ready = False
+                                    break
+
+                            if is_ready:
                                 try:
                                     weight = int(para["probability"])
                                 except Exception as e:
@@ -125,7 +132,8 @@ class Event(Config):
                 if para["after_state_id"] == "":
                     return None
                 else:
-                    return int(para["after_state_id"])
+                    after_state_ids = para["after_state_id"].split(",")
+                    return after_state_ids
 
 
 event = Event()
@@ -232,6 +240,15 @@ class StateTable(Config):
     def __init__(self):
         self.file_name = 'StateTable.csv'
         super(StateTable, self).__init__()
+
+    def get_exclusive_state(self, state_id):
+        exclusive_state_list = []
+        for para in self.config:
+            if para["state_id"] == str(state_id):
+                if para["exclusive_state_id"] != "":
+                    exclusive_state_list = para["exclusive_state_id"].split(",")
+
+                return exclusive_state_list
 
 
 state_table = StateTable()

@@ -5,7 +5,7 @@
 # @Software: PyCharm
 import random
 
-from game.config import attribute, parameter, store_table, option_config, event, option_table
+from game.config import attribute, parameter, store_table, option_config, event, option_table, state_table
 
 
 class Process:
@@ -103,7 +103,7 @@ class Process:
 
     def _execute_event(self, event_id):
         if event.get_after_state(event_id) is not None:
-            self.role.state = event.get_after_state(event_id)
+            self._change_state(event.get_after_state(event_id))
             
         if event_id == 3001:
             self.rebirth()
@@ -114,6 +114,16 @@ class Process:
         if effect_dict is not None:
             for k, v in effect_dict.items():
                 self.role.set_attribute(k, self.role.get_attribute(k) + v)
+
+    def _change_state(self, state_list):
+        for state in state_list:
+            exclusive_states = state_table.get_exclusive_state(state)
+            if exclusive_states is not None:
+                for exclusive_state in exclusive_states:
+                    if exclusive_state in self.role.state:
+                        self.role.state.remove(exclusive_state)
+
+            self.role.state.append(state)
 
     def rebirth(self):
         self.role.age = 0
@@ -199,7 +209,7 @@ class Role:
         for attribute_id in attribute.ids():
             self.attribute.update({attribute_id: 0})
         self.age = -1  # unborn
-        self.state = None
+        self.state = []
 
     def get_attribute(self, attribute_id):
         return self.attribute.get(attribute_id)
