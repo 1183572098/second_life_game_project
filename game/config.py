@@ -171,7 +171,7 @@ class StoreTable(Config):
         for para in self.config:
             if para["ID"] == str(good_id):
                 attribute_id, value = para["money"].split(":")
-                money_dict = {attribute_id: value}
+                money_dict = {int(attribute_id): int(value)}
                 return money_dict
 
     def get_values(self, good_id):

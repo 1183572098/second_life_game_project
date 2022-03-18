@@ -47,7 +47,7 @@ class Process:
             event_id = self._get_event()
             if str(event_id)[0] == "2":
                 self.rebirth(event_id)
-            if str(event_id)[0] == "3":
+            elif str(event_id)[0] == "3":
                 self._execute_event(event_id)
             else:
                 self.event_history.append(event_id)
@@ -133,7 +133,8 @@ class Process:
         self.role.state.clear()
         self.event_history.clear()
         self.event_history.append(event_id)
-        self._change_state(event.get_after_state(event_id))
+        if event.get_after_state(event_id) is not None:
+            self._change_state(event.get_after_state(event_id))
 
     def get_bag(self):
         return self.bag
