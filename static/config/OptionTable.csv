@@ -1,7 +1,7 @@
-event_id,option1,event1,option2,event2,option3,event3,question,notes
-4001,studying hard all year,3500,falling for a new game,3501,learning a musical instrument,3502,"It's your first year in primary school, your year plan will be",year 7
-4002,were rejected by your crush,3503,realised you're gay,3504,just broke up with someone,3505,"Everyone seems to be involved in a relationship, you",year 13
-4003,took a gap year,3506,looking for a job,3507,applied for college,3508,"This year you turn 18, you decided",year 18
-4004,have a try,3509,not to be curious,3510,report to his parents,3511,"You went to a party, saw your friends smoking weeds, you decided to",year 18
-4005,Harvard,3512,Oxford,3513,MIT,3514,"You received several college offers, you decided to go to ",year 18
-4100,try to escape,3242,fight against,3243,obediently pay,3242,"You were stopped by a bunch of punks, you ...",
+event_id,option1,event1,option2,event2,option3,event3,question,notes,pre_event,pre_states_id
+4001,studying hard all year,3500,falling for a new game,3501,learning a musical instrument,3502,"It's your first year in primary school, your year plan will be",year 7,,
+4002,were rejected by your crush,3503,realised you're gay,3504,just broke up with someone,3505,"Everyone seems to be involved in a relationship, you",year 13,,
+4003,took a gap year,3506,looking for a job,3507,applied for college,3508,"This year you turn 18, you decided",year 18,,
+4004,have a try,3509,not to be curious,3510,report to his parents,3511,"You went to a party, saw your friends smoking weeds, you decided to",year 18,,
+4005,Harvard,3512,Oxford,3513,MIT,3514,"You received several college offers, you decided to go to ",year 18,,
+4100,try to escape,3242,fight against,3243,obediently pay,3242,"You were stopped by a bunch of punks, you ...",,,
