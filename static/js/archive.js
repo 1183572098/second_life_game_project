@@ -1,6 +1,15 @@
 var archiveMap = new Map();
 var eventMap = new Map();
-var currentSelect = 0;
+var currentSelect = 0,
+    one = byId("one"),
+    two = byId("two"),
+    three = byId("three");
+
+
+function byId(id){
+    return typeof(id)==="string"?document.getElementById(id):id;
+}
+
 
 $(document).ready(function(){
     $.ajax({
@@ -107,3 +116,48 @@ function select2(){
 function select3(){
     currentSelect = 3;
 }
+
+// one.onmouseover=function(){
+//     one.className = "one highlight";
+// } 
+
+
+// two.onmouseover=function(){
+//     two.className = "two highlight";
+// } 
+
+// three.onmouseover=function(){
+//     three.className = "three highlight";
+// } 
+
+// one.onmouseout=function(){
+//     one.className = "one";
+// } 
+
+// two.onmouseout=function(){
+//     two.className = "two";
+// } 
+
+// three.onmouseout=function(){
+//     three.className = "three";
+// } 
+
+
+one.onclick=function(){
+    one.className = "one highlight";
+    two.className = "two";
+    three.className = "three";
+} 
+
+two.onclick=function(){
+    one.className = "one";
+    two.className = "two highlight";
+    three.className = "three";
+} 
+
+three.onclick=function(){
+    one.className = "one";
+    two.className = "two";
+    three.className = "three highlight";
+} 
+
