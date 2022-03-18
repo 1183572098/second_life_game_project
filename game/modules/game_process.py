@@ -45,6 +45,8 @@ class Process:
             self.role.age += 1
             self.mechanism_process()
             event_id = self._get_event()
+            if str(event_id)[0] == "2":
+                self.rebirth(event_id)
             if str(event_id)[0] == "3":
                 self._execute_event(event_id)
             else:
@@ -83,7 +85,11 @@ class Process:
 
     def _get_event(self):
         if self.role.age in option_config.ages():
-            event_dict = option_config.get_event(self.role.age)
+            event_dict = option_config.get_event(self.role)
+            event_dict = option_table.filter(event_dict, self.role, self.event_history)
+            if len(event_dict) == 0:
+                event_dict = event.get_event(self.role, self.event_history)
+
         else:
             event_dict = event.get_event(self.role, self.event_history)
 
@@ -104,10 +110,6 @@ class Process:
     def _execute_event(self, event_id):
         if event.get_after_state(event_id) is not None:
             self._change_state(event.get_after_state(event_id))
-            
-        if event_id == 3001:
-            self.rebirth()
-            return
 
         self.event_history.append(event_id)
         effect_dict = event.get_effect(event_id)
@@ -125,11 +127,13 @@ class Process:
 
             self.role.state.append(state)
 
-    def rebirth(self):
+    def rebirth(self, event_id):
         self.role.age = 0
         self.role.attribute = self.initial_attribute
+        self.role.state.clear()
         self.event_history.clear()
-        self.event_history.append(3001)
+        self.event_history.append(event_id)
+        self._change_state(event.get_after_state(event_id))
 
     def get_bag(self):
         return self.bag

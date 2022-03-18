@@ -9,6 +9,30 @@ def modify_ternary_expression(expression_str):
     return option1 + " if " + formula + " else " + option2
 
 
+def satisfy_pre(pre_events, event_history):
+    for pre_events in pre_events:
+        if int(pre_events) in event_history:
+            continue
+        return False
+    return True
+
+
+def satisfy_exclusive(exclusive_events, event_history):
+    for exclusive_event in exclusive_events:
+        if int(exclusive_event) in event_history:
+            return False
+    return True
+
+
+def satisfy_state(pre_state, state):
+    pre_state_list = pre_state.split(",")
+    if pre_state_list[0] != "":
+        for pre_state in pre_state_list:
+            if pre_state not in state:
+                return False
+    return True
+
+
 class Config(object):
     file_name = None
 
@@ -88,17 +112,9 @@ class Event(Config):
             age_min, age_max = age_group.split(",")
             if int(para["EventType"]) == 0 or (int(para["EventType"]) == 1 and (int(para["maximum"]) > role.attribute[int(para["attribute threshold"])] >= int(para["minimum"]))):
                 if (int(age_min) == -1 or role.age >= int(age_min)) and (int(age_max) == -1 or role.age <= int(age_max)):
-                    if (para["pre_event"] == "" or self._satisfy_pre(para["pre_event"].split(","), event_history)) and (para["exclusive_events"] == "" or self._satisfy_exclusive(para["exclusive_events"].split(","), event_history)):
+                    if (para["pre_event"] == "" or satisfy_pre(para["pre_event"].split(","), event_history)) and (para["exclusive_events"] == "" or satisfy_exclusive(para["exclusive_events"].split(","), event_history)):
                         if int(para["IsRepeated"]) == 1 or int(para["event ID"]) not in event_history:
-                            pre_state_list = para["pre_state_id"].split(",")
-                            is_ready = True
-                            if pre_state_list[0] != "":
-                                for pre_state in pre_state_list:
-                                    if pre_state not in role.state:
-                                        is_ready = False
-                                        break
-
-                            if is_ready:
+                            if satisfy_state(para["pre_state_id"], role.state):
                                 try:
                                     weight = int(para["probability"])
                                 except Exception as e:
@@ -106,19 +122,6 @@ class Event(Config):
                                 event_list.update({int(para["event ID"]): weight})
 
         return event_list
-
-    def _satisfy_pre(self, pre_events, event_history):
-        for pre_events in pre_events:
-            if int(pre_events) in event_history:
-                continue
-            return False
-        return True
-
-    def _satisfy_exclusive(self, exclusive_events, event_history):
-        for exclusive_event in exclusive_events:
-            if int(exclusive_event) in event_history:
-                return False
-        return True
 
     def get_effect(self, event_id):
         effect_dict = {}
@@ -230,9 +233,9 @@ class OptionConfig(Config):
 
         return self.age_list
 
-    def get_event(self, age):
+    def get_event(self, role):
         for para in self.config:
-            if para["age"] == str(age):
+            if para["age"] == str(role.age):
                 events = para["event_id"].split(",")
                 event_dict = {}
                 for e in events:
@@ -256,6 +259,16 @@ class OptionTable(Config):
         for para in self.config:
             if para["event_id"] == str(event_id):
                 return int(para["event" + str(option_id)])
+
+    def filter(self, event_dict, role, event_history):
+        temp_dict = {}
+        for k, v in event_dict.items():
+            for para in self.config:
+                if para["event_id"] == str(k):
+                    if (para["pre_event"] == "" or satisfy_pre(para["pre_event"].split(","), event_history)) and satisfy_state(para["pre_states_id"], role.state):
+                        temp_dict.update({k: v})
+
+        return temp_dict
 
 
 option_table = OptionTable()

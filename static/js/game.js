@@ -31,7 +31,9 @@ function readAttributeSuccess(data){
     for(let i=1;i<newData.length;i++){
         let dataCell = newData[i].split(",");
         if(dataCell[0]!==""){
-            attributeMap.set(dataCell[0], dataCell[1]);
+            if(parseInt(dataCell[2]) !== 1) {
+                attributeMap.set(dataCell[0], dataCell[1]);
+            }
         }
     }
     createTop();
