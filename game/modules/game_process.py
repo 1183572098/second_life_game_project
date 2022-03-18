@@ -77,8 +77,8 @@ class Process:
             return
 
         effects = effect_str.split(",")
-        for e in effects:
-            e, p = e.split(":")
+        for ef in effects:
+            e, p = ef.split(":")
             self.role.set_attribute(int(e), self.role.get_attribute(int(e)) + int(p))
 
     def _get_event(self):
