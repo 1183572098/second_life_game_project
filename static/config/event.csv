@@ -99,11 +99,11 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3232,"3,5",You like listening to your mother tell fairy tales.,4:2,0,,,,10,,,,1,1,
 3233,"3,5",You like listening to music very much.,3:2,0,,,,10,,,,1,1,
 3234,"4,5",You go to elementary school.,,0,,,,20,,,,0,1,
-3235,"6,10",You are studying hard.,4:1,0,,,,20,,,,1,1,
-3236,"6,10",You practice the violin every day.,3:1,0,,,,20,3010,,,1,1,
-3237,"6,10",You play football every week.,2:1,0,,,,20,3012,,,1,1,
-3238,"6,10",You practice the piano every day.,3:1,0,,,,20,3011,,,1,1,
-3239,"6,10",You play basketball every week.,2:1,0,,,,20,3013,,,1,1,
+3235,"6,18",You are studying hard.,4:1,0,,,,20,,,,1,1,
+3236,"6,18",You practice the violin every day.,3:1,0,,,,20,3010,,,1,1,
+3237,"6,18",You play football every week.,2:1,0,,,,20,3012,,,1,1,
+3238,"6,18",You practice the piano every day.,3:1,0,,,,20,3011,,,1,1,
+3239,"6,18",You play basketball every week.,2:1,0,,,,20,3013,,,1,1,
 3240,"6,8",You're studying too fast so you skipped a grade.,4:2,1,4,40,70,10,,,,0,1,
 3241,"6,8","You are far smarter than ordinary people, so you were taken away and subjected to human experiments.",1:-100,1,4,70,-1,10,,,,0,1,
 3242,"6,18",You were robbed by a bunch of punks.,1:-3,1,5,0,30,10,,,,1,1,
@@ -148,4 +148,22 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3280,"3,-1",You learned to drive a spaceship.,2:10,1,2,40,-1,999,3265,,,0,3,
 3281,"3,-1",You have returned to earth yourself.,"7:10,6:10",0,,,,999,3280,,"3277,3282",0,3,1
 3282,"3,-1",You have returned to Earth with advanced alien technology.,"7:10,6:20",0,,,,999,"3280,3279",,"3277,3281",0,3,1
-3283,"6,10",You often travel.,"2:1,7:5",0,,,,10,,,,1,1,
+3283,"6,18",You often travel.,"3:1,7:5",0,,,,10,,,,1,1,
+3284,"6,18",You play games every day.,"2:-1,3:-1,4:-1,7:2",0,,,,10,,,,1,1,
+3285,"6,18",You have nothing to do every day.,"2:-1,3:-1,4:-1",0,,,,5,,,,1,1,
+3286,"6,18",You often go out on dates with different people.,"2:-1,3:-1,4:-1,7:2",0,,,,5,,,,1,1,
+3287,"6,18",You often go out and fight people.,"2:1,3:-1,4:-1",1,2,20,-1,5,,,,1,1,
+3288,"6,18",You've become the boss of the gangster on this block.,"2:5,3:-1,4:2",1,2,30,-1,5,3287,,,1,1,
+3289,"18,-1",You joined a big company with a great salary.,"4:2,7:5",1,4,40,-1,10,,,"",1,1,5
+3290,"18,-1",You joined a company with friendly colleagues.,"4:1,7:5",1,4,15,40,10,,,,1,1,5
+3291,"18,-1",You found a job.,7:5,1,4,-1,15,10,,,,1,1,5
+3292,"18,-1","Your colleague has a bad relationship with you, you resigned.",7:-2,0,,,,5,"3289,3290,3291",,"",1,5,1
+3293,"18,-1",You made a great contribution to the company.,"4:1,6:3,7:3",0,,,,5,"3289,3290,3291",,"",1,5,
+3294,"18,-1",You worked hard.,"4:1,7:1,6:1",0,,,,10,,,,1,5,
+3295,"18,-1",You were invited by another company to work there.,"4:1,7:1",1,6,20,-1,10,,,,1,5,
+3296,"18,-1",You had to leave this company because you lost a battle within the company.,7:-2,0,,,,5,,,,1,5,1
+3297,"18,-1",You got promoted.,"4:2,7:5,6:3",1,6,20,-1,10,,,,1,5,
+3298,"18,-1",You became the boss of the company.,"4:3,7:8,6:5",1,6,40,-1,10,,,,1,5,
+3299,"18,-1",You own your own company and start a business.,"4:3,7:8,6:5",1,6,30,-1,10,"3289,3290,3291",,,1,1,5
+3300,"18,-1",Your company goes bankrupt.,"7:-5,6:-5",0,"",,,5,3299,,,1,5,1
+3301,"18,-1",You work hard for your own company.,"4:1,7:1,6:1",0,,,,10,,,,1,5,
