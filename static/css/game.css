@@ -139,18 +139,32 @@ body{
 	width: 878px;
 }
 
+.subMiddle .tableHead{
+	position: fixed;
+	width: 896px;
+	height: 60px;
+	background-image: url("../image/background/A.png");		
+	line-height: 60px;
+	font-size: 20px;
+	font-style: oblique;
+	color: yellow;
+	background-color: red;
+}
+
+.subMiddle .tableHead .left{
+	height: 60px;
+	width: 448px;
+	background-image: url("../image/background/A.png");		
+	float: left;
+}
+
+
 .subMiddle tbody{
 	display: block;
 	overflow: auto;
 	margin-top: 40px;
 }
 
-/*
-.subMiddle .event{
-	display: block;
-	overflow: auto;
-}
-*/
 .subMiddle .body{
 	margin-top: 61px;
 	height: 190px;
@@ -213,6 +227,17 @@ body{
 	color: #FFA500;
 	text-align: center;
 	font-style: oblique;
+}
+
+.store .tableTop2{
+	position: absolute;
+	top: 0;
+	background-color: #6B8E23;
+	color: darkorange;
+	text-align: center;
+	color: #FFA500;
+	text-align: center;
+	font-style: oblique;	
 }
 
 .store .left{
