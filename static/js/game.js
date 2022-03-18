@@ -117,7 +117,8 @@ $('#next').click(function(){
         {},
         function (data) {
             if(Boolean(data.is_end) === true){
-                alert("game over.")
+                alert("game over.");
+                endPage();
             }
             else{
                 age = data.age;
@@ -179,3 +180,9 @@ document.onkeydown = function ()
 document.oncontextmenu = function () {
     return false;
 }
+
+function endPage(){
+    document.getElementById("end").className="overshadow";
+}
+
+

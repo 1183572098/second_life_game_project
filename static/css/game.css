@@ -292,16 +292,27 @@ body{
 	opacity: !important;
 }
 
+
 .overShadow{
 	background-color: black;
 	opacity: 0.8;
 	width: 100%;
 	height: 100%;
 	opacity: !important;
+	z-index: 4;
 }
 
+.endGame{
+	position: absolute;
+	bottom: 30px;
+	left: -50%;
+	width: 100px;
+	height: 50px;
+	z-index: -1;
+}
 
 .baseFoot{
 	background-image: url("../image/background/EE.png");	
 
 }
+
