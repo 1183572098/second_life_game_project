@@ -60,6 +60,7 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3066,"10,22",You got a poster of Justin Bieber and hang it on the wall.,"7:8,3:3",0,,,,15,,,,0,,,0
 3067,"10,50",You sang everyday in the shower.,"3:3,6:1",0,,,,10,,,,1,,,0
 3068,"20,55",You lost a lot of money on gambling.,"8:-10,6:-5,7:-5",0,,,,10,,,,1,,,0
+3069,"18,60",One day you woke up rich.,8:30,0,,,,1,,,,0,,,0
 3400,"12,-1",You were robbed and all your documents are lost.,"3:-2,7:-5",1,5,0,10,10,,flexible age limitation,,1,1,,0
 3401,"12,20",You came out with your parents. Dad couldn't accept it and lost his temper.,7:-5,0,,,,10,3504,come out,,0,1,,0
 3402,"12,20",You came out with your parents. Dad and mom were supportive.,7:5,0,,,,10,3504,,,0,1,,0
@@ -75,20 +76,22 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3502,"0,-1",You started to learn guitar.,3:3,2,,,,10,,,,1,1,,0
 3503,"0,-1",You were rejected by your crush,5:-2,2,,,,10,,,,1,1,,0
 3504,"0,-1",You wanted to come out but didn't know how.,5:2,2,,,,10,,,,1,1,,0
-3505,"0,-1",just broke up with someone,"5:-2,4:2",2,,,,10,,fell for your classmate,,1,1,,0
-3506,"0,-1",took a gap year,1:5,2,,,,10,,,,1,1,,0
-3507,"0,-1",looking for a job,4:-3,2,,,,10,,didn't pass your final exam,,1,1,,0
-3508,"0,-1",applied for college,4:5,2,,,,10,,,,1,1,,0
+3505,"0,-1",You were heartbroken.,"5:-2,4:2",2,,,,10,,fell for your classmate,,1,1,,0
+3506,"0,-1",You decided to do something meaningful during this year.,1:5,2,,,,10,,,,1,1,,0
+3507,"0,-1",You were looking for a job,4:-3,2,,,,10,,didn't pass your final exam,,1,1,,0
+3508,"0,-1",You applied for several colleges.,4:5,2,,,,10,,,,1,1,,0
 3509,"0,-1",have a try,"1:-5,4:-3",2,,,,10,,,,1,1,,0
 3510,"0,-1",not to be curious,5:3,2,,,,10,,,,1,1,,0
 3511,"0,-1",report to his parents,5:1,2,,,,10,,,,1,1,,0
 3512,"0,-1",You went to Harvard.,7:3,2,,,,10,,,,1,1,,0
 3513,"0,-1",You went to Oxford.,7:3,2,,,,10,,,,1,1,,0
 3514,"0,-1",You went to MIT.,7:3,2,,,,10,,,,1,1,,0
-3515,"0,-1",You still didn't tell her/him your feelings.,"7:-1,5:1",2,,,,10,,Update from here,,10,,,0
-3516,"0,-1",You fianlly said the words and got a "yes"!,7:8,2,,,,10,,,,10,11,,0
-3517,"0,-1",She/He told you you were better off as friends.,"7:-5,5:1",2,,,,10,,,,10,,,0
-3518,"0,-1",A possitive answer made you the happiest person in the world.,7:8,2,,,,10,,,,10,11,,0
+3515,"0,-1",You still didn't tell her/him your feelings.,"7:-1,5:1",2,,,,10,,Update from here,,0,,,0
+3516,"0,-1",You fianlly said the words and got a "yes"!,7:8,2,,,,10,,,,0,11,,0
+3517,"0,-1",She/He told you you were better off as friends.,"7:-5,5:1",2,,,,10,,,,0,,,0
+3518,"0,-1",A possitive answer made you the happiest person in the world.,7:8,2,,,,10,,,,0,11,,0
+3519,"20,-1",You thought marriage isn't so bad.,,0,,,,10,,,,0,,,0
+3520,"20,-1",Your temper was getting worse. Life is so hard.,7:-5,0,,,,10,,,,0,,,0
 3200,"5,-1",Adopted a puppy named Pavlov.,5:3,0,,,,10,,,,0,1,,0
 3201,"5,-1",Pavlov is dead.,,0,,,,10,3200,,,0,1,,0
 3202,"5,-1",Pavlov gave birth to 3 puppies.,5:3,0,,,,3,"3200,3210",,3201,1,1,,0
