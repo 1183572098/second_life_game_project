@@ -4,6 +4,7 @@ state_id,state_name,notes,exclusive_state_id
 3,at_home,Player can trigger events at home,2
 4,on_Earth,Player is on Earth,5
 5,on_alien_plant,Player is on an alien planet,4
-6,on_college,Player is studying at a college,"7,8"
-7,at_work,Player has a job,"6,8"
-8,workless,Player is not working,"6,7"
+6,on_college,Player is studying at a college,"7,8,9"
+7,at_work,Player has a job,"6,8,9"
+8,unemployment,Player is not working,"6,7,9"
+9,be_boss,Player is the boss of companies,"6,7,8"

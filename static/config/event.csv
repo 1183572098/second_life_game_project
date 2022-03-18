@@ -1,5 +1,5 @@
 event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,probability,pre_event,notes,exclusive_events,IsRepeated,pre_state_id,after_state_id
-3001,"0,0",You were born.,1:0,0,,,,95,,,,1,-1,1
+3001,"0,0",You were born.,1:0,0,,,,95,,,,1,-1,"1,3,4,8"
 3002,"0,0",You were stillborn.,1:-100,0,,,,5,,,,1,-1,
 3003,"1,2",You can walk faster than any kids in your age.,"1:2,2:3",0,,,,10,,year 1-2,3213,0,1,
 3004,"1,2",You grew up in a big city.,5:1,0,,,,10,,,3005,1,1,
@@ -93,8 +93,8 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3226,"3,5",Your academic performance is average.,4:0,1,4,0,15,10,,,,1,1,
 3227,"3,5",You are a genius in learning.,"4:8,6:5",1,4,50,-1,10,,,,1,1,
 3228,"3,5",You're called a nerd because your grades are so good,1:-1,1,4,40,-1,10,,,,1,1,
-3229,"3,10",You made a wish to a shooting star and said you wanted to see aliens.,,1,5,20,-1,10,,,,0,1,
-3230,"3,18",You were kidnapped by aliens.,1:-30,1,5,25,40,10,3229,,,0,1,3
+3229,"3,10",You made a wish to a shooting star and said you wanted to see aliens.,,1,5,20,-1,10,,,,0,4,
+3230,"3,18",You were kidnapped by aliens.,1:-30,1,5,25,40,10,3229,,,0,4,5
 3231,"3,5",You often play football on grass.,"1:1,2:2",0,,,,10,,,,1,1,
 3232,"3,5",You like listening to your mother tell fairy tales.,4:2,0,,,,10,,,,1,1,
 3233,"3,5",You like listening to music very much.,3:2,0,,,,10,,,,1,1,
@@ -114,13 +114,13 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3247,"6,18",Your dad caught you stealing money and beat you.,"1:-2,7:2",1,5,-1,30,10,3246,,"3248,3250",0,1,
 3248,"6,18","Your dad found out you were stealing money, he criticized you mildly, you were ashamed.",7:2,1,5,30,50,10,3246,,"3247,3250",0,1,
 3249,"6,18",You made your first money with a summer job.,7:4,0,,,,10,,,,0,1,
-3250,"13,18",You ran away from home.,7:-2,1,7,-1,5,10,,,"",1,1,2
-3251,"13,18",You had no money to buy food and had to go home.,7:-2,1,4,-1,30,10,3250,,"3255,3256",1,2,1
+3250,"13,18",You ran away from home.,7:-2,1,7,-1,5,10,,,"",1,3,2
+3251,"13,18",You had no money to buy food and had to go home.,7:-2,1,4,-1,30,10,3250,,"3255,3256",1,2,3
 3252,"13,18",You robbed people to stay alive.,7:-2,1,2,30,-1,20,"3250,3246",,3248,1,2,
 3253,"13,18",You made a living by playing the violin.,7:2,1,3,30,-1,20,"3250,3010",,,1,2,
 3254,"13,18",You make a living by doing temporary work.,7:2,1,2,30,-1,20,3250,,,1,2,
-3255,"13,18",You were caught by the police and sent home.,7:-2,1,5,30,50,20,"3250,3252",,"3256,3251",1,2,1
-3256,"13,18",You were found by your parents and brought home.,7:2,0,,,,10,3250,,"3255,3251",1,2,1
+3255,"13,18",You were caught by the police and sent home.,7:-2,1,5,30,50,20,"3250,3252",,"3256,3251",1,2,3
+3256,"13,18",You were found by your parents and brought home.,7:2,0,,,,10,3250,,"3255,3251",1,2,3
 3256,"6,-1",Your mother died.,7:-2,0,,,,5,,,,0,1,
 3257,"6,-1",You made a wish to the meteor that your mother would come back.,,1,5,20,-1,5,3256,,,0,1,
 3258,"6,-1",You saw your mother's ghost in the cemetery.,7:2,1,5,25,-1,10,3257,,3259,0,1,
@@ -130,40 +130,41 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3262,"6,-1",You saw your father's ghost in the cemetery.,7:2,1,5,25,-1,10,3261,,3263,0,1,
 3263,"6,-1","You heard your 'father' knock on the door, but you didn't dare to open it.",7:-2,1,5,-1,10,10,3261,,3262,0,1,
 3264,"12,-1",You hit the jackpot and took the whole family on a beach trip.,7:5,1,5,50,-1,5,,,,1,1,
-3265,"3,-1",You fell in love at first sight by an alien leader.,"1:10,7:5",1,5,50,-1,999,3230,,,0,3,
-3266,"3,-1",Aliens experimented on you.,"1:-150,7:-10",0,,,,10,3230,,3265,0,3,
-3267,"3,-1",You found a weakness in alien defense.,4:8,1,4,50,-1,999,3230,,3265,0,3,
-3268,"3,-1",You successfully escaped from the alien base.,2:8,1,2,40,-1,999,3267,,3273,0,3,
-3269,"3,-1",You were hidden in your home by kind aliens.,5:8,1,5,30,-1,999,3268,,3275,0,3,
-3270,"3,-1",The alien who helped you would drive a spaceship and send you back to Earth.,5:8,1,5,50,-1,999,3269,,,0,3,
-3271,"3,-1",You were back on earth.,5:8,0,,,,999,3270,,,0,3,1
-3272,"3,-1","You were reported by alien neighbors,  captured and killed.",1:-150,1,5,-1,50,999,3269,,3270,0,3,
-3273,"3,-1",You were caught and returned during the escape.,5:-8,1,2,-1,40,999,3267,,3268,0,3,
-3274,"3,-1","Because of your cleverness,  you were taken out of your brain by aliens for experiments.",1:-150,0,,,,999,3273,,,0,3,
-3275,"3,-1","No one can help you, you had to send a SOS signal to the earth.",,1,5,-1,30,999,3268,,3269,0,3,
-3276,"3,-1",You were captured and killed by aliens before earthlings came to rescue you.,1:-150,0,,,,999,3275,,,0,3,
-3277,"3,-1",You have a mixed-race child.,7:5,0,,,,999,3265,,,0,3,
-3278,"3,-1",You lived to be 200 years old and then died.,1:-150,0,,,,999,3277,,,0,3,
-3279,"3,-1",You have learned the advanced technology of aliens.,4:10,1,4,60,-1,999,3265,,,0,3,
-3280,"3,-1",You learned to drive a spaceship.,2:10,1,2,40,-1,999,3265,,,0,3,
-3281,"3,-1",You have returned to earth yourself.,"7:10,6:10",0,,,,999,3280,,"3277,3282",0,3,1
-3282,"3,-1",You have returned to Earth with advanced alien technology.,"7:10,6:20",0,,,,999,"3280,3279",,"3277,3281",0,3,1
+3265,"3,-1",You fell in love at first sight by an alien leader.,"1:10,7:5",1,5,50,-1,999,3230,,,0,5,
+3266,"3,-1",Aliens experimented on you.,"1:-150,7:-10",0,,,,10,3230,,3265,0,5,
+3267,"3,-1",You found a weakness in alien defense.,4:8,1,4,50,-1,999,3230,,3265,0,5,
+3268,"3,-1",You successfully escaped from the alien base.,2:8,1,2,40,-1,999,3267,,3273,0,5,
+3269,"3,-1",You were hidden in your home by kind aliens.,5:8,1,5,30,-1,999,3268,,3275,0,5,
+3270,"3,-1",The alien who helped you would drive a spaceship and send you back to Earth.,5:8,1,5,50,-1,999,3269,,,0,5,
+3271,"3,-1",You were back on earth.,5:8,0,,,,999,3270,,,0,5,4
+3272,"3,-1","You were reported by alien neighbors,  captured and killed.",1:-150,1,5,-1,50,999,3269,,3270,0,5,
+3273,"3,-1",You were caught and returned during the escape.,5:-8,1,2,-1,40,999,3267,,3268,0,5,
+3274,"3,-1","Because of your cleverness,  you were taken out of your brain by aliens for experiments.",1:-150,0,,,,999,3273,,,0,5,
+3275,"3,-1","No one can help you, you had to send a SOS signal to the earth.",,1,5,-1,30,999,3268,,3269,0,5,
+3276,"3,-1",You were captured and killed by aliens before earthlings came to rescue you.,1:-150,0,,,,999,3275,,,0,5,
+3277,"3,-1",You have a mixed-race child.,7:5,0,,,,999,3265,,,0,5,
+3278,"3,-1",You lived to be 200 years old and then died.,1:-150,0,,,,999,3277,,,0,5,
+3279,"3,-1",You have learned the advanced technology of aliens.,4:10,1,4,60,-1,999,3265,,,0,5,
+3280,"3,-1",You learned to drive a spaceship.,2:10,1,2,40,-1,999,3265,,,0,5,
+3281,"3,-1",You have returned to earth yourself.,"7:10,6:10",0,,,,999,3280,,"3277,3282",0,5,4
+3282,"3,-1",You have returned to Earth with advanced alien technology.,"7:10,6:20",0,,,,999,"3280,3279",,"3277,3281",0,5,4
 3283,"6,18",You often travel.,"3:1,7:5",0,,,,10,,,,1,1,
 3284,"6,18",You play games every day.,"2:-1,3:-1,4:-1,7:2",0,,,,10,,,,1,1,
 3285,"6,18",You have nothing to do every day.,"2:-1,3:-1,4:-1",0,,,,5,,,,1,1,
 3286,"6,18",You often go out on dates with different people.,"2:-1,3:-1,4:-1,7:2",0,,,,5,,,,1,1,
 3287,"6,18",You often go out and fight people.,"2:1,3:-1,4:-1",1,2,20,-1,5,,,,1,1,
 3288,"6,18",You've become the boss of the gangster on this block.,"2:5,3:-1,4:2",1,2,30,-1,5,3287,,,1,1,
-3289,"18,-1",You joined a big company with a great salary.,"4:2,7:5",1,4,40,-1,10,,,"",1,1,5
-3290,"18,-1",You joined a company with friendly colleagues.,"4:1,7:5",1,4,15,40,10,,,,1,1,5
-3291,"18,-1",You found a job.,7:5,1,4,-1,15,10,,,,1,1,5
-3292,"18,-1","Your colleague has a bad relationship with you, you resigned.",7:-2,0,,,,5,"3289,3290,3291",,"",1,5,1
-3293,"18,-1",You made a great contribution to the company.,"4:1,6:3,7:3",0,,,,5,"3289,3290,3291",,"",1,5,
-3294,"18,-1",You worked hard.,"4:1,7:1,6:1",0,,,,10,,,,1,5,
-3295,"18,-1",You were invited by another company to work there.,"4:1,7:1",1,6,20,-1,10,,,,1,5,
-3296,"18,-1",You had to leave this company because you lost a battle within the company.,7:-2,0,,,,5,,,,1,5,1
-3297,"18,-1",You got promoted.,"4:2,7:5,6:3",1,6,20,-1,10,,,,1,5,
-3298,"18,-1",You became the boss of the company.,"4:3,7:8,6:5",1,6,40,-1,10,,,,1,5,
-3299,"18,-1",You own your own company and start a business.,"4:3,7:8,6:5",1,6,30,-1,10,"3289,3290,3291",,,1,1,5
-3300,"18,-1",Your company goes bankrupt.,"7:-5,6:-5",0,"",,,5,3299,,,1,5,1
-3301,"18,-1",You work hard for your own company.,"4:1,7:1,6:1",0,,,,10,,,,1,5,
+3289,"18,60",You joined a big company with a great salary.,"4:2,7:5,8:10",1,4,40,-1,10,,,"",1,8,7
+3290,"18,60",You joined a company with friendly colleagues.,"4:1,7:5,8:8",1,4,15,40,10,,,,1,8,7
+3291,"18,60",You found a job.,"7:5,8:5",1,4,-1,15,10,,,,1,8,7
+3292,"18,60","Your colleague has a bad relationship with you, you resigned.",7:-2,0,,,,5,"3289,3290,3291",,"",1,7,8
+3293,"18,60",You made a great contribution to the company.,"4:1,6:3,7:3,8:8",0,,,,5,"3289,3290,3291",,"",1,7,
+3294,"18,60",You worked hard.,"4:1,7:1,6:1,8:5",0,,,,10,,,,1,7,
+3295,"18,60",You were invited by another company to work there.,"4:1,7:1",1,6,20,-1,10,,,,1,7,
+3296,"18,60",You had to leave this company because you lost a battle within the company.,7:-2,0,,,,5,,,,1,7,8
+3297,"18,60",You got promoted.,"4:2,7:5,6:3",1,6,20,-1,10,,,,1,7,
+3298,"18,60",You became the boss of the company.,"4:3,7:8,6:5",1,6,40,-1,10,,,,1,7,9
+3299,"18,60",You own your own company and start a business.,"4:3,7:8,6:5,8:100",1,6,30,-1,10,"3289,3290,3291",,,1,8,9
+3300,"18,60",Your company goes bankrupt.,"7:-5,6:-5,8:-100",0,"",,,3,3299,,,1,9,8
+3301,"18,60",You work hard for your own company.,"4:1,7:1,6:1,8:8",0,,,,10,,,,1,9,
+3302,"18,60","You used your work email to flirt with coworkers, and you got fired.","7:-3,8:-5,6:-3",0,,,,3,,,,1,"8,9",7
