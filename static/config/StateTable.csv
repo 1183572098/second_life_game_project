@@ -10,3 +10,4 @@ state_id,state_name,notes,exclusive_state_id
 9,be_boss,Player is the boss of companies,"6,7,8"
 10,is_single,Player is single.,11
 11,is_not_single,Player is not single.,10
+12,is_married,Player is married.,11
