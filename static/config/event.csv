@@ -69,7 +69,7 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3602,"0,-1",You died of depression.,,1,7,-200,0,999,3021,,,1,1,,0
 3603,"0,-1",You died on the operating table.,,1,1,-200,0,999,3026,,,1,1,,0
 3604,"0,-1",Nothing special happened this year.,,0,,,,5,,,,1,1,,0
-3605,"90,150",You had cancer,1:-100,0,,,,5+age*1+(50-health)>0?(50-health):0,,,,,,,0
+3605,"90,150",You had cancer,1:-100,0,,,,5+age*1+(50-health)>0?(50-health):0,,,,0,,,0
 3606,"10,-1",You had a rough year. Everything seemed so hopeless.,7:-8,0,,,,10,,,,,,,"","10,-1",You had a rough year. Everything seemed so hopeless.,7:-8,0,,,,10,,,,,,,
 3500,"0,-1",You studied hard all year,4:5,2,,,,10,,"option events begin here, ID starts from 3500",,1,1,,0
 3501,"0,-1",You fell for a new game,"4:-2,1:-1",2,,,,10,,,,1,1,,0
@@ -239,16 +239,21 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3335,"18,-1",Novel flu had spread around the world.,,0,,,,2,,,,1,,,0
 3336,"18,-1",An actor became the president of the United States.,,0,,,,2,,,,0,,,0
 3337,"18,-1",Scientists discovered aliens.,,0,,,,2,,,3230,0,,,0
-3338,"18,-1",You planted flowers around the house and the community became beautiful.,"7:5,5:5",0,,,,5,,,,1,,,0
-3339,"10,-1",You picked up change on the road.,"7:10,8:3,5:-3",1,5,10,-1,10,,,,1,,,0
-3340,"10,-1",You could always meet someone who helps you.,"7:10,8:3,5:-3",1,5,15,-1,10,,,,1,,,0
-3341,"10,18",The best person in school didn't come to the exam.,"7:10,6:2,5:-3",1,5,20,-1,10,,,,1,,,0
-3700,"10,-1",You spent the money you found.,"7:10,5:-3,8:3",2,,,,10,,,,1,,,0
-3701,"10,-1",Police found the man who lost money.,"7:5,5:5",2,,,,10,,,,1,,,0
-3702,"10,-1",The person who lost the money appreciated you and gave you a bonus.,"7:10,5:8,8:3",2,,,,10,,,,1,,,0
-3342,"10,-1",You helped the person asking for directions on the side of the road.,"7:5,5:5",0,,,,5,,,,1,,,0
-3343,"18,-1",You chatted with a guy who was about to jump into a river and rescued him.,"7:5,5:5",0,,,,3,,,,1,,,0
-3703,"22,-1",You spent no money on charity.,"",2,,,,3,,,,1,,,0
-3704,"22,-1",You spent a little money on charity.,"7:5,8:-3,5:3",2,8,10,-1,3,,,,1,,,0
-3705,"22,-1",You spent lots of money on charity.,"7:10,8:-10,5:10",2,8,30,-1,3,,,,1,,,0
+3338,"18,-1",You planted flowers around the house and the community became beautiful.,"7:3,5:5",0,,,,5,,,,1,,,0
+3339,"10,-1",You picked up change on the road.,"7:3,8:3,5:-3",1,5,10,-1,10,,,,1,,,0
+3340,"10,-1",You could always meet someone who helps you.,"7:3,8:3,5:-3",1,5,15,-1,10,,,,1,,,0
+3341,"10,18",The best person in school didn't come to the exam.,"7:3,6:2,5:-3",1,5,20,-1,10,,,,1,,,0
+3700,"10,-1",You spent the money you found.,"7:5,5:-3,8:3",2,,,,10,,,,1,,,0
+3701,"10,-1",Police found the man who lost money.,"7:3,5:5",2,,,,10,,,,1,,,0
+3702,"10,-1",The person who lost the money appreciated you and gave you a bonus.,"7:5,5:8,8:3",2,,,,10,,,,1,,,0
+3342,"10,-1",You helped the person asking for directions on the side of the road.,"7:3,5:5",0,,,,5,,,,1,,,0
+3343,"18,-1",You chatted with a guy who was about to jump into a river and rescued him.,"7:3,5:5",0,,,,3,,,,1,,,0
+3703,"22,-1",You spent no money on charity.,"",2,,,,3,,,,0,,,0
+3704,"22,-1",You spent a little money on charity.,"7:3,8:-3,5:3",2,8,10,-1,3,,,,0,,,0
+3705,"22,-1",You spent lots of money on charity.,"7:8,8:-10,5:10",2,8,30,-1,3,,,,0,,,0
 3338,"18,-1",Virtual reality technology has been vigorously developed.,,0,,,,2,,,,0,,,0
+3339,"18,-1",People could live in a holographic society based on consciousness alone.,,0,,,,999,3338,,,0,,,0
+3340,"25,40","You were drowning in virtual reality, and the real body kept getting weaker","1:-3,7:3",0,,,,age>30?999:age,3339,,,1,,,0
+3706,"25,40",You took the red pill and came back to reality,"1:3,7:3",2,,,,10,3340,,,0,,,0
+3707,"25,40",You took the blue pill and stayed in a virtual society,"1:-3,7:3",2,,,,10,3340,,,0,,,0
+3708,"25,40","You missed this opportunity, so you had to stay in the virtual society.","1:-3,7:3",2,,,,10,3340,,,0,,,0
