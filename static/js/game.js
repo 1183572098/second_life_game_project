@@ -117,7 +117,6 @@ $('#next').click(function(){
         {},
         function (data) {
             if(Boolean(data.is_end) === true){
-                alert("game over.");
                 endPage();
             }
             else{
@@ -183,6 +182,8 @@ document.oncontextmenu = function () {
 
 function endPage(){
     document.getElementById("end").className="overshadow";
+    document.getElementById("restart").hidden = false;
+    document.getElementById("next").hidden = true;
 }
 
 
