@@ -144,6 +144,11 @@ class Event(Config):
                     after_state_ids = para["after_state_id"].split(",")
                     return after_state_ids
 
+    def get_is_end(self, event_id):
+        for para in self.config:
+            if para["event ID"] == str(event_id):
+                return int(para["is_end"])
+
 
 event = Event()
 
@@ -171,7 +176,7 @@ class StoreTable(Config):
         for para in self.config:
             if para["ID"] == str(good_id):
                 attribute_id, value = para["money"].split(":")
-                money_dict = {attribute_id: value}
+                money_dict = {int(attribute_id): int(value)}
                 return money_dict
 
     def get_values(self, good_id):

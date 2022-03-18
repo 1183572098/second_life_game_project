@@ -18,6 +18,7 @@ class Process:
         self.shop = None
         self.role = Role()
         self.shop = store_table.get_goods()
+        self.is_end = 0
 
     def random_attribute(self):
         random_attributes = []
@@ -47,17 +48,15 @@ class Process:
             event_id = self._get_event()
             if str(event_id)[0] == "2":
                 self.rebirth(event_id)
-            if str(event_id)[0] == "3":
+            elif str(event_id)[0] == "3":
                 self._execute_event(event_id)
             else:
                 self.event_history.append(event_id)
 
-            result.update({"is_end": 0})
             result.update({"age": self.role.age})
             result.update({"event_id": event_id})
             result.update({"attribute": self.role.visible_attribute})
         else:
-            result.update({"is_end": 1})
             result.update({"attribute_id": is_end})
 
         return result
@@ -117,6 +116,8 @@ class Process:
             for k, v in effect_dict.items():
                 self.role.set_attribute(k, self.role.get_attribute(k) + v)
 
+        self.is_end = event.get_is_end(event_id)
+
     def _change_state(self, state_list):
         for state in state_list:
             exclusive_states = state_table.get_exclusive_state(state)
@@ -133,7 +134,8 @@ class Process:
         self.role.state.clear()
         self.event_history.clear()
         self.event_history.append(event_id)
-        self._change_state(event.get_after_state(event_id))
+        if event.get_after_state(event_id) is not None:
+            self._change_state(event.get_after_state(event_id))
 
     def get_bag(self):
         return self.bag
@@ -202,7 +204,8 @@ class Process:
             for i in range(2):
                 attribute_id = self._get_random_by_weights(weight_dict)
                 self.role.set_attribute(attribute_id, self.role.get_attribute(attribute_id) + store_table.get_range_values(good_id, i)[attribute_id])
-
+        elif good_type == 4:
+            self.rebirth(self.event_history[0])
         else:
             print("error: unknown type of good")
 
