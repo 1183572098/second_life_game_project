@@ -61,10 +61,10 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3512,"0,-1",You went to Harvard.,7:3,2,,,,10,,,,1,1,
 3513,"0,-1",You went to Oxford.,7:3,2,,,,10,,,,1,1,
 3514,"0,-1",You went to MIT.,7:3,2,,,,10,,,,1,1,
-3515,"0,-1",You still didn't tell her/him your feelings.,"7:-1,5:1",2,,,,10,,Update from here,,1,1,
-3516,"0,-1",You fianlly said the words and got a "yes"!,7:8,2,,,,10,,,,1,1,
-3517,"0,-1",She/He told you you were better off as friends.,"7:-5,5:1",2,,,,10,,,,1,1,
-3518,"0,-1",A possitive answer made you the happiest person in the world.,7:8,2,,,,10,,,,1,1,
+3515,"0,-1",You still didn't tell her/him your feelings.,"7:-1,5:1",2,,,,10,,Update from here,,1,10,
+3516,"0,-1",You fianlly said the words and got a "yes"!,7:8,2,,,,10,,,,1,10,11
+3517,"0,-1",She/He told you you were better off as friends.,"7:-5,5:1",2,,,,10,,,,1,10,
+3518,"0,-1",A possitive answer made you the happiest person in the world.,7:8,2,,,,10,,,,1,10,11
 3200,"5,-1",Adopted a puppy named Pavlov.,5:3,0,,,,10,,,,0,1,
 3201,"5,-1",Pavlov is dead.,,0,,,,10,3200,,,0,1,
 3202,"5,-1",Pavlov gave birth to 3 puppies.,5:3,0,,,,3,"3200,3210",,3201,1,1,
@@ -161,11 +161,12 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3292,"18,60","Your colleague has a bad relationship with you, you resigned.",7:-2,0,,,,5,"3289,3290,3291",,"",1,7,8
 3293,"18,60",You made a great contribution to the company.,"4:1,6:3,7:3,8:8",0,,,,5,"3289,3290,3291",,"",1,7,
 3294,"18,60",You worked hard.,"4:1,7:1,6:1,8:5",0,,,,10,,,,1,7,
-3295,"18,60",You were invited by another company to work there.,"4:1,7:1",1,6,20,-1,10,,,,1,7,
+3295,"18,60",You were invited by another company to work there.,"4:1,7:1",1,6,15,-1,10,,,,1,7,
 3296,"18,60",You had to leave this company because you lost a battle within the company.,7:-2,0,,,,5,,,,1,7,8
-3297,"18,60",You got promoted.,"4:2,7:5,6:3",1,6,20,-1,10,,,,1,7,
-3298,"18,60",You became the boss of the company.,"4:3,7:8,6:5",1,6,40,-1,10,,,,1,7,9
-3299,"18,60",You own your own company and start a business.,"4:3,7:8,6:5,8:100",1,6,30,-1,10,"3289,3290,3291",,,1,8,9
-3300,"18,60",Your company goes bankrupt.,"7:-5,6:-5,8:-100",0,"",,,3,3299,,,1,9,8
-3301,"18,60",You work hard for your own company.,"4:1,7:1,6:1,8:8",0,,,,10,,,,1,9,
+3297,"18,60",You got promoted.,"4:2,7:5,6:3",1,6,15,-1,10,,,,1,7,
+3298,"18,60",You became the boss of the company.,"4:3,7:8,6:5",1,6,25,-1,10,,,,1,7,9
+3299,"18,60",You created your own company and started a business.,"4:3,7:8,6:5,8:100",1,6,25,-1,10,"3289,3290,3291",,,1,8,9
+3300,"18,60",Your company went bankrupt.,"7:-5,6:-5,8:-100",1,6,-1,10,3,3299,,,1,9,8
+3301,"18,60",You worked hard for your own company.,"4:1,7:1,6:1,8:8",0,,,,10,,,,1,9,
 3302,"18,60","You used your work email to flirt with coworkers, and you got fired.","7:-3,8:-5,6:-3",0,,,,3,,,,1,"8,9",7
+3303,"18,60","The economic situation was not good, and your company's profitability declines.","7:-3,8:-5,6:-2",0,,,,3,3299,,,1,9,
