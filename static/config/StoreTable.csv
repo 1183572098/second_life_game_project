@@ -1,7 +1,7 @@
 ID,Goods,Type,money,value1,value2,value3,value4,value5,event trigger ID,num,notes,Position,Weight
-2001,Health pills,0,10,2,0,0,0,0,,-1,,../../static/image/medicine/health.gif,
-2002,Aladdin's lamp,0,20,,,,-2,5,,-1,Aladdin bless you,../../static/image/medicine/AladdinLight.gif,
-2003,Rebirth Pills,1,100,,,,,,3001,2,"Life restarts, back to 0 years old, and the all attributes are reset to 4",../../static/image/medicine/rebirth.png,
-2004,Fairy Amulet,0,20,3,-3,1,1,1,,5,,../../static/image/medicine/fairy.gif,
-2005,Wandering Symphony,2,50,-3,-3,-3,-3,-3,,5,"Random one attribute +5, random one attribute -3",../../static/image/medicine/wander.png,"1,1,1,1,1"
-2006,immortal love,2,150,10,10,10,10,10,,1,add 10 value to one attribute randomly ,../../static/image/medicine/love.png,"1,1,1,1,1"
+2001,Health pills,0,8:5,2,0,0,0,0,,-1,,../../static/image/medicine/health.gif,
+2002,Aladdin's lamp,0,8:5,,,,-2,5,,-1,Aladdin bless you,../../static/image/medicine/AladdinLight.gif,
+2003,Rebirth Pills,1,8:30,,,,,,3001,1,"Life restarts, back to 0 years old, and the all attributes are reset to 4",../../static/image/medicine/rebirth.png,
+2004,Fairy Amulet,0,8:5,3,-3,1,1,1,,5,,../../static/image/medicine/fairy.gif,
+2005,Wandering Symphony,2,8:5,-3,-3,-3,-3,-3,,5,"Random one attribute +5, random one attribute -3",../../static/image/medicine/wander.png,"1,1,1,1,1"
+2006,immortal love,2,8:15,10,10,10,10,10,,1,add 10 value to one attribute randomly ,../../static/image/medicine/love.png,"1,1,1,1,1"
