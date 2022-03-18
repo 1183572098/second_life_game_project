@@ -54,6 +54,12 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3060,"30,50",Your back hurt badly so you decided to try Pilate classes.,"1:5,2:5,7:3",1,1,10,30,10,,,,0,,,0
 3061,"23,29",Your quited your job to take care of your child.,"4:-3,7:-3",0,,,,10,3051,,,0,,,0
 3062,"23,29",Your quited your job to take care of your children.,"4:-3,7:-3",0,,,,10,3052,,,0,,,0
+3063,"16,50",You became a movie star.,6:5,1,6,30,-1,10,,,,0,,,0
+3064,"16,50",You became a rapper.,6:5,1,6,30,-1,10,3067,,,0,,,0
+3065,"16,50",You became a singer.,6:5,1,6,30,-1,10,3067,,,0,,,0
+3066,"10,22",You got a poster of Justin Bieber and hang it on the wall.,"7:8,3:3",0,,,,15,,,,0,,,0
+3067,"10,50",You sang everyday in the shower.,"3:3,6:1",0,,,,10,,,,1,,,0
+3068,"20,55",You lost a lot of money on gambling.,"8:-10,6:-5,7:-5",0,,,,10,,,,1,,,0
 3400,"12,-1",You were robbed and all your documents are lost.,"3:-2,7:-5",1,5,0,10,10,,flexible age limitation,,1,1,,0
 3401,"12,20",You came out with your parents. Dad couldn't accept it and lost his temper.,7:-5,0,,,,10,3504,come out,,0,1,,0
 3402,"12,20",You came out with your parents. Dad and mom were supportive.,7:5,0,,,,10,3504,,,0,1,,0
