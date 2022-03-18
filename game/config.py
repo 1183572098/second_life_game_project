@@ -189,6 +189,7 @@ class StoreTable(Config):
                 i = 1
                 for weight in weights:
                     weight_dict.update({i: int(weight)})
+                    i += 1
 
         return weight_dict
 
