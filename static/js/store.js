@@ -50,7 +50,7 @@ function openBag(){
 
 function openStore(){
 	$.post('../shop/',
-		{'user_id': userId},
+		{},
 		function (data) {
 			if(data.bag !== ""){
 				bagMap = new Map(Object.entries(data.bag));
@@ -119,8 +119,7 @@ function purchase(val){
 	let itemId = $(val).parent().parent().find('td').eq(0).attr("id");
 
 	$.post('../purchase/',
-		{'user_id': userId,
-		'good_id': itemId},
+		{'good_id': itemId},
 		function (data) {
 			if(Boolean(data.success) === true){
 				if(data.bag !== ""){
@@ -144,8 +143,7 @@ function use(val){
 	let itemId = $(val).parent().parent().find('td').eq(0).attr("id");
 
 	$.post('../use/',
-		{'user_id': userId,
-		'good_id': itemId},
+		{'good_id': itemId},
 		function (data) {
 			if(Boolean(data.success) === true){
 				if(data.bag !== ""){

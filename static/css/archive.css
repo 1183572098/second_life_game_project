@@ -70,41 +70,47 @@ p{
 
 /*image*/
 .portrait{
-  height: 20px;
-  width: 20px;
+  height: 10px;
+  width: 10px;
+  /*margin-right: -40px;*/
+}
+
+.portrait img{
+  height: 60px;
+  width: 60px;
 }
 
 .one{
-  height: 250px;
-  width: 150px;
+  height: 290px;
+  width: 160px;
   position: absolute;
-  top: 10px;
+  top: 0px;
   left: 0px;
-  z-index: 4;
+}
+
+.highlight{
+  background-color: yellow;
 }
 
 .two{
-  height: 250px;
-  width: 150px;
+  height: 290px;
+  width: 160px;
   position: absolute;
-  top: 10px;
-  left: 160px;
+  left: 170px;
   position: !important;
 }
 
 .three{
-  height: 250px;
-  width: 150px;
+  height: 290px;
+  width: 160px;
   position: absolute;
-  top: 10px;
-  left: 320px;
+  left: 340px;
   position: !important;
 }
 
 .archive{
   height: 30px;
   background-color: black;
-  color: blueviolet;
 }
 
 .rowHead{
@@ -115,15 +121,18 @@ p{
 }
 
 .row{
-  height: 43px;
+  height: 60px;
   width: 150px;
   margin-left: 0px;
   border-color: black;
-  background-color: #6495ED;
-  font-size: 16px;
-  line-height: 40px;
+  background-color: white;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 15px;
   text-align: center;
   text-decoration: none;
+  color: black;
+  padding-top: 6px;
 }
 
 .saveFile{
@@ -161,7 +170,7 @@ p{
   text-decoration: none;
   position: absolute;
   top: 480px;
-  left: 580px;
+  left: 980px;
   background-color: #6495ED;
 }
 
