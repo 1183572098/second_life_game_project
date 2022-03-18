@@ -21,7 +21,7 @@ body{
 	position: fixed;
 	height: 100%;
 	width: 100%;
-	background-image: url("../image/background/E.png");
+	background-image: url("../image/background/QQ.png");
 	background-repeat: no-repeat;
 	text-align: center;
 	line-height: 100%;
@@ -73,7 +73,7 @@ body{
 	border: 1px solid red;
 	border-radius: 50%;
 	text-align: center;
-	background-image: url("../image/background/A.png");
+	background-image: url("../image/background/RR.png");
 	background-size: 200px;
     opacity:0.6;
     border-image: url("../image/background/A.png");
@@ -82,18 +82,20 @@ body{
 .save{
 	position: absolute;
 	top: 60px;
-	left: -120px;
-	width: 80px;
-	height: 80px;
+	left: -200px;
+	width: 100px;
+	height: 100px;
 	font-style: oblique;
 	font-size: 20px;
-	line-height: 80px;
+	line-height: 100px;
 	color: #B0E0E6 ;
 	/*border: 1px solid red;*/
 	border-radius: 50%;
 	text-align: center;
 	/*background-image: url("../image/background/EE.png");*/
-	background-image: url("../image/background/B.png");
+	/*background-image: url("../image/background/B.png");*/
+
+ 	background-image: url("../image/background/RR.png");
     border-image: url("../image/background/A.png");
 	opacity: 0.7;
 	
@@ -104,7 +106,6 @@ body{
 	top: 10px;
 	height: 300px;
 	width: 900px;
-	/*background-color: #FAEBD7;*/
 	opacity: 0.7;
 
 }
@@ -149,7 +150,7 @@ body{
 	position: relative;
 	height: 50px;
 	width: auto;
-	background-image: url("../image/background/E.png");
+	/*background-image: url("../image/background/DD.png");*/
 	border: solid;
 	margin-top: 10px;
 	z-index: 1;
@@ -163,7 +164,7 @@ body{
 	line-height: 50px;
 	font-size: 27px;
 	margin-left: 810px;
-	background-image: url("../image/background/E.png");
+	/*background-image: url("../image/background/E.png");*/
 
 	opacity: 0.8;
 }
@@ -195,10 +196,12 @@ body{
 .store .left{
 	float: left;
 	width: 430px;
-	background-color: #B0E0E6;
+	/*background-color: #B0E0E6;*/
+	background-image: url("../image/background/BB.png");
 	height: 300px;
 	display: block;
 	overflow: auto;
+	color: wheat;
 }
 
 .store .right{
@@ -207,7 +210,10 @@ body{
 	height: 300px;
 	display: block;
 	overflow: auto;
-	background-image: url("../image/background/QQ.png");	
+	/*background-image: url("../image/background/QQ.png");*/
+	background-image: url("../image/background/WW.png");
+	color: 	wheat;
+
 }
 
 .store tr{
@@ -223,19 +229,20 @@ body{
 }
 
 .select{
-	width: 220px;
+	width: 700px;
 	height: 200px;
 	position: absolute;
-	margin-left: -110px;
+	margin-left: -350px;
 	margin-top: -100px;
 	top: 50%;
 	left: 50%;
-	opacity: 0.8;
+	/*opacity: 0.8;*/
+	background-image: url("../image/background/EE.png");	
+
 }
 
 .selectHead{
 	height: 90px;
-	background-color: #2E8B57;
 	color: #B0E0E6;
 	line-height: 30px;
 	font: bold;
@@ -246,18 +253,18 @@ body{
 
 .subSelect{
 	height: 80px;
-	background-color: #FFE4B5;
-	border: solid #87CEEB;
 	line-height: 66px;
 	font: bold;
 	font-style: oblique;
 	text-align: center;
 	font-size: 16px	;
+	background-image: url("../image/background/QQ.png");	
+
 }
 
 .shadow{
 	background-color: black;
-	opacity: 0.8;
+	opacity: 1;
 	width: 100%;
 	height: 100%;
 	opacity: !important;
@@ -271,3 +278,7 @@ body{
 	opacity: !important;
 }
 
+.baseFoot{
+	background-image: url("../image/background/EE.png");	
+
+}
