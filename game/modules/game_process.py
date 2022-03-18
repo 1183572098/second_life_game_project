@@ -185,6 +185,11 @@ class Process:
             weight_dict = store_table.get_weight(good_id)
             attribute_id = self._get_random_by_weights(weight_dict)
             self.role.set_attribute(attribute_id, self.role.get_attribute(attribute_id) + store_table.get_values(good_id)[attribute_id])
+        elif good_type == 3:
+            weight_dict = store_table.get_weight(good_id)
+            for i in range(2):
+                attribute_id = self._get_random_by_weights(weight_dict)
+                self.role.set_attribute(attribute_id, self.role.get_attribute(attribute_id) + store_table.get_range_values(good_id, i)[attribute_id])
 
         else:
             print("error: unknown type of good")

@@ -176,6 +176,18 @@ class StoreTable(Config):
 
         return values
 
+    def get_range_values(self, good_id, index):
+        values = {}
+        for para in self.config:
+            if para["ID"] == str(good_id):
+                values.update({1: int(para["value1"].split(",")[index]),
+                               2: int(para["value1"].split(",")[index]),
+                               3: int(para["value1"].split(",")[index]),
+                               4: int(para["value1"].split(",")[index]),
+                               5: int(para["value1"].split(",")[index])})
+
+        return values
+
     def get_event(self, good_id):
         for para in self.config:
             if para["ID"] == str(good_id):
