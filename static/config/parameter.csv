@@ -5,6 +5,6 @@ id,value,notes
 2003,50,Initial property maximum value
 2004,60,The first special mechanism age
 2005,70,The second special mechanism age
-2006,"1,-1:2:-1",The first special mechanism affects properties and values
-2007,"1,-2:2:-2",The second special mechanism affects properties and values
+2006,"1:-1,2:-1",The first special mechanism affects properties and values
+2007,"1:-2,2:-2",The second special mechanism affects properties and values
 2008,9,Numbers of head portraits
