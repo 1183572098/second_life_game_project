@@ -204,7 +204,8 @@ class Process:
             for i in range(2):
                 attribute_id = self._get_random_by_weights(weight_dict)
                 self.role.set_attribute(attribute_id, self.role.get_attribute(attribute_id) + store_table.get_range_values(good_id, i)[attribute_id])
-
+        elif good_type == 4:
+            self.rebirth(self.event_history[0])
         else:
             print("error: unknown type of good")
 
