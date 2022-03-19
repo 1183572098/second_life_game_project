@@ -65,7 +65,7 @@ body{
 
 .shop{
 	position: absolute;
-	top: -70px;
+	top: 0;
 	right: 800px;
 	width: 100px;
 	height: 100px;
@@ -84,7 +84,7 @@ body{
 
 .save{
 	position: absolute;
-	top: 60px;
+	top: 125px;
 	left: -200px;
 	width: 100px;
 	height: 100px;
