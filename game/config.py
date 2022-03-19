@@ -111,7 +111,7 @@ class Event(Config):
         for para in self.config:
             age_group = para["age group"]
             age_min, age_max = age_group.split(",")
-            if int(para["EventType"]) == 0 or (int(para["EventType"]) == 1 and (int(para["maximum"]) > role.attribute[int(para["attribute threshold"])] >= int(para["minimum"]))):
+            if int(para["EventType"]) == 0 or (int(para["EventType"]) == 1 and (int(para["minimum"]) == -1 or int(para["minimum"]) <= role.attribute[int(para["attribute threshold"])]) and (int(para["maximum"]) == -1 or int(para["maximum"]) > role.attribute[int(para["attribute threshold"])])):
                 if (int(age_min) == -1 or role.age >= int(age_min)) and (int(age_max) == -1 or role.age <= int(age_max)):
                     if (para["pre_event"] == "" or satisfy_pre(para["pre_event"].split(","), event_history)) and (para["exclusive_events"] == "" or satisfy_exclusive(para["exclusive_events"].split(","), event_history)):
                         if int(para["IsRepeated"]) == 1 or int(para["event ID"]) not in event_history:
