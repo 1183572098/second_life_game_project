@@ -106,6 +106,7 @@ class Event(Config):
         event_list = {}
         for k, v in role.attribute.items():
             exec('{} = {}'.format(attribute.name(k), v))
+        age = role.age
 
         for para in self.config:
             age_group = para["age group"]
