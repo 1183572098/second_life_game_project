@@ -4,5 +4,5 @@ ID,Goods,Type,money,value1,value2,value3,value4,value5,valu6,value7,value8,event
 2003,Rebirth Pills,4,8:30,,,,,0,0,,,,1,"Life restarts, back to 0 years old, and the all attributes are reset to 4",../../static/image/medicine/rebirth.png,
 2004,Fairy Amulet,0,8:5,3,-3,1,1,0,0,1,1,,5,Guess if this is a poisonous apple?,../../static/image/medicine/fairy.gif,
 2005,Wandering Symphony,3,8:5,"-5,3","5,-3","-5,3","-5,3",0,0,"-5,3","-5,3",,5,"Random one attribute +5, random one attribute -3",../../static/image/medicine/wander.png,"1,1,1,1,0,0,1,1"
-2006,Immortal love,2,8:30,10,10,10,10,0,0,10,10,,1,Add 10 value to one attribute randomly ,../../static/image/medicine/love.png,"1,1,1,1,0,0,1,1"
-2007,Wishing bottle,1,1:15,,,,,,,,,3069,1,Exchange your health for money?,,
+2006,Immortal love,2,8:30,10,10,10,10,0,0,10,10,,1,Add 10 value to one attribute randomly,../../static/image/medicine/love.png,"1,1,1,1,0,0,1,1"
+2007,Wishing bottle,1,1:15,,,,,,,,,3069,1,Exchange your health for money?,../../static/image/medicine/water.jpg,
