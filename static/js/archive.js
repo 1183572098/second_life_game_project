@@ -1,9 +1,9 @@
 var archiveMap = new Map();
 var eventMap = new Map();
 var currentSelect = 0,
-    one = byId("one"),
-    two = byId("two"),
-    three = byId("three");
+    one = byId("oneBorder"),
+    two = byId("twoBorder"),
+    three = byId("threeBorder");
 
 
 function byId(id){
@@ -118,20 +118,20 @@ function select3(){
 }
 
 one.onclick=function(){
-    one.className = "one highlight";
-    two.className = "two";
-    three.className = "three";
+    one.className = "oneBorder highlight";
+    two.className = "twoBorder noLight";
+    three.className = "threeBorder noLight";
 } 
 
 two.onclick=function(){
-    one.className = "one";
-    two.className = "two highlight";
-    three.className = "three";
+    one.className = "oneBorder noLight";
+    two.className = "twoBorder highlight";
+    three.className = "threeBorder noLight";
 } 
 
 three.onclick=function(){
-    one.className = "one";
-    two.className = "two";
-    three.className = "three highlight";
+    one.className = "oneBorder noLight";
+    two.className = "twoBorder noLight";
+    three.className = "threeBorder highlight";
 } 
 

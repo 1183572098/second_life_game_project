@@ -23,14 +23,13 @@ a:hover{
 }
 
 
-.archive{
+.archive1{
+  height: 260px;
+  width: 520px;
   position: absolute;
   top: 230px;
-  left: 200px;
-  height: 260px;
-  width: 400px;
+  margin-left: 30%;
   color: white;
-  background-color: black;
   opacity: 0.8;
 }
 
@@ -72,7 +71,6 @@ p{
 .portrait{
   height: 10px;
   width: 10px;
-  /*margin-right: -40px;*/
 }
 
 .portrait img{
@@ -80,57 +78,79 @@ p{
   width: 60px;
 }
 
-.one{
-  height: 290px;
-  width: 160px;
-  position: absolute;
-  top: 0px;
-  left: 0px;
+.oneBorder{
+
+  position: relative;
+  height: 258px;
+  width: 158px;
+  /*background-color: yellow;*/
+  min-height:1px;
+  float: left;
 }
+
+
+.one{
+  height: 200px;
+  width: 140px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+}
+
+.twoBorder{
+  position: relative;
+  height: 260px;
+  width: 157px;
+  /*background-color: yellow;*/
+  min-height:1px;
+  float: right;
+  top: 0px;
+  left: -200px;
+
+}
+
 
 .two{
   height: 290px;
+  height: 2px;
   width: 160px;
   position: absolute;
-  left: 170px;
-  position: !important;
+  top: 4px;
+  left: 4px;
 }
 
+
+.threeBorder{
+  position: relative;
+  height: 258px;
+  width: 158px;
+  /*background-color: yellow;*/
+  background-size: 0px;
+  min-height:1px;
+  float: right;
+  right: -120px;
+
+}
 .three{
   height: 290px;
   width: 160px;
   position: absolute;
-  left: 340px;
-  position: !important;
+  top: 1px;
+  left: 3px;
+  /*position: !important;*/
 }
 
-.content{
-  height: 270px;
-  width: 140px;  
-  position: absolute;
-  left: 350px;
-  position: !important;
-}
-
-.highlight{
-  background-image: url("../image/background/E.png");
-}
-
-
-.archive{
-  height: 30px;
-  background-color: black;
-}
 
 .rowHead{
   text-align: center;
   font-size: 20px;
+  width: 150px;
   color: black;
   background-color: #228B22;
 }
 
 .row{
-  height: 60px;
+  height: 56px;
   width: 150px;
   margin-left: 0px;
   border-color: black;
@@ -152,9 +172,11 @@ p{
   text-align: center;
   text-decoration: none;
   position: absolute;
-  top: 280px;
-  right: 20px;
-  background-color: #6495ED;
+  top: 20px;
+  right: -150px;
+  color: white;
+  background-image: url("../image/background/BB.png");
+
 }
 
 .readFile{
@@ -165,9 +187,10 @@ p{
   text-align: center;
   text-decoration: none;
   position: absolute;
-  top: 340px;
-  right: 20px;
-  background-color: #6495ED;
+  top: 120px;
+  right: -150px;
+  color: white;
+  background-image: url("../image/background/BB.png");
 }
 
 .game{
@@ -178,9 +201,10 @@ p{
   text-align: center;
   text-decoration: none;
   position: absolute;
-  top: 480px;
-  left: 980px;
-  background-color: #6495ED;
+  top: 280px;
+  left: 100px;
+  color: white;
+  background-image: url("../image/background/BB.png");
 }
 
 .index{
@@ -191,7 +215,17 @@ p{
   text-align: center;
   text-decoration: none;
   position: absolute;
-  top: 480px;
-  left: 780px;
-  background-color: #6495ED;
+  top: 280px;
+  left: 260px;
+  color: white;
+  background-image: url("../image/background/BB.png");
+
+}
+
+.highlight{
+  opacity: 1;
+}
+
+.noLight{
+  opacity: 0.8;
 }
