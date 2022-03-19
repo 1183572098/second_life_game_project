@@ -137,7 +137,7 @@ $('#confirm').click(function(){
 		'head_portrait': window.initalImg},
 		function (data) {
 			if(Boolean(data.success) === true){
-				window.location.href ="../game/";
+				window.location.href ="../start/";
 			}
 			else{
 				if(data.reason === undefined){

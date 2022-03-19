@@ -92,7 +92,7 @@ function read(){
         {'location': currentSelect},
         function (data) {
             if(Boolean(data.success) === true){
-                window.location.href ="../reload/";
+                window.location.href ="../game/";
             }
             else{
                 if(data.reason === undefined){

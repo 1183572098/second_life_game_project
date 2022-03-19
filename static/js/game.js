@@ -89,7 +89,7 @@ function createEventTable(){
         let eventArray = Array.from(eventId);
         let year = 0;
         for(let event of eventArray){
-            if(parseInt((parseInt(event)%10000) / 1000) === 3){
+            if(parseInt((parseInt(event)%10000) / 1000) <= 3){
                 createEvent(year, event);
                 year ++;
             }
@@ -169,19 +169,6 @@ function choose(val){
             document.getElementById("shadow").className = "shadow hide";
 
         })
-}
-
-document.onkeydown = function ()
-{
-    if (event.keyCode === 116) {
-        event.keyCode = 0;
-        event.cancelBubble = true;
-        return false;
-    }
-}
-
-document.oncontextmenu = function () {
-    return false;
 }
 
 function endPage(val){

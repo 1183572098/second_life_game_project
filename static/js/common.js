@@ -13,3 +13,16 @@ function csvToArray(text) {
     }
     return row;
 }
+
+document.onkeydown = function ()
+{
+    if (event.keyCode === 116 || (event.ctrlKey && event.keyCode === 82)) {
+        event.keyCode = 0;
+        event.cancelBubble = true;
+        return false;
+    }
+}
+
+document.oncontextmenu = function () {
+    return false;
+}

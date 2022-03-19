@@ -205,6 +205,17 @@ def next_year(request):
 
 
 @csrf_exempt
+def start(request):
+    manager = game_manager.Manager()
+    manager.enter_game(request)
+    result = manager.reload_game(request)
+    print("result: " + str(result))
+    if result is None:
+        return redirect('second_life:index')
+    return render(request, 'game/game.html', context=result)
+
+
+@csrf_exempt
 def reload(request):
     manager = game_manager.Manager()
     result = manager.reload_game(request)

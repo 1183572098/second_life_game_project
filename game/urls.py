@@ -15,12 +15,12 @@ urlpatterns = [
     path('shop/', views.click_shop, name='shop'),
     path('purchase/', views.purchase_good, name='purchase'),
     path('use/', views.use_good, name='use'),
-    path('game/', views.game, name='game'),
+    path('game/', views.reload, name='game'),
     path('option/', views.choose_option, name='choose_option'),
     path('post/', views.add_announcement, name='add_announcement'),
     path('announcements/', views.show_announcement, name='show_announcement'),
     path('next/', views.next_year, name='next_year'),
     path('archive/read/', views.load_game, name='load_game'),
     path('archive/save/', views.save_game, name='save_game'),
-    path('reload/', views.reload, name='reload'),
+    path('start/', views.start, name='start')
 ]
