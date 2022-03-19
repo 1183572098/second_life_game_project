@@ -161,13 +161,13 @@ body{
 
 .subMiddle tbody{
 	display: block;
-	overflow: auto;
 	margin-top: 40px;
 }
 
 .subMiddle .body{
 	margin-top: 61px;
-	height: 190px;
+	border-left: none;
+	border-right: none;
 }
 
 .subMiddle2{
