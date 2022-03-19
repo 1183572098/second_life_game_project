@@ -525,8 +525,8 @@ body{
 	/*opacity: 0.8;*/
 	color: black;
 	text-align: center;
-	line-height: 200px;
-	font-size: 30px;
+	line-height: 50px;
+	font-size: 20px;
 	background-image: url("../image/background/bcg.jpg");
 	background-size: 500px;
 	background-repeat: no-repeat;
