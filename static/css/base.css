@@ -44,6 +44,7 @@ a:visited { text-decoration: none;color: black;}
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+    overflow: auto;
 }
 
 .gradient-button {
