@@ -153,10 +153,27 @@ body{
 	width: auto;
 	background-image: url("../image/background/A.png");
 	border: solid;
-	/*margin-bottom: 70px;*/	
 	margin-top: 70px;
 	z-index: 1;
+}
+
+.subMiddle .body{
+	height: 330px;
 	overflow: auto;
+}
+
+
+
+.subMiddle ::-webkit-scrollbar {
+	width: 16px;
+	background-image: url("../image/background/CC.png");
+}
+
+.subMiddle ::-webkit-scrollbar-thumb
+{
+    border-radius:10px;
+    -webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.3);
+    background-image: url("../image/background/QQ.png");
 }
 
 .subMiddle td{
@@ -213,19 +230,6 @@ body{
 
 }
 
-.subMiddle2 ::-webkit-scrollbar {
-	width: 16px;
-	background-image: url("../image/background/CC.png");
-}
-
-.subMiddle2 ::-webkit-scrollbar-thumb
-{
-    border-radius:10px;
-    -webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.3);
-    /*background-color:#555;*/
-    background-image: url("../image/background/QQ.png");
-/**/
-}
 
 .subMiddle2 .downRight{
 	height: 46px;
@@ -280,7 +284,6 @@ body{
 	top: 90px;
 	height: 220px;
 	width: 900px;
-	background-image: url("../image/background/book.jpg");
 	z-index: 0;
 	opacity: 1;
 	opacity: !important;
@@ -292,9 +295,7 @@ body{
 	top: -40px;
 	height: 20px;
 	width: 400px;
-	/*background-color: #6B8E23;*/
 	background-image: url("../image/background/A.png");
-
 	color: darkorange;
 	text-align: center;
 	color: #FFA500;
@@ -385,14 +386,12 @@ body{
 .store .left{
 	float: left;
 	width: 416px;
-	/*background-color: #B0E0E6;*/
 	background-image: url("../image/background/A.png");
 	height: 300px;
 	display: block;
-	overflow: scroll;
+	overflow: auto;
 	color: wheat;
 	margin-top: 20px;
-	/*scrollbar-base-color:red;*/
 }
 
 
@@ -400,13 +399,12 @@ body{
 .store .right{
 	float: right;
 	width: 416px;
-	height: 280px;
+	height: 300px;
 	display: block;
-	overflow: scroll;
-	/*background-image: url("../image/background/QQ.png");*/
+	overflow: auto;
 	background-image: url("../image/background/A.png");
 	color: 	wheat;
-	margin-top: -20px;
+	margin-top: 20px;
 }
 
 
@@ -426,9 +424,7 @@ body{
 {
     border-radius:10px;
     -webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.3);
-    /*background-color:#555;*/
     background-image: url("../image/background/QQ.png");
-/**/
 }
 
 .store tr{
