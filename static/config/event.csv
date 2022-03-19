@@ -253,8 +253,8 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3338,"18,-1",Virtual reality technology has been vigorously developed.,,0,,,,2,,,,0,,,0
 3339,"18,-1",People could live in a holographic society based on consciousness alone.,,0,,,,999,3338,,,0,,,0
 3340,"25,40","You were drowning in virtual reality, and the real body kept getting weaker","1:-3,7:2",0,,,,age>30?999:age,3339,,,1,,,0
-3706,"25,40",You took the red pill and came back to reality,"1:3,7:2",2,,,,10,3340,,,0,,,0
-3707,"25,40",You took the blue pill and stayed in a virtual society,"1:-3,7:2",2,,,,10,3340,,,0,,,0
+3706,"25,40",You took the red pill and came back to reality.,"1:3,7:2",2,,,,10,3340,,,0,,,0
+3707,"25,40",You took the blue pill and stayed in a virtual society.,"1:-3,7:2",2,,,,10,3340,,,0,,,0
 3708,"25,40","You missed this opportunity, so you had to stay in the virtual society.","1:-3,7:2",2,,,,10,3340,,,0,,,0
 3341,"0,-1",You died of muscle atrophy.,,1,2,-1,1,9999,,,,0,,,1
 3342,"0,-1",Your artistic ability was too low to be spurned to death.,,1,3,-1,1,9999,,,,0,,,1
@@ -263,3 +263,5 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3345,"0,-1",You were depressed and killed yourself.,,1,7,-1,1,9999,,,,0,,,1
 3346,"0,-1",You had no money to eat and were starved to death.,,1,8,-1,1,9999,,,,0,,,1
 3347,"0,-1","You had no money for accommodation, and froze to death outside in winter.",,1,8,-1,1,9999,,,,0,,,1
+3348,"25,40",You could never leave the virtual world.,1:-100,0,,,,9999,"3707,3708",,,0,,,1
+3349,"25,40",You were reborn in the real world.,7:30,0,,,,9999,3706,,,0,,,1
