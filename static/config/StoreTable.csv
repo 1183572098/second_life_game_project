@@ -5,4 +5,4 @@ ID,Goods,Type,money,value1,value2,value3,value4,value5,event trigger ID,num,note
 2004,Fairy Amulet,0,8:5,3,-3,1,1,1,,5,Guess if this is a poisonous apple?,../../static/image/medicine/fairy.gif,
 2005,Wandering Symphony,2,8:5,-3,-3,-3,-3,-3,,5,"Random one attribute +5, random one attribute -3",../../static/image/medicine/wander.png,"1,1,1,1,1"
 2006,Immortal love,2,8:15,10,10,10,10,10,,1,Add 10 value to one attribute randomly ,../../static/image/medicine/love.png,"1,1,1,1,1"
-2007,Wishing bottle,1,5:20,,,,,,3069,1,Wanna be a millionaire?,,
+2007,Wishing bottle,1,1:15,,,,,,3069,1,Exchange your health for money?,,
