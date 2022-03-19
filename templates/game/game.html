@@ -12,7 +12,7 @@
         var eventId = {{event_id}};
         var isEnd = Boolean({{is_end}});
     </script>
-<div class="main">
+<div class="main NoSelect" >
 
     <div id="shadow" class="shadow hide"></div>
 <!--    endGame Page-->
@@ -33,17 +33,19 @@
 <!--        class=hide-->
         <div class="store hide" id="wholeStore">
             <div class="left">
-                 <table id="bag" class="table table-bordered table-striped table-condensed">
-                    <div class="tableTop">Bag</div>
-                     <thead><td>Item</td><td>Icon</td><td>Quantity</td><td>Item Description</td></thead>
-                     <tbody></tbody>
+                <div class="bagHead"><div class="item">Item</div><div class="icon">Icon</div><div class="quantity">Quantity</div><div class="des">Item Description</div><div class="price"></div></div>
+                <div class="tableTop">Bag</div>
+                 <table id="bag" class="pos table table-bordered table-striped table-condensed">
+                     <tbody class="bagBody"></tbody>
                 </table>
             </div>
+
             <div class="right">
-                 <table id="store" class="table table-bordered  table-condensed">
-                    <div class="tableTop2">Store  (doubleclick icon to purchase)</div>
-                     <thead><td>Item</td><td>Icon</td><td>Available Quantity</td><td>Item Description</td><td>Price</td></thead>
-                     <tbody></tbody>
+                <div class="storeHead"><div class="item">Item</div><div class="icon">Icon</div><div class="quantity quantityFix">Available Quantity</div><div class="des">Item Description</div><div class="price">Price</div></div>
+                <div class="tableTop2">Store  (doubleclick icon to purchase)</div>
+                <table id="store" class="pos table table-bordered  table-condensed">
+<!--                     <thead><span class="one"></span><span class="two"></span><span class="three"></span></thead>-->
+                     <tbody class="storeBody"></tbody>
                 </table>
             </div>
         </div>
@@ -57,8 +59,10 @@
 
 
         <div class="subMiddle2" id="subMiddle2">
-            <!-- <div class="left"></div> -->
-            <div class="downRight" id="downRight"><a href="{% url 'second_life:initial' %}" class="restart" id="restart" hidden>Restart a new game</a><a href="#" id="next">Next</a></div>
+            <div class="downright">
+                <a href="#"></a><div class="restart" id="restart">Restart</div>
+                <a href="#"></a> <div class="next" id="next">Next</div>
+            </div>
         </div>
     </div>
 <!--    event select-->

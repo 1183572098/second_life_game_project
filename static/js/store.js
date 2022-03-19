@@ -99,6 +99,7 @@ function createTr(key, value, type){
 	}
 	else{
 		td3.innerHTML = value;
+		td3.className = "special";
 	}
 	tr.appendChild(td3);
 

@@ -88,10 +88,6 @@ p{
   left: 0px;
 }
 
-.highlight{
-  background-image: url("../image/background/E.png");
-}
-
 .two{
   height: 290px;
   width: 160px;
@@ -107,6 +103,19 @@ p{
   left: 340px;
   position: !important;
 }
+
+.content{
+  height: 270px;
+  width: 140px;  
+  position: absolute;
+  left: 350px;
+  position: !important;
+}
+
+.highlight{
+  background-image: url("../image/background/E.png");
+}
+
 
 .archive{
   height: 30px;

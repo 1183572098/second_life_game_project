@@ -92,12 +92,8 @@ body{
 	font-size: 20px;
 	line-height: 100px;
 	color: #B0E0E6 ;
-	/*border: 1px solid red;*/
 	border-radius: 50%;
 	text-align: center;
-	/*background-image: url("../image/background/EE.png");*/
-	/*background-image: url("../image/background/B.png");*/
-
  	background-image: url("../image/background/RR.png");
     border-image: url("../image/background/A.png");
 	opacity: 0.7;
@@ -148,7 +144,6 @@ body{
 	font-size: 20px;
 	font-style: oblique;
 	color: yellow;
-	background-color: red;
 }
 
 .subMiddle .tableHead .left{
@@ -189,30 +184,50 @@ body{
 	font-size: 27px;
 	margin-left: 810px;
 	opacity: 0.8;
+	color: white;
 }
 
 .restart{
+	height: 50px;
+	width: 100px;
 	position: absolute;
-	/*bottom: 20px;*/
-	/*background-image: url("../image/background/A.png");*/
-	left: 250px;
+	top: 0px;
+	left: 300px;
+	line-height: 50px;
+	background-size: 300px 50px;
+	background-image: url("../image/background/11.png");
+	font-style: oblique;
+	font: bold;
+	font-size: 18px;
+	cursor: pointer;
+}
+
+.next{
+	height: 50px;
+	width: 100px;
+	position: absolute;
+	top: 0px;
+	right: 50px;
+	background-size: 300px 50px;
+	background-image: url("../image/background/11.png");
+	font-style: oblique;
+	font-size: 18px;
+	line-height: 50px;
+	cursor: pointer;
 }
 
 .return{
 	position: absolute;
-	/*bottom: 20px;*/
-	/*background-image: url("../image/background/A.png");*/
 	left: 450px;	
 }
-
 
 
 /*bag and shop*/
 
 .store{
 	position: absolute;
-	top: 80px;
-	height: 300px;
+	top: 90px;
+	height: 220px;
 	width: 900px;
 	background-image: url("../image/background/book.jpg");
 	z-index: 0;
@@ -220,8 +235,15 @@ body{
 	opacity: !important;
 }
 
+
 .store .tableTop{
-	background-color: #6B8E23;
+	position: absolute;
+	top: -40px;
+	height: 20px;
+	width: 400px;
+	/*background-color: #6B8E23;*/
+	background-image: url("../image/background/EE.png");
+
 	color: darkorange;
 	text-align: center;
 	color: #FFA500;
@@ -231,8 +253,12 @@ body{
 
 .store .tableTop2{
 	position: absolute;
-	top: 0;
-	background-color: #6B8E23;
+	top: -40px;
+	height: 20px;
+	width: 400px;
+	/*background-color: #6B8E23;*/
+	background-image: url("../image/background/EE.png");
+
 	color: darkorange;
 	text-align: center;
 	color: #FFA500;
@@ -240,32 +266,123 @@ body{
 	font-style: oblique;	
 }
 
-.store .left{
-	float: left;
-	width: 430px;
-	/*background-color: #B0E0E6;*/
-	background-image: url("../image/background/BB.png");
-	height: 300px;
-	display: block;
-	overflow: auto;
+.bagHead{
+	position: absolute;
+	top: -20px;
+	height: 20px;
+	width: 400px;
+	background-image: url("../image/background/EE.png");
+}
+
+.storeHead{
+	position: absolute;
+	top: -20px;
+	height: 40px;
+	width: 400px;
+	background-image: url("../image/background/EE.png");
 	color: wheat;
 }
+
+.item{
+	float: left;
+	display: inline;
+	height: 40px;
+	width: 100px;
+	background-image: url("../image/background/EE.png");
+
+}
+.icon{
+	float: left;
+	display: inline;
+	height: 40px;
+	width: 45px;
+	background-image: url("../image/background/EE.png");
+}
+.quantity{
+	float: left;
+	display: inline;
+	height: 40px;
+	width: 80px;
+	background-image: url("../image/background/EE.png");
+}
+.des{
+	float: left;
+	display: inline;
+	height: 40px;
+	width: 110px;
+	background-image: url("../image/background/EE.png");
+}
+
+.price{
+	float: left;
+	display: inline;
+	height: 40px;
+	width: 65px;
+	background-image: url("../image/background/EE.png");
+}
+
+.store .one{
+	width: 100px;
+}
+.store .two{
+	width: 30px;
+}
+.store .three{
+	width: 100px;
+}
+
+.store .left{
+	float: left;
+	width: 416px;
+	/*background-color: #B0E0E6;*/
+	background-image: url("../image/background/A.png");
+	height: 300px;
+	display: block;
+	overflow: scroll;
+	color: wheat;
+	/*scrollbar-base-color:red;*/
+}
+
+
 
 .store .right{
 	float: right;
 	width: 416px;
 	height: 300px;
 	display: block;
-	overflow: auto;
+	overflow: scroll;
 	/*background-image: url("../image/background/QQ.png");*/
 	background-image: url("../image/background/A.png");
 	color: 	wheat;
-
+	padding-top: 20px;
+	/*line-height: 300px;*/
 }
 
 
+.store .left .pos{
+	line-height: 0;
+}
+.store .right .pos{
+	line-height: 0;
+}
+
+.store ::-webkit-scrollbar {
+	width: 16px;
+	background-image: url("../image/background/CC.png");
+}
+
+.store ::-webkit-scrollbar-thumb
+{
+    border-radius:10px;
+    -webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.3);
+    /*background-color:#555;*/
+    background-image: url("../image/background/QQ.png");
+/**/
+}
+
 .store tr{
 	height: 50px;
+	line-height: 50px;
 }
 
 .effect{
@@ -281,22 +398,23 @@ body{
 	height: 200px;
 	position: absolute;
 	margin-left: -350px;
-	margin-top: -100px;
+	margin-top: -24px;
 	top: 50%;
 	left: 50%;
 	/*opacity: 0.8;*/
-	background-image: url("../image/background/EE.png");	
-
+	background-image: url("../image/background/11.png");	
 }
 
 .selectHead{
 	height: 90px;
 	color: #B0E0E6;
+	color: black;
 	line-height: 30px;
 	font: bold;
 	font-style: oblique;
 	text-align: center;
 	font-size: 16px	;
+	line-height: 90px;
 }
 
 .subSelect{
@@ -306,7 +424,7 @@ body{
 	font-style: oblique;
 	text-align: center;
 	font-size: 16px	;
-	background-image: url("../image/background/QQ.png");	
+	background-image: url("../image/background/11.png");	
 
 }
 
@@ -351,4 +469,8 @@ body{
 	color: black;
 	opacity: 0.6;
 	background-color: black;
+}
+
+.special{
+	width: 80px;
 }
