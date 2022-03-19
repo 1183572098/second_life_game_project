@@ -119,6 +119,9 @@ $('#next').click(function(){
         function (data) {
             eventId = data.event_id;
             if(Boolean(data.is_end) === true){
+                attribute = data.attribute;
+                attributeValueMap = new Map(Object.entries(attribute));
+                setAttribute();
                 endPage(eventMap.get(String(eventId)));
             }
             else{

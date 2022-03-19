@@ -117,32 +117,6 @@ function select3(){
     currentSelect = 3;
 }
 
-// one.onmouseover=function(){
-//     one.className = "one highlight";
-// } 
-
-
-// two.onmouseover=function(){
-//     two.className = "two highlight";
-// } 
-
-// three.onmouseover=function(){
-//     three.className = "three highlight";
-// } 
-
-// one.onmouseout=function(){
-//     one.className = "one";
-// } 
-
-// two.onmouseout=function(){
-//     two.className = "two";
-// } 
-
-// three.onmouseout=function(){
-//     three.className = "three";
-// } 
-
-
 one.onclick=function(){
     one.className = "one highlight";
     two.className = "two";
