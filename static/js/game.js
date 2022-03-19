@@ -110,7 +110,7 @@ function createEvent(age, eventId){
     td2.id = "event" + eventId;
     td2.innerHTML = eventMap.get(String(eventId));
     tr.appendChild(td2);
-    document.getElementById("subMiddle").scrollTop = document.getElementById("subMiddle").scrollHeight;
+    document.getElementById("subMiddleBody").scrollTop = document.getElementById("subMiddleBody").scrollHeight;
 }
 
 $('#next').click(function(){
