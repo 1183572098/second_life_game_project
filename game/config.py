@@ -10,10 +10,9 @@ def modify_ternary_expression(expression_str):
 
 
 def satisfy_pre(pre_events, event_history):
-    for pre_events in pre_events:
-        if int(pre_events) in event_history:
-            continue
-        return False
+    for pre_event in pre_events:
+        if int(pre_event) not in event_history:
+            return False
     return True
 
 
