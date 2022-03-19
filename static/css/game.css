@@ -119,7 +119,7 @@ body{
 	/*margin-bottom: 70px;*/	
 	margin-top: 70px;
 	z-index: 1;
-
+	overflow: auto;
 }
 
 .subMiddle td{
