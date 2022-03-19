@@ -445,12 +445,11 @@ body{
 	width: 700px;
 	height: 200px;
 	position: absolute;
-	margin-left: -350px;
-	margin-top: -24px;
+	margin-left: -250px;
+	margin-top: 30px;
 	top: 50%;
 	left: 50%;
-	/*opacity: 0.8;*/
-	/*background-image: url("../image/background/11.png");	*/
+	/*margin: 0 auto;*/
 }
 
 .selectHead{
