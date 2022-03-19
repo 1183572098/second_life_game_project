@@ -152,7 +152,7 @@ class Process:
             if self.role.attribute.get(k) < v:
                 return False
             else:
-                self.role.attribute.update({k, self.role.attribute.get(k) - v})
+                self.role.attribute.update({k: self.role.attribute.get(k) - v})
 
         if self.bag.get(good_id) is None:
             self.bag.update({good_id: 1})
