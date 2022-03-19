@@ -187,10 +187,10 @@ document.oncontextmenu = function () {
 function endPage(val){
     document.getElementById("content").innerHTML = val;
     document.getElementById("end").className="overshadow";
-    document.getElementById("restart").hidden = false;
     document.getElementById("next").hidden = true;
 }
 
 function clickReturn(){
     document.getElementById("end").className="overshadow hide";
+    document.getElementById("restart").hidden = false;
 }
