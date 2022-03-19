@@ -29,9 +29,9 @@ function readTableSuccess(data){
 		let dataCell = csvToArray(newData[i]);
 		if(dataCell[0]!==""){
 			goodsNameMap.set(dataCell[0], dataCell[1]);
-			goodsIconMap.set(dataCell[0], dataCell[12]);
+			goodsIconMap.set(dataCell[0], dataCell[15]);
 			goodsMoneyMap.set(dataCell[0], dataCell[3]);
-			goodsNotesMap.set(dataCell[0], dataCell[11]);
+			goodsNotesMap.set(dataCell[0], dataCell[14]);
 		}
 	}
 }

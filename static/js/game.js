@@ -5,7 +5,7 @@ var option1Map = new Map();
 var option2Map = new Map();
 var option3Map = new Map();
 var questionMap = new Map();
-
+var isEnd = false;
 
 $(document).ready(function(){
     $.ajax({
@@ -119,6 +119,7 @@ $('#next').click(function(){
         function (data) {
             eventId = data.event_id;
             if(Boolean(data.is_end) === true){
+                isEnd = true;
                 attribute = data.attribute;
                 attributeValueMap = new Map(Object.entries(attribute));
                 setAttribute();
@@ -174,10 +175,24 @@ function choose(val){
 function endPage(val){
     document.getElementById("content").innerHTML = val;
     document.getElementById("end").className="overshadow";
-    document.getElementById("next").hidden = true;
+    if(isEnd){
+        document.getElementById("next").hidden = true;
+    }
 }
 
 function clickReturn(){
     document.getElementById("end").className="overshadow hide";
-    document.getElementById("restart").hidden = false;
+    if(isEnd){
+        document.getElementById("restart").hidden = false;
+    }
+}
+
+function tips(){
+    let tips = "<br/>Please be careful not to let any of your attributes drop to 0. <br/> Do good things, maybe good things will happen.";
+    endPage(tips);
+}
+
+function teamList(){
+    let teamList = "<br/>Planner: Yandan Lai. Qixuan Yang. <br/> Developer: Jinyi Li. <br/> UI: Zhihao Xing. Bianca Jones.";
+    endPage(teamList);
 }

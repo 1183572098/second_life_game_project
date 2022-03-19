@@ -65,8 +65,8 @@ body{
 
 .shop{
 	position: absolute;
-	top: -70px;
-	right: 800px;
+	top: 0;
+	left: -150px;
 	width: 100px;
 	height: 100px;
 	font-style: oblique;
@@ -84,8 +84,8 @@ body{
 
 .save{
 	position: absolute;
-	top: 60px;
-	left: -200px;
+	top: 125px;
+	left: -150px;
 	width: 100px;
 	height: 100px;
 	font-style: oblique;
@@ -98,6 +98,43 @@ body{
     border-image: url("../image/background/A.png");
 	opacity: 0.7;
 	
+}
+
+.teamList{
+	position: absolute;
+	top: 0;
+	left: 950px;
+	width: 100px;
+	height: 100px;
+	font-style: oblique;
+	font-size: 20px;
+	line-height: 40px;
+	color: #B0E0E6 ;
+	border: 1px solid red;
+	border-radius: 50%;
+	text-align: center;
+	background-image: url("../image/background/A.png");
+	background-size: 200px;
+	opacity:0.6;
+	border-image: url("../image/background/CC.png");
+}
+
+.tips{
+	position: absolute;
+	top: 125px;
+	left: 950px;
+	width: 100px;
+	height: 100px;
+	font-style: oblique;
+	font-size: 20px;
+	line-height: 100px;
+	color: #B0E0E6 ;
+	border-radius: 50%;
+	text-align: center;
+	background-image: url("../image/background/RR.png");
+	border-image: url("../image/background/A.png");
+	opacity: 0.7;
+
 }
 
 .middle{
@@ -488,8 +525,8 @@ body{
 	/*opacity: 0.8;*/
 	color: black;
 	text-align: center;
-	line-height: 200px;
-	font-size: 30px;
+	line-height: 50px;
+	font-size: 20px;
 	background-image: url("../image/background/bcg.jpg");
 	background-size: 500px;
 	background-repeat: no-repeat;
