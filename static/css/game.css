@@ -369,7 +369,7 @@ body{
 	/*background-image: url("../image/background/QQ.png");*/
 	background-image: url("../image/background/A.png");
 	color: 	wheat;
-	margin-top: 20px;
+	margin-top: -20px;
 }
 
 
@@ -466,8 +466,8 @@ body{
 	width: 100px;
 	height: 50px;
 	position: absolute;
-	bottom: 20px;
-	right: 20px;
+	bottom: 30px;
+	right: 40%;
 	background-image: url("../image/background/EE.png");
 	line-height: 50px;
 }
@@ -477,16 +477,33 @@ body{
 
 }
 
-.formPosition{
+.formPosition2{
+	margin-top: 100px;
+	/*margin-top: -20px;*/
+	margin-left: 30%;
 	height: 400px;
-	position: relative;
-	margin: auto;
-  	width: 50%;
-  	padding: 10px;
+	/*position: relative;*/
+	position: fixed	;
+  	width: 500px;
+	/*opacity: 0.8;*/
 	color: black;
-	opacity: 0.6;
-	background-color: black;
+	text-align: center;
+	line-height: 200px;
+	font-size: 30px;
+	background-image: url("../image/background/bcg.jpg");
+	background-size: 500px;
+	background-repeat: no-repeat;
 }
+
+.content{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 400px;
+	width: 50%;
+}
+
+
 
 .special{
 	width: 80px;
