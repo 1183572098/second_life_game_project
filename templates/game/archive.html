@@ -32,9 +32,11 @@
 
         </div>
 
-        <div class="archive">
-            <div class="one" id="one">
-                <div class="rowHead">
+        <div class="archive1">
+
+            <div class="oneBorder noLight" id="oneBorder">
+                <div class="one" id="one">
+                     <div class="rowHead">
                     Archive One
                 </div>
                 <a href="#" onclick="select1()">
@@ -43,9 +45,10 @@
                     <div id="detail1" class="row"></div>
                     <div id="time1" class="row"></div>
                 </a>
+                </div>
             </div>
-
-            <div class="two" id="two">
+            <div class="twoBorder noLight" id="twoBorder">
+                 <div class="two" id="two">
                 <div class="rowHead">
                     Archive Two
                 </div>
@@ -60,8 +63,10 @@
                     </div>
                 </a>
             </div>
+            </div>
 
-            <div class="three" id="three">
+            <div class="threeBorder noLight" id="threeBorder">
+                 <div class="three" id="three">
                 <div class="rowHead">
                     Archive Three
                 </div>
@@ -76,15 +81,17 @@
                     </div>
                 </a>
             </div>
-
+            </div>
+         <button id="saveBtn" onclick="save()" disabled hidden><div class="saveFile">Save Archive</div></button>
+        <button id="readBtn" onclick="read()"><div class="readFile">Read Archive</div></button>
+        <a id="gamePage" href="{% url 'second_life:reload' %}" style="display: none"><div class="game">Game Page</div></a>
+        <a href="{% url 'second_life:index' %}"><div class="index">Main Page</div></a>
         </div>
 
-        <button id="saveBtn" onclick="save()" disabled hidden><div class="saveFile">Save Archive</div></button>
-        <button id="readBtn" onclick="read()"><div class="readFile">Read Archive</div></button>
+
 
     </div>
-<a id="gamePage" href="{% url 'second_life:game' %}" style="display: none"><div class="game">Game Page</div></a>
-        <a href="{% url 'second_life:index' %}"><div class="index">Main Page</div></a>
+
 </div>
 <script src="../../static/js/archive.js"></script>
 <script src="../../static/js/common.js"></script>
