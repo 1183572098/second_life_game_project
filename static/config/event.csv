@@ -64,12 +64,12 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3400,"12,-1",You were robbed and all your documents are lost.,"3:-2,7:-5",1,5,0,10,10,,flexible age limitation,,1,1,,0
 3401,"12,20",You came out with your parents. Dad couldn't accept it and lost his temper.,7:-5,0,,,,10,3504,come out,,0,1,,0
 3402,"12,20",You came out with your parents. Dad and mom were supportive.,7:5,0,,,,10,3504,,,0,1,,0
-3600,"0,-1",die of disease,1:-100,1,1,-80,0,999,,no age limitation,,1,1,,0
-3601,"0,-1",die of Stupidity,4:-100,1,4,-200,0,999,,,,1,1,,0
-3602,"0,-1",You died of depression.,,1,7,-200,0,999,3021,,,1,1,,0
-3603,"0,-1",You died on the operating table.,,1,1,-200,0,999,3026,,,1,1,,0
+3600,"0,-1",You died of disease.,1:-100,1,1,-1,0,9999,,no age limitation,,1,1,,1
+3601,"0,-1",You died of stupidity.,4:-100,1,4,-1,0,9999,,,,1,1,,1
+3602,"0,-1",You died of depression.,,1,7,-1,0,9999,3021,,,1,1,,1
+3603,"0,-1",You died on the operating table.,,1,1,-1,0,9999,3026,,,1,1,,1
 3604,"0,-1",Nothing special happened this year.,,0,,,,5,,,,1,1,,0
-3605,"90,150",You had cancer,1:-100,0,,,,5+age*1+(50-health)>0?(50-health):0,,,,0,,,0
+3605,"90,150",You had cancer,1:-100,0,,,,5+age*1+(50-health)>0?(50-health):0,,,,0,1,,1
 3500,"0,-1",You studied hard all year,4:5,2,,,,10,,"option events begin here, ID starts from 3500",,1,1,,0
 3501,"0,-1",You fell for a new game,"4:-2,1:-1",2,,,,10,,,,1,1,,0
 3502,"0,-1",You started to learn guitar.,3:3,2,,,,10,,,,1,1,,0
@@ -132,7 +132,7 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3238,"6,18",You practice the piano every day.,3:1,0,,,,20,3011,,,1,1,,0
 3239,"6,18",You play basketball every week.,2:1,0,,,,20,3013,,,1,1,,0
 3240,"6,8",You're studying too fast so you skipped a grade.,4:2,1,4,40,70,10,,,,0,1,,0
-3241,"6,8","You are far smarter than ordinary people, so you were taken away and subjected to human experiments.",1:-100,1,4,70,-1,10,,,,0,1,,0
+3241,"6,8","You are far smarter than ordinary people, so you were taken away and subjected to human experiments.",1:-100,1,4,70,-1,10,,,,0,1,,1
 3242,"6,18",You were robbed by a bunch of punks.,1:-3,1,5,0,30,10,,,,1,1,,0
 3243,"6,18",You got hurt by a bunch of punks.,1:-8,1,5,0,10,10,,,,1,1,,0
 3244,"10,18",You secretly drank your dad's wine.,"1:-1,7:2",0,,,,10,,,3250,1,1,,0
@@ -158,19 +158,19 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3263,"6,-1","You heard your 'father' knock on the door, but you didn't dare to open it.",7:-10,1,5,-1,10,10,3261,,3262,0,1,,0
 3264,"12,-1",You hit the jackpot and took the whole family on a beach trip.,"7:30,8:30,5:-15",1,5,40,-1,10,,,"",1,1,,0
 3265,"3,-1",You fell in love at first sight by an alien leader.,"1:10,7:5",1,5,50,-1,999,3230,,,0,5,,0
-3266,"3,-1",Aliens experimented on you.,"1:-150,7:-10",0,,,,10,3230,,3265,0,5,,0
+3266,"3,-1",Aliens experimented on you.,"1:-150,7:-10",0,,,,10,3230,,3265,0,5,,1
 3267,"3,-1",You found a weakness in alien defense.,4:8,1,4,50,-1,999,3230,,3265,0,5,,0
 3268,"3,-1",You successfully escaped from the alien base.,2:8,1,2,40,-1,999,3267,,3273,0,5,,0
 3269,"3,-1",You were hidden in your home by kind aliens.,5:8,1,5,30,-1,999,3268,,3275,0,5,,0
 3270,"3,-1",The alien who helped you would drive a spaceship and send you back to Earth.,5:8,1,5,50,-1,999,3269,,,0,5,,0
 3271,"3,-1",You were back on earth.,5:8,0,,,,999,3270,,,0,5,4,0
-3272,"3,-1","You were reported by alien neighbors,  captured and killed.",1:-150,1,5,-1,50,999,3269,,3270,0,5,,0
+3272,"3,-1","You were reported by alien neighbors,  captured and killed.",1:-150,1,5,-1,50,999,3269,,3270,0,5,,1
 3273,"3,-1",You were caught and returned during the escape.,5:-8,1,2,-1,40,999,3267,,3268,0,5,,0
-3274,"3,-1","Because of your cleverness,  you were taken out of your brain by aliens for experiments.",1:-150,0,,,,999,3273,,,0,5,,0
+3274,"3,-1","Because of your cleverness,  you were taken out of your brain by aliens for experiments.",1:-150,0,,,,999,3273,,,0,5,,1
 3275,"3,-1","No one can help you, you had to send a SOS signal to the earth.",,1,5,-1,30,999,3268,,3269,0,5,,0
-3276,"3,-1",You were captured and killed by aliens before earthlings came to rescue you.,1:-150,0,,,,999,3275,,,0,5,,0
+3276,"3,-1",You were captured and killed by aliens before earthlings came to rescue you.,1:-150,0,,,,999,3275,,,0,5,,1
 3277,"3,-1",You have a mixed-race child.,7:5,0,,,,999,3265,,,0,5,,0
-3278,"3,-1",You lived to be 200 years old and then died.,1:-150,0,,,,999,3277,,,0,5,,0
+3278,"3,-1",You died of illness.,1:-150,0,"","","",999,3277,,,0,5,,1
 3279,"3,-1",You have learned the advanced technology of aliens.,4:10,1,4,60,-1,999,3265,,,0,5,,0
 3280,"3,-1",You learned to drive a spaceship.,2:10,1,2,40,-1,999,3265,,,0,5,,0
 3281,"3,-1",You have returned to earth yourself.,"7:10,6:10",0,,,,999,3280,,"3277,3282",0,5,4,0
@@ -218,7 +218,7 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3315,"18,-1",Oil prices have risen.,,0,,,,3,,,,1,,,0
 3316,"18,-1",The third world war broke out.,7:-5,0,,,,3,,,,0,,,0
 3317,"18,-1",The world war is over.,7:5,0,,,,3,3316,,,0,,,0
-3318,"18,-1",You were killed by a bomb.,1:-150,0,,,,3,3316,,3317,0,,,0
+3318,"18,-1",You were killed by a bomb.,1:-150,0,,,,3,3316,,3317,0,,,1
 3319,"50,-1",You started to feel that money was useless and  health was the most important thing.,"",0,,,,3,,,,0,,,0
 3320,"50,-1",You felt aging and tire easily.,,0,,,,3,,,,0,,,0
 3321,"50,-1",You always thought back to the good old days.,,0,,,,3,,,,0,,,0
@@ -229,7 +229,7 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3326,"18,-1",6G signals covered the world.,,0,,,,3,,,,0,,,0
 3327,"18,-1",Scientists created a true AI.,,0,,,,3,,,,0,,,0
 3328,"18,-1","AI took most jobs in the world, people protested against AI.",,0,,,,3,3327,,,0,,,0
-3329,"18,-1",AI destroys the world.,1:-150,0,,,,3,3327,,,0,,,0
+3329,"18,-1",AI destroys the world.,1:-150,0,,,,3,3327,,,0,,,1
 3330,"18,60",Your job was replaced by AI and you lost your job.,"7:-3,8:-5",0,,,,3,,,,0,7,8,0
 3331,"18,60",Your job didn't change when AI hited.,"7:3,8:5",0,,,,3,,,,0,9,,0
 3332,"18,-1",7.0 magnitude earthquake hits Japan.,7:-1,0,,,,3,,,,0,,,0
@@ -256,3 +256,10 @@ event ID,age group,event,effect,EventType,attribute threshold,minimum,maximum,pr
 3706,"25,40",You took the red pill and came back to reality,"1:3,7:3",2,,,,10,3340,,,0,,,0
 3707,"25,40",You took the blue pill and stayed in a virtual society,"1:-3,7:3",2,,,,10,3340,,,0,,,0
 3708,"25,40","You missed this opportunity, so you had to stay in the virtual society.","1:-3,7:3",2,,,,10,3340,,,0,,,0
+3341,"0,-1",You died of muscle atrophy.,,1,2,-1,0,9999,,,,0,,,1
+3342,"0,-1",Your artistic ability was too low to be spurned to death.,,1,3,-1,0,9999,,,,0,,,1
+3343,"0,-1",You were killed by a wine bottle that fell from the sky.,,1,5,-1,0,9999,,,,0,,,1
+3344,"0,-1",You were notorious and have no face to live in the world.,,1,6,-1,0,9999,,,,0,,,1
+3345,"0,-1",You were depressed and killed yourself.,,1,7,-1,0,9999,,,,0,,,1
+3346,"0,-1",You had no money to eat and were starved to death.,,1,8,-1,0,9999,,,,0,,,1
+3347,"0,-1","You had no money for accommodation, and froze to death outside in winter.",,1,8,-1,0,9999,,,,0,,,1
