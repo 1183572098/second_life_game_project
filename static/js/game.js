@@ -173,7 +173,8 @@ function choose(val){
 }
 
 function endPage(val){
-    document.getElementById("content").innerHTML = val;
+    document.getElementById("content").innerHTML = "<br/>";
+    document.getElementById("content").innerHTML += val;
     document.getElementById("end").className="overshadow";
     if(isEnd){
         document.getElementById("next").hidden = true;
