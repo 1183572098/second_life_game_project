@@ -42,7 +42,7 @@ function showArchive(){
             archiveMap = new Map(Object.entries(archive[i]));
             document.getElementById("name" + String(i+1)).innerHTML = archiveMap.get("nickname");
             document.getElementById("portrait" + String(i+1)).innerHTML = getPortrait(archiveMap.get("portrait"));
-            document.getElementById("detail" + String(i+1)).innerHTML = archiveMap.get("age") + ": " + eventMap.get(String(archiveMap.get("event")));
+            document.getElementById("detail" + String(i+1)).innerHTML = archiveMap.get("age") + " years: " + eventMap.get(String(archiveMap.get("event")));
             document.getElementById("time" + String(i+1)).innerHTML = archiveMap.get("time");
         }
     }
