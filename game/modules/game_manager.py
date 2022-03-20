@@ -147,7 +147,7 @@ class Manager:
         print("info: serialize")
         p_stream = pickle.dumps(self.player_games.get(request_data.user.id))
         loc = request_data.POST.get('location')
-        record = self.data.select(Record.objects.get, Record, location=loc)
+        record = self.data.select(Record.objects.get, Record, user_id=request_data.user.id, location=loc)
         result = {}
         if record is None:
             result_code = self.data.create(Record, user_id=request_data.user.id, data=p_stream, location=loc)
