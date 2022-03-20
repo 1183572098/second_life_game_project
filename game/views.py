@@ -222,4 +222,8 @@ def reload(request):
     print("result: " + str(result))
     if result is None:
         return redirect('second_life:index')
+    elif result["success"] == 0:
+        return redirect('second_life:initial')
+    elif len(result["event_id"]) == 0:
+        return redirect('second_life:initial')
     return render(request, 'game/game.html', context=result)
