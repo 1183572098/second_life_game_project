@@ -11,7 +11,7 @@
 
 <div class="main">
 <div class="formPosition">
-<h1>Add Announcement</h1> <br /> <br />
+<h1>Add Announcement</h1> <br /> <br /></div>
 <form id="AnnouncementForm" method="post" action="/second_life/post/" class="form">
         {% csrf_token %}
 
@@ -23,11 +23,10 @@
 <div class ="form">{% for field in form.visible_fields %}
  	{{ field.errors }}
  	<p>{{ field.help_text }}</p>
- 	{{ field }}<br /> 
+ 	<p class="field">{{ field }}<br /> </p>
  {% endfor %}</div>
 
-	<input type="submit" class="gradient-button gradient-button-1" value="Submit" />
+	<p><input type="submit" class="gradient-button gradient-button-1" value="Submit" /></p>
  </form>
-</div>
 </div>
 {% endblock %}
