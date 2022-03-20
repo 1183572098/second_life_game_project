@@ -3,7 +3,26 @@
 	padding: 0;
 }
 
+.main {
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 
+        0 0 10px #0ebeff,
+        0 0 20px #0ebeff,
+        0 0 50px #0ebeff,
+        0 0 100px #0ebeff,
+        0 0 200px #0ebeff
+}
 
+.subTitle{
+	  font-family: "papyrus"; 
+}
+.random{
+	  font-family: "papyrus"; 
+}
+.confirm{
+	  font-family: "papyrus"; 
+}
 .main{
   background-attachment: fixed;
   background-image: url("../image/background/CC.png");
@@ -131,7 +150,6 @@
 
 
 .deal{
-	background-color: blue;
 	background-size: 300px 50px;
 	background-image: url("../image/background/BB.png");
 	font-style: oblique;

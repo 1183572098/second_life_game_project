@@ -2,7 +2,85 @@
 	margin: 0;
 	padding: 0;
 }
+/*font-style*/
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap');
 
+.top {
+    color: #fff;
+    font-style: oblique;
+    text-shadow: 
+        0 0 10px #0ebeff,
+        0 0 20px #0ebeff,
+        0 0 50px #0ebeff,
+        0 0 100px #0ebeff,
+        0 0 200px #0ebeff
+}
+
+.formPosition2 {
+    color: #fff;
+    font-style: oblique;
+    text-shadow: 
+        0 0 10px red,
+        0 0 20px #0ebeff,
+        0 0 50px blue,
+        0 0 100px #0ebeff,
+        0 0 200px #0ebeff
+}
+
+.store{
+	font-style: oblique;
+}
+
+.subMiddle {
+    color: #fff;
+    font-style: oblique;
+    text-shadow: 
+        0 0 10px #0ebeff,
+        0 0 20px #0ebeff,
+        0 0 50px #0ebeff,
+        0 0 100px #0ebeff,
+        0 0 200px #0ebeff
+}
+
+.next {
+    color: #fff;
+    font-style: oblique;
+    text-shadow: 
+        0 0 10px #0ebeff,
+        0 0 20px #0ebeff,
+        0 0 50px #0ebeff,
+        0 0 100px #0ebeff,
+        0 0 200px #0ebeff
+}
+
+.select {
+    color: #fff;
+    font-style: oblique;
+    text-shadow: 
+        0 0 10px #0ebeff,
+        0 0 20px #0ebeff,
+        0 0 50px #0ebeff,
+        0 0 100px #0ebeff,
+        0 0 200px #0ebeff
+}
+.shop {
+    text-shadow: 0 0 5px #fff;
+}
+.save {
+    text-shadow: 0 0 5px #fff;
+}
+.teamList {
+    text-shadow: 0 0 5px #fff;
+}
+.tips {
+    text-shadow: 0 0 5px #fff;
+}
+
+.tableHead{
+	  font-family: "papyrus"; 
+}
+
+/*position*/
 a:link{ text-decoration: none; color: black;}
 a:active { text-decoration:none;color: black;}
 a:hover { text-decoration:none;color: black;} 
@@ -275,6 +353,7 @@ body{
 .return{
 	position: absolute;
 	left: 450px;	
+
 }
 
 

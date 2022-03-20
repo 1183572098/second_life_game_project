@@ -7,6 +7,26 @@ a:hover{
   color: yellow;
   text-decoration: none;
 }
+
+/*font-style*/
+.formPosition {
+    color: #fff;
+    font-style: oblique;
+    text-shadow: 
+        0 0 10px #0ebeff,
+        0 0 20px #0ebeff,
+        0 0 50px #0ebeff,
+        0 0 100px #0ebeff,
+        0 0 200px #0ebeff
+}
+
+.readFile {
+    text-shadow: 0 0 5px #fff;
+}
+.index {
+    text-shadow: 0 0 5px #fff;
+}
+
 /*initial*/
 
 .formPosition{

@@ -4,6 +4,7 @@
 }
 
 .formPosition{
+  /*font-style: oblique;*/
 	height: 140px;
 	margin: auto;
   	width: 50%;
@@ -19,11 +20,28 @@ h1{
   text-align: center;
 }
 
+p {
+    color: #fff;
+    font-style: oblique;
+    text-shadow: 
+        0 0 10px #0ebeff,
+        0 0 20px #0ebeff,
+        0 0 50px #0ebeff,
+        0 0 100px #0ebeff,
+        0 0 200px #0ebeff
+}
+
+
 p{
   text-align: center;
   color: white;
   font-size: 120%;
+  font-style: oblique;
+/*font-family: "papyrus"; */
+
 }
+
+
 
 .field{
   text-align: center;
