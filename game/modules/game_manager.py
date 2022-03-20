@@ -79,7 +79,6 @@ class Manager:
             result = game.next_year()
         else:
             result = None
-        print(game.event_history)
         return result
 
     def open_shop(self, request_data):
