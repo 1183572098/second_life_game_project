@@ -159,7 +159,7 @@ class Manager:
     def deserialize(self, request_data):
         print("info: deserialize")
         loc = request_data.POST.get('location')
-        record = self.data.select(Record.objects.get, Record, location=loc)
+        record = self.data.select(Record.objects.get, Record, user_id=request_data.user.id, location=loc)
         result = {}
         if record is None:
             print("record is none")
