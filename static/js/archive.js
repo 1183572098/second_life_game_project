@@ -24,7 +24,14 @@ function readEventSuccess(data){
     for(let i=1;i<newData.length;i++){
         let dataCell = csvToArray(newData[i]);
         if(dataCell[0]!==""){
-            eventMap.set(dataCell[0], dataCell[2]);
+            if(dataCell[2].length > 30){
+                let tempStr = dataCell[2].substr(0, 30);
+                tempStr += "...";
+                eventMap.set(dataCell[0], tempStr);
+            }
+            else{
+                eventMap.set(dataCell[0], dataCell[2]);
+            }
         }
     }
     showArchive();
