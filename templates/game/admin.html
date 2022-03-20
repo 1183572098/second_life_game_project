@@ -13,18 +13,19 @@
 <div class="formPosition">
 
 <h1>Announcements</h1> <br /><br />
+</div>
 
 {% if announcements %}
 {% for announcement in announcements %}
-<table class="test">
-	<td><div class="head">{{ announcement.title }}</div></td>
-        <td><p>{{ announcement.content }}</p></td>
+
+	<div class="head">{{ announcement.title }}</div><br />
+        <p>{{ announcement.content }}</p> <br /><br />
 </table>
 {% endfor %}
 
 {% else %}
 <p>There are no announcements.</p>
-</div>
+
 </div>
 {% endif %}
 {% endblock %}

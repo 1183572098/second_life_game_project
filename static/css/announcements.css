@@ -20,7 +20,14 @@ h1{
 }
 
 p{
+  text-align: center;
   color: white;
+  font-size: 120%;
+}
+
+.field{
+  text-align: center;
+  color: black;
   font-size: 120%;
 }
 
@@ -28,26 +35,14 @@ p{
   position:center;
 }
 
-table.test{
-  border-collapse: separate;
-  border-spacing: 20px;
-  text-align: left;
-  font-weight:bold;
-}
-
 .head {
   font-family: "papyrus";
   font-size: 220%;
+  font-weight: bold;
+  text-align: center;
   background: -webkit-linear-gradient(#5887c4, white);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
 
-html {
-min-height: 100%;
-}
-
-b {
-overflow-y: scroll;
 }
 
