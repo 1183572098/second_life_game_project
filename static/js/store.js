@@ -194,7 +194,7 @@ function use(val){
 				attributeValueMap = new Map(Object.entries(attribute));
 				setAttribute();
 				// for rebirth especially
-				if(data.event_id === 3001){
+				if(data.event_id <= 3000){
 					$("#event tbody").html("");
 					age = data.age;
 					eventId = data.event_id;
