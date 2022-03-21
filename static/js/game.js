@@ -5,7 +5,6 @@ var option1Map = new Map();
 var option2Map = new Map();
 var option3Map = new Map();
 var questionMap = new Map();
-var isEnd = false;
 
 $(document).ready(function(){
     $.ajax({
@@ -23,6 +22,12 @@ $(document).ready(function(){
         dataType: "text",
     }).done(readOptionSuccess);
 
+    alert(isEnd);
+
+    if(isEnd > 0){
+        document.getElementById("next").hidden = true;
+        document.getElementById("restart").hidden = false;
+    }
 });
 
 
@@ -95,11 +100,6 @@ function createEventTable(){
             }
         }
     }
-
-    if(isEnd){
-        document.getElementById("next").hidden = true;
-        document.getElementById("restart").hidden = false;
-    }
 }
 
 function createEvent(age, eventId){
@@ -123,8 +123,7 @@ $('#next').click(function(){
         {},
         function (data) {
             eventId = data.event_id;
-            if(Boolean(data.is_end) === true){
-                isEnd = true;
+            if(data.is_end > 0){
                 attribute = data.attribute;
                 attributeValueMap = new Map(Object.entries(attribute));
                 setAttribute();
@@ -181,14 +180,14 @@ function endPage(val){
     document.getElementById("content").innerHTML = "<br/>";
     document.getElementById("content").innerHTML += val;
     document.getElementById("end").className="overshadow";
-    if(isEnd){
+    if(isEnd > 0){
         document.getElementById("next").hidden = true;
     }
 }
 
 function clickReturn(){
     document.getElementById("end").className="overshadow hide";
-    if(isEnd){
+    if(isEnd > 0){
         document.getElementById("restart").hidden = false;
     }
 }
