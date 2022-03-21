@@ -22,8 +22,6 @@ $(document).ready(function(){
         dataType: "text",
     }).done(readOptionSuccess);
 
-    alert(isEnd);
-
     if(isEnd > 0){
         document.getElementById("next").hidden = true;
         document.getElementById("restart").hidden = false;
