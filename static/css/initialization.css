@@ -4,7 +4,6 @@
 }
 
 .main {
-    color: #fff;
     font-weight: bold;
     text-shadow: 
         0 0 10px #0ebeff,
@@ -33,7 +32,6 @@
 }
 
 .subTitle{
-	color: #FF4500;
 	color: darkorange;
 	font-style: oblique;
 	opacity: 0.8;
@@ -139,7 +137,6 @@
 	position: absolute;
 	top: 160px;
 	left: 20px;
-	/*background-image: url("../../static/image/image/profile/cat.jpg");*/
 	background-image: url("../image/background/EE.png");
 	opacity: 0.8;
 }

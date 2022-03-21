@@ -222,7 +222,7 @@ body{
 
 }
 
-/*enent*/
+/*event*/
 .subMiddle{
 	position: relative;
 	height: 400px;
@@ -300,7 +300,6 @@ body{
 	position: relative;
 	height: 50px;
 	width: auto;
-	/*background-image: url("../image/background/DD.png");*/
 	border: solid;
 	margin-top: 10px;
 	z-index: 1;
