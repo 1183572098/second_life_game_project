@@ -95,6 +95,11 @@ function createEventTable(){
             }
         }
     }
+
+    if(isEnd){
+        document.getElementById("next").hidden = true;
+        document.getElementById("restart").hidden = false;
+    }
 }
 
 function createEvent(age, eventId){
