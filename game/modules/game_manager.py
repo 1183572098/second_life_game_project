@@ -106,6 +106,7 @@ class Manager:
             success = game.purchase(good_id)
             if success:
                 result.update({"success": 1})
+                result.update({"attribute": game.role.visible_attribute})
                 result.update(self.open_shop(request_data))
             else:
                 result.update({"success": 0})
@@ -114,7 +115,7 @@ class Manager:
             print("info: can't purchase")
             result.update({"success": 0})
             result.update({"reason": "Insufficient number of the good available for purchase"})
-
+            result.update({"attribute": game.role.visible_attribute})
         return result
 
     def use_good(self, request_data):
@@ -128,7 +129,7 @@ class Manager:
             result.update({"success": 1})
             result.update({"age": game.role.age})
             result.update({"event_id": game.event_history[-1]})
-            result.update({"attribute": game.role.attribute})
+            result.update({"attribute": game.role.visible_attribute})
             result.update(self.open_shop(request_data))
         else:
             print("error: can't purchase")
@@ -192,7 +193,7 @@ class Manager:
             result.update({"is_end": game.end})
             result.update({"age": game.role.age})
             result.update({"event_id": game.event_history})
-            result.update({"attribute": game.role.attribute})
+            result.update({"attribute": game.role.visible_attribute})
 
         return result
 

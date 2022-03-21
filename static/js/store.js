@@ -161,11 +161,7 @@ function purchase(val){
 		{'good_id': itemId},
 		function (data) {
 			if(Boolean(data.success) === true){
-				if(data.bag !== ""){
-					bagMap = new Map(Object.entries(data.bag));
-				}
-				ShopMap = new Map(Object.entries(data.shop));
-				showStore();
+				refresh(data);
 			}
 			else{
 				if(data.reason === undefined){
@@ -185,14 +181,7 @@ function use(val){
 		{'good_id': itemId},
 		function (data) {
 			if(Boolean(data.success) === true){
-				if(data.bag !== ""){
-					bagMap = new Map(Object.entries(data.bag));
-				}
-				ShopMap = new Map(Object.entries(data.shop));
-				showStore();
-				attribute = data.attribute;
-				attributeValueMap = new Map(Object.entries(attribute));
-				setAttribute();
+				refresh(data);
 				// for rebirth especially
 				if(data.event_id <= 3000){
 					$("#event tbody").html("");
@@ -210,4 +199,15 @@ function use(val){
 				}
 			}
 		})
+}
+
+function refresh(data){
+	if(data.bag !== ""){
+		bagMap = new Map(Object.entries(data.bag));
+	}
+	ShopMap = new Map(Object.entries(data.shop));
+	showStore();
+	attribute = data.attribute;
+	attributeValueMap = new Map(Object.entries(attribute));
+	setAttribute();
 }
